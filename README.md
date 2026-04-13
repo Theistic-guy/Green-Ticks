@@ -7,21 +7,16 @@
 ## 📁 Navigation
 
 ### 🧠 By Topics
-- [Arrays](topics/arrays/)
-- [Sliding Window](topics/sliding-window/)
-- [Binary Search](topics/binary-search/)
-- [Graphs](topics/graphs/)
-- [Dynamic Programming](topics/dynamic-programming/)
-
+- [Arrays](Topics/Arrays/)
 ---
 
 ### 📚 By Source
-- [NeetCode 150](platforms/neetcode-150/)
-- [CSES](platforms/cses/)
+- [NeetCode 150](Platforms/NeetCode/)
+- [CSES](Platforms/CSES/)
 
 ---
 
 ### 🛠 Templates
-- [BFS](templates/bfs.py)
-- [DFS](templates/dfs.py)
-- [Binary Search](templates/binary_search.py)
+- [BFS](Templates/bfs.py)
+- [DFS](Templates/dfs.py)
+- [Binary Search](Templates/binary_search.py)
