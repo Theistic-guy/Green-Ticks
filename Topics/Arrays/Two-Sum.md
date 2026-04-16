@@ -9,7 +9,7 @@
 
 ```Python
 
-def twoSum(self, nums: List[int], target: int) -> List[int]:
+def twoSum(nums: List[int], target: int) -> List[int]:
 
         lst = [(val,idx) for idx, val in enumerate(nums)]
 
