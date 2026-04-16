@@ -11,7 +11,7 @@
 
 ```Python
 
-def maxProfit(self, prices: List[int]) -> int:
+def maxProfit(prices: List[int]) -> int:
 
         ans = 0
 
