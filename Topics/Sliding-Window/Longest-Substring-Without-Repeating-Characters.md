@@ -11,7 +11,7 @@
 
 ```Python
 
-def lengthOfLongestSubstring(self, s: str) -> int:
+def lengthOfLongestSubstring(s: str) -> int:
 
 	if not s:
 		return 0
