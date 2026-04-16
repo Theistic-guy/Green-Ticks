@@ -11,7 +11,7 @@
 
 ```Python
 
-def maxArea(self, heights: List[int]) -> int:
+def maxArea(heights: List[int]) -> int:
 	ans = 0
 	i = 0
 	j = len(heights)-1
