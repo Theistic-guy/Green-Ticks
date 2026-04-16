@@ -13,7 +13,7 @@
 
 from collections import Counter
 
-def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+def groupAnagrams(strs: List[str]) -> List[List[str]]:
 
 	lst = [("".join(sorted(val)),idx) for idx,val in enumerate(strs)]
 	lst.sort(key=lambda x:x[0])
