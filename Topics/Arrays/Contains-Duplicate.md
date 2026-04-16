@@ -8,7 +8,7 @@
 
 ```Python
 
-def hasDuplicate(self, nums: List[int]) -> bool:
+def hasDuplicate(nums: List[int]) -> bool:
 	set1 = set()
 	for i in nums:
 		if i not in set1:
