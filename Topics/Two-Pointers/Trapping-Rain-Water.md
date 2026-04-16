@@ -12,7 +12,7 @@
 ```Python
 
 
-def trap(self, heights: List[int]) -> int:
+def trap(heights: List[int]) -> int:
 	n = len(heights)
 	left_max = [0] * n
 	right_max = [0] * n
