@@ -8,7 +8,7 @@
 ## 💻 Code
 
 ```py
-def threeSum(self, nums: List[int]) -> List[List[int]]:
+def threeSum( nums: List[int]) -> List[List[int]]:
     nums.sort()  # sorting enables two-pointer strategy
     n = len(nums)
     ans = []
