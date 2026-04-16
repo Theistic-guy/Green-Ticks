@@ -1,4 +1,8 @@
-# Green-Ticks ✓
+<h1>
+  Green-Ticks
+  <img src="assets/Accepted.gif" alt="Accepted" width="40" />
+</h1>
+
 ![Static Badge](https://img.shields.io/badge/Problems-1-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
