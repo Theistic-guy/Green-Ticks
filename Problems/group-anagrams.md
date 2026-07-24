@@ -1,3 +1,41 @@
+---
+Title: Group Anagrams
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Adobe
+  - Uber
+  - Oracle
+  - Goldman Sachs
+  - Yahoo
+  - Salesforce
+  - tiktok
+  - Cisco
+  - VMware
+  - Walmart Global Tech
+  - IBM
+  - Visa
+  - eBay
+  - JPMorgan
+  - ServiceNow
+  - Twilio
+  - Affirm
+  - BlackRock
+  - Alation
+Topics:
+  - Arrays
+  - Strings
+  - Sorting
+  - Hashing
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/group-anagrams/)"
+---
 
 # 🔠Group Anagrams
 

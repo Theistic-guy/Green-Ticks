@@ -1,3 +1,35 @@
+---
+Title: Longest Substring Without Repeating Characters
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Adobe
+  - Bloomberg
+  - Uber
+  - Oracle
+  - Goldman Sachs
+  - Yahoo
+  - Salesforce
+  - Samsung
+  - VMware
+  - Walmart Global Tech
+  - Intuit
+  - Yandex
+  - JPMorgan
+  - Paypal
+  - Spotify
+  - Zoho
+Topics:
+  - Sliding Window
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)"
+---
 
 # 🔤Longest Substring Without Repeating Characters
 

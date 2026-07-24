@@ -1,3 +1,23 @@
+---
+Title: Container With Most Water
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Adobe
+  - Bloomberg
+  - Goldman Sachs
+  - Swiggy
+Topics:
+  - Two Pointers
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/container-with-most-water/)"
+---
 
 # 🧊 Container With Most Water
 

@@ -1,3 +1,38 @@
+---
+Title: Trapping Rain Water
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Adobe
+  - Bloomberg
+  - Uber
+  - Oracle
+  - Goldman Sachs
+  - Snapchat
+  - Intuit
+  - Visa
+  - Paypal
+  - Citadel
+  - Qualtrics
+  - ServiceNow
+  - Rubrik
+  - Tesla
+  - Intel
+  - National Instruments
+  - Sapient
+Topics:
+  - Two Pointers
+  - Monotonic Stack
+  - Prefix and Suffix Arrays
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/trapping-rain-water/)"
+---
 
 # 🌧️Trapping Rain Water
 
@@ -43,6 +78,28 @@ def trap(heights: List[int]) -> int:
 <summary> Two pointers soln.  </summary>
 Left, Right ptrs => if left ls. than Right move left else vice-versa
 left_max, right_max => keep them calculating as we move then calculate water for each height as<br> <b> min(left_max,right_max) - height </b>
+	
+```Python
+def trap(height):
+	if not height:
+		return 0
+		
+	left, right = 0, len(height) - 1
+	left_max, right_max = height[left], height[right]
+	water = 0
+	
+	while left < right:
+		if height[left] < height[right]:
+			left += 1
+			left_max = max(left_max, height[left])
+			water += left_max - height[left]
+		else:
+			right -= 1
+			right_max = max(right_max, height[right])
+			water += right_max - height[right]
+			
+	return water
+```
 </details>
 
 

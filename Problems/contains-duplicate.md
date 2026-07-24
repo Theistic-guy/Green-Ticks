@@ -1,3 +1,16 @@
+---
+Title: Contains Duplicate
+Companies: [Not Specified]
+Topics:
+  - Arrays
+  - Hashing
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/contains-duplicate/)"
+---
+
 # 1️⃣1️⃣Contains  Duplicate
 
 **Idea:** Use hashing
@@ -17,4 +30,3 @@ def hasDuplicate(nums: List[int]) -> bool:
 			return True
 	return False
 ```
-

@@ -1,3 +1,24 @@
+---
+Title: Valid Anagram
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Bloomberg
+  - Goldman Sachs
+  - Spotify
+  - Affirm
+Topics:
+  - Arrays
+  - Hashing
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/valid-anagram/)"
+---
 
 # ✔️Valid Anagram
 

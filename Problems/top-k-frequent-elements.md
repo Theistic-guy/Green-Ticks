@@ -1,3 +1,26 @@
+---
+Title: Top K Frequent Elements
+Companies:
+  - Amazon
+  - Google
+  - Microsoft
+  - Facebook
+  - Apple
+  - Adobe
+  - Bloomberg
+  - Uber
+  - Oracle
+  - Cisco
+Topics:
+  - Arrays
+  - Hashing
+  - Heap
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/top-k-frequent-elements/)"
+---
 
 # 🥇Top K Frequent Elements
 

@@ -1,3 +1,16 @@
+---
+Title: 3Sum
+Companies: [Not Specified]
+Topics:
+  - Two Pointers
+  - Arrays
+Platform:
+  - Leetcode
+Difficulty: Not Specified
+Other Tags:
+Link: "[Leetcode](https://leetcode.com/problems/3sum/)"
+---
+
 # 🧩 3Sum
 
 **Pattern:** Two Pointers  
