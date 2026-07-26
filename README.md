@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-10-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-11-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,12 +13,12 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 10 |
+| Problems | 11 |
 | Topics | 9 |
 | Platforms | 1 |
 | Companies | 49 |
-| Difficulty Levels | 1 |
-| Miscellaneous Tags | 0 |
+| Difficulty Levels | 2 |
+| Miscellaneous Tags | 1 |
 | Templates | 0 |
 
 ---
@@ -26,14 +26,14 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (6)](Topics/arrays.md)
+  - [Arrays (7)](Topics/arrays.md)
   - [Hashing (4)](Topics/hashing.md)
   - [Heap (1)](Topics/heap.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
-  - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
-  - [Sliding Window (2)](Topics/sliding-window.md)
-  - [Sorting (1)](Topics/sorting.md)
-  - [Strings (1)](Topics/strings.md)
+  - [Prefix and Suffix Arrays (2)](Topics/prefix-and-suffix-arrays.md)
+  - [Sliding Window (3)](Topics/sliding-window.md)
+  - [Sorting (2)](Topics/sorting.md)
+  - [Strings (2)](Topics/strings.md)
   - [Two Pointers (4)](Topics/two-pointers.md)
 </details>
 
@@ -43,7 +43,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [Leetcode (10)](Platforms/leetcode.md)
+  - [Leetcode (11)](Platforms/leetcode.md)
 </details>
 
 ---
@@ -55,7 +55,7 @@
   - [Adobe (6)](Companies/adobe.md)
   - [Affirm (2)](Companies/affirm.md)
   - [Alation (2)](Companies/alation.md)
-  - [Amazon (7)](Companies/amazon.md)
+  - [Amazon (8)](Companies/amazon.md)
   - [Apple (7)](Companies/apple.md)
   - [Atlassian (1)](Companies/atlassian.md)
   - [BlackRock (1)](Companies/blackrock.md)
@@ -109,7 +109,17 @@
 <details>
   <summary>Expand</summary>
 
+  - [Hard (1)](Difficulty/hard.md)
   - [Not Specified (10)](Difficulty/not-specified.md)
+</details>
+
+---
+
+### 🏷️ By Miscellaneous Tags
+<details>
+  <summary>Expand</summary>
+
+  - [Good One (1)](Miscellaneous%20Tags/good-one.md)
 </details>
 
 ---
