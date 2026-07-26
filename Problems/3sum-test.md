@@ -1,3 +1,20 @@
+---
+Title: 3Sum Test
+Companies:
+  - Amazon
+Topics:
+  - Arrays
+  - Prefix and Suffix Arrays
+  - Sliding Window
+  - Sorting
+  - Strings
+Platform:
+  - Leetcode
+Difficulty: Hard
+Other Tags:
+  - Good One
+Link: "https:://somethnig.something"
+---
 
 # 🧩 3Sum
 
