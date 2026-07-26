@@ -1,8 +1,5 @@
 # Amazon
 
-## Hard
-- [3Sum Test](../Problems/3sum-test.md)
-
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
