@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-10-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-11-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,9 +13,9 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 10 |
-| Topics | 9 |
-| Platforms | 1 |
+| Problems | 11 |
+| Topics | 10 |
+| Platforms | 2 |
 | Companies | 49 |
 | Difficulty Levels | 1 |
 | Miscellaneous Tags | 0 |
@@ -29,6 +29,7 @@
   - [Arrays (6)](Topics/arrays.md)
   - [Hashing (4)](Topics/hashing.md)
   - [Heap (1)](Topics/heap.md)
+  - [Maths (1)](Topics/maths.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Sliding Window (2)](Topics/sliding-window.md)
@@ -44,6 +45,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (10)](Platforms/leetcode.md)
+  - [Miscellaneous (1)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -77,7 +79,7 @@
   - [Microsoft (7)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (3)](Companies/not-specified.md)
+  - [Not Specified (4)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -109,7 +111,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [Not Specified (10)](Difficulty/not-specified.md)
+  - [Not Specified (11)](Difficulty/not-specified.md)
 </details>
 
 ---
