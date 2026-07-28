@@ -40,4 +40,4 @@ def isPalindrome(x):
 **Aux. Space complexity** -  O(1)
 
 ---
-[prefix-and-suffix-arrays](prefix-and-suffix-arrays.md)
+[prefix-and-suffix-arrays](Green-Ticks/Topics/prefix-and-suffix-arrays.md)
