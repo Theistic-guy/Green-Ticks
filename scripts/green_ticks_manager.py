@@ -98,6 +98,7 @@ TOPICS = [
     "Arrays",
     "Hashing",
     "Heap",
+    "Maths",
     "Monotonic Stack",
     "Prefix and Suffix Arrays",
     "Sliding Window",

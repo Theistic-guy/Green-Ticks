@@ -3,6 +3,7 @@ Title: Count Digits
 Companies:
   - Not Specified
 Topics:
+  - Maths
 Platform:
   - Miscellaneous
 Difficulty: Not Specified
