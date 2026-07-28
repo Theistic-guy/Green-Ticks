@@ -32,7 +32,7 @@ def lcm(a, b):
 
 ```
 
-**Time complexity** - O(D) , D is no of digits
+**Time complexity** - O(log(min(a, b))) . See [this](../Notes/Time%20complexity%20for%20GCD.md)
 **Aux. Space complexity** -  O(1)
 
 ---

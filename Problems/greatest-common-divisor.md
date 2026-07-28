@@ -11,7 +11,6 @@ Other Tags:
 Link: ""
 ---
 
-
 # GCD
 
 **Pattern:** Euclidean algorithm
@@ -29,6 +28,9 @@ def gcd(a, b):
     return gcd(b, a % b)
 
 ```
+
+**Time complexity** - O(log(min(a, b)). See [this](../Notes/Time%20complexity%20for%20GCD.md)
+**Aux. Space complexity** -  O(1)
 
 > [!NOTE] Note
 > **No need to ensure** `a ≥ b`—if `a < b`, the first modulo operation (`a % b = a`) automatically swaps the numbers.
