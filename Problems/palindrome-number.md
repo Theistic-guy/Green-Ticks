@@ -6,7 +6,7 @@ Topics:
   - Maths
 Platform:
   - Miscellaneous
-Difficulty: Easy
+Difficulty: Medium
 Other Tags:
 Link: ""
 ---
