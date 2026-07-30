@@ -8,6 +8,7 @@ Platform:
   - Miscellaneous
 Difficulty: Medium
 Other Tags:
+  - GFG
 Link: ""
 ---
 
