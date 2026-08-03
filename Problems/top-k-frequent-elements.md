@@ -109,7 +109,7 @@ def topKFrequent_heap(nums: list[int], k: int) -> list[int]:
 
 ## Approach 2: Bucket Sort ($O(N)$ Time - Optimal)
 
-If you give the Min-Heap approach, an Amazon interviewer will often ask: *"Can you optimize this to linear $O(N)$ time?"*
+If you give the Min-Heap approach, an  interviewer will often ask: *"Can you optimize this to linear $O(N)$ time?"*
 
 This is where **Bucket Sort** comes in.
 
