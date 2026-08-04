@@ -8,6 +8,7 @@ on:
       - "scripts/build_indexes.py"
       - "SCHEMA.md"
       - ".github/workflows/build-indexes.yml"
+      - "assets/**"
 
 permissions:
   contents: write
