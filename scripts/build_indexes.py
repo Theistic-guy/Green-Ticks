@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PROBLEMS_DIR = ROOT / "Problems"
 README_FILE = ROOT / "README.md"
 template_dir = ROOT / "Templates"
+README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
 
 template_files = []
 
@@ -44,6 +45,11 @@ ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags"}
 
 # Restored from your original script
 FILENAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+
+# Matches a leading numeric prefix (supports dot notation like 2, 2.3, 10.1)
+# followed by a hyphen (spaces around it are optional), e.g.:
+#   "2-intro.md", "2.3-details.md", "2.3 - details.md", "10-appendix.md"
+README_SECTION_RE = re.compile(r"^(\d+(?:\.\d+)*)\s*-\s*(.+)$")
 
 # The {count} placeholder will be replaced dynamically
 README_HEADER_TEMPLATE = """<h1>
@@ -273,6 +279,47 @@ def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, A
 
     index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
+def readme_section_sort_key(path: Path) -> tuple[int, tuple[int, ...], str]:
+    """
+    Sort key for files in the 'ReadMe Sections' folder.
+
+    Files named with a leading numeric prefix (e.g. '2-intro.md',
+    '2.3 - details.md', '10-appendix.md') are ordered numerically by that
+    prefix, so '2' < '2.3' < '2.10' < '10' (unlike plain string sorting).
+
+    Files with no recognizable numeric prefix sort after all numbered
+    files, alphabetically among themselves.
+    """
+    match = README_SECTION_RE.match(path.stem)
+    if match:
+        num_parts = tuple(int(p) for p in match.group(1).split("."))
+        return (0, num_parts, path.stem.lower())
+    return (1, (), path.stem.lower())
+
+def build_readme_sections_appendix(sections_dir: Path) -> str:
+    """
+    Read every .md file in the 'ReadMe Sections' folder (if it exists),
+    order them via readme_section_sort_key, and join their contents with
+    a '---' divider between each file.
+    """
+    if not sections_dir.exists():
+        return ""
+
+    section_files = sorted(sections_dir.glob("*.md"), key=readme_section_sort_key)
+    if not section_files:
+        return ""
+
+    chunks: list[str] = []
+    for file in section_files:
+        content = file.read_text(encoding="utf-8").strip()
+        if content:
+            chunks.append(content)
+
+    if not chunks:
+        return ""
+
+    return "\n\n---\n\n".join(chunks)
+
 def build_templates_section(template_files: list[Path]) -> str:
     """Generate the Templates section of the README."""
 
@@ -350,7 +397,8 @@ def generate_readme(
     by_company,
     by_other_tag,
     by_difficulty,
-    template_files
+    template_files,
+    readme_sections_appendix: str = ""
 ) -> None:
 
     stats = textwrap.dedent(f"""\
@@ -423,6 +471,10 @@ def generate_readme(
         + "\n".join(sections)
         + README_FOOTER
     )
+
+    if readme_sections_appendix:
+        readme_content = readme_content.rstrip() + "\n\n" + readme_sections_appendix + "\n"
+
     README_FILE.write_text(readme_content, encoding="utf-8")
 
 def main() -> None:
@@ -505,6 +557,9 @@ def main() -> None:
         index_file = difficulty_dir / f"{difficulty_slugs[difficulty]}.md"
         render_flat_index(index_file, difficulty, items)
 
+    print("Appending ReadMe Sections...", flush=True)
+    readme_sections_appendix = build_readme_sections_appendix(README_SECTIONS_DIR)
+
     # Call README generation with the calculated number of problem files
     generate_readme(
         problem_count=len(notes),
@@ -523,7 +578,8 @@ def main() -> None:
         by_company=by_company,
         by_other_tag=by_other_tag,
         by_difficulty=by_difficulty,
-        template_files=template_files
+        template_files=template_files,
+        readme_sections_appendix=readme_sections_appendix
     )
 
     print("Indexes and README generated successfully.", flush=True)
