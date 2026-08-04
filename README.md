@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-20-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-25-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,12 +13,12 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 20 |
+| Problems | 25 |
 | Topics | 10 |
 | Platforms | 2 |
 | Companies | 49 |
-| Difficulty Levels | 3 |
-| Miscellaneous Tags | 1 |
+| Difficulty Levels | 4 |
+| Miscellaneous Tags | 3 |
 | Templates | 0 |
 
 ---
@@ -29,7 +29,7 @@
   - [Arrays (6)](Topics/arrays.md)
   - [Hashing (4)](Topics/hashing.md)
   - [Heap (1)](Topics/heap.md)
-  - [Maths (10)](Topics/maths.md)
+  - [Maths (15)](Topics/maths.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Sliding Window (2)](Topics/sliding-window.md)
@@ -45,7 +45,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (10)](Platforms/leetcode.md)
-  - [Miscellaneous (10)](Platforms/miscellaneous.md)
+  - [Miscellaneous (15)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -79,7 +79,7 @@
   - [Microsoft (7)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (13)](Companies/not-specified.md)
+  - [Not Specified (18)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -111,8 +111,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (6)](Difficulty/easy.md)
-  - [Medium (4)](Difficulty/medium.md)
+  - [Easy (8)](Difficulty/easy.md)
+  - [Medium (6)](Difficulty/medium.md)
+  - [Hard (1)](Difficulty/hard.md)
   - [Not Specified (10)](Difficulty/not-specified.md)
 </details>
 
@@ -122,7 +123,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [GFG (7)](Miscellaneous%20Tags/gfg.md)
+  - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
+  - [GFG (12)](Miscellaneous%20Tags/gfg.md)
+  - [XOR (2)](Miscellaneous%20Tags/xor.md)
 </details>
 
 ---
