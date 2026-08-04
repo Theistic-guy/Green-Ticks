@@ -65,26 +65,27 @@ README_HEADER_TEMPLATE = """<h1>
 ## 📁 Navigation
 """
 
-README_FOOTER = """
+README_FOOTER = ""
+# README_FOOTER = """
 
-## ⚙️ How It Works
+# ## ⚙️ How It Works
 
-Every problem lives inside `Problems/` as a Markdown file with YAML metadata.
+# Every problem lives inside `Problems/` as a Markdown file with YAML metadata.
 
-Running
+# Running
 
-```bash
-python scripts/build_indexes.py
-```
+# ```bash
+# python scripts/build_indexes.py
+# ```
 
-will:
-- Validate metadata
-- Generate all index pages
-- Regenerate this README
+# will:
+# - Validate metadata
+# - Generate all index pages
+# - Regenerate this README
 
----
+# ---
 
-"""
+# """
 
 def slugify(value: str) -> str:
     value = unicodedata.normalize("NFKD", value)
