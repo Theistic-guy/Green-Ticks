@@ -1,8 +1,8 @@
-# Subset
+# DP
 
 ## Medium
 - [Equal Partition](../Problems/equal-partition.md)
-- [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
 
 ## Hard

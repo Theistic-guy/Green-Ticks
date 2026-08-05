@@ -13,12 +13,17 @@
 ## Medium
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
+- [Equal Partition](../Problems/equal-partition.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome Number](../Problems/palindrome-number.md)
+- [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
+- [Subset sum using DP](../Problems/subset-sum-using-dp.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
 ## Hard
+- [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
