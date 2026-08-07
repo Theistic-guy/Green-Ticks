@@ -1,46 +1,56 @@
 ---
-Title: Palindrome Number
+Title: Josephus Problem
 Companies:
   - Not Specified
 Topics:
-  - Maths
+  - Recursion
 Platform:
   - Miscellaneous
-Difficulty: Medium
+Difficulty: Hard
 Other Tags:
 Link: ""
 ---
 
-# Palindrome Number
+# Josephus Problem
 
 **Pattern:** 
 **Idea:** 
+**Intuition** : [Intuition behind Josephus Problem](../Notes/Intuition%20behind%20Josephus%20Problem.md)
 
 ---
 
 ## 💻 Code
 
+#### Recursive
 ```Python
-def isPalindrome(x):
-    if x < 0:
-        return False
+def josephus(n, k):
 
-    original = x
-    rev = 0
+    if n == 1:
+        return 0
 
-    while x > 0:
-        digit = x % 10
-        rev = rev * 10 + digit
-        x //= 10
-
-    return original == rev
+    return (josephus(n - 1, k) + k) % n
 
 ```
-**Time complexity** - O(D) , D is no of digits
-**Aux. Space complexity** -  O(1)
+**Time complexity** - O(n) 
+**Aux. Space complexity** -  O(n) , recursion stack
+
+#### Iterative
+```python
+def josephus(n, k):
+
+    ans = 0
+
+    for i in range(2, n + 1):
+        ans = (ans + k) % i
+
+    return ans
+```
+This is 0-index based, as i gives 0 to i-1 values, so for '1' ans is 0. For 1-based indexing, simply return the final ans + 1.
+
+Time - O(n)
+Aux space - O(1)
 
 ---
-# Josephus Problem (DSA Interview Notes)
 
 ## Problem Statement
 
@@ -492,4 +502,4 @@ def josephus(n, k):
 | Recursive | **$O(n)$**      | **$O(n)$**      |
 | Iterative | **$O(n)$**      | **$O(1)$**      |
 
-> **Interview Tip:** The hardest part of the Josephus problem is **deriving the recurrence**, not writing the code. Once you remember the relation `$J(n,k)=(J(n-1,k)+k)\bmod n$`, both the recursive and iterative implementations become straightforward.
+> **Interview Tip:** The hardest part of the Josephus problem is **deriving the recurrence**, not writing the code. Once you remember the relation $$J(n,k)=(J(n-1,k)+k)\bmod n$$, both the recursive and iterative implementations become straightforward.
