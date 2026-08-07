@@ -15,6 +15,7 @@
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
+- [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
 ## Hard

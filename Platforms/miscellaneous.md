@@ -21,9 +21,11 @@
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
+- [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
 ## Hard
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
+- [Josephus Problem](../Problems/josephus-problem.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)

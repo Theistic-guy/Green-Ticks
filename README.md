@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-32-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-34-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,7 +13,7 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 32 |
+| Problems | 34 |
 | Topics | 12 |
 | Platforms | 2 |
 | Companies | 49 |
@@ -33,7 +33,7 @@
   - [Maths (18)](Topics/maths.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
-  - [Recursion (1)](Topics/recursion.md)
+  - [Recursion (3)](Topics/recursion.md)
   - [Sliding Window (2)](Topics/sliding-window.md)
   - [Sorting (1)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
@@ -47,7 +47,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (10)](Platforms/leetcode.md)
-  - [Miscellaneous (22)](Platforms/miscellaneous.md)
+  - [Miscellaneous (24)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -81,7 +81,7 @@
   - [Microsoft (7)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (25)](Companies/not-specified.md)
+  - [Not Specified (27)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -114,8 +114,8 @@
   <summary>Expand</summary>
 
   - [Easy (8)](Difficulty/easy.md)
-  - [Medium (11)](Difficulty/medium.md)
-  - [Hard (3)](Difficulty/hard.md)
+  - [Medium (12)](Difficulty/medium.md)
+  - [Hard (4)](Difficulty/hard.md)
   - [Not Specified (10)](Difficulty/not-specified.md)
 </details>
 
@@ -126,7 +126,7 @@
   <summary>Expand</summary>
 
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
-  - [GFG (14)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (15)](Miscellaneous%20Tags/gfg.md)
   - [Subset (4)](Miscellaneous%20Tags/subset.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
 </details>
@@ -138,3 +138,4 @@
 + How memory (Stack, Heap,..) is allocated - [Python Memory Model for DSA & Interviews](/Notes/Python%20Memory%20Model%20for%20DSA%20&%20Interviews.md)
 + Turning into Tail Recursive Procedures - [How to convert to 'Tail Recursive Procedures'](/Notes/How%20to%20convert%20to%20'Tail%20Recursive%20Procedures'.md)
 + Basic Recursion Problems (complexities + recurrence relations)  - [Basic Problems Using Simple Recursion](Notes/Basic%20Problems%20Using%20Simple%20Recursion.md)
++ Basic array problems - [Basic Array Problems](/Notes/Basic%20Array%20Problems.md)
