@@ -33,6 +33,7 @@ Companies:
   - Alation
 Topics:
   - Sliding Window
+  - Arrays
 Platform:
   - Leetcode
 Difficulty: Not Specified
@@ -43,7 +44,6 @@ Link: "[Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 # 📈Best Time to Buy and Sell Stock
 
 **Pattern:** Siding Window
-
 **Idea:** Keep track of best price so far and the maximum profit so far.
 
 ---
@@ -71,6 +71,7 @@ def maxProfit(prices: List[int]) -> int:
         return ans
 ```
 
+Valley and Peak approach - [Valley Peak approach](../Notes/Extras/Valley%20Peak%20approach.md)
 
 
 

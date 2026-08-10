@@ -4,3 +4,4 @@
 + Turning into Tail Recursive Procedures - [How to convert to 'Tail Recursive Procedures'](/Notes/How%20to%20convert%20to%20'Tail%20Recursive%20Procedures'.md)
 + Basic Recursion Problems (complexities + recurrence relations)  - [Basic Problems Using Simple Recursion](Notes/Basic%20Problems%20Using%20Simple%20Recursion.md)
 + Basic array problems - [Basic Array Problems](/Notes/Basic%20Array%20Problems.md)
++ Kadane's subarray variations - [Maximum Subarray — Important Interview Variations](/Notes/Maximum%20Subarray%20—%20Important%20Interview%20Variations.md)

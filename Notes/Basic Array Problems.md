@@ -324,6 +324,9 @@ Output
 [3,4,5,1,2]
 ```
 
+# 6. Leaders in an Array problem
+# 7. Maximum difference order
+# 8. Longest even odd subarray
 ---
 
 ## Interview Approach (Reversal Algorithm)
