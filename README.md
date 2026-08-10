@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-34-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-42-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,12 +13,12 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 34 |
-| Topics | 12 |
+| Problems | 42 |
+| Topics | 14 |
 | Platforms | 2 |
 | Companies | 49 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 4 |
+| Miscellaneous Tags | 8 |
 | Templates | 0 |
 
 ---
@@ -26,15 +26,17 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (6)](Topics/arrays.md)
+  - [Arrays (15)](Topics/arrays.md)
+  - [Difference Array (1)](Topics/difference-array.md)
   - [DP (4)](Topics/dp.md)
   - [Hashing (4)](Topics/hashing.md)
   - [Heap (1)](Topics/heap.md)
   - [Maths (18)](Topics/maths.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
+  - [Prefix Sum (2)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
-  - [Sliding Window (2)](Topics/sliding-window.md)
+  - [Sliding Window (4)](Topics/sliding-window.md)
   - [Sorting (1)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
   - [Two Pointers (4)](Topics/two-pointers.md)
@@ -47,7 +49,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (10)](Platforms/leetcode.md)
-  - [Miscellaneous (24)](Platforms/miscellaneous.md)
+  - [Miscellaneous (32)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -81,7 +83,7 @@
   - [Microsoft (7)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (27)](Companies/not-specified.md)
+  - [Not Specified (35)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -113,9 +115,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (8)](Difficulty/easy.md)
-  - [Medium (12)](Difficulty/medium.md)
-  - [Hard (4)](Difficulty/hard.md)
+  - [Easy (13)](Difficulty/easy.md)
+  - [Medium (14)](Difficulty/medium.md)
+  - [Hard (5)](Difficulty/hard.md)
   - [Not Specified (10)](Difficulty/not-specified.md)
 </details>
 
@@ -125,8 +127,12 @@
 <details>
   <summary>Expand</summary>
 
+  - [Boyer-Moore Voting (1)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
-  - [GFG (15)](Miscellaneous%20Tags/gfg.md)
+  - [Flips (1)](Miscellaneous%20Tags/flips.md)
+  - [GFG (22)](Miscellaneous%20Tags/gfg.md)
+  - [Kadane (1)](Miscellaneous%20Tags/kadane.md)
+  - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
   - [Subset (4)](Miscellaneous%20Tags/subset.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
 </details>
@@ -139,3 +145,4 @@
 + Turning into Tail Recursive Procedures - [How to convert to 'Tail Recursive Procedures'](/Notes/How%20to%20convert%20to%20'Tail%20Recursive%20Procedures'.md)
 + Basic Recursion Problems (complexities + recurrence relations)  - [Basic Problems Using Simple Recursion](Notes/Basic%20Problems%20Using%20Simple%20Recursion.md)
 + Basic array problems - [Basic Array Problems](/Notes/Basic%20Array%20Problems.md)
++ Kadane's subarray variations - [Maximum Subarray — Important Interview Variations](/Notes/Maximum%20Subarray%20—%20Important%20Interview%20Variations.md)
