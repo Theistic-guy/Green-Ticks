@@ -1,13 +1,15 @@
 ---
-Title: Palindrome Number
+Title: Find peak in mountain array
 Companies:
   - Not Specified
 Topics:
-  - Maths
+  - Arrays
+  - Searching
 Platform:
   - Miscellaneous
 Difficulty: Medium
 Other Tags:
+  - Binary Search
 Link: ""
 ---
 
