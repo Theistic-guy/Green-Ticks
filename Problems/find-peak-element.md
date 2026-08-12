@@ -18,6 +18,8 @@ Link: ""
 
 **Pattern:**  Binary Search
 **Idea:** 
+**Variations** : 
++ [find-peak-in-mountain-array](find-peak-in-mountain-array.md)
 
 ---
 
@@ -45,6 +47,7 @@ def find_peak(arr):
 ```
 **Time complexity** - O(log n) 
 **Aux. Space complexity** -  O(1)
+**Why it works** - [Why finding peak element using binary search works](../Notes/Extras/Why%20finding%20peak%20element%20using%20binary%20search%20works.md)
 
 ---
 

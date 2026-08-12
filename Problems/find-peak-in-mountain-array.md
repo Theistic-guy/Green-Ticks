@@ -10,36 +10,118 @@ Platform:
 Difficulty: Medium
 Other Tags:
   - Binary Search
-Link: ""
+Link: "[[find-peak-element]]"
+Refs:
+  - "[[../Notes/Extras/Why finding peak element using binary search works|Why finding peak element using binary search works]]"
+  - "[[find-peak-element]]"
 ---
-
-# Palindrome Number
-
-**Pattern:** 
+# Find a Peak in a Mountain Array
+**Pattern:** Binary Search
 **Idea:** 
-**Variations** : 
+**Variations** : Derived from [find-peak-element](find-peak-element.md)
++ [Important Variation : Find in Mountain Array](#Important%20Variation%20Find%20in%20Mountain%20Array)
 
 ---
 
 ## 💻 Code
 
 ```Python
-def isPalindrome(x):
-    if x < 0:
-        return False
+def find_peak(arr):
 
-    original = x
-    rev = 0
+    low = 0
+    high = len(arr) - 1
 
-    while x > 0:
-        digit = x % 10
-        rev = rev * 10 + digit
-        x //= 10
+	# there would be atleast 2 elements
+    while low < high:
 
-    return original == rev
+        mid = (low + high) // 2
+        
+		# arr[mid+1] would never give out of bounds exception
+        if arr[mid] < arr[mid + 1]: 
+        
+            low = mid + 1
+        else:
+            high = mid # search in the left 
+
+    return low
 
 ```
-**Time complexity** - O(D) , D is no of digits
+**Time complexity** - O(log n) 
 **Aux. Space complexity** -  O(1)
+
+---
+
+
+A **Mountain Array** looks like:
+
+```text
+[1, 3, 5, 7, 6, 4, 2]
+```
+
+There is exactly one peak.
+
+The same Binary Search works:
+
+```python
+if arr[mid] < arr[mid + 1]:
+    low = mid + 1
+else:
+    high = mid
+```
+
+This is essentially the same algorithm, but the problem guarantees a mountain structure.
+
+### Complexity
+
+- **Time:** **$O(\log n)$**
+    
+- **Auxiliary Space:** **$O(1)$**
+    
+
+---
+
+# Important Variation : Find in Mountain Array
+
+This is a more realistic interview follow-up.
+
+Given:
+
+```text
+[1, 3, 5, 7, 6, 4, 2]
+```
+
+and target:
+
+```text
+6
+```
+
+find its index.
+
+### Approach
+
+First find the peak.
+
+Then the array becomes two sorted arrays:
+
+```text
+Ascending:
+
+[1, 3, 5, 7]
+
+Descending:
+
+[7, 6, 4, 2]
+```
+
+Perform Binary Search on both sides.
+
+Overall:
+
+$$  
+O(\log n)  
+$$
+
+This is **LeetCode 1095 — Find in Mountain Array**.
 
 ---
