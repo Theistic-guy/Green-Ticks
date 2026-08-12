@@ -17,7 +17,8 @@ Link:
 **Idea:** 
 **Variations** : Derived from [find-peak-element](find-peak-element.md)
 
-[Important Variation : Find in Mountain Array](find-peak-in-mountain-array.md#Important-Variation-Find-in-Mountain-Array)
+[Important Variation : Find in Mountain Array](#Important%20Variation%20Find%20in%20Mountain%20Array)
+
 
 ---
 
