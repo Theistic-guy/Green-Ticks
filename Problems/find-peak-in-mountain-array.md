@@ -10,16 +10,14 @@ Platform:
 Difficulty: Medium
 Other Tags:
   - Binary Search
-Link: "[[find-peak-element]]"
-Refs:
-  - "[[../Notes/Extras/Why finding peak element using binary search works|Why finding peak element using binary search works]]"
-  - "[[find-peak-element]]"
+Link:
 ---
 # Find a Peak in a Mountain Array
 **Pattern:** Binary Search
 **Idea:** 
 **Variations** : Derived from [find-peak-element](find-peak-element.md)
-+ [Important Variation : Find in Mountain Array](#Important%20Variation%20Find%20in%20Mountain%20Array)
+
+[Important Variation : Find in Mountain Array](find-peak-in-mountain-array.md#Important-Variation-Find-in-Mountain-Array)
 
 ---
 
