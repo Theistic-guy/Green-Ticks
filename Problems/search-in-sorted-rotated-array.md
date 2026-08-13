@@ -57,7 +57,7 @@ def search(arr, target):
 **Time complexity** - O(log n)
 **Aux. Space complexity** -  O(1)
 See decision tree below.
-Important variation (With duplicates) - [search-in-rotated-sorted-array-ii](search-in-rotated-sorted-array-ii.md)
+Important variation (With duplicates) - [search-in-rotated-sorted-array](search-in-rotated-sorted-array.md)
 
 ---
 
@@ -355,7 +355,7 @@ Therefore:
 
 ---
 
-# Important Variation: Duplicates . See More [here](search-in-rotated-sorted-array-ii.md)
+# Important Variation: Duplicates . See More [here](search-in-rotated-sorted-array.md)
 
 This is an important follow-up.
 
