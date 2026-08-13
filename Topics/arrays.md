@@ -20,7 +20,7 @@
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
-- [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array.md)
+- [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 
 ## Not Specified
 - [3Sum](../Problems/3sum.md)
