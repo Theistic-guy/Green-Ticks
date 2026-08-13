@@ -16,6 +16,7 @@ Platform:
   - Leetcode
 Difficulty: Not Specified
 Other Tags:
+  - Maximum
 Link: "[Leetcode](https://leetcode.com/problems/container-with-most-water/)"
 ---
 

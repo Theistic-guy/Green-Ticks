@@ -10,6 +10,7 @@ Platform:
 Difficulty: Hard
 Other Tags:
   - Binary Search
+  - Sorted
 Link: ""
 ---
 

@@ -10,6 +10,7 @@ Difficulty: Easy
 Other Tags:
   - GFG
   - Binary Search
+  - Sorted
 Link: ""
 ---
 

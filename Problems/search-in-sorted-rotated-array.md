@@ -11,6 +11,7 @@ Difficulty: Medium
 Other Tags:
   - Binary Search
   - GFG
+  - Sorted
 Link: ""
 ---
 

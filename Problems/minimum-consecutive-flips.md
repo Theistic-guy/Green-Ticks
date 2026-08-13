@@ -10,6 +10,7 @@ Difficulty: Easy
 Other Tags:
   - GFG
   - Flips
+  - Minimum
 Link: ""
 ---
 # Minimum Consecutive Flips (DSA Interview Notes)

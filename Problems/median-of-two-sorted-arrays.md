@@ -5,6 +5,7 @@ Companies:
 Topics:
   - Arrays
   - Searching
+  - Two Pointers
 Platform:
   - Miscellaneous
 Difficulty: Hard
@@ -12,9 +13,9 @@ Other Tags:
   - GFG
   - Binary Search
   - Median
+  - Sorted
 Link: ""
 ---
-
 # Median of Two Sorted Arrays
 
 **Pattern:** Binary Search
@@ -22,6 +23,7 @@ Link: ""
 **Idea:** 
 
 **Variations** : 
++ [kth-element-in-two-sorted-arrays](kth-element-in-two-sorted-arrays.md) ⭐⭐⭐⭐⭐
 
 ---
 
@@ -75,6 +77,7 @@ def find_median(A, B):
 ```
 **Time complexity** - O(log(min(m,n)))
 **Aux. Space complexity** -  O(1)
+**2 doubts** : Why `m+n+1 //2` and why search smaller array always? [here](../Notes/Extras/2%20doubts%20about%20'median%20of%20two%20sorted%20arrays'.md)
 
 ---
 

@@ -10,6 +10,7 @@ Platform:
 Difficulty: Hard
 Other Tags:
   - GFG
+  - Maximum
 Link: ""
 ---
 
