@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-42-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-54-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,29 +13,31 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 42 |
-| Topics | 14 |
+| Problems | 54 |
+| Topics | 16 |
 | Platforms | 2 |
 | Companies | 49 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 8 |
-| Templates | 0 |
+| Miscellaneous Tags | 11 |
+| Templates | 1 |
 
 ---
 ### 🧠 By Topics
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (15)](Topics/arrays.md)
+  - [Arrays (23)](Topics/arrays.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (4)](Topics/dp.md)
   - [Hashing (4)](Topics/hashing.md)
   - [Heap (1)](Topics/heap.md)
-  - [Maths (18)](Topics/maths.md)
+  - [Maths (20)](Topics/maths.md)
+  - [Matrix (1)](Topics/matrix.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Prefix Sum (2)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
+  - [Searching (10)](Topics/searching.md)
   - [Sliding Window (4)](Topics/sliding-window.md)
   - [Sorting (1)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
@@ -49,7 +51,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (10)](Platforms/leetcode.md)
-  - [Miscellaneous (32)](Platforms/miscellaneous.md)
+  - [Miscellaneous (44)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -83,7 +85,7 @@
   - [Microsoft (7)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (35)](Companies/not-specified.md)
+  - [Not Specified (47)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -115,9 +117,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (13)](Difficulty/easy.md)
-  - [Medium (14)](Difficulty/medium.md)
-  - [Hard (5)](Difficulty/hard.md)
+  - [Easy (16)](Difficulty/easy.md)
+  - [Medium (19)](Difficulty/medium.md)
+  - [Hard (9)](Difficulty/hard.md)
   - [Not Specified (10)](Difficulty/not-specified.md)
 </details>
 
@@ -127,14 +129,27 @@
 <details>
   <summary>Expand</summary>
 
+  - [Binary Search (10)](Miscellaneous%20Tags/binary-search.md)
   - [Boyer-Moore Voting (1)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
-  - [GFG (22)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (28)](Miscellaneous%20Tags/gfg.md)
   - [Kadane (1)](Miscellaneous%20Tags/kadane.md)
+  - [kth (3)](Miscellaneous%20Tags/kth.md)
+  - [Median (1)](Miscellaneous%20Tags/median.md)
   - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
   - [Subset (4)](Miscellaneous%20Tags/subset.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
+</details>
+
+---
+
+### 📄 Templates
+<details>
+  <summary>Expand</summary>
+
+  - [Merging two sorted arrays](Templates/Merging two sorted arrays.md)
+
 </details>
 
 ---
