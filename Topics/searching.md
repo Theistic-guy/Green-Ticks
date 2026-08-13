@@ -14,4 +14,4 @@
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
-- [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array.md)
+- [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)

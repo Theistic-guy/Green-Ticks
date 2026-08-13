@@ -148,7 +148,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [Merging two sorted arrays](Templates/Merging two sorted arrays.md)
+  - [Merging-two-sorted-arrays](Templates/Merging-two-sorted-arrays.md)
 
 </details>
 
