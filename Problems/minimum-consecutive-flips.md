@@ -15,6 +15,7 @@ Link: ""
 # Minimum Consecutive Flips (DSA Interview Notes)
 
 **Pattern:** 
+
 **Idea:** 
 
 ---

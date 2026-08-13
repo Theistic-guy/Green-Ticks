@@ -17,6 +17,7 @@ Link: ""
 # Search in a Sorted Rotated Array
 
 **Pattern:**  Binary Search
+
 **Idea:** 
 
 ---

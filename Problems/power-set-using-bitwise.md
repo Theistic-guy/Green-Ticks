@@ -16,6 +16,7 @@ Link: ""
 # Generate the Power Set Using Bit Manipulation
 
 **Pattern:** Bit manipulation
+
 **Idea:** using bits as "include" or "not include"
 
 ---

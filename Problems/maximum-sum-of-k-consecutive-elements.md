@@ -18,6 +18,7 @@ Link: ""
 # Maximum Sum of K Consecutive Elements (Sliding Window) — DSA Interview Notes
 
 **Pattern:** sliding window
+
 **Idea:** 
 
 ---

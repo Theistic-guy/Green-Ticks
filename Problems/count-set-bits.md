@@ -15,6 +15,7 @@ Link: ""
 # Count Set Bits (Population Count / Hamming Weight)
 
 **Pattern:** Bit manipulation
+
 **Idea:** Brian kernighan's algorithm
 
 ---

@@ -16,8 +16,11 @@ Link: ""
 ---
 
 # Median of Two Sorted Arrays
+
 **Pattern:** Binary Search
+
 **Idea:** 
+
 **Variations** : 
 
 ---

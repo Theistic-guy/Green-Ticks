@@ -16,6 +16,7 @@ Link: ""
 # Check if the K-th Bit is Set or Not
 
 **Pattern:** bit manipulation
+
 **Idea:** masking
 
 ---

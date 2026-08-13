@@ -44,6 +44,7 @@ Link: "[Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 # 📈Best Time to Buy and Sell Stock
 
 **Pattern:** Siding Window
+
 **Idea:** Keep track of best price so far and the maximum profit so far.
 
 ---

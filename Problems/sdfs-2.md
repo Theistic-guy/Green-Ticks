@@ -14,7 +14,9 @@ Link: ""
 # Palindrome Number
 
 **Pattern:** 
+
 **Idea:** 
+
 **Variations** : 
 
 ---

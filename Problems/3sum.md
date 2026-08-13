@@ -14,6 +14,7 @@ Link: "[Leetcode](https://leetcode.com/problems/3sum/)"
 # 🧩 3Sum
 
 **Pattern:** Two Pointers  
+
 **Idea:** Fix one element → reduce to 2Sum (sorted array)
 
 ---

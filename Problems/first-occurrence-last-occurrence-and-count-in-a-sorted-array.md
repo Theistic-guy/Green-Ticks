@@ -18,6 +18,7 @@ Link: ""
 
 
 **Pattern:** Binary Search
+
 **Idea:** 
 
 ---

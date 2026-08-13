@@ -16,6 +16,7 @@ Link: ""
 # Search in Rotated Sorted Array II — Handling Duplicates
 
 **Pattern:**  Binary Search
+
 **Idea:** 
 
 ---

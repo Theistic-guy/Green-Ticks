@@ -15,6 +15,7 @@ Link: ""
 # GCD
 
 **Pattern:** Euclidean algorithm
+
  **Idea:** Common divisors of (a, b) = Common divisors of (b, r)
 
 ---

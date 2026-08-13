@@ -15,6 +15,7 @@ Link: ""
 # Weighted Sum Range Queries Using Prefix Sum (DSA Interview Notes)
 
 **Pattern:** Prefix sum
+
 **Idea:** 
 
 ---

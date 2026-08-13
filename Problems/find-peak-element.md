@@ -17,7 +17,9 @@ Link: ""
 # Finding a Peak Element — Binary Search
 
 **Pattern:**  Binary Search
+
 **Idea:** 
+
 **Variations** : 
 + [find-peak-in-mountain-array](find-peak-in-mountain-array.md)
 + [find-a-peak-element-in-2d-matrix](find-a-peak-element-in-2d-matrix.md)

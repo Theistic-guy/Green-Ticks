@@ -17,7 +17,9 @@ Link: ""
 # Find a Peak Element in a 2D Matrix
 
 **Pattern:** Binary  Search
+
 **Idea:** 
+
 **Variations** : 
 
 ---

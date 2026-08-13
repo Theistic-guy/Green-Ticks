@@ -15,6 +15,7 @@ Link: ""
 # Sieve of Eratosthenes
 
 **Pattern:** prime numbers
+
 **Idea:** sqrt (n) theorem use
 
 ---

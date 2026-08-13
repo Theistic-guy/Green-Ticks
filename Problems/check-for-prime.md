@@ -14,6 +14,7 @@ Link: ""
 # # Check if a Number is Prime
 
 **Pattern:** Prime numbers
+
 **Idea:** factors occur in pairs (x,y) -> x*y = n  where $x \leq y \to x*x=n \therefore x \leq \sqrt{n}$ 
 
 ---

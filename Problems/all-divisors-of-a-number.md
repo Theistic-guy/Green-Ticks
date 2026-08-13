@@ -15,6 +15,7 @@ Link: ""
 # All Divisors of a Number
 
 **Pattern:**  
+
 **Idea:**  divisors occur in pairs (x, y) , x <= sqrt(n) 
 
 

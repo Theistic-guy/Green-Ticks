@@ -14,6 +14,7 @@ Link: ""
 # Power Set with Duplicates (Subsets II)
 
 **Pattern:** backtracking + sorting
+
 **Idea:** sort and check on backtracking if condition to not include on the same level
 
 ---

@@ -16,6 +16,7 @@ Link: ""
 # Search in an Infinite Sorted Array
 
 **Pattern:** Binary Search
+
 **Idea:** 
 
 ---

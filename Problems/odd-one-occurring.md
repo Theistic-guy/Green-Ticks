@@ -16,6 +16,7 @@ Link: ""
 # Find the One Odd Occurring Number
 
 **Pattern:** Bit manipulation
+
 **Idea:**  XOR properties especially $x \wedge x = 0$ (even times) and $x \wedge x \wedge x = x$ (odd times)
 
 ---

@@ -15,6 +15,7 @@ Link: ""
 # Find Minimum Element in a Sorted Rotated Array
 
 **Pattern:** Binary Search
+
 **Idea:** 
 
 ---
