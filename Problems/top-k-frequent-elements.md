@@ -19,6 +19,7 @@ Platform:
   - Leetcode
 Difficulty: Not Specified
 Other Tags:
+  - kth
 Link: "[Leetcode](https://leetcode.com/problems/top-k-frequent-elements/)"
 ---
 

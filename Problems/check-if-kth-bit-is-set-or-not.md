@@ -9,6 +9,7 @@ Platform:
 Difficulty: Easy
 Other Tags:
   - GFG
+  - kth
 Link: ""
 ---
 

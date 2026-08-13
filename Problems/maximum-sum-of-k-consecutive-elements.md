@@ -11,6 +11,7 @@ Difficulty: Easy
 Other Tags:
   - GFG
   - Subarray
+  - kth
 Link: ""
 ---
 
