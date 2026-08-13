@@ -1,5 +1,5 @@
 ---
-Title: First Occurrence, Last Occurrence & Count in a Sorted Array
+Title: First Occurrence Last Occurrence & Count in a Sorted Array
 Companies:
   - Not Specified
 Topics:
