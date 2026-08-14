@@ -14,7 +14,9 @@ Link: ""
 # Josephus Problem
 
 **Pattern:** 
+
 **Idea:** 
+
 **Intuition** : [Intuition behind Josephus Problem](../Notes/Intuition%20behind%20Josephus%20Problem.md)
 
 ---

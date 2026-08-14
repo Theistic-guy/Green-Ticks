@@ -17,6 +17,7 @@ Link: ""
 # Subarray with given sum
 
 **Pattern:**  sliding window
+
 **Idea:** 
 
 ---

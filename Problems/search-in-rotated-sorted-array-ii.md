@@ -10,12 +10,14 @@ Platform:
 Difficulty: Hard
 Other Tags:
   - Binary Search
+  - Sorted
 Link: ""
 ---
 
 # Search in Rotated Sorted Array II — Handling Duplicates
 
 **Pattern:**  Binary Search
+
 **Idea:** 
 
 ---

@@ -15,6 +15,7 @@ Link: ""
 # LCM - Least Common Multiple
 
 **Pattern:** 
+
 **Idea:** a × b = GCD(a, b) × LCM(a, b)
 
 ---

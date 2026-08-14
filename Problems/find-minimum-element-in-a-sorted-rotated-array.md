@@ -10,11 +10,14 @@ Platform:
 Difficulty: Medium
 Other Tags:
   - Binary Search
+  - Sorted
+  - Minimum
 Link: ""
 ---
 # Find Minimum Element in a Sorted Rotated Array
 
 **Pattern:** Binary Search
+
 **Idea:** 
 
 ---

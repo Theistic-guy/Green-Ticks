@@ -16,6 +16,7 @@ Link: "[Leetcode](https://leetcode.com/problems/two-sum/)"
 # 2️⃣Two Sum
 
 **Pattern:** Two Pointers
+
 **Idea:** Sort the array => Use two pointers (i = start, j = end) , move inwards..
 **Follow-up**: [3sum](3sum.md)
 

@@ -16,6 +16,7 @@ Link: ""
 # Equilibrium Point (DSA Interview Notes)
 
 **Pattern:**  Prefix sum
+
 **Idea:** maintain left sum and total sum and subtract the self element
 
 ---

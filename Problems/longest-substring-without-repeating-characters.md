@@ -28,6 +28,7 @@ Platform:
   - Leetcode
 Difficulty: Not Specified
 Other Tags:
+  - Longest
 Link: "[Leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)"
 ---
 

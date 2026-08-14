@@ -16,6 +16,7 @@ Link: ""
 # Square Root Using Binary Search
 
 **Pattern:**  Binary search
+
 **Idea:** 
 
 ---

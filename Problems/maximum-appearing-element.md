@@ -10,12 +10,14 @@ Platform:
 Difficulty: Hard
 Other Tags:
   - GFG
+  - Maximum
 Link: ""
 ---
 
 # Maximum Appearing Element in Range Queries (Difference Array Technique) — DSA Interview Notes
 
 **Pattern:** 
+
 **Idea:** 
 
 ---

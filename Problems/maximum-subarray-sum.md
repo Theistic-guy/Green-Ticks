@@ -17,6 +17,7 @@ Link: ""
 # Maximum Subarray Sum (Kadane's Algorithm) — DSA Interview Notes
 
 **Pattern:**  greedy
+
 **Idea:** Kadane's algorithm
 
 ---

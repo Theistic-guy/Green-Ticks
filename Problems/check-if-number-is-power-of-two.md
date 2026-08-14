@@ -16,6 +16,7 @@ Link: ""
 # # Check if a Number is a Power of Two
 
 **Pattern:**  Brian Kernighan
+
 **Idea:**  n & (n-1)
 
 ---

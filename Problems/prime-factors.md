@@ -15,6 +15,7 @@ Link: ""
 # Prime Factors
 
 **Pattern:** prime factorization
+
 **Idea:** 
 
 ---

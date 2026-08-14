@@ -10,12 +10,14 @@ Difficulty: Easy
 Other Tags:
   - GFG
   - Binary Search
+  - Sorted
 Link: ""
 ---
 
 # Search in an Infinite Sorted Array
 
 **Pattern:** Binary Search
+
 **Idea:** 
 
 ---

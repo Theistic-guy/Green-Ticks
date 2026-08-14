@@ -15,6 +15,7 @@ Link: ""
 # Trailing Zeroes in a decimal
 
 **Pattern:** 
+
 **Idea:** 
 
 ---

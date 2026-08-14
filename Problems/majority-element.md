@@ -15,6 +15,7 @@ Link: ""
 # Majority Element (Moore's Voting Algorithm) — DSA Interview Notes
 
 **Pattern:** 
+
 **Idea:** 
 
 ---

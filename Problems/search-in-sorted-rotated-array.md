@@ -11,12 +11,14 @@ Difficulty: Medium
 Other Tags:
   - Binary Search
   - GFG
+  - Sorted
 Link: ""
 ---
 
 # Search in a Sorted Rotated Array
 
 **Pattern:**  Binary Search
+
 **Idea:** 
 
 ---

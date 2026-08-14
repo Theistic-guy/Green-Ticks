@@ -14,6 +14,7 @@ Link: ""
 # Binary Exponentiation
 
 **Pattern:** **Divide and Conquer** (specifically, **Decrease and Conquer**)
+
 **Idea:** **Halve the exponent** at each step, square the result, and multiply by the base only if the exponent was odd.
 
 ---

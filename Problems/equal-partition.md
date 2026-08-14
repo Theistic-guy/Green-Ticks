@@ -15,6 +15,7 @@ Link: ""
 # Equal Partition
 
 **Pattern:** subset sum with dp tricks
+
 **Idea:**  divide the total sum by 2 and use 'subset sum with given sum' problem . 
 
 ---
