@@ -1,5 +1,4 @@
 
-
 ## 🧠 PKM: K-Way Merge Algorithm (Python)
 
 ## 📌 Context & Core Concept
@@ -74,6 +73,8 @@ The K-Way Merge is a classic LeetCode pattern. Spotting a collection of pre-sort
 
 ## 1. Merge k Sorted Lists ([LeetCode 23](https://leetcode.com/problems/merge-k-sorted-lists/) — Hard)
 
+### ==Covered here== - [merge-k-sorted-lists](../Problems/merge-k-sorted-lists.md)
+
 - The Pitch: You are given an array of K linked-lists, each sorted in ascending order. Merge them into one sorted linked list.
 - Why K-Way Merge: This is the most literal application of the pattern. You track the head pointers of all K linked lists in your min-heap.
 
@@ -86,14 +87,15 @@ The K-Way Merge is a classic LeetCode pattern. Spotting a collection of pre-sort
 
 ## 3. Find K Pairs with Smallest Sums ([LeetCode 373](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/) — Medium)
 
+### ==Covered here== - [find-k-pairs-with-smallest-sums](../Problems/find-k-pairs-with-smallest-sums.md)
+
+
 - The Pitch: You are given two integer arrays sorted in ascending order, `nums1` and `nums2`. Define a pair (u, v) which consists of one element from the first array and one from the second. Return the K pairs with the smallest sums.
 - Why K-Way Merge: Think of this visually as an implicit grid where row i represents pairing `nums1[i]` with all items in `nums2`. Each row is naturally sorted. You run a K-Way merge across these virtual lines.
 
 ## 4. Smallest Range Covering Elements from K Lists ([LeetCode 632](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/) — Hard)
-
+### ==Covered here== - [smallest-range-covering-elements-from-k-sorted-lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
 - The Pitch: You have K lists of sorted integers. Find the smallest continuous numerical range that includes at least one number from each of the K lists.
 - Why K-Way Merge: Maintain a min-heap tracking one element from each list. Track the global maximum of the elements currently sitting inside your heap. The difference between your heap's `min` (top) and your tracked `max` forms a viable range. Advance using standard K-Way rules to find the smallest window.
 
 ---
-
-Would you like me to add a detailed line-by-line code walk-through for any specific LeetCode problem listed above, or expand on how to handle edge cases like duplicate values in Python?

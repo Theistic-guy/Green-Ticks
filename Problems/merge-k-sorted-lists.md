@@ -1,49 +1,68 @@
 ---
-Title: Palindrome Number
+Title: Merge K Sorted Lists — K-Way Merge
 Companies:
   - Not Specified
 Topics:
-  - Maths
+  - Linked Lists
+  - Heap
 Platform:
-  - Miscellaneous
-Difficulty: Medium
+  - Leetcode
+Difficulty: Hard
 Other Tags:
+  - kth
+  - Sorted
+  - Merge
 Link: ""
 ---
+# Merge K Sorted Lists — K-Way Merge
 
-# Palindrome Number
-
-**Pattern:** 
+**Pattern:** Heap (K-way)
 
 **Idea:** 
 
 **Variations** : 
-
++ [K-way Merge](../Notes/K-way%20Merge.md)
 ---
 
 ## 💻 Code
 
 ```Python
-def isPalindrome(x):
-    if x < 0:
-        return False
+import heapq
 
-    original = x
-    rev = 0
 
-    while x > 0:
-        digit = x % 10
-        rev = rev * 10 + digit
-        x //= 10
+def mergeKLists(lists):
+    heap = []
 
-    return original == rev
+    # Put the head of every non-empty list into the heap.
+    for i, node in enumerate(lists):
+        if node:
+            heapq.heappush(heap, (node.val, i, node))
+
+    dummy = ListNode(0)
+    tail = dummy
+
+    while heap:
+        value, i, node = heapq.heappop(heap)
+
+        # Add the smallest node to result.
+        tail.next = node
+        tail = node
+
+        # Add the next node from the same list.
+        if node.next:
+            heapq.heappush(
+                heap,
+                (node.next.val, i, node.next)
+            )
+
+    return dummy.next
 
 ```
-**Time complexity** - O(D) , D is no of digits
-**Aux. Space complexity** -  O(1)
+**Time complexity** - O(N log K) , n is total no of nodes, and k is no of lists
+**Aux. Space complexity** -  O(k)
 
 ---
-# Merge K Sorted Lists — K-Way Merge
+
 
 > **Pattern:** K-way merge using a **min heap**
 > 
@@ -227,7 +246,7 @@ For linked-list nodes, use a tuple:
 (value, unique_id, node)
 ```
 
-The `unique_id` prevents Python from trying to compare two `ListNode` objects when their values are equal.
+==The `unique_id` prevents Python from trying to compare two `ListNode` objects when their values are equal.==
 
 ```python
 import heapq

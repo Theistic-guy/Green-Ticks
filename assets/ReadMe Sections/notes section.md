@@ -6,3 +6,4 @@
 + Basic array problems - [Basic Array Problems](/Notes/Basic%20Array%20Problems.md)
 + Kadane's subarray variations - [Maximum Subarray — Important Interview Variations](/Notes/Maximum%20Subarray%20—%20Important%20Interview%20Variations.md)
 + K-way merge problems - [K-way Merge](/Notes/K-way%20Merge.md)
++ Binary Search on Answer Pattern - [Binary Search on Answer ( Predicate Search) - 5⭐](/Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)

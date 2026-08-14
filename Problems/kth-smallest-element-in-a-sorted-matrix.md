@@ -7,7 +7,7 @@ Topics:
   - Matrix
   - Searching
 Platform:
-  - Miscellaneous
+  - Leetcode
 Difficulty: Hard
 Other Tags:
   - kth
@@ -24,7 +24,9 @@ Link: ""
 **Idea:** 
 
 **Variations** : 
-
++ [K-way Merge](../Notes/K-way%20Merge.md)
++ Also part of [Binary Search on Answer ( Predicate Search) - 5⭐](../Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
+  
 ---
 
 ## 💻 Code
