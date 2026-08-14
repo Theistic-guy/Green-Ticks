@@ -1,13 +1,15 @@
 ---
 Title: 3Sum
-Companies: [Not Specified]
+Companies:
+  - Not Specified
 Topics:
   - Two Pointers
   - Arrays
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Medium
 Other Tags:
+  - GFG
 Link: "[Leetcode](https://leetcode.com/problems/3sum/)"
 ---
 
@@ -15,6 +17,7 @@ Link: "[Leetcode](https://leetcode.com/problems/3sum/)"
 
 **Pattern:** Two Pointers  
 **Idea:** Fix one element → reduce to 2Sum (sorted array)
+**2sum** : [two-sum](two-sum.md)
 
 ---
 

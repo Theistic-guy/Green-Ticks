@@ -1,13 +1,15 @@
 ---
 Title: Two Sum
-Companies: [Not Specified]
+Companies:
+  - Not Specified
 Topics:
   - Two Pointers
   - Arrays
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Easy
 Other Tags:
+  - GFG
 Link: "[Leetcode](https://leetcode.com/problems/two-sum/)"
 ---
 
@@ -15,6 +17,7 @@ Link: "[Leetcode](https://leetcode.com/problems/two-sum/)"
 
 **Pattern:** Two Pointers
 **Idea:** Sort the array => Use two pointers (i = start, j = end) , move inwards..
+**Follow-up**: [3sum](3sum.md)
 
 ---
 
