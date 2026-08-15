@@ -1,5 +1,19 @@
 # Amazon
 
+## Medium
+- [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
+- [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
+- [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
+
+## Hard
+- [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
+- [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
+- [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
+- [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
+- [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)

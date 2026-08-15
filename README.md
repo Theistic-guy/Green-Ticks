@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-54-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-69-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,12 +13,12 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 54 |
-| Topics | 16 |
+| Problems | 69 |
+| Topics | 19 |
 | Platforms | 2 |
-| Companies | 49 |
+| Companies | 50 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 11 |
+| Miscellaneous Tags | 23 |
 | Templates | 1 |
 
 ---
@@ -26,22 +26,25 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (23)](Topics/arrays.md)
+  - [Arrays (24)](Topics/arrays.md)
+  - [Backtracking (1)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (4)](Topics/dp.md)
+  - [Greedy (5)](Topics/greedy.md)
   - [Hashing (4)](Topics/hashing.md)
-  - [Heap (1)](Topics/heap.md)
-  - [Maths (20)](Topics/maths.md)
-  - [Matrix (1)](Topics/matrix.md)
+  - [Heap (5)](Topics/heap.md)
+  - [Linked Lists (1)](Topics/linked-lists.md)
+  - [Maths (18)](Topics/maths.md)
+  - [Matrix (2)](Topics/matrix.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Prefix Sum (2)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
-  - [Searching (10)](Topics/searching.md)
+  - [Searching (24)](Topics/searching.md)
   - [Sliding Window (4)](Topics/sliding-window.md)
   - [Sorting (1)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
-  - [Two Pointers (4)](Topics/two-pointers.md)
+  - [Two Pointers (8)](Topics/two-pointers.md)
 </details>
 
 ---
@@ -50,8 +53,8 @@
 <details>
   <summary>Expand</summary>
 
-  - [Leetcode (10)](Platforms/leetcode.md)
-  - [Miscellaneous (44)](Platforms/miscellaneous.md)
+  - [Leetcode (27)](Platforms/leetcode.md)
+  - [Miscellaneous (42)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -63,8 +66,8 @@
   - [Adobe (6)](Companies/adobe.md)
   - [Affirm (2)](Companies/affirm.md)
   - [Alation (2)](Companies/alation.md)
-  - [Amazon (7)](Companies/amazon.md)
-  - [Apple (7)](Companies/apple.md)
+  - [Amazon (17)](Companies/amazon.md)
+  - [Apple (8)](Companies/apple.md)
   - [Atlassian (1)](Companies/atlassian.md)
   - [BlackRock (1)](Companies/blackrock.md)
   - [Bloomberg (6)](Companies/bloomberg.md)
@@ -77,15 +80,16 @@
   - [Expedia (1)](Companies/expedia.md)
   - [Facebook (7)](Companies/facebook.md)
   - [Goldman Sachs (6)](Companies/goldman-sachs.md)
-  - [Google (7)](Companies/google.md)
+  - [Google (17)](Companies/google.md)
   - [IBM (1)](Companies/ibm.md)
   - [Intel (1)](Companies/intel.md)
   - [Intuit (2)](Companies/intuit.md)
   - [JPMorgan (3)](Companies/jpmorgan.md)
-  - [Microsoft (7)](Companies/microsoft.md)
+  - [Meta (3)](Companies/meta.md)
+  - [Microsoft (8)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (1)](Companies/netflix.md)
-  - [Not Specified (47)](Companies/not-specified.md)
+  - [Not Specified (49)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -117,10 +121,10 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (16)](Difficulty/easy.md)
-  - [Medium (19)](Difficulty/medium.md)
-  - [Hard (9)](Difficulty/hard.md)
-  - [Not Specified (10)](Difficulty/not-specified.md)
+  - [Easy (17)](Difficulty/easy.md)
+  - [Medium (23)](Difficulty/medium.md)
+  - [Hard (21)](Difficulty/hard.md)
+  - [Not Specified (8)](Difficulty/not-specified.md)
 </details>
 
 ---
@@ -129,14 +133,26 @@
 <details>
   <summary>Expand</summary>
 
-  - [Binary Search (10)](Miscellaneous%20Tags/binary-search.md)
+  - [Binary Search (24)](Miscellaneous%20Tags/binary-search.md)
   - [Boyer-Moore Voting (1)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
-  - [GFG (28)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (30)](Miscellaneous%20Tags/gfg.md)
   - [Kadane (1)](Miscellaneous%20Tags/kadane.md)
-  - [kth (3)](Miscellaneous%20Tags/kth.md)
+  - [kth (10)](Miscellaneous%20Tags/kth.md)
+  - [Longest (1)](Miscellaneous%20Tags/longest.md)
+  - [Maximum (3)](Miscellaneous%20Tags/maximum.md)
   - [Median (1)](Miscellaneous%20Tags/median.md)
+  - [Merge (1)](Miscellaneous%20Tags/merge.md)
+  - [Minimum (2)](Miscellaneous%20Tags/minimum.md)
+  - [P & C (1)](Miscellaneous%20Tags/p-c.md)
+  - [Pairs (2)](Miscellaneous%20Tags/pairs.md)
+  - [Predicate Search - Basic (2)](Miscellaneous%20Tags/predicate-search-basic.md)
+  - [Predicate Search - Counting (4)](Miscellaneous%20Tags/predicate-search-counting.md)
+  - [Predicate Search - Maximize Minimum (2)](Miscellaneous%20Tags/predicate-search-maximize-minimum.md)
+  - [Predicate Search - Minimize Maximum (4)](Miscellaneous%20Tags/predicate-search-minimize-maximum.md)
+  - [Smallest (4)](Miscellaneous%20Tags/smallest.md)
+  - [Sorted (10)](Miscellaneous%20Tags/sorted.md)
   - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
   - [Subset (4)](Miscellaneous%20Tags/subset.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
@@ -161,3 +177,5 @@
 + Basic Recursion Problems (complexities + recurrence relations)  - [Basic Problems Using Simple Recursion](Notes/Basic%20Problems%20Using%20Simple%20Recursion.md)
 + Basic array problems - [Basic Array Problems](/Notes/Basic%20Array%20Problems.md)
 + Kadane's subarray variations - [Maximum Subarray — Important Interview Variations](/Notes/Maximum%20Subarray%20—%20Important%20Interview%20Variations.md)
++ K-way merge problems - [K-way Merge](/Notes/K-way%20Merge.md)
++ Binary Search on Answer Pattern - [Binary Search on Answer ( Predicate Search) - 5⭐](/Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
