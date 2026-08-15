@@ -1,16 +1,16 @@
-👉 Find the 14 problems set below
+==👉 Find the 14 problems set below==
 ## Binary Search on Answer — Interview Study Order
 
 ### 🟢 Group 1 — Core / Must Master
 
 These establish the basic **candidate → `feasible()` → first True** pattern.
 
-|#|Problem|LC|Pattern|Company tags*|
-|---|---|--:|---|---|
-|1|**Koko Eating Bananas**|875|Minimum rate → count time|Amazon, Google|
-|2|**Capacity to Ship Packages Within D Days**|1011|Minimum capacity → greedy grouping|Amazon, Meta|
-|3|**Find the Smallest Divisor Given a Threshold**|1283|Minimum divisor → counting|Amazon, Apple|
-|4|**Minimum Speed to Arrive on Time**|1870|Minimum speed → time calculation|Google, Amazon|
+| #   | Problem                                         |   LC | Pattern                            | Company tags*  | Links                                                                                                        |
+| --- | ----------------------------------------------- | ---: | ---------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1   | **Koko Eating Bananas**                         |  875 | Minimum rate → count time          | Amazon, Google | [koko-eating-bananas](../../Problems/koko-eating-bananas.md)                                                 |
+| 2   | **Capacity to Ship Packages Within D Days**     | 1011 | Minimum capacity → greedy grouping | Amazon, Meta   | [capacity-to-ship-packages](../../Problems/capacity-to-ship-packages.md)                                     |
+| 3   | **Find the Smallest Divisor Given a Threshold** | 1283 | Minimum divisor → counting         | Amazon, Apple  | [find-the-smallest-divisor-given-a-threshold](../../Problems/find-the-smallest-divisor-given-a-threshold.md) |
+| 4   | **Minimum Speed to Arrive on Time**             | 1870 | Minimum speed → time calculation   | Google, Amazon | [koko-eating-bananas](../../Problems/koko-eating-bananas.md)                                                 |
 
 **What you should learn from this group:**
 
@@ -40,13 +40,13 @@ becomes:
 
 > **"Assume the maximum is X. Can I make the entire problem work?"**
 
-|#|Problem|LC|Validator|Company tags*|
-|---|---|--:|---|---|
-|5|**Split Array Largest Sum**|410|Greedy partition|Google, Meta, Amazon|
-|6|**Minimized Maximum of Products Distributed to Any Store**|2064|Greedy allocation|Amazon, Microsoft|
-|7|**Minimum Limit of Balls in a Bag**|1760|Count required splits|Google, Amazon|
-|8|**Book Allocation**|—|Greedy partition|Amazon, Microsoft|
-|9|**Painter's Partition**|—|Greedy partition|Amazon, Microsoft|
+| #   | Problem                                                    |   LC | Validator             | Company tags*        | Links                                                                                                                              |
+| --- | ---------------------------------------------------------- | ---: | --------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 5   | **Split Array Largest Sum**                                |  410 | Greedy partition      | Google, Meta, Amazon | [split-array-largest-sum](../../Problems/split-array-largest-sum.md)                                                               |
+| 6   | **Minimized Maximum of Products Distributed to Any Store** | 2064 | Greedy allocation     | Amazon, Microsoft    | [minimized-maximum-of-products-distributed-to-any-store](../../Problems/minimized-maximum-of-products-distributed-to-any-store.md) |
+| 7   | **Minimum Limit of Balls in a Bag**                        | 1760 | Count required splits | Google, Amazon       | [minimum-limit-of-balls-in-a-bag](../../Problems/minimum-limit-of-balls-in-a-bag.md)                                               |
+| 8   | **Book Allocation**                                        |    — | Greedy partition      | Amazon, Microsoft    | [split-array-largest-sum](../../Problems/split-array-largest-sum.md)                                                               |
+| 9   | **Painter's Partition**                                    |    — | Greedy partition      | Amazon, Microsoft    | [split-array-largest-sum](../../Problems/split-array-largest-sum.md)                                                               |
 
 ### Important:
 
@@ -88,11 +88,11 @@ TTTTFFFF
 
 and you find the **last True**.
 
-|#|Problem|LC|Validator|Company tags*|
-|---|---|--:|---|---|
-|10|**Magnetic Force Between Two Balls**|1552|Greedy placement|Amazon, Meta, Google|
-|11|**Aggressive Cows**|—|Same greedy placement|Amazon, Google|
-|12|**Divide Chocolate**|1231|Greedy partition|Google|
+| #   | Problem                              |   LC | Validator             | Company tags*        | Links                                                                                                                        |
+| --- | ------------------------------------ | ---: | --------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 10  | **Magnetic Force Between Two Balls** | 1552 | Greedy placement      | Amazon, Meta, Google | [magnetic-force-between-two-balls-or-aggressive-cows](../../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md) |
+| 11  | **Aggressive Cows**                  |    — | Same greedy placement | Amazon, Google       | [magnetic-force-between-two-balls-or-aggressive-cows](../../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md) |
+| 12  | **Divide Chocolate**                 | 1231 | Greedy partition      | Google               | [divide-chocolate](../../Problems/divide-chocolate.md)                                                                       |
 
 Again, **1552 is the one I'd learn properly**.
 
@@ -118,12 +118,12 @@ This is where the pattern becomes more interesting.
 
 Instead of a straightforward greedy validator, you **count how many things satisfy a property for candidate X**.
 
-|#|Problem|LC|Validator|Company tags*|
-|---|---|--:|---|---|
-|13|**K-th Smallest Pair Distance**|719|Two pointers + counting|Google, Amazon|
-|14|**K-th Smallest Element in a Sorted Matrix**|378|Count `<= X`|Amazon, Google|
-|15|**K-th Smallest Number in Multiplication Table**|668|Mathematical counting|Google|
-|16|**Maximum Candies Allocated to K Children**|2226|Count pieces|Google, Amazon|
+| #   | Problem                                          |   LC | Validator               | Company tags*  | Links                                                                                                        |
+| --- | ------------------------------------------------ | ---: | ----------------------- | -------------- | ------------------------------------------------------------------------------------------------------------ |
+| 13  | **K-th Smallest Pair Distance**                  |  719 | Two pointers + counting | Google, Amazon | [kth-smallest-pair-distance](../../Problems/kth-smallest-pair-distance.md)                                   |
+| 14  | **K-th Smallest Element in a Sorted Matrix**     |  378 | Count `<= X`            | Amazon, Google | [kth-smallest-element-in-a-sorted-matrix](../../Problems/kth-smallest-element-in-a-sorted-matrix.md)         |
+| 15  | **K-th Smallest Number in Multiplication Table** |  668 | Mathematical counting   | Google         | [kth-smallest-number-in-multiplication-table](../../Problems/kth-smallest-number-in-multiplication-table.md) |
+| 16  | **Maximum Candies Allocated to K Children**      | 2226 | Count pieces            | Google, Amazon | [maximum-candies-allocated-to-k-children](../../Problems/maximum-candies-allocated-to-k-children.md)         |
 
 This teaches a very useful abstraction:
 
@@ -153,12 +153,12 @@ You don't necessarily need all four if time becomes tight.
 
 Do these only after the previous groups feel natural.
 
-|Problem|LC|Why it's different|Company tags*|
-|---|--:|---|---|
-|**Minimize Max Distance to Gas Station**|774|Continuous / floating-point BS|Google|
-|**Swim in Rising Water**|778|Binary search + graph feasibility|Google, Meta|
-|**Ugly Number III**|1201|Binary search + inclusion-exclusion|Google|
-|**K-th Smallest Prime Fraction**|786|More specialized predicate|Google|
+| Problem                                  |   LC | Why it's different                  | Company tags* | Links                                                                                          |
+| ---------------------------------------- | ---: | ----------------------------------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| **Minimize Max Distance to Gas Station** |  774 | Continuous / floating-point BS      | Google        | [minimize-max-distance-to-gas-station](../../Problems/minimize-max-distance-to-gas-station.md) |
+| **Swim in Rising Water**                 |  778 | Binary search + graph feasibility   | Google, Meta  |                                                                                                |
+| **Ugly Number III**                      | 1201 | Binary search + inclusion-exclusion | Google        |                                                                                                |
+| **K-th Smallest Prime Fraction**         |  786 | More specialized predicate          | Google        |                                                                                                |
 
 ### `Swim in Rising Water`
 

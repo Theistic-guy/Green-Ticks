@@ -1,7 +1,8 @@
 ---
 Title: Kth smallest pair distance
 Companies:
-  - Not Specified
+  - Amazon
+  - Google
 Topics:
   - Searching
   - Two Pointers
@@ -13,6 +14,7 @@ Other Tags:
   - Smallest
   - Pairs
   - Binary Search
+  - Predicate Search - Counting
 Link: ""
 ---
 

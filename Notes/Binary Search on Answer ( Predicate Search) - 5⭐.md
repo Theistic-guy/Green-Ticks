@@ -7,6 +7,8 @@
 ---
 ==Curated Problem set on this topic==  - [Predicate Search Problem Set](Extras/Predicate%20Search%20Problem%20Set.md)
 
+---
+
 <details>
 <summary>What is Candidate, Feasibility and Predicate?</summary>
 
@@ -14,10 +16,10 @@
 ## 1. Candidate (The "Mid" Value)
 A Candidate is a single, specific value chosen from your search space that you test to see if it could be the correct answer. [2, 5] 
 
-* 
+
 * Role in Binary Search: During each iteration of the loop, you calculate mid = low + (high - low) / 2. This mid value is your current candidate.
 * The Search Space: The range between low and high contains all possible candidates. For example, if you are looking for the minimum shipping truck capacity, your lowest candidate might be the weight of the heaviest single package, and your highest candidate might be the sum of all package weights. [1, 2, 4, 5, 6] 
-* 
+
 
 ## 2. Predicate (The Condition Function)
 A Predicate is a boolean function—traditionally named check(), isValid(), or feasible()—that takes a candidate value as its input and returns either true or false. [5, 7, 8] 
@@ -30,10 +32,10 @@ A Predicate is a boolean function—traditionally named check(), isValid(), or f
 ## 3. Feasibility (The Validation Check)
 Feasibility refers to the actual real-world logic inside your predicate function that determines whether a candidate value satisfies the rules and constraints of the problem. [2, 3, 4] 
 
-* 
+ 
 * Role in Binary Search: The predicate executes a "feasibility check". It asks: "Is this candidate value sufficient to get the job done?"
 * How it simplifies problems: It is often incredibly complex to calculate the absolute optimal answer directly. However, it is usually much simpler to write a greedy or simulation-style helper function that answers a yes/no question about a fixed value. [2, 3, 4, 13, 14] 
-* 
+
 
 ------------------------------
 ## Concrete Example: "Koko Eating Bananas" (LeetCode 875)
@@ -47,23 +49,21 @@ To see how these three components fit together, consider a classic problem: Koko
 
 The Monotonic Behavior:
 
-* 
+
 * If an eating speed of 4 bananas/hour is too slow (false), then 1, 2, and 3 are also definitely too slow. We discard the left half (low = mid + 1).
 * If an eating speed of 10 bananas/hour works (true), then 11, 12, and 13 will also work. We record 10 as a potential answer and discard the right half to see if a smaller, more optimal speed exists (high = mid - 1). [1, 2, 11, 16, 17] 
-* 
+
 
 ------------------------------
-If you are working on a specific problem right now, let me know:
 
-* 
-* What is the goal of the problem? (e.g., minimizing a maximum value, splitting an array)
-* What constraints are given?
-* 
-
-I can help you define the exact search space range and write out the feasibility check logic for it!
 
 
 </details>
+
+---
+✅ Diff types of binary search styles - [Boundary style vs  Explicit answer style Binary Search](Extras/Boundary%20style%20vs%20%20Explicit%20answer%20style%20Binary%20Search.md)
+
+---
 ## 1. Recognition
 
 Look for:

@@ -1,7 +1,8 @@
 ---
 Title: Kth Smallest Element in a Sorted Matrix
 Companies:
-  - Not Specified
+  - Amazon
+  - Google
 Topics:
   - Heap
   - Matrix
@@ -14,12 +15,13 @@ Other Tags:
   - Binary Search
   - Sorted
   - Smallest
+  - Predicate Search - Counting
 Link: ""
 ---
 
 # Kth Smallest Element in a Sorted Matrix
 
-**Pattern:** 
+**Pattern:**  Heap (k-way) or binary search on answer
 
 **Idea:** 
 

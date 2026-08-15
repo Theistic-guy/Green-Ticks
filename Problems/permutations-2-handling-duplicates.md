@@ -4,10 +4,12 @@ Companies:
   - Not Specified
 Topics:
   - Maths
+  - Backtracking
 Platform:
-  - Miscellaneous
+  - Leetcode
 Difficulty: Medium
 Other Tags:
+  - P & C
 Link: ""
 ---
 
