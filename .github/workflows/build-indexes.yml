@@ -40,7 +40,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Only stage what we specifically want the bot to touch
-          git add Topics Platforms Companies Difficulty "Miscellaneous Tags" README.md
+          git add Topics Platforms Companies Difficulty "Miscellaneous Tags" Rating README.md
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

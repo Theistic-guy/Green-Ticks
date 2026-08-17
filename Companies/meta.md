@@ -7,6 +7,6 @@
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)

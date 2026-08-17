@@ -6,7 +6,7 @@
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 
 ## Hard
-- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 
 ## Not Specified

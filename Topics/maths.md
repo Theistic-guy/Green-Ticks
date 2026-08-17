@@ -14,7 +14,7 @@
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
-- [Palindrome Number](../Problems/palindrome-number.md)
+- [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)

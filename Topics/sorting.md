@@ -1,7 +1,7 @@
 # Sorting
 
 ## Hard
-- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 
 ## Not Specified

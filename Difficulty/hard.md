@@ -6,7 +6,7 @@
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
-- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)

@@ -1,4 +1,4 @@
-# Not Specified
+# Not Rated
 
 ## Easy
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
@@ -24,9 +24,16 @@
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Equal Partition](../Problems/equal-partition.md)
+- [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
+- [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
+- [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
+- [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
+- [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
+- [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
@@ -40,19 +47,35 @@
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
 ## Hard
+- [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
+- [Divide Chocolate](../Problems/divide-chocolate.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Josephus Problem](../Problems/josephus-problem.md)
+- [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)
+- [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
+- [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
+- [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
+- [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
+- [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
 ## Not Specified
+- [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
+- [Container With Most Water](../Problems/container-with-most-water.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
+- [Group Anagrams](../Problems/group-anagrams.md)
+- [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
