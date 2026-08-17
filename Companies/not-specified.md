@@ -16,9 +16,11 @@
 - [Prime Factors](../Problems/prime-factors.md)
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
+- [Two Sum](../Problems/two-sum.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium
+- [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Equal Partition](../Problems/equal-partition.md)
@@ -27,8 +29,6 @@
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome Number](../Problems/palindrome-number.md)
-- [Palindrome Number](../Problems/kth-element-in-two-sorted-arrays.md)
-- [Palindrome Number](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
@@ -42,15 +42,17 @@
 ## Hard
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
+- [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Josephus Problem](../Problems/josephus-problem.md)
+- [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
+- [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
+- [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
 ## Not Specified
-- [3Sum](../Problems/3sum.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Two Sum](../Problems/two-sum.md)

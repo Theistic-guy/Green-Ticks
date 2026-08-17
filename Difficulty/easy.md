@@ -15,4 +15,5 @@
 - [Prime Factors](../Problems/prime-factors.md)
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
+- [Two Sum](../Problems/two-sum.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)

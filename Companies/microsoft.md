@@ -1,5 +1,8 @@
 # Microsoft
 
+## Medium
+- [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)

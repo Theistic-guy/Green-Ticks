@@ -13,8 +13,10 @@
 - [Prime Factors](../Problems/prime-factors.md)
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
+- [Two Sum](../Problems/two-sum.md)
 
 ## Medium
+- [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)

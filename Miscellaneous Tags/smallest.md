@@ -1,10 +1,7 @@
-# Heap
+# Smallest
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
-- [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
+- [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
-
-## Not Specified
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
