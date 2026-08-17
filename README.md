@@ -18,7 +18,7 @@
 | Platforms | 2 |
 | Companies | 52 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 28 |
+| Miscellaneous Tags | 29 |
 | Templates | 2 |
 
 ---
@@ -29,7 +29,7 @@
   - [Arrays (28)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
-  - [DP (4)](Topics/dp.md)
+  - [DP (5)](Topics/dp.md)
   - [Greedy (5)](Topics/greedy.md)
   - [Hashing (5)](Topics/hashing.md)
   - [Heap (5)](Topics/heap.md)
@@ -41,7 +41,7 @@
   - [Prefix Sum (2)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
   - [Searching (24)](Topics/searching.md)
-  - [Sliding Window (4)](Topics/sliding-window.md)
+  - [Sliding Window (3)](Topics/sliding-window.md)
   - [Sorting (3)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
   - [Two Pointers (10)](Topics/two-pointers.md)
@@ -145,6 +145,7 @@
 <details>
   <summary>Expand</summary>
 
+  - [1D DP (1)](Miscellaneous%20Tags/1d-dp.md)
   - [Binary Search (24)](Miscellaneous%20Tags/binary-search.md)
   - [Boyer-Moore Voting (1)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
@@ -155,7 +156,7 @@
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
   - [GFG (31)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
-  - [Kadane (1)](Miscellaneous%20Tags/kadane.md)
+  - [Kadane (2)](Miscellaneous%20Tags/kadane.md)
   - [kth (10)](Miscellaneous%20Tags/kth.md)
   - [Longest (1)](Miscellaneous%20Tags/longest.md)
   - [Maximum (3)](Miscellaneous%20Tags/maximum.md)

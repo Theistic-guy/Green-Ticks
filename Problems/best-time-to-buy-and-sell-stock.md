@@ -43,7 +43,9 @@ Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)"
 ---
 
-# 📈Best Time to Buy and Sell Stock <a href="../README.md" style="float: right; text-decoration: none;">🏠</a>
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
+# 📈Best Time to Buy and Sell Stock 
 
 **Pattern:** Siding Window
 
