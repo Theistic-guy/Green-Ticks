@@ -131,6 +131,15 @@
 
 ---
 
+### ⭐ By Rating
+<details>
+  <summary>Expand</summary>
+
+  - [Not Rated (73)](Rating/not-rated.md)
+</details>
+
+---
+
 ### 🏷️ By Miscellaneous Tags
 <details>
   <summary>Expand</summary>
