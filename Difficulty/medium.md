@@ -4,6 +4,8 @@
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Equal Partition](../Problems/equal-partition.md)
+- [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
+- [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)

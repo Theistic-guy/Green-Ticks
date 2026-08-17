@@ -1,8 +1,7 @@
-# Linked Lists
+# Floyd's Cycle-Finding
 
 ## Medium
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 
 ## Hard
-- [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

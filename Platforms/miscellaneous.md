@@ -45,5 +45,6 @@
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)

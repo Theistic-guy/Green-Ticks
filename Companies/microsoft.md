@@ -1,7 +1,13 @@
 # Microsoft
 
 ## Medium
+- [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
+- [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
+
+## Hard
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

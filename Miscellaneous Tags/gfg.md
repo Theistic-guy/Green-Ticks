@@ -33,6 +33,7 @@
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
 ## Not Specified

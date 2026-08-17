@@ -1,6 +1,8 @@
 # Amazon
 
 ## Medium
+- [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
+- [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
@@ -9,9 +11,11 @@
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 
 ## Not Specified

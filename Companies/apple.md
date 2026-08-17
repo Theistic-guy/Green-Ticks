@@ -3,6 +3,9 @@
 ## Medium
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
 
+## Hard
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)

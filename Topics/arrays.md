@@ -11,6 +11,8 @@
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
+- [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
+- [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
@@ -20,9 +22,11 @@
 ## Hard
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
+- [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 
 ## Not Specified
