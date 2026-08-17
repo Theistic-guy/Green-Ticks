@@ -64,6 +64,13 @@ def rating_label(rating: int | None) -> str:
 def rating_stars(rating: int | None) -> str:
     return STAR * rating if rating else ""
 
+def parse_rating(raw: Any) -> int:
+    """Accepts either an integer (1-5) or a run of star emoji, e.g. '⭐⭐⭐'."""
+    text = str(raw).strip()
+    if text and set(text) == {STAR}:
+        return len(text)
+    return int(text)
+
 def sort_rating(value: str) -> tuple[int, str]:
     return (RATING_SORT_ORDER.get(value, 99), value.lower())
 
@@ -234,9 +241,9 @@ def validate_note(path: Path) -> dict[str, Any]:
 
     if rating_raw not in (None, ""):
         try:
-            rating = int(rating_raw)
+            rating = parse_rating(rating_raw)
         except (TypeError, ValueError):
-            errors.append("Rating must be an integer from 1 to 5")
+            errors.append("Rating must be an integer from 1 to 5, or 1-5 ⭐ characters")
         else:
             if not 1 <= rating <= 5:
                 errors.append("Rating must be between 1 and 5")
