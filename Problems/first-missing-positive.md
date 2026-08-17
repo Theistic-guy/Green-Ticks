@@ -17,6 +17,7 @@ Other Tags:
   - Cyclic Sort / Placement
   - In-place Array Modification
 Link: ""
+Rating: ⭐⭐⭐⭐⭐
 ---
 
 # First Missing Positive

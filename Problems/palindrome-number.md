@@ -1,5 +1,5 @@
 ---
-Title: Palindrome Number
+Title: Palindrome number
 Companies:
   - Not Specified
 Topics:
@@ -9,6 +9,7 @@ Platform:
 Difficulty: Medium
 Other Tags:
 Link: ""
+Rating:
 ---
 
 # Palindrome Number
