@@ -1,7 +1,7 @@
 # Hashing
 
 ## Hard
-- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md)
+- [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Contains Duplicate](../Problems/contains-duplicate.md)

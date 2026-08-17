@@ -135,7 +135,8 @@
 <details>
   <summary>Expand</summary>
 
-  - [Not Rated (73)](Rating/not-rated.md)
+  - [5 Stars (1)](Rating/5-stars.md)
+  - [Not Rated (72)](Rating/not-rated.md)
 </details>
 
 ---
