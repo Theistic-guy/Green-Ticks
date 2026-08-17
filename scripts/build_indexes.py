@@ -31,6 +31,7 @@ GENERATED_DIRS = {
     "Companies": ROOT / "Companies",
     "Difficulty": ROOT / "Difficulty",
     "Miscellaneous Tags": ROOT / "Miscellaneous Tags",
+    "Rating": ROOT / "Rating",
 }
 
 DIFFICULTY_ORDER = {
@@ -41,7 +42,30 @@ DIFFICULTY_ORDER = {
 }
 
 REQUIRED_KEYS = {"Title", "Topics", "Platform", "Companies", "Difficulty"}
-ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags"}
+ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating"}
+
+STAR = "⭐"
+
+# Rating is optional (1-5). Order for display: 5 stars first, unrated last.
+RATING_SORT_ORDER = {
+    "5 Stars": 0,
+    "4 Stars": 1,
+    "3 Stars": 2,
+    "2 Stars": 3,
+    "1 Star": 4,
+    "Not Rated": 5,
+}
+
+def rating_label(rating: int | None) -> str:
+    if rating is None:
+        return "Not Rated"
+    return f"{rating} Star" if rating == 1 else f"{rating} Stars"
+
+def rating_stars(rating: int | None) -> str:
+    return STAR * rating if rating else ""
+
+def sort_rating(value: str) -> tuple[int, str]:
+    return (RATING_SORT_ORDER.get(value, 99), value.lower())
 
 # Restored from your original script
 FILENAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
@@ -190,6 +214,9 @@ def validate_note(path: Path) -> dict[str, Any]:
     link = as_single(meta.get("Link")) if meta.get("Link") not in (None, "") else ""
     other_tags = as_list(meta.get("Other Tags"))
 
+    rating_raw = meta.get("Rating")
+    rating: int | None = None
+
     errors: list[str] = []
 
     if not title.strip():
@@ -205,6 +232,15 @@ def validate_note(path: Path) -> dict[str, Any]:
     if difficulty and difficulty not in DIFFICULTY_ORDER:
         errors.append(f"Difficulty must be one of: {', '.join(DIFFICULTY_ORDER.keys())}")
 
+    if rating_raw not in (None, ""):
+        try:
+            rating = int(rating_raw)
+        except (TypeError, ValueError):
+            errors.append("Rating must be an integer from 1 to 5")
+        else:
+            if not 1 <= rating <= 5:
+                errors.append("Rating must be between 1 and 5")
+
     if errors:
         raise ValueError("; ".join(errors))
 
@@ -217,6 +253,7 @@ def validate_note(path: Path) -> dict[str, Any]:
         "difficulty": difficulty,
         "link": link,
         "other_tags": other_tags,
+        "rating": rating,
     }
 
 def clean_generated_dirs() -> None:
@@ -267,7 +304,9 @@ def render_grouped_by_difficulty(
         lines.append(f"## {difficulty}")
         for problem in sorted(groups[difficulty], key=sort_by_title_then_path):
             link_target = rel_link(index_file, problem["source_path"])
-            lines.append(f"- [{problem['title']}]({link_target})")
+            stars = rating_stars(problem.get("rating"))
+            suffix = f" {stars}" if stars else ""
+            lines.append(f"- [{problem['title']}]({link_target}){suffix}")
         lines.append("")
 
     index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
@@ -276,7 +315,9 @@ def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, A
     lines: list[str] = [f"# {heading}", ""]
     for problem in sorted(problems, key=sort_by_title_then_path):
         link_target = rel_link(index_file, problem["source_path"])
-        lines.append(f"- [{problem['title']}]({link_target})")
+        stars = rating_stars(problem.get("rating"))
+        suffix = f" {stars}" if stars else ""
+        lines.append(f"- [{problem['title']}]({link_target}){suffix}")
 
     index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
@@ -388,16 +429,19 @@ def generate_readme(
     company_values: list[str],
     difficulty_values: list[str],
     other_tag_values: list[str],
+    rating_values: list[str],
     topic_slugs: dict[str, str],
     platform_slugs: dict[str, str],
     company_slugs: dict[str, str],
     difficulty_slugs: dict[str, str],
     other_tag_slugs: dict[str, str],
+    rating_slugs: dict[str, str],
     by_topic,
     by_platform,
     by_company,
     by_other_tag,
     by_difficulty,
+    by_rating,
     template_files,
     readme_sections_appendix: str = ""
 ) -> None:
@@ -445,6 +489,13 @@ def generate_readme(
     section = build_readme_section(
         "Difficulty", "🧪", "Difficulty", difficulty_values, difficulty_slugs,
         counts={k: len(v) for k, v in by_difficulty.items()}
+    )
+
+    if section:
+        sections.append(section)
+    section = build_readme_section(
+        "Rating", "⭐", "Rating", rating_values, rating_slugs,
+        counts={k: len(v) for k, v in by_rating.items()}
     )
 
     if section:
@@ -507,18 +558,21 @@ def main() -> None:
     company_values = sorted({c for note in notes for c in note["companies"]}, key=str.lower)
     other_tag_values = sorted({t for note in notes for t in note["other_tags"]}, key=str.lower)
     difficulty_values = sorted({note["difficulty"] for note in notes}, key=sort_difficulty)
+    rating_values = sorted({rating_label(note["rating"]) for note in notes}, key=sort_rating)
 
     topic_slugs = ensure_no_slug_collisions("Topic", topic_values)
     platform_slugs = ensure_no_slug_collisions("Platform", platform_values)
     company_slugs = ensure_no_slug_collisions("Company", company_values)
     other_tag_slugs = ensure_no_slug_collisions("Miscellaneous Tag", other_tag_values)
     difficulty_slugs = ensure_no_slug_collisions("Difficulty", difficulty_values)
+    rating_slugs = ensure_no_slug_collisions("Rating", rating_values)
 
     by_topic: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_platform: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_company: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_other_tag: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_difficulty: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_rating: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     for note in notes:
         for topic in note["topics"]:
@@ -530,6 +584,7 @@ def main() -> None:
         for tag in note["other_tags"]:
             by_other_tag[tag].append(note)
         by_difficulty[note["difficulty"]].append(note)
+        by_rating[rating_label(note["rating"])].append(note)
 
     print("Generating index files...", flush=True)
 
@@ -558,6 +613,11 @@ def main() -> None:
         index_file = difficulty_dir / f"{difficulty_slugs[difficulty]}.md"
         render_flat_index(index_file, difficulty, items)
 
+    rating_dir = GENERATED_DIRS["Rating"]
+    for rating, items in by_rating.items():
+        index_file = rating_dir / f"{rating_slugs[rating]}.md"
+        render_grouped_by_difficulty(index_file, rating, items)
+
     print("Appending ReadMe Sections...", flush=True)
     readme_sections_appendix = build_readme_sections_appendix(README_SECTIONS_DIR)
 
@@ -569,16 +629,19 @@ def main() -> None:
         company_values=company_values,
         difficulty_values=difficulty_values,
         other_tag_values=other_tag_values,
+        rating_values=rating_values,
         topic_slugs=topic_slugs,
         platform_slugs=platform_slugs,
         company_slugs=company_slugs,
         difficulty_slugs=difficulty_slugs,
         other_tag_slugs=other_tag_slugs,
+        rating_slugs=rating_slugs,
         by_topic=by_topic,
         by_platform=by_platform,
         by_company=by_company,
         by_other_tag=by_other_tag,
         by_difficulty=by_difficulty,
+        by_rating=by_rating,
         template_files=template_files,
         readme_sections_appendix=readme_sections_appendix
     )
