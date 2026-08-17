@@ -11,6 +11,7 @@ Other Tags:
 Link: ""
 Rating:
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Palindrome Number
 
@@ -41,6 +42,7 @@ def isPalindrome(x):
 
 ```
 **Time complexity** - O(D) , D is no of digits
+
 **Aux. Space complexity** -  O(1)
 
 ---

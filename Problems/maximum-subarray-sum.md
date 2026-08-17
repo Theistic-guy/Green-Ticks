@@ -38,8 +38,11 @@ def max_subarray(arr):
     return ans
 ```
 **Time complexity** - O(n)
+
 **Aux. Space complexity** -  O(1)
-**Variations** - [[Maximum Subarray — Important Interview Variations]]
+
+**Variations** - [Maximum Subarray — Important Interview Variations](../Notes/Maximum%20Subarray%20—%20Important%20Interview%20Variations.md)
+
 
 ---
 

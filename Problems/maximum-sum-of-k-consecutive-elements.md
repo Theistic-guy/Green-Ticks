@@ -45,7 +45,9 @@ def max_sum(arr, k):
     return ans
 ```
 **Time complexity** - O(n) 
+
 **Aux. Space complexity** -  O(1)
+
 **Variations** are briefly mentioned below, with complete solutions find them [Sliding window variations.](../Notes/Sliding%20window%20variations.md)
 
 ---

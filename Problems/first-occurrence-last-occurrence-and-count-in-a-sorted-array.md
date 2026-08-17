@@ -50,6 +50,7 @@ def first_occurrence(arr, x):
 
 ```
 **Time complexity** - O(logn) 
+
 **Aux. Space complexity** -  O(1)
 
 ---
