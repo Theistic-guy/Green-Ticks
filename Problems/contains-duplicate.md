@@ -1,6 +1,7 @@
 ---
 Title: Contains Duplicate
-Companies: [Not Specified]
+Companies:
+  - Not Specified
 Topics:
   - Arrays
   - Hashing
@@ -8,6 +9,7 @@ Platform:
   - Leetcode
 Difficulty: Not Specified
 Other Tags:
+  - Duplicates
 Link: "[Leetcode](https://leetcode.com/problems/contains-duplicate/)"
 ---
 

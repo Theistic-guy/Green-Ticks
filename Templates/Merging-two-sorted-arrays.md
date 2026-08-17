@@ -1,3 +1,4 @@
+# Merging two sorted arrays
 ```Python
 def merge(A, B):
     merged = []

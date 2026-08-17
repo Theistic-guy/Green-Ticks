@@ -4,10 +4,14 @@ Companies:
   - Not Specified
 Topics:
   - Maths
+  - Sorting
+  - Backtracking
 Platform:
   - Miscellaneous
 Difficulty: Hard
 Other Tags:
+  - Subset
+  - Duplicates
 Link: ""
 ---
 
