@@ -351,6 +351,13 @@ def subarray_sum(arr, target):
     
 - **Auxiliary Space Complexity:** **$O(n)$**
     
+💡 The Core Math Secret (The "Why")Imagine you are walking along a path, counting your total steps from the start. This running total is your prefix sum.If you are at a total of 15 steps (prefix), and you know that earlier in your walk you were at a total of 5 steps (seen), what happened in between?You must have taken exactly 10 steps (target) during that middle stretch!Mathematically:
+
+$$\text{Current Prefix} - \text{Previous Prefix} = \text{Subarray Sum}$$
+
+$$\text{Current Prefix} - \text{Target} = \text{Previous Prefix}$$
+
+
 
 ---
 
