@@ -90,9 +90,8 @@ The denominator (`k`) is constant.
 
 Therefore,
 
-# $$  
+$$  
 \text{Maximum Average}
-
 \frac{\text{Maximum Sum}}{k}  
 $$
 
