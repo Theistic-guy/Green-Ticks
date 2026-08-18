@@ -1,0 +1,1 @@
++ arr.count() to count the no of occurrences
