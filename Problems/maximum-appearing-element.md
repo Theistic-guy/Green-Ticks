@@ -27,7 +27,7 @@ Link: ""
 ```Python
 def maximum_appearing(L, R):
 
-    MAX = max(R) + 2
+    MAX = max(R) + 2  # because values in L,R are 1-based so easy coding, (+1 for that), another +1 is for adding -1 past the actual limit
 
     diff = [0] * MAX
 
