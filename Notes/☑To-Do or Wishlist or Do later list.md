@@ -5,3 +5,7 @@
 + find all anangrams is leetcode 438
 + n-k sliding window cards speatete note
 + prefix sum LC 862 (see that )
+
+gse solutions
+corys
+siminforyss( chennai does someting like that )
