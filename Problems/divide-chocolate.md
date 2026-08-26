@@ -13,6 +13,7 @@ Other Tags:
   - Predicate Search - Maximize Minimum
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Divide Chocolate
 
 **Pattern:**  Binary search on answer

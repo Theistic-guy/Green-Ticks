@@ -14,7 +14,7 @@ Other Tags:
   - Sorted
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Search in a Sorted Rotated Array
 
 **Pattern:**  Binary Search

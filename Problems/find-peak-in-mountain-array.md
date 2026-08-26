@@ -12,6 +12,7 @@ Other Tags:
   - Binary Search
 Link:
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Find a Peak in a Mountain Array
 
 **Pattern:** Binary Search

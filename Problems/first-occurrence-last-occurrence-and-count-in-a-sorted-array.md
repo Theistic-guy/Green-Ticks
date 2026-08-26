@@ -13,7 +13,7 @@ Other Tags:
   - Binary Search
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # First Occurrence, Last Occurrence & Count in a Sorted Array
 
 

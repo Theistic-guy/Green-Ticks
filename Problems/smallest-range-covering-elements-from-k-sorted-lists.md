@@ -13,7 +13,7 @@ Other Tags:
   - Sorted
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Smallest Range Covering Elements from K Sorted Lists
 
 **Pattern:**  Heap (k-way)

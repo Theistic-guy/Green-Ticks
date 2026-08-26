@@ -15,7 +15,7 @@ Other Tags:
   - Duplicates
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Find All Duplicates in an Array
 
 **Pattern:**  In place array modification

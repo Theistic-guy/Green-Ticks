@@ -13,7 +13,7 @@ Other Tags:
   - Predicate Search - Minimize Maximum
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Minimize Max Distance to Gas Station
 
 **Pattern:**  Binary Search on answer

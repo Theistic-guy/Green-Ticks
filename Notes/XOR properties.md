@@ -1,3 +1,5 @@
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 - **Identity Property (\(A $\oplus$ 0 = A\))**: XORing any value with zero leaves the value completely unchanged.
 
 - **Self-Inverse Property (\(A $\oplus$ A = 0\))**: XORing any value with itself always results in zero.

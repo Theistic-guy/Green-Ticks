@@ -36,7 +36,7 @@ Difficulty: Not Specified
 Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/group-anagrams/)"
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # 🔠Group Anagrams
 
 **Pattern:** Arrays, Strings, Sorting

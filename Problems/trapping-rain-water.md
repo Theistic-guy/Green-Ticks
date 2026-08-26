@@ -34,7 +34,7 @@ Other Tags:
   - GFG
 Link: "[Leetcode](https://leetcode.com/problems/trapping-rain-water/)"
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # 🌧️Trapping Rain Water
 
 **Pattern:** Two Pointers, Monotonic Stack, Prefix & Suffix arrays

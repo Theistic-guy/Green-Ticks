@@ -1,3 +1,4 @@
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Merging two sorted arrays
 ```Python
 def merge(A, B):
@@ -15,3 +16,7 @@ def merge(A, B):
     return merged
 
 ```
+
+##### Problems like...
+[intersection-of-two-sorted-arrays](../Problems/intersection-of-two-sorted-arrays.md)
+[union-of-two-sorted-arrays](../Problems/union-of-two-sorted-arrays.md)

@@ -11,7 +11,7 @@ Other Tags:
   - Subset
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Equal Partition
 
 **Pattern:** subset sum with dp tricks

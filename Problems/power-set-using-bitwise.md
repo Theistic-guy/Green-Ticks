@@ -12,7 +12,7 @@ Other Tags:
   - Subset
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Generate the Power Set Using Bit Manipulation
 
 **Pattern:** Bit manipulation

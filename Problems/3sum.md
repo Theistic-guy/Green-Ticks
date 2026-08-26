@@ -12,7 +12,7 @@ Other Tags:
   - GFG
 Link: "[Leetcode](https://leetcode.com/problems/3sum/)"
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # 🧩 3Sum
 
 **Pattern:** Two Pointers  

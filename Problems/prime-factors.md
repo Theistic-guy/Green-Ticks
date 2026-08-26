@@ -11,7 +11,7 @@ Other Tags:
   - GFG
 Link: ""
 ---
-
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 # Prime Factors
 
 **Pattern:** prime factorization

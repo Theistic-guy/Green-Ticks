@@ -15,7 +15,7 @@
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
-- [Palindrome number](../Problems/palindrome-number.md)
+- [Palindrome number](../Problems/intersection-of-two-sorted-arrays.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
