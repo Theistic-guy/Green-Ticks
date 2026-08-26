@@ -13,6 +13,7 @@ Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/contains-duplicate/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # 1️⃣1️⃣Contains  Duplicate
 
 **Idea:** Use hashing

@@ -1,4 +1,5 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 The **Lookup Table** approach is an optimization over Brian Kernighan's algorithm when you need to count set bits **repeatedly for many numbers**.
 
 Instead of counting bits every time, we **precompute** the answer for all possible **8-bit numbers (0–255)** and store them in a table.

@@ -14,6 +14,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Finding a Peak Element — Binary Search
 
 **Pattern:**  Binary Search

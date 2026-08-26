@@ -14,6 +14,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Search in Rotated Sorted Array II — Handling Duplicates
 
 **Pattern:**  Binary Search

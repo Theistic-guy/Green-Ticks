@@ -14,6 +14,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Maximum Appearing Element in Range Queries (Difference Array Technique) — DSA Interview Notes
 
 **Pattern:** 

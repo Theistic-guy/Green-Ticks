@@ -15,6 +15,7 @@ Other Tags:
   - Predicate Search - Maximize Minimum
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Magnetic Force Between Two Balls / Aggressive Cows
 

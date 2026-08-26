@@ -14,6 +14,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Minimum Consecutive Flips (DSA Interview Notes)
 
 **Pattern:** 

@@ -14,6 +14,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Minimized Maximum of Products Distributed to Any Store
 
 **Pattern:** binary search on answer (minimize maximum)

@@ -1,4 +1,5 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Merge Sort — Patterns, Variations & Problem-Breakdown Framework
 
 ## 1. Why Merge Sort Matters Beyond "Sorting"

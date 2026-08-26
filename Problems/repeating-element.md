@@ -28,6 +28,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Repeating Element — Detection Techniques & Important Variations
 
 **Pattern:**  floyd detection (best) + others

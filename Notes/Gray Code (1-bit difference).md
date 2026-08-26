@@ -1,4 +1,5 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Gray Code (Bit Manipulation)
 
 ## What is Gray Code?

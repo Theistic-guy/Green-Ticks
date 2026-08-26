@@ -11,6 +11,7 @@ Other Tags: [GFG]
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Binary Exponentiation
 
 **Pattern:** **Divide and Conquer** (specifically, **Decrease and Conquer**)

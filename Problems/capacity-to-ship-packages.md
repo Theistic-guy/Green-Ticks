@@ -15,6 +15,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Capacity to Ship Packages Within D Days
 
 **Pattern:**  Binary Search on Answer (predicate search) - Core

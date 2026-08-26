@@ -32,6 +32,7 @@ Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # 🔤Longest Substring Without Repeating Characters
 
 **Pattern:** Sliding Window

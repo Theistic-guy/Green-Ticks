@@ -12,6 +12,7 @@ Other Tags:
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Tower Of Hanoi
 
 **Pattern:** Recursion till the base solves for the trivial case then as functions return it gives the complete picture.
