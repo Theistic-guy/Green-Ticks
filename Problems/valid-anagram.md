@@ -19,6 +19,7 @@ Difficulty: Not Specified
 Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/valid-anagram/)"
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # ✔️Valid Anagram
 

@@ -12,6 +12,8 @@ Other Tags:
   - GFG
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Rope Cutting → Dynamic Programming
 **Pattern:** DP on recursion 1-D
 **Idea:**  Store already computed results in a dp array

@@ -17,6 +17,7 @@ Other Tags:
   - Predicate Search - Counting
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Kth Smallest Pair Distance
 

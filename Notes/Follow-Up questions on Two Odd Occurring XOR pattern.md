@@ -1,3 +1,5 @@
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # XOR Trick – Common Interview Follow-up Questions
 
 ## 1. Why can't we extend the XOR trick to **three or more** odd-occurring numbers?

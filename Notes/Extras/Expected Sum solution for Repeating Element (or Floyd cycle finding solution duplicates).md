@@ -1,3 +1,5 @@
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # PKM Note: Array Duplicate Detection via Expected Arithmetic Sum
 
 - **Topic:** Algorithms & Data Structures / Array Searching

@@ -13,6 +13,7 @@ Other Tags:
   - Predicate Search - Basic
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Find the Smallest Divisor Given a Threshold
 

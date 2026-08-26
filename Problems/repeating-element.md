@@ -27,6 +27,7 @@ Other Tags:
   - In-place Array Modification
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Repeating Element — Detection Techniques & Important Variations
 

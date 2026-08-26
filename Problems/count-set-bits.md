@@ -12,6 +12,8 @@ Other Tags:
   - GFG
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Count Set Bits (Population Count / Hamming Weight)
 
 **Pattern:** Bit manipulation

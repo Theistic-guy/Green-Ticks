@@ -3,6 +3,8 @@ tags:
   - recursion
   - josephus
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 See Also:
 + Why simply add 1 to the final answer in 1-based indexing Josephus. [1](#Josephus%20Problem%200-Indexed%20vs%201-Indexed%20Justification)
 + Why we add K to the new numbering to get back to original [2](#The%20Two%20Worlds)

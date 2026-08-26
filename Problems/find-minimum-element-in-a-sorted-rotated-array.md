@@ -14,6 +14,8 @@ Other Tags:
   - Minimum
 Link: ""
 ---
+<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Find Minimum Element in a Sorted Rotated Array
 
 **Pattern:** Binary Search
