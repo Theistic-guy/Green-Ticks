@@ -1,12 +1,19 @@
----
 
-## title: Quickselect & Selection Algorithms tags: [dsa, algorithms, selection-algorithms, quicksort-family, patterns] difficulty_range: Easy-Hard related: ["Binary Search on Answer", "Sorting", "Heaps", "Dutch National Flag", "Divide and Conquer"]
+ #dsa, #algorithms, #selection-algorithms, #quicksort-family, #patterns
+ 
+ See also and Related:
+ + [Binary Search on Answer ( Predicate Search) - 5⭐](Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
+ + [heap](../Topics/heap.md)
+ + [3-Way Partitioning (Dutch National Flag)](3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
+ + [Merge Sort (Divide & Conquer) Strategies](Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
+ 
 
 # 🎯 Quickselect & Selection Algorithms
 
-> **One-line definition:** A _selection algorithm_ finds the kth smallest/largest element (the **kth order statistic**) in a collection without necessarily sorting the whole thing. **Quickselect** is quicksort with one recursive branch amputated — partition once, then recurse into only the half that contains your target index.
+> **One-line definition: ** A _selection algorithm_ finds the kth smallest/largest element (the **kth order statistic**) in a collection without necessarily sorting the whole thing. **Quickselect** is quicksort with one recursive branch amputated — partition once, then recurse into only the half that contains your target index.
 
----
+
+
 
 ## 🧠 The Core Insight
 

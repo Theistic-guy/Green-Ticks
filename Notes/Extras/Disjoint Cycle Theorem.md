@@ -1,6 +1,6 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-![](../../assets/Images/Pasted%20image%2020260827125353.png)
+![](../../assets/Images/disjoint%20cycle%20theorem.png)
 
 https://www.youtube.com/watch?v=NeHZcwCUPFg
 # Disjoint Cycle Theorem, Cycle Sort, and Minimum Swaps to Sort
