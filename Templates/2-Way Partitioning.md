@@ -2,6 +2,9 @@
 
 # Partitioning (Lomuto)
 
+[3-Way Partitioning (Dutch National Flag)](../Notes/3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
+
+
 $O(n)$
 
 ```Python
