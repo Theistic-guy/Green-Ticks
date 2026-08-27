@@ -1,5 +1,8 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
+##### Refs:
++ checkout full cycle sort - [Cycle Sort](../Notes/Cycle%20Sort%20(with%20duplicates).md)
+
 # Cyclic sort & Placement loop
 
 The standard cyclic sort and placement algorithm in Python places numbers in the range 1 to n into their correct indices 0 to n-1 in O(n) time. 
