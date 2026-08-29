@@ -44,6 +44,8 @@ DIFFICULTY_ORDER = {
 REQUIRED_KEYS = {"Title", "Topics", "Platform", "Companies", "Difficulty"}
 ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating"}
 
+HOME_LINK_TEXT = "⇐🏠"
+
 STAR = "⭐"
 
 # Rating is optional (1-5). Order for display: 5 stars first, unrated last.
@@ -297,16 +299,66 @@ def sort_by_title_then_path(problem: dict[str, Any]) -> tuple[str, str]:
 def sort_difficulty(value: str) -> tuple[int, str]:
     return (DIFFICULTY_ORDER.get(value, 99), value.lower())
 
+def home_link_lines(index_file: Path) -> list[str]:
+    """Back-to-README link placed at the very top of every generated index file."""
+    return [f"[{HOME_LINK_TEXT}]({rel_link(index_file, README_FILE)})", ""]
+
+def build_combo_section(
+    index_file: Path,
+    current_value: str,
+    problems: list[dict[str, Any]],
+) -> list[str]:
+    """
+    "See As Combo-wise Listings" section for Topics pages only.
+
+    Groups problems by their *exact* topic set (current topic + whatever
+    else is tagged). A problem with topics {A, B} appears only under the
+    "A + B" subsection - never also under "A + B + C" - so nothing is
+    duplicated just because one problem's tags are a subset of another's.
+    """
+    groups: dict[frozenset[str], list[dict[str, Any]]] = defaultdict(list)
+    for problem in problems:
+        topic_set = frozenset(problem["topics"])
+        if len(topic_set) <= 1:
+            continue  # no combo - this problem is tagged with only the current topic
+        groups[topic_set].append(problem)
+
+    if not groups:
+        return []
+
+    def combo_heading(topic_set: frozenset[str]) -> str:
+        others = sorted((t for t in topic_set if t != current_value), key=str.lower)
+        return " + ".join([current_value] + others)
+
+    ordered_keys = sorted(
+        groups.keys(),
+        key=lambda k: (len(k), combo_heading(k).lower()),
+    )
+
+    lines: list[str] = ["## See As Combo-wise Listings", ""]
+    for topic_set in ordered_keys:
+        lines.append(f"### {combo_heading(topic_set)}")
+        for problem in sorted(groups[topic_set], key=sort_by_title_then_path):
+            link_target = rel_link(index_file, problem["source_path"])
+            stars = rating_stars(problem.get("rating"))
+            suffix = f" {stars}" if stars else ""
+            lines.append(f"- [{problem['title']}]({link_target}){suffix}")
+        lines.append("")
+
+    return lines
+
 def render_grouped_by_difficulty(
     index_file: Path,
     heading: str,
     problems: list[dict[str, Any]],
+    combo_topic: str | None = None,
 ) -> None:
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for problem in problems:
         groups[problem["difficulty"]].append(problem)
 
-    lines: list[str] = [f"# {heading}", ""]
+    lines: list[str] = home_link_lines(index_file)
+    lines += [f"# {heading}", ""]
     for difficulty in sorted(groups.keys(), key=sort_difficulty):
         lines.append(f"## {difficulty}")
         for problem in sorted(groups[difficulty], key=sort_by_title_then_path):
@@ -316,10 +368,14 @@ def render_grouped_by_difficulty(
             lines.append(f"- [{problem['title']}]({link_target}){suffix}")
         lines.append("")
 
+    if combo_topic is not None:
+        lines += build_combo_section(index_file, combo_topic, problems)
+
     index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, Any]]) -> None:
-    lines: list[str] = [f"# {heading}", ""]
+    lines: list[str] = home_link_lines(index_file)
+    lines += [f"# {heading}", ""]
     for problem in sorted(problems, key=sort_by_title_then_path):
         link_target = rel_link(index_file, problem["source_path"])
         stars = rating_stars(problem.get("rating"))
@@ -598,7 +654,7 @@ def main() -> None:
     topics_dir = GENERATED_DIRS["Topics"]
     for topic, items in by_topic.items():
         index_file = topics_dir / f"{topic_slugs[topic]}.md"
-        render_grouped_by_difficulty(index_file, topic, items)
+        render_grouped_by_difficulty(index_file, topic, items, combo_topic=topic)
 
     platforms_dir = GENERATED_DIRS["Platforms"]
     for platform, items in by_platform.items():
