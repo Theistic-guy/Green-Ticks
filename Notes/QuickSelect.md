@@ -7,7 +7,8 @@
  + [3-Way Partitioning (Dutch National Flag)](3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
  + [Merge Sort (Divide & Conquer) Strategies](Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
  
-
+# 🧠 Mind map
+![QuickSelect Map|700](../assets/Images/QuickSelect%20Map.svg)
 # 🎯 Quickselect & Selection Algorithms
 
 > **One-line definition: ** A _selection algorithm_ finds the kth smallest/largest element (the **kth order statistic**) in a collection without necessarily sorting the whole thing. **Quickselect** is quicksort with one recursive branch amputated — partition once, then recurse into only the half that contains your target index.

@@ -1,5 +1,6 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
+
 > **Core idea:** When many operations modify an entire range, don't update every element immediately. Record the **boundary changes** and reconstruct the final array later.
 
 ---

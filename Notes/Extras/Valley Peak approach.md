@@ -1,4 +1,5 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 The Valley-Peak approach is <mark>a popular algorithmic strategy in Data Structures and Algorithms (DSA) used to calculate cumulative gains or track structural patterns in data sequences</mark>. It is most famous for solving LeetCode #122: Stock Buy and Sell II and similar greedy/sliding window optimization problems. [1, 2, 3]
 
 The core concept is to visualize a 1D sequence or array as a series of geographical mountains. A Valley represents a local minimum (a drop in data, or the best price to "buy"), while a Peak represents a local maximum (a surge in data, or the best price to "sell"). [2, 4, 5, 6, 7]

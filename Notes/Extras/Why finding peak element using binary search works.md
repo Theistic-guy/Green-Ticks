@@ -1,4 +1,5 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
+
 # Find a Peak Element — Binary Search on an Unsorted Array
 
 > **Core lesson:** Binary search does **not** require the array itself to be sorted. It requires a way to look at `mid` and **prove that one side must contain a valid answer**.
