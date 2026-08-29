@@ -1,3 +1,5 @@
+[⇐🏠](../README.md)
+
 # Binary Search
 
 ## Easy
