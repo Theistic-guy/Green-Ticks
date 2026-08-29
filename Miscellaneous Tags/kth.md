@@ -1,8 +1,14 @@
+[⇐🏠](../README.md)
+
 # kth
 
 ## Easy
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+
+## Medium
+- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
@@ -12,6 +18,3 @@
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
-
-## Not Specified
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)

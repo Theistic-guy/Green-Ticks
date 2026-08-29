@@ -1,3 +1,5 @@
+[⇐🏠](../README.md)
+
 # Sorted
 
 ## Easy
@@ -5,7 +7,10 @@
 
 ## Medium
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
+- [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
+- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)

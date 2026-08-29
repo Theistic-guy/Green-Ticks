@@ -1,6 +1,9 @@
+[⇐🏠](../README.md)
+
 # Leetcode
 
 ## Easy
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
 
 ## Medium
@@ -13,6 +16,7 @@
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
+- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
@@ -34,6 +38,5 @@
 - [Contains Duplicate](../Problems/contains-duplicate.md)
 - [Group Anagrams](../Problems/group-anagrams.md)
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
 - [Valid Anagram](../Problems/valid-anagram.md)

@@ -1,6 +1,9 @@
+[⇐🏠](../README.md)
+
 # Hard
 
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
+- [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
 - [Divide Chocolate](../Problems/divide-chocolate.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)

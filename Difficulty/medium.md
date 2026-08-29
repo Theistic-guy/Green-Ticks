@@ -1,3 +1,5 @@
+[⇐🏠](../README.md)
+
 # Medium
 
 - [3Sum](../Problems/3sum.md)
@@ -9,13 +11,15 @@
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
+- [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
-- [Palindrome number](../Problems/intersection-of-two-sorted-arrays.md)
+- [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
@@ -23,5 +27,7 @@
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md)
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
+- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
+- [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐

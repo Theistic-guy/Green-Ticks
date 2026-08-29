@@ -1,3 +1,5 @@
+[⇐🏠](../README.md)
+
 # DP
 
 ## Medium
@@ -10,3 +12,11 @@
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
+
+## See As Combo-wise Listings
+
+### DP + Arrays
+- [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
+
+### DP + Recursion
+- [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)

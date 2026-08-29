@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-73-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-79-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,26 +13,26 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 73 |
+| Problems | 79 |
 | Topics | 19 |
 | Platforms | 2 |
 | Companies | 52 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 29 |
-| Templates | 2 |
+| Miscellaneous Tags | 31 |
+| Templates | 4 |
 
 ---
 ### 🧠 By Topics
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (28)](Topics/arrays.md)
+  - [Arrays (33)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
-  - [Greedy (5)](Topics/greedy.md)
+  - [Greedy (6)](Topics/greedy.md)
   - [Hashing (5)](Topics/hashing.md)
-  - [Heap (5)](Topics/heap.md)
+  - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
   - [Matrix (2)](Topics/matrix.md)
@@ -40,11 +40,11 @@
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Prefix Sum (2)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
-  - [Searching (24)](Topics/searching.md)
-  - [Sliding Window (3)](Topics/sliding-window.md)
-  - [Sorting (3)](Topics/sorting.md)
+  - [Searching (25)](Topics/searching.md)
+  - [Sliding Window (4)](Topics/sliding-window.md)
+  - [Sorting (9)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
-  - [Two Pointers (10)](Topics/two-pointers.md)
+  - [Two Pointers (11)](Topics/two-pointers.md)
 </details>
 
 ---
@@ -53,8 +53,8 @@
 <details>
   <summary>Expand</summary>
 
-  - [Leetcode (30)](Platforms/leetcode.md)
-  - [Miscellaneous (43)](Platforms/miscellaneous.md)
+  - [Leetcode (31)](Platforms/leetcode.md)
+  - [Miscellaneous (48)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -90,7 +90,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (49)](Companies/not-specified.md)
+  - [Not Specified (55)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -123,10 +123,10 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (17)](Difficulty/easy.md)
-  - [Medium (25)](Difficulty/medium.md)
-  - [Hard (23)](Difficulty/hard.md)
-  - [Not Specified (8)](Difficulty/not-specified.md)
+  - [Easy (19)](Difficulty/easy.md)
+  - [Medium (29)](Difficulty/medium.md)
+  - [Hard (24)](Difficulty/hard.md)
+  - [Not Specified (7)](Difficulty/not-specified.md)
 </details>
 
 ---
@@ -135,8 +135,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [5 Stars (1)](Rating/5-stars.md)
-  - [Not Rated (72)](Rating/not-rated.md)
+  - [5 Stars (2)](Rating/5-stars.md)
+  - [4 Stars (2)](Rating/4-stars.md)
+  - [Not Rated (75)](Rating/not-rated.md)
 </details>
 
 ---
@@ -154,14 +155,14 @@
   - [Duplicates (5)](Miscellaneous%20Tags/duplicates.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
-  - [GFG (31)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (35)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
   - [Kadane (2)](Miscellaneous%20Tags/kadane.md)
-  - [kth (10)](Miscellaneous%20Tags/kth.md)
+  - [kth (11)](Miscellaneous%20Tags/kth.md)
   - [Longest (1)](Miscellaneous%20Tags/longest.md)
   - [Maximum (3)](Miscellaneous%20Tags/maximum.md)
   - [Median (1)](Miscellaneous%20Tags/median.md)
-  - [Merge (1)](Miscellaneous%20Tags/merge.md)
+  - [Merge (4)](Miscellaneous%20Tags/merge.md)
   - [Minimum (2)](Miscellaneous%20Tags/minimum.md)
   - [P & C (1)](Miscellaneous%20Tags/p-c.md)
   - [Pairs (2)](Miscellaneous%20Tags/pairs.md)
@@ -169,10 +170,12 @@
   - [Predicate Search - Counting (4)](Miscellaneous%20Tags/predicate-search-counting.md)
   - [Predicate Search - Maximize Minimum (2)](Miscellaneous%20Tags/predicate-search-maximize-minimum.md)
   - [Predicate Search - Minimize Maximum (4)](Miscellaneous%20Tags/predicate-search-minimize-maximum.md)
+  - [Quick select (3)](Miscellaneous%20Tags/quick-select.md)
   - [Smallest (4)](Miscellaneous%20Tags/smallest.md)
-  - [Sorted (10)](Miscellaneous%20Tags/sorted.md)
+  - [Sorted (13)](Miscellaneous%20Tags/sorted.md)
   - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
   - [Subset (5)](Miscellaneous%20Tags/subset.md)
+  - [Union (1)](Miscellaneous%20Tags/union.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
 </details>
 
@@ -182,7 +185,9 @@
 <details>
   <summary>Expand</summary>
 
+  - [2-Way Partitioning](Templates/2-Way Partitioning.md)
   - [Cyclic-sort-and-placement](Templates/Cyclic-sort-and-placement.md)
+  - [Heap Lazy Deletion (Decrease Key)](Templates/Heap Lazy Deletion (Decrease Key).md)
   - [Merging-two-sorted-arrays](Templates/Merging-two-sorted-arrays.md)
 
 </details>
@@ -199,3 +204,12 @@
 + K-way merge problems - [K-way Merge](/Notes/K-way%20Merge.md)
 + Binary Search on Answer Pattern - [Binary Search on Answer ( Predicate Search) - 5⭐](/Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
 + Arrays as functional graphs (Floyd's cycle + Others) - [Arrays as Functional Graphs](/Notes/Arrays%20as%20Functional%20Graphs.md)
++ Sorting Patterns - 
+	+ Divide & Conquer merge strategy - [Merge Sort (Divide & Conquer) ](../../Notes/Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
+	+ Quickselect ($O(n)$) position finding - [QuickSelect](../../Notes/QuickSelect.md)
+		+ 3 way partitioning - [3-Way Partitioning (Dutch National Flag)](../../Notes/3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
+	+ All Heaps concept - [Heaps Concept (Sorting , Operations etc.)](../../Notes/Heaps%20Concept%20(Sorting%20,%20Operations%20etc.).md)
+	+ Cycle Sort - [Cycle Sort (with duplicates)](../../Notes/Cycle%20Sort%20(with%20duplicates).md)
+		+ [Disjoint Cycle Theorem](../../Notes/Extras/Disjoint%20Cycle%20Theorem.md)
+	+ Radix Sort - [Radix Sort](../../Notes/Radix%20Sort.md)
+	+ Bucket Sort - [Bucket Sort](../../Notes/Bucket%20Sort.md)

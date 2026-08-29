@@ -1,9 +1,12 @@
+[⇐🏠](../README.md)
+
 # Not Rated
 
 ## Easy
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
 - [Check For Prime](../Problems/check-for-prime.md)
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
+- [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Count Digits](../Problems/count-digits.md)
 - [Equilibrium Point](../Problems/equilibrium-point.md)
 - [First Occurrence Last Occurrence & Count in a Sorted Array](../Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
@@ -16,6 +19,7 @@
 - [Prime Factors](../Problems/prime-factors.md)
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
@@ -29,13 +33,15 @@
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
+- [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
-- [Palindrome number](../Problems/intersection-of-two-sorted-arrays.md)
+- [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
@@ -76,6 +82,5 @@
 - [Contains Duplicate](../Problems/contains-duplicate.md)
 - [Group Anagrams](../Problems/group-anagrams.md)
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
 - [Valid Anagram](../Problems/valid-anagram.md)
