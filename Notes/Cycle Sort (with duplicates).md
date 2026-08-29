@@ -2,6 +2,7 @@
 
 ###### See Also:
 + Disjoint cycle theorem (Core principle) - [Disjoint Cycle Theorem](Extras/Disjoint%20Cycle%20Theorem.md)
+	+ [Coordinate Compression](Coordinate%20Compression.md)
 + cyclic placement - [Cyclic-sort-and-placement](../Templates/Cyclic-sort-and-placement.md) (when index = value - 1)
 + Functional graphs mutation - [Arrays as Functional Graphs](Arrays%20as%20Functional%20Graphs.md)
 
@@ -11,6 +12,9 @@ Aux. Space - O(1)
 
 **Absolute minimum writes**  - `n` in the worst case
 For minimum swaps , use Selection Sort.
+
+>Every single element in an unsorted array belongs to exactly one unique cycle.
+> an element at the correct position contributes a single cycle of size 1 
 
 If current pos of start (cycle_start) is  `3` then indexes before it 0 ,1,2 are already sorted. Because they have started the cycles and cycles come back.
 ## Python Code

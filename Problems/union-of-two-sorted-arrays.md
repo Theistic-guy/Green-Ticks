@@ -1,680 +1,716 @@
+from __future__ import annotations
+
+import os
+import re
+import shutil
+import sys
+import textwrap
+import unicodedata
+from collections import defaultdict
+from pathlib import Path
+from typing import Any
+from urllib.parse import quote
+
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+PROBLEMS_DIR = ROOT / "Problems"
+README_FILE = ROOT / "README.md"
+template_dir = ROOT / "Templates"
+README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
+
+template_files = []
+
+if template_dir.exists():
+    template_files = sorted(template_dir.glob("*.md"))
+
+
+GENERATED_DIRS = {
+    "Topics": ROOT / "Topics",
+    "Platforms": ROOT / "Platforms",
+    "Companies": ROOT / "Companies",
+    "Difficulty": ROOT / "Difficulty",
+    "Miscellaneous Tags": ROOT / "Miscellaneous Tags",
+    "Rating": ROOT / "Rating",
+}
+
+DIFFICULTY_ORDER = {
+    "Easy": 0,
+    "Medium": 1,
+    "Hard": 2,
+    "Not Specified": 3,
+}
+
+REQUIRED_KEYS = {"Title", "Topics", "Platform", "Companies", "Difficulty"}
+ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating"}
+
+HOME_LINK_TEXT = "⇐🏠"
+
+STAR = "⭐"
+
+# Rating is optional (1-5). Order for display: 5 stars first, unrated last.
+RATING_SORT_ORDER = {
+    "5 Stars": 0,
+    "4 Stars": 1,
+    "3 Stars": 2,
+    "2 Stars": 3,
+    "1 Star": 4,
+    "Not Rated": 5,
+}
+
+def rating_label(rating: int | None) -> str:
+    if rating is None:
+        return "Not Rated"
+    return f"{rating} Star" if rating == 1 else f"{rating} Stars"
+
+def rating_stars(rating: int | None) -> str:
+    return STAR * rating if rating else ""
+
+def parse_rating(raw: Any) -> int:
+    """Accepts either an integer (1-5) or a run of star emoji, e.g. '⭐⭐⭐'."""
+    text = str(raw).strip()
+    if text and set(text) == {STAR}:
+        return len(text)
+    return int(text)
+
+def sort_rating(value: str) -> tuple[int, str]:
+    return (RATING_SORT_ORDER.get(value, 99), value.lower())
+
+# Restored from your original script
+FILENAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+
+# Matches a leading numeric prefix (supports dot notation like 2, 2.3, 10.1)
+# followed by a hyphen (spaces around it are optional), e.g.:
+#   "2-intro.md", "2.3-details.md", "2.3 - details.md", "10-appendix.md"
+README_SECTION_RE = re.compile(r"^(\d+(?:\.\d+)*)\s*-\s*(.+)$")
+
+# The {count} placeholder will be replaced dynamically
+README_HEADER_TEMPLATE = """<h1>
+  Green-Ticks
+  <img src="assets/Accepted.gif" alt="Accepted" width="40" />
+</h1>
+
+![Static Badge](https://img.shields.io/badge/Problems-{count}-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
+
 ---
-Title: Union of Two Sorted Arrays
-Companies:
-  - Not Specified
-Topics:
-  - Sorting
-  - Arrays
-Platform:
-  - Miscellaneous
-Difficulty: Medium
-Other Tags:
-  - Sorted
-  - Union
-  - Merge
-  - GFG
-Link: ""
-Rating:
-  - ⭐⭐⭐⭐
----
-<h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-# Union of Two Sorted Arrays
+## 📁 Navigation
+"""
 
-**Pattern:**  Merge function of merge sort
+README_FOOTER = ""
+# README_FOOTER = """
 
-**Idea:** 
+# ## ⚙️ How It Works
 
-**Variations** : 
-+ [intersection-of-two-sorted-arrays](intersection-of-two-sorted-arrays.md)
-+ [Merge Sort (Divide & Conquer) Strategies](../Notes/Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
+# Every problem lives inside `Problems/` as a Markdown file with YAML metadata.
 
----
+# Running
 
-## 💻 Code
+# ```bash
+# python scripts/build_indexes.py
+# ```
 
-```Python
-def union_of_sorted_arrays(arr1, arr2):
-    union = []
+# will:
+# - Validate metadata
+# - Generate all index pages
+# - Regenerate this README
 
-    n1, n2 = len(arr1), len(arr2)
-    i = j = 0
+# ---
 
-    def add_to_union(value):
-        # Because values are processed in sorted order,
-        # checking only the last element removes duplicates.
-        if not union or union[-1] != value:
-            union.append(value)
+# """
 
-    while i < n1 and j < n2:
+def slugify(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = value.lower().strip()
+    value = re.sub(r"[^\w\s-]", "", value)
+    value = re.sub(r"[\s_]+", "-", value)
+    value = re.sub(r"-+", "-", value)
+    return value.strip("-") or "untitled"
 
-        if arr1[i] < arr2[j]:
-            add_to_union(arr1[i])
-            i += 1
+def unique_preserve_order(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            out.append(item)
+    return out
 
-        elif arr1[i] > arr2[j]:
-            add_to_union(arr2[j])
-            j += 1
-
+def as_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        raw_items = value
+    elif isinstance(value, str):
+        s = value.strip()
+        if not s:
+            return []
+        if "," in s:
+            raw_items = [part.strip() for part in s.split(",")]
         else:
-            # Same value exists in both arrays.
-            # Add it only once.
-            add_to_union(arr1[i])
-            i += 1
-            j += 1
-
-    # Process remaining elements of arr1.
-    while i < n1:
-        add_to_union(arr1[i])
-        i += 1
-
-    # Process remaining elements of arr2.
-    while j < n2:
-        add_to_union(arr2[j])
-        j += 1
-
-    return union
-```
-**Time complexity** - O(n1 + n2)
-
-**Aux. Space complexity** -  O(1)
-
----
-# Union of Two Sorted Arrays
-
-Tags: #Array #Two-Pointers #Sorting #Merge #Union #Duplicates #Set #Space-Optimization #FAANG
-
-## Problem Statement
-
-Given two **sorted arrays**, find their **union**: all distinct elements that occur in either array.
-
-Example:
-
-```text
-arr1 = [1, 2, 2, 3, 4]
-arr2 = [2, 3, 5, 5, 6]
-
-Union = [1, 2, 3, 4, 5, 6]
-```
-
-The result contains each value **exactly once**.
-
-> The important distinction from the previous **Intersection of Two Sorted Arrays** problem:
-> 
-> - **Intersection** → values present in **both** arrays.
->     
-> - **Union** → values present in **at least one** array.
->     
-
----
-
-## Key Idea
-
-Because both arrays are sorted, we can perform the equivalent of a **merge step** from Merge Sort using two pointers.
-
-```text
-i → arr1
-j → arr2
-```
-
-At each step:
-
-- `arr1[i] < arr2[j]` → take `arr1[i]`
-    
-- `arr1[i] > arr2[j]` → take `arr2[j]`
-    
-- equal → take the value **once** and advance both pointers
-    
-
-The only additional issue is **duplicates**.
-
-Since the output itself is sorted, every newly selected element can be compared with the **last element already inserted**:
-
-```python
-if not union or union[-1] != val:
-    union.append(val)
-```
-
-This lets us handle duplicates from **both arrays uniformly**.
-
----
-
-## Intuition — The WHY
-
-Consider:
-
-```text
-arr1 = [1, 2, 2, 5]
-arr2 = [2, 3, 3, 6]
-```
-
-Initially:
-
-```text
-1 < 2
-```
-
-So `1` is definitely the next smallest element of the union.
-
-Then:
-
-```text
-2 == 2
-```
-
-We add `2` **once** and advance both pointers.
-
-Then:
-
-```text
-2 < 3
-```
-
-We encounter another `2`, but:
-
-```python
-union[-1] == 2
-```
-
-so we simply don't add it.
-
-The crucial observation is:
-
-> Because the input arrays are sorted, every duplicate of a value appears adjacent to that value, and the union is also processed in sorted order.
-
-Therefore, we don't need separate duplicate-skipping logic for `arr1` and `arr2`.
-
----
-
-## Approach
-
-Maintain:
-
-```python
-i = 0
-j = 0
-```
-
-### Case 1 — `arr1[i] < arr2[j]`
-
-`arr1[i]` is the smallest available element.
-
-Add it to the union and advance `i`.
-
-### Case 2 — `arr1[i] > arr2[j]`
-
-Symmetrically, add `arr2[j]` and advance `j`.
-
-### Case 3 — Equal
-
-The value occurs in both arrays.
-
-Add it **once**, then advance both:
-
-```python
-i += 1
-j += 1
-```
-
-### Remaining elements
-
-Eventually one array is exhausted.
-
-The remaining elements of the other array are already sorted, so append them while applying the same duplicate check.
-
----
-
-## Python Solution
-
-Your **second implementation is the cleaner approach**, and it is the one I would prefer in an interview.
-
-```python
-def union_of_sorted_arrays(arr1, arr2):
-    union = []
-
-    n1, n2 = len(arr1), len(arr2)
-    i = j = 0
-
-    def add_to_union(value):
-        # Because values are processed in sorted order,
-        # checking only the last element removes duplicates.
-        if not union or union[-1] != value:
-            union.append(value)
-
-    while i < n1 and j < n2:
-
-        if arr1[i] < arr2[j]:
-            add_to_union(arr1[i])
-            i += 1
-
-        elif arr1[i] > arr2[j]:
-            add_to_union(arr2[j])
-            j += 1
-
+            raw_items = [s]
+    else:
+        raw_items = [value]
+
+    cleaned: list[str] = []
+    for item in raw_items:
+        s = str(item).strip()
+        if s:
+            cleaned.append(s)
+    return unique_preserve_order(cleaned)
+
+def as_single(value: Any) -> str:
+    items = as_list(value)
+    if not items:
+        return ""
+    if len(items) != 1:
+        raise ValueError(f"expected exactly one value, got {items!r}")
+    return items[0]
+
+def read_frontmatter(path: Path) -> dict[str, Any]:
+    text = path.read_text(encoding="utf-8").lstrip("\ufeff")
+    if not text.startswith("---"):
+        raise ValueError("missing YAML frontmatter")
+
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        raise ValueError("frontmatter block is not closed properly")
+
+    raw_frontmatter = parts[1]
+    data = yaml.safe_load(raw_frontmatter) or {}
+    if not isinstance(data, dict):
+        raise ValueError("frontmatter must be a YAML mapping")
+
+    return data
+
+# Restored from your original script
+def fail(errors: list[str]) -> None:
+    print("\n================ VALIDATION FAILED ================\n", flush=True)
+    for err in errors:
+        print(f"[ERROR] {err}", flush=True)
+    print("\n===================================================\n", flush=True)
+    sys.stdout.flush()
+    sys.stderr.flush()
+    raise RuntimeError("Validation failed. See errors above.")
+
+# Restored from your original script
+def validate_filename(path: Path) -> None:
+    if not FILENAME_RE.fullmatch(path.name):
+        raise ValueError(
+            "filename must be lowercase hyphenated only, like 'two-sum.md' or "
+            "'best-time-to-buy-and-sell-stock.md'"
+        )
+
+def validate_note(path: Path) -> dict[str, Any]:
+    validate_filename(path)
+
+    meta = read_frontmatter(path)
+
+    unknown = sorted(set(meta.keys()) - ALL_KEYS)
+    if unknown:
+        print(
+            f"[WARN] {path.as_posix()}: unknown keys ignored -> {', '.join(unknown)}",
+            flush=True,
+        )
+
+    title = as_single(meta.get("Title"))
+    topics = as_list(meta.get("Topics"))
+    platforms = as_list(meta.get("Platform"))
+    companies = as_list(meta.get("Companies"))
+    difficulty = as_single(meta.get("Difficulty"))
+    link = as_single(meta.get("Link")) if meta.get("Link") not in (None, "") else ""
+    other_tags = as_list(meta.get("Other Tags"))
+
+    rating_field = meta.get("Rating")
+    rating: int | None = None
+
+    errors: list[str] = []
+
+    if not title.strip():
+        errors.append("Title is required and cannot be blank")
+    if not topics:
+        errors.append("Topics is required and cannot be empty")
+    if not platforms:
+        errors.append("Platform is required and cannot be empty")
+    if not companies:
+        errors.append("Companies is required and cannot be empty")
+    if not difficulty.strip():
+        errors.append("Difficulty is required and cannot be blank")
+    if difficulty and difficulty not in DIFFICULTY_ORDER:
+        errors.append(f"Difficulty must be one of: {', '.join(DIFFICULTY_ORDER.keys())}")
+
+    if rating_field not in (None, ""):
+        try:
+            rating_raw = as_single(rating_field)
+            rating = parse_rating(rating_raw) if rating_raw else None
+        except (TypeError, ValueError):
+            errors.append("Rating must be an integer from 1 to 5, or 1-5 ⭐ characters")
         else:
-            # Same value exists in both arrays.
-            # Add it only once.
-            add_to_union(arr1[i])
-            i += 1
-            j += 1
+            if rating is not None and not 1 <= rating <= 5:
+                errors.append("Rating must be between 1 and 5")
 
-    # Process remaining elements of arr1.
-    while i < n1:
-        add_to_union(arr1[i])
-        i += 1
+    if errors:
+        raise ValueError("; ".join(errors))
 
-    # Process remaining elements of arr2.
-    while j < n2:
-        add_to_union(arr2[j])
-        j += 1
+    return {
+        "source_path": path,
+        "title": title,
+        "topics": topics,
+        "platforms": platforms,
+        "companies": companies,
+        "difficulty": difficulty,
+        "link": link,
+        "other_tags": other_tags,
+        "rating": rating,
+    }
 
-    return union
-```
+def clean_generated_dirs() -> None:
+    for out_dir in GENERATED_DIRS.values():
+        if out_dir.exists():
+            shutil.rmtree(out_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
 
-### Why this version is preferable
+def ensure_no_slug_collisions(category: str, values: list[str]) -> dict[str, str]:
+    value_to_slug: dict[str, str] = {}
+    slug_to_value: dict[str, str] = {}
 
-The textbook version explicitly checks:
+    for value in values:
+        slug = slugify(value)
+        if slug in slug_to_value and slug_to_value[slug] != value:
+            raise ValueError(
+                f"{category} names '{slug_to_value[slug]}' and '{value}' both normalize to '{slug}'. "
+                f"Rename one of them or make them canonical."
+            )
+        slug_to_value[slug] = value
+        value_to_slug[value] = slug
 
-```python
-if i > 0 and arr1[i] == arr1[i - 1]:
-```
+    return value_to_slug
 
-and separately:
+def rel_link(from_file: Path, to_file: Path) -> str:
+    return os.path.relpath(to_file, start=from_file.parent).replace(os.sep, "/")
 
-```python
-if j > 0 and arr2[j] == arr2[j - 1]:
-```
+def sort_by_title_then_path(problem: dict[str, Any]) -> tuple[str, str]:
+    return (
+        problem["title"].lower(),
+        problem["source_path"].as_posix().lower(),
+    )
 
-Your version instead maintains a simple invariant:
+def sort_difficulty(value: str) -> tuple[int, str]:
+    return (DIFFICULTY_ORDER.get(value, 99), value.lower())
 
-> **`union` always contains unique elements in sorted order.**
+def home_link_lines(index_file: Path) -> list[str]:
+    """Back-to-README link placed at the very top of every generated index file."""
+    return [f"[{HOME_LINK_TEXT}]({rel_link(index_file, README_FILE)})", ""]
 
-So every candidate only needs one check:
+def build_combo_section(
+    index_file: Path,
+    current_value: str,
+    problems: list[dict[str, Any]],
+) -> list[str]:
+    """
+    "See As Combo-wise Listings" section for Topics pages only.
 
-```python
-union[-1] != value
-```
+    Groups problems by their *exact* topic set (current topic + whatever
+    else is tagged). A problem with topics {A, B} appears only under the
+    "A + B" subsection - never also under "A + B + C" - so nothing is
+    duplicated just because one problem's tags are a subset of another's.
+    """
+    groups: dict[frozenset[str], list[dict[str, Any]]] = defaultdict(list)
+    for problem in problems:
+        topic_set = frozenset(problem["topics"])
+        if len(topic_set) <= 1:
+            continue  # no combo - this problem is tagged with only the current topic
+        groups[topic_set].append(problem)
 
-This removes duplicate-handling logic from the pointer traversal itself.
+    if not groups:
+        return []
 
----
+    def combo_heading(topic_set: frozenset[str]) -> str:
+        others = sorted((t for t in topic_set if t != current_value), key=str.lower)
+        return " + ".join([current_value] + others)
 
-## Dry Run
+    ordered_keys = sorted(
+        groups.keys(),
+        key=lambda k: (len(k), combo_heading(k).lower()),
+    )
 
-Consider:
+    lines: list[str] = ["## See As Combo-wise Listings", ""]
+    for topic_set in ordered_keys:
+        lines.append(f"### {combo_heading(topic_set)}")
+        for problem in sorted(groups[topic_set], key=sort_by_title_then_path):
+            link_target = rel_link(index_file, problem["source_path"])
+            stars = rating_stars(problem.get("rating"))
+            suffix = f" {stars}" if stars else ""
+            lines.append(f"- [{problem['title']}]({link_target}){suffix}")
+        lines.append("")
 
-```text
-arr1 = [1, 2, 2, 4, 6]
-arr2 = [2, 2, 3, 6]
-```
+    return lines
 
-### Step 1
+def render_grouped_by_difficulty(
+    index_file: Path,
+    heading: str,
+    problems: list[dict[str, Any]],
+    combo_topic: str | None = None,
+) -> None:
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for problem in problems:
+        groups[problem["difficulty"]].append(problem)
 
-```text
-1 < 2
-```
+    lines: list[str] = home_link_lines(index_file)
+    lines += [f"# {heading}", ""]
+    for difficulty in sorted(groups.keys(), key=sort_difficulty):
+        lines.append(f"## {difficulty}")
+        for problem in sorted(groups[difficulty], key=sort_by_title_then_path):
+            link_target = rel_link(index_file, problem["source_path"])
+            stars = rating_stars(problem.get("rating"))
+            suffix = f" {stars}" if stars else ""
+            lines.append(f"- [{problem['title']}]({link_target}){suffix}")
+        lines.append("")
 
-Add `1`.
+    if combo_topic is not None:
+        lines += build_combo_section(index_file, combo_topic, problems)
 
-```text
-union = [1]
-i = 1
-j = 0
-```
+    index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
-### Step 2
+def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, Any]]) -> None:
+    lines: list[str] = home_link_lines(index_file)
+    lines += [f"# {heading}", ""]
+    for problem in sorted(problems, key=sort_by_title_then_path):
+        link_target = rel_link(index_file, problem["source_path"])
+        stars = rating_stars(problem.get("rating"))
+        suffix = f" {stars}" if stars else ""
+        lines.append(f"- [{problem['title']}]({link_target}){suffix}")
 
-```text
-2 == 2
-```
+    index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
-Add `2` once.
+def readme_section_sort_key(path: Path) -> tuple[int, tuple[int, ...], str]:
+    """
+    Sort key for files in the 'ReadMe Sections' folder.
 
-```text
-union = [1, 2]
-i = 2
-j = 1
-```
+    Files named with a leading numeric prefix (e.g. '2-intro.md',
+    '2.3 - details.md', '10-appendix.md') are ordered numerically by that
+    prefix, so '2' < '2.3' < '2.10' < '10' (unlike plain string sorting).
 
-### Step 3
+    Files with no recognizable numeric prefix sort after all numbered
+    files, alphabetically among themselves.
+    """
+    match = README_SECTION_RE.match(path.stem)
+    if match:
+        num_parts = tuple(int(p) for p in match.group(1).split("."))
+        return (0, num_parts, path.stem.lower())
+    return (1, (), path.stem.lower())
 
-```text
-2 < 2
-```
+def build_readme_sections_appendix(sections_dir: Path) -> str:
+    """
+    Read every .md file in the 'ReadMe Sections' folder (if it exists),
+    order them via readme_section_sort_key, and join their contents with
+    a '---' divider between each file.
+    """
+    if not sections_dir.exists():
+        return ""
 
-Actually both current values are `2`:
+    section_files = sorted(sections_dir.glob("*.md"), key=readme_section_sort_key)
+    if not section_files:
+        return ""
 
-```text
-arr1[2] = 2
-arr2[1] = 2
-```
+    chunks: list[str] = []
+    for file in section_files:
+        content = file.read_text(encoding="utf-8").strip()
+        if content:
+            chunks.append(content)
 
-So add attempt:
+    if not chunks:
+        return ""
 
-```python
-add_to_union(2)
-```
+    return "\n\n---\n\n".join(chunks)
 
-but:
+def build_templates_section(template_files: list[Path]) -> str:
+    """Generate the Templates section of the README."""
 
-```python
-union[-1] == 2
-```
+    if not template_files:
+        return ""
 
-Therefore nothing is added.
+    lines = [
+        "### 📄 Templates",
+        "<details>",
+        "  <summary>Expand</summary>",
+        "",
+    ]
 
-Advance both.
+    for file in template_files:
+        lines.append(f"  - [{file.stem}](Templates/{file.name})")
 
-```text
-i = 3
-j = 2
-```
+    lines.extend([
+        "",
+        "</details>",
+        "",
+        "---",
+        "",
+    ])
 
-### Step 4
+    return "\n".join(lines)
 
-```text
-4 > 3
-```
+def build_readme_section(
+    title: str,
+    emoji: str,
+    folder: str,
+    values: list[str],
+    slug_map: dict[str, str],
+    counts: dict[str, int],
+) -> str:
+    lines = [
+        f"### {emoji} By {title}",
+        "<details>",
+        "  <summary>Expand</summary>",
+        "",
+    ]
+    if not values:
+        return ""
 
-Add `3`.
+    for value in values:
+        slug = slug_map[value]
+        encoded_folder = folder.replace(" ", "%20")
+        count = counts[value]
 
-```text
-union = [1, 2, 3]
-j = 3
-```
+        lines.append(
+            f"  - [{value} ({count})]({encoded_folder}/{slug}.md)"
+        )
 
-### Step 5
+    lines.extend([
+        "</details>",
+        "",
+        "---",
+        "",
+    ])
+    return "\n".join(lines)
 
-```text
-4 < 6
-```
+def generate_readme(
+    problem_count: int,
+    topic_values: list[str],
+    platform_values: list[str],
+    company_values: list[str],
+    difficulty_values: list[str],
+    other_tag_values: list[str],
+    rating_values: list[str],
+    topic_slugs: dict[str, str],
+    platform_slugs: dict[str, str],
+    company_slugs: dict[str, str],
+    difficulty_slugs: dict[str, str],
+    other_tag_slugs: dict[str, str],
+    rating_slugs: dict[str, str],
+    by_topic,
+    by_platform,
+    by_company,
+    by_other_tag,
+    by_difficulty,
+    by_rating,
+    template_files,
+    readme_sections_appendix: str = ""
+) -> None:
 
-Add `4`.
+    stats = textwrap.dedent(f"""\
+    ## 📊 Repository Statistics
 
-```text
-union = [1, 2, 3, 4]
-i = 4
-```
+    | Metric | Count |
+    |--------|------:|
+    | Problems | {problem_count} |
+    | Topics | {len(topic_values)} |
+    | Platforms | {len(platform_values)} |
+    | Companies | {len(company_values)} |
+    | Difficulty Levels | {len(difficulty_values)} |
+    | Miscellaneous Tags | {len(other_tag_values)} |
+    | Templates | {len(template_files)} |
 
-### Step 6
+    ---
+    """)
+    sections = []
 
-```text
-6 == 6
-```
+    section = build_readme_section(
+        "Topics", "🧠", "Topics", topic_values, topic_slugs,
+        counts={k: len(v) for k, v in by_topic.items()}
+    )
 
-Add `6` once.
+    if section:
+        sections.append(section)
 
-Final result:
 
-```text
-[1, 2, 3, 4, 6]
-```
+    section = build_readme_section(
+        "Platforms", "📚", "Platforms", platform_values, platform_slugs,
+        counts={k: len(v) for k, v in by_platform.items()}
+    )
 
----
+    if section:
+        sections.append(section)
+    section = build_readme_section(
+        "Companies", "🏢", "Companies", company_values, company_slugs,
+        counts={k: len(v) for k, v in by_company.items()}
+    )
 
-## Complexity
+    if section:
+        sections.append(section)
+    section = build_readme_section(
+        "Difficulty", "🧪", "Difficulty", difficulty_values, difficulty_slugs,
+        counts={k: len(v) for k, v in by_difficulty.items()}
+    )
 
-Let:
-$$
-n1=∣arr1∣,n2=∣arr2∣
-$$
+    if section:
+        sections.append(section)
+    section = build_readme_section(
+        "Rating", "⭐", "Rating", rating_values, rating_slugs,
+        counts={k: len(v) for k, v in by_rating.items()}
+    )
 
-### Time
+    if section:
+        sections.append(section)
+    section = build_readme_section(
+        "Miscellaneous Tags", "🏷️", "Miscellaneous Tags", other_tag_values, other_tag_slugs,
+        counts={k: len(v) for k, v in by_other_tag.items()}
+    )
 
-O(n1+n2)O(n_1 + n_2)
+    if section:
+        sections.append(section)
 
-Each pointer moves only forward, so each element is processed at most once.
+    template_section = build_templates_section(template_files)
 
-### Auxiliary Space
+    if template_section:
+        sections.append(template_section)
+  
 
-O(1)O(1)
-
-for the algorithm's working variables and pointers.
-
-However, the returned union itself can contain up to:
-
-O(n1+n2)O(n_1+n_2)
-
-elements.
-
-So:
-
-- **Auxiliary space excluding output:** $O(1)$
+    # Dynamically inject the problem count
+    dynamic_header = README_HEADER_TEMPLATE.format(count=problem_count)
     
-- **Output space:** $O(n_1+n_2)$
-    
-- **Total space including output:** $O(n_1+n_2)$
-    
-
----
-
-## Important Variations
-
-### 1. Union of Unsorted Arrays
-
-If the arrays are not sorted, the two-pointer approach is unavailable.
-
-A common solution for a unique union is:
-
-```python
-union = list(set(arr1) | set(arr2))
-```
-
-This is concise but:
-
-- does not preserve sorted order
-    
-- requires hash-table space
-    
-- does not demonstrate exploitation of sorted input
-    
-
-If sorted output is required, the result can be sorted afterward, giving additional sorting cost.
-
----
-
-### 2. Union of More Than Two Sorted Arrays
-
-For multiple sorted arrays, the same idea generalizes to a **k-way merge**.
-
-A min-heap is often useful:
-
-```text
-k sorted arrays
-      ↓
-  Min Heap
-      ↓
-smallest current element
-```
-
-This connects the problem to the broader **K-way Merge** pattern.
-
----
-
-### 3. In-Place / Output Restrictions
-
-If an interviewer asks you to modify one array or minimize additional storage, the problem changes significantly depending on whether:
-
-- the arrays may be overwritten,
-    
-- the output must be stored somewhere,
-    
-- or the result can be streamed/processed without materializing it.
-    
-
-The ordinary union problem generally assumes returning the result.
-
----
-
-## Common Mistakes / Quirks
-
-### Mistake 1 — Forgetting duplicates
-
-This:
-
-```python
-if arr1[i] < arr2[j]:
-    union.append(arr1[i])
-```
-
-is not enough.
-
-For:
-
-```text
-arr1 = [1, 2, 2]
-arr2 = [2, 3]
-```
-
-you could incorrectly produce:
-
-```text
-[1, 2, 2, 3]
-```
-
-rather than:
-
-```text
-[1, 2, 3]
-```
-
----
-
-### Mistake 2 — Assuming equality means two insertions
-
-When:
-
-```python
-arr1[i] == arr2[j]
-```
-
-the value should be added only once:
-
-```python
-union.append(arr1[i])
-i += 1
-j += 1
-```
-
----
-
-### Mistake 3 — Handling duplicates separately when you don't need to
-
-Your textbook approach works, but this logic:
-
-```python
-if i > 0 and arr1[i] == arr1[i - 1]:
-    i += 1
-    continue
-```
-
-and its corresponding `arr2` logic make the main loop harder to reason about.
-
-Your `add_to_union()` approach is cleaner because duplicate elimination becomes independent of **which array the value came from**.
-
----
-
-### Mistake 4 — Forgetting the remainder
-
-After:
-
-```python
-while i < n1 and j < n2:
-```
-
-one array may still contain elements.
-
-These must still be processed.
-
----
-
-## Comparing the Two Implementations
-
-### Textbook Version
-
-The textbook approach explicitly skips duplicates **before** comparison.
-
-**Advantages:**
-
-- Makes duplicate skipping explicit.
-    
-- Does not perform a duplicate check when adding a value.
-    
-
-**Disadvantages:**
-
-- More branching.
-    
-- Duplicate logic is duplicated for both arrays.
-    
-- More difficult to read.
-    
-- `continue` makes the main control flow slightly less direct.
-    
-
-### Your Version
-
-Your approach keeps the invariant:
-
-> `union` is always sorted and contains no duplicates.
-
-Then:
-
-```python
-if not union or union[-1] != value:
-    union.append(value)
-```
-
-handles every duplicate case.
-
-**I prefer your version for an interview** because the invariant is simpler and the implementation is easier to explain.
-
-The helper itself is not algorithmically important; you could also inline the check. The key idea is the **"compare with the last output element"** technique.
-
----
-
-## Pythonic Way
-
-For arbitrary arrays, Python's set operators are the natural shortcut:
-
-```python
-union = list(set(arr1) | set(arr2))
-```
-
-For already-sorted arrays, however, this hides the most important property of the problem.
-
-For interview preparation, prefer the **two-pointer merge solution**.
-
----
-
-## Key Takeaways / Pattern Recognition
-
-This problem and **Intersection of Two Sorted Arrays** are almost the same two-pointer skeleton.
-
-### Intersection
-
-Only process:
-
-```text
-a[i] == b[j]
-```
-
-### Union
-
-Process the **smaller current element**, and process equality only once:
-
-```text
-a[i] < b[j]  → take a[i]
-a[i] > b[j]  → take b[j]
-a[i] == b[j] → take once, move both
-```
-
-The reusable pattern is:
-
-> **Two sorted sequences → think Merge Sort's merge step.**
-
-And for unique output:
-
-> **When processing values in sorted order, comparing against the last output element is enough to remove duplicates.**
-
-This is a useful general pattern beyond union: whenever an algorithm generates candidates in sorted order, ask whether **"compare with the last emitted value"** can simplify duplicate handling.
+    readme_content = (
+        dynamic_header
+        + stats
+        + "\n".join(sections)
+        + README_FOOTER
+    )
+
+    if readme_sections_appendix:
+        readme_content = readme_content.rstrip() + "\n\n" + readme_sections_appendix + "\n"
+
+    README_FILE.write_text(readme_content, encoding="utf-8")
+
+def main() -> None:
+    print("Starting index generation...", flush=True)
+
+    if not PROBLEMS_DIR.exists():
+        fail([f"Problems/ folder does not exist at: {PROBLEMS_DIR}"])
+
+    notes: list[dict[str, Any]] = []
+    validation_errors: list[str] = []
+
+    for path in sorted(PROBLEMS_DIR.rglob("*.md")):
+        try:
+            note = validate_note(path)
+            notes.append(note)
+        except Exception as exc:
+            validation_errors.append(f"{path.as_posix()}: {exc}")
+
+    if validation_errors:
+        fail(validation_errors)
+
+    print("Validation passed.", flush=True)
+    print("Creating generated directories...", flush=True)
+
+    clean_generated_dirs()
+
+    topic_values = sorted({t for note in notes for t in note["topics"]}, key=str.lower)
+    platform_values = sorted({p for note in notes for p in note["platforms"]}, key=str.lower)
+    company_values = sorted({c for note in notes for c in note["companies"]}, key=str.lower)
+    other_tag_values = sorted({t for note in notes for t in note["other_tags"]}, key=str.lower)
+    difficulty_values = sorted({note["difficulty"] for note in notes}, key=sort_difficulty)
+    rating_values = sorted({rating_label(note["rating"]) for note in notes}, key=sort_rating)
+
+    topic_slugs = ensure_no_slug_collisions("Topic", topic_values)
+    platform_slugs = ensure_no_slug_collisions("Platform", platform_values)
+    company_slugs = ensure_no_slug_collisions("Company", company_values)
+    other_tag_slugs = ensure_no_slug_collisions("Miscellaneous Tag", other_tag_values)
+    difficulty_slugs = ensure_no_slug_collisions("Difficulty", difficulty_values)
+    rating_slugs = ensure_no_slug_collisions("Rating", rating_values)
+
+    by_topic: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_platform: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_company: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_other_tag: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_difficulty: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_rating: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    for note in notes:
+        for topic in note["topics"]:
+            by_topic[topic].append(note)
+        for platform in note["platforms"]:
+            by_platform[platform].append(note)
+        for company in note["companies"]:
+            by_company[company].append(note)
+        for tag in note["other_tags"]:
+            by_other_tag[tag].append(note)
+        by_difficulty[note["difficulty"]].append(note)
+        by_rating[rating_label(note["rating"])].append(note)
+
+    print("Generating index files...", flush=True)
+
+    topics_dir = GENERATED_DIRS["Topics"]
+    for topic, items in by_topic.items():
+        index_file = topics_dir / f"{topic_slugs[topic]}.md"
+        render_grouped_by_difficulty(index_file, topic, items, combo_topic=topic)
+
+    platforms_dir = GENERATED_DIRS["Platforms"]
+    for platform, items in by_platform.items():
+        index_file = platforms_dir / f"{platform_slugs[platform]}.md"
+        render_grouped_by_difficulty(index_file, platform, items)
+
+    companies_dir = GENERATED_DIRS["Companies"]
+    for company, items in by_company.items():
+        index_file = companies_dir / f"{company_slugs[company]}.md"
+        render_grouped_by_difficulty(index_file, company, items)
+
+    misc_dir = GENERATED_DIRS["Miscellaneous Tags"]
+    for tag, items in by_other_tag.items():
+        index_file = misc_dir / f"{other_tag_slugs[tag]}.md"
+        render_grouped_by_difficulty(index_file, tag, items)
+
+    difficulty_dir = GENERATED_DIRS["Difficulty"]
+    for difficulty, items in by_difficulty.items():
+        index_file = difficulty_dir / f"{difficulty_slugs[difficulty]}.md"
+        render_flat_index(index_file, difficulty, items)
+
+    rating_dir = GENERATED_DIRS["Rating"]
+    for rating, items in by_rating.items():
+        index_file = rating_dir / f"{rating_slugs[rating]}.md"
+        render_grouped_by_difficulty(index_file, rating, items)
+
+    print("Appending ReadMe Sections...", flush=True)
+    readme_sections_appendix = build_readme_sections_appendix(README_SECTIONS_DIR)
+
+    # Call README generation with the calculated number of problem files
+    generate_readme(
+        problem_count=len(notes),
+        topic_values=topic_values,
+        platform_values=platform_values,
+        company_values=company_values,
+        difficulty_values=difficulty_values,
+        other_tag_values=other_tag_values,
+        rating_values=rating_values,
+        topic_slugs=topic_slugs,
+        platform_slugs=platform_slugs,
+        company_slugs=company_slugs,
+        difficulty_slugs=difficulty_slugs,
+        other_tag_slugs=other_tag_slugs,
+        rating_slugs=rating_slugs,
+        by_topic=by_topic,
+        by_platform=by_platform,
+        by_company=by_company,
+        by_other_tag=by_other_tag,
+        by_difficulty=by_difficulty,
+        by_rating=by_rating,
+        template_files=template_files,
+        readme_sections_appendix=readme_sections_appendix
+    )
+
+    print("Indexes and README generated successfully.", flush=True)
+
+if __name__ == "__main__":
+    main()
