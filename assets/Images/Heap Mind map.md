@@ -71,7 +71,7 @@ Sorting ^H7Mmr2jq
  ^3CucRB44
 
 ## Element Links
-PDcCAvWu: [[../../Templates/Heap Lazy Deletion (Decrease Key)]]
+PDcCAvWu: [[../../Templates/Heap-Lazy-Deletion-(Decrease-Key)]]
 
 %%
 ## Drawing

@@ -1,7 +1,7 @@
 # Heaps
 
 **See Also** :-
-+ [Heap Lazy Deletion (Decrease Key)](../Templates/Heap%20Lazy%20Deletion%20(Decrease%20Key).md)
++ [Heap-Lazy-Deletion-(Decrease-Key)](../Templates/Heap-Lazy-Deletion-(Decrease-Key).md)
 
 
 ![Heap Mind map|700](../assets/Images/Heap%20Mind%20map.svg)

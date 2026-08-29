@@ -44,7 +44,7 @@ DIFFICULTY_ORDER = {
 REQUIRED_KEYS = {"Title", "Topics", "Platform", "Companies", "Difficulty"}
 ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating"}
 
-HOME_LINK_TEXT = "⇐🏠"
+HOME_LINK_TEXT = "<h1 align='right'><a href='../README.md'>⇐🏠</a></h1>"
 
 STAR = "⭐"
 

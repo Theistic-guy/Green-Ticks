@@ -4,7 +4,7 @@
 
 ##### Refs
 <u><b>Leetcode - 75 : Sort Colors</b></u>
-[2-Way Partitioning](../Templates/2-Way%20Partitioning.md)
+[2-Way-Partitioning](../Templates/2-Way-Partitioning.md)
 
 ---
 **Core idea:** Partition an array into three zones relative to a pivot value — `< pivot`, `== pivot`, `> pivot` — in one linear pass, O(n) time, O(1) space. Invented by Dijkstra for the problem of sorting an array of three colors (hence "Dutch flag").
