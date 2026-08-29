@@ -223,7 +223,7 @@ def validate_note(path: Path) -> dict[str, Any]:
     link = as_single(meta.get("Link")) if meta.get("Link") not in (None, "") else ""
     other_tags = as_list(meta.get("Other Tags"))
 
-    rating_raw = meta.get("Rating")
+    rating_field = meta.get("Rating")
     rating: int | None = None
 
     errors: list[str] = []
@@ -241,13 +241,14 @@ def validate_note(path: Path) -> dict[str, Any]:
     if difficulty and difficulty not in DIFFICULTY_ORDER:
         errors.append(f"Difficulty must be one of: {', '.join(DIFFICULTY_ORDER.keys())}")
 
-    if rating_raw not in (None, ""):
+    if rating_field not in (None, ""):
         try:
-            rating = parse_rating(rating_raw)
+            rating_raw = as_single(rating_field)
+            rating = parse_rating(rating_raw) if rating_raw else None
         except (TypeError, ValueError):
             errors.append("Rating must be an integer from 1 to 5, or 1-5 ⭐ characters")
         else:
-            if not 1 <= rating <= 5:
+            if rating is not None and not 1 <= rating <= 5:
                 errors.append("Rating must be between 1 and 5")
 
     if errors:
