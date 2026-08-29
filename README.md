@@ -185,9 +185,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [2-Way Partitioning](Templates/2-Way Partitioning.md)
+  - [2-Way-Partitioning](Templates/2-Way-Partitioning.md)
   - [Cyclic-sort-and-placement](Templates/Cyclic-sort-and-placement.md)
-  - [Heap Lazy Deletion (Decrease Key)](Templates/Heap Lazy Deletion (Decrease Key).md)
+  - [Heap-Lazy-Deletion-(Decrease-Key)](Templates/Heap-Lazy-Deletion-(Decrease-Key).md)
   - [Merging-two-sorted-arrays](Templates/Merging-two-sorted-arrays.md)
 
 </details>
@@ -205,11 +205,11 @@
 + Binary Search on Answer Pattern - [Binary Search on Answer ( Predicate Search) - 5⭐](/Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
 + Arrays as functional graphs (Floyd's cycle + Others) - [Arrays as Functional Graphs](/Notes/Arrays%20as%20Functional%20Graphs.md)
 + Sorting Patterns - 
-	+ Divide & Conquer merge strategy - [Merge Sort (Divide & Conquer) ](../../Notes/Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
-	+ Quickselect ($O(n)$) position finding - [QuickSelect](../../Notes/QuickSelect.md)
-		+ 3 way partitioning - [3-Way Partitioning (Dutch National Flag)](../../Notes/3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
-	+ All Heaps concept - [Heaps Concept (Sorting , Operations etc.)](../../Notes/Heaps%20Concept%20(Sorting%20,%20Operations%20etc.).md)
-	+ Cycle Sort - [Cycle Sort (with duplicates)](../../Notes/Cycle%20Sort%20(with%20duplicates).md)
-		+ [Disjoint Cycle Theorem](../../Notes/Extras/Disjoint%20Cycle%20Theorem.md)
-	+ Radix Sort - [Radix Sort](../../Notes/Radix%20Sort.md)
-	+ Bucket Sort - [Bucket Sort](../../Notes/Bucket%20Sort.md)
+	+ Divide & Conquer merge strategy - [Merge Sort (Divide & Conquer) ](/Notes/Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
+	+ Quickselect ($O(n)$) position finding - [QuickSelect](/Notes/QuickSelect.md)
+		+ 3 way partitioning - [3-Way Partitioning (Dutch National Flag)](/Notes/3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
+	+ All Heaps concept - [Heaps Concept (Sorting , Operations etc.)](/Notes/Heaps%20Concept%20(Sorting%20,%20Operations%20etc.).md)
+	+ Cycle Sort - [Cycle Sort (with duplicates)](/Notes/Cycle%20Sort%20(with%20duplicates).md)
+		+ [Disjoint Cycle Theorem](/Notes/Extras/Disjoint%20Cycle%20Theorem.md)
+	+ Radix Sort - [Radix Sort](/Notes/Radix%20Sort.md)
+	+ Bucket Sort - [Bucket Sort](/Notes/Bucket%20Sort.md)
