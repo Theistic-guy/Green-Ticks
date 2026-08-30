@@ -9,3 +9,4 @@
 + prefix sum LC 862 (see that )
 + prefix sum (subarruy sum divisbly by k ) - sepatate note
 + tag every LC note with  #leetcode 
++ (../..Readme) path is diff for nested folders this needs to be fixed appropriately.

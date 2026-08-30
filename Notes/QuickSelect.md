@@ -6,6 +6,7 @@
  + [heap](../Topics/heap.md)
  + [3-Way Partitioning (Dutch National Flag)](3-Way%20Partitioning%20(Dutch%20National%20Flag).md)
  + [Merge Sort (Divide & Conquer) Strategies](Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
+ (See problems below)
  
 # 🧠 Mind map
 ![QuickSelect Map|700](../assets/Images/QuickSelect%20Map.svg)
@@ -245,37 +246,37 @@ The two most-confused siblings in this family — both find "the kth/optimal val
 
 ### Must-Know Core (do first, in order)
 
-|#|Problem|Difficulty|Why|
-|---|---|---|---|
-|215|Kth Largest Element in an Array|Medium|Canonical quickselect problem — know both heap and quickselect solutions cold|
-|347|Top K Frequent Elements|Medium|Quickselect on frequency-as-key — very high frequency at Amazon/Meta/Google|
-|973|K Closest Points to Origin|Medium|Quickselect on distance-as-key — common at Amazon (geo framing), Meta|
-|703|Kth Largest Element in a Stream|Easy|Tests knowing when quickselect **fails** (streaming) → heap|
-|295|Find Median from Data Stream|Hard|Two-heap technique; frequent follow-up to 703|
+| #   | Problem                         | Difficulty | Why                                                                           | 🔗                                                                                  |
+| --- | ------------------------------- | ---------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 215 | Kth Largest Element in an Array | Medium     | Canonical quickselect problem — know both heap and quickselect solutions cold | [kth-smallest-element-in-an-array](../Problems/kth-smallest-element-in-an-array.md) |
+| 347 | Top K Frequent Elements         | Medium     | Quickselect on frequency-as-key — very high frequency at Amazon/Meta/Google   | [top-k-frequent-elements](../Problems/top-k-frequent-elements.md)                   |
+| 973 | K Closest Points to Origin      | Medium     | Quickselect on distance-as-key — common at Amazon (geo framing), Meta         |                                                                                     |
+| 703 | Kth Largest Element in a Stream | Easy       | Tests knowing when quickselect **fails** (streaming) → heap                   |                                                                                     |
+| 295 | Find Median from Data Stream    | Hard       | Two-heap technique; frequent follow-up to 703                                 |                                                                                     |
 
 ### Median-Specific (selection as subroutine)
 
-|#|Problem|Difficulty|Why|
-|---|---|---|---|
-|462|Min Moves to Equal Array Elements II|Medium|Median via quickselect + greedy math|
-|4|Median of Two Sorted Arrays|Hard|Binary search on partition point — classic hard bar-raiser (Google/Meta)|
-|480|Sliding Window Median|Hard|Two-heap + lazy deletion, finance/trading-adjacent companies|
+| #   | Problem                              | Difficulty | Why                                                                      | l🔗                                                                       |
+| --- | ------------------------------------ | ---------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| 462 | Min Moves to Equal Array Elements II | Medium     | Median via quickselect + greedy math                                     |                                                                           |
+| 4   | Median of Two Sorted Arrays          | Hard       | Binary search on partition point — classic hard bar-raiser (Google/Meta) | [median-of-two-sorted-arrays](../Problems/median-of-two-sorted-arrays.md) |
+| 480 | Sliding Window Median                | Hard       | Two-heap + lazy deletion, finance/trading-adjacent companies             |                                                                           |
 
 ### Distance / Frequency / Custom-Key Variants
 
-|#|Problem|Difficulty|Why|
-|---|---|---|---|
-|692|Top K Frequent Words|Medium|Like 347 + lexicographic tie-breaking — tests comparator design|
-|658|Find K Closest Elements|Medium|Binary search + two pointers is intended — good "don't force quickselect" case|
-|1985|Find the Kth Largest Integer in the Array|Medium|String-number comparator edge cases, same skeleton as 215|
-|719|Find K-th Smallest Pair Distance|Hard|Binary search on answer + two pointers — common at Google|
-|378|Kth Smallest Element in a Sorted Matrix|Medium|Heap or binary-search-on-value; see worked contrast above|
+| #    | Problem                                   | Difficulty | Why                                                                            | 🔗                                                                                                |
+| ---- | ----------------------------------------- | ---------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| 692  | Top K Frequent Words                      | Medium     | Like 347 + lexicographic tie-breaking — tests comparator design                | [top-k-frequent-elements](../Problems/top-k-frequent-elements.md)                                 |
+| 658  | Find K Closest Elements                   | Medium     | Binary search + two pointers is intended — good "don't force quickselect" case | [top-k-closest-elements](../Problems/top-k-closest-elements.md)                                   |
+| 1985 | Find the Kth Largest Integer in the Array | Medium     | String-number comparator edge cases, same skeleton as 215                      | [kth-smallest-element-in-an-array](../Problems/kth-smallest-element-in-an-array.md)               |
+| 719  | Find K-th Smallest Pair Distance          | Hard       | Binary search on answer + two pointers — common at Google                      | [kth-smallest-pair-distance](../Problems/kth-smallest-pair-distance.md)                           |
+| 378  | Kth Smallest Element in a Sorted Matrix   | Medium     | Heap or binary-search-on-value; see worked contrast above                      | [kth-smallest-element-in-a-sorted-matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md) |
 
 ### Partition-Mechanics Practice
 
-|#|Problem|Difficulty|Why|
-|---|---|---|---|
-|75|Sort Colors (Dutch National Flag)|Medium|The 3-way partition primitive underlying quickselect's partition step — very frequent standalone ask (Microsoft/Amazon)|
+| #   | Problem                           | Difficulty | Why                                                                                                                     | 🔗                                                                                               |
+| --- | --------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 75  | Sort Colors (Dutch National Flag) | Medium     | The 3-way partition primitive underlying quickselect's partition step — very frequent standalone ask (Microsoft/Amazon) | [3-Way Partitioning (Dutch National Flag)](3-Way%20Partitioning%20(Dutch%20National%20Flag).md)] |
 
 ### Deeper / Compound (top-tier bars)
 
