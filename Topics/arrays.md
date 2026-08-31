@@ -20,6 +20,7 @@
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md)
@@ -82,6 +83,9 @@
 
 ### Arrays + Hashing + Sorting
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
+
+### Arrays + Heap + Sorting
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
 ### Arrays + Linked Lists + Two Pointers
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)

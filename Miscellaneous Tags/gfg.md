@@ -27,19 +27,23 @@
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
+- [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md)
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
+- [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
+- [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
+- [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
 ## Not Specified

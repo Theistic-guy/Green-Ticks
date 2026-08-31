@@ -17,6 +17,7 @@
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
+- [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
@@ -24,5 +25,6 @@
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
+- [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)

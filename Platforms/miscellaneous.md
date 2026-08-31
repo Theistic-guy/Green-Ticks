@@ -34,12 +34,14 @@
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
+- [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md)
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
+- [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
@@ -50,8 +52,10 @@
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
+- [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
+- [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 - [Two odd occurring](../Problems/two-odd-occurring.md)

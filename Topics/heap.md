@@ -20,11 +20,11 @@
 ### Heap + Linked Lists
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 
-### Heap + Sorting
-- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
-
 ### Heap + Two Pointers
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
+
+### Heap + Arrays + Sorting
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
 ### Heap + Matrix + Searching
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
