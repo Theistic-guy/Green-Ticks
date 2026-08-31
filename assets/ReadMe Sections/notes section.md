@@ -17,4 +17,5 @@
 		+ [Disjoint Cycle Theorem](/Notes/Extras/Disjoint%20Cycle%20Theorem.md)
 	+ Radix Sort - [Radix Sort](/Notes/Radix%20Sort.md)
 	+ Bucket Sort - [Bucket Sort](/Notes/Bucket%20Sort.md)
+	+ Intervals pattern ⭐ - [Intervals & Ranges Pattern (Sorting)](/Notes/Intervals%20&%20Ranges%20Pattern%20(Sorting).md)
 	

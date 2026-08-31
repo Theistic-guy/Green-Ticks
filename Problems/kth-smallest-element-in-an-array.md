@@ -5,11 +5,14 @@ Companies:
 Topics:
   - Sorting
   - Heap
+  - Arrays
 Platform:
   - Miscellaneous
 Difficulty: Medium
 Other Tags:
   - Quick select
+  - kth
+  - Smallest
 Link: ""
 Rating:
 ---

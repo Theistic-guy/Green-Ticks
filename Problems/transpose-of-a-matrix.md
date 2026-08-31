@@ -6,8 +6,9 @@ Topics:
   - Matrix
 Platform:
   - Miscellaneous
-Difficulty: medium
+Difficulty: Medium
 Other Tags:
+  - GFG
 Link: ""
 Rating:
 ---
@@ -26,6 +27,7 @@ Rating:
 
 ## 💻 Code
 
+General case : matrix can be non-square
 ```Python
 def transpose(matrix):
     if not matrix:
@@ -48,6 +50,29 @@ def transpose(matrix):
 **Time complexity** - O(mn)
 
 **Aux. Space complexity** -  O(mn)
+
+When matrix is square we can traverse the triangular part
+
+```Python
+def transpose_square(matrix):
+    n = len(matrix)
+    # Loop through the upper triangular part only
+    for i in range(n):
+        for j in range(i + 1, n):
+            # Swap elements across the diagonal
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    return matrix
+
+# Example usage:
+square_mat = [,
+ ,
+    [7, 8, 9]
+]
+print("Square Transpose:")
+print(transpose_square(square_mat))
+# Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
+```
 
 ---
 

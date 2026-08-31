@@ -8,6 +8,7 @@ Platform:
   - Miscellaneous
 Difficulty: Hard
 Other Tags:
+  - GFG
 Link: ""
 Rating:
   - ⭐⭐⭐⭐⭐

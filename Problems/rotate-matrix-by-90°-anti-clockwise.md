@@ -1,13 +1,14 @@
 ---
-Title: Palindrome number
+Title: Rotate Matrix by 90° Anti-Clockwise
 Companies:
   - Not Specified
 Topics:
-  - Maths
+  - Matrix
 Platform:
   - Miscellaneous
 Difficulty: Medium
 Other Tags:
+  - GFG
 Link: ""
 Rating:
 ---
@@ -20,11 +21,15 @@ Rating:
 **Idea:** 
 
 **Variations** : 
++ part of [Matrices Everywhere !!!](../Notes/Matrices%20Everywhere%20!!!.md)
++ [transpose-of-a-matrix](transpose-of-a-matrix.md)
+
 
 ---
 
 ## 💻 Code
 
+This is transposing a square matrix (but a general case do exist)
 ```Python
 def rotate_anticlockwise(matrix):
     n = len(matrix)
@@ -401,19 +406,21 @@ O(n2)O(n^2)
 
 ### Clockwise Rotation
 
-(i,j)→(j,n−1−i)(i,j)\rightarrow(j,n-1-i)
+$$
+(i,j)\rightarrow(j,n-1-i)
+$$
 
 Equivalent operations:
 
-Transpose+Reverse Rows\text{Transpose} + \text{Reverse Rows}
+$\text{Transpose} + \text{Reverse Rows}$
 
 ### Anti-Clockwise Rotation
 
-(i,j)→(n−1−j,i)(i,j)\rightarrow(n-1-j,i)
+$(i,j)\rightarrow(n-1-j,i)$
 
 Equivalent operations:
 
-Transpose+Reverse Columns\text{Transpose} + \text{Reverse Columns}
+$\text{Transpose} + \text{Reverse Columns}$
 
 ### Memory Shortcut
 
