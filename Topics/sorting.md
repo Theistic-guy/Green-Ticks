@@ -26,11 +26,11 @@
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
-### Sorting + Heap
-- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
-
 ### Sorting + Arrays + Hashing
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
+
+### Sorting + Arrays + Heap
+- [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
 ### Sorting + Backtracking + Maths
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)

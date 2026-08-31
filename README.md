@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-79-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-83-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,7 +13,7 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 79 |
+| Problems | 83 |
 | Topics | 19 |
 | Platforms | 2 |
 | Companies | 52 |
@@ -26,7 +26,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (33)](Topics/arrays.md)
+  - [Arrays (34)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
@@ -35,7 +35,7 @@
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
-  - [Matrix (2)](Topics/matrix.md)
+  - [Matrix (6)](Topics/matrix.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
   - [Prefix Sum (2)](Topics/prefix-sum.md)
@@ -54,7 +54,7 @@
   <summary>Expand</summary>
 
   - [Leetcode (31)](Platforms/leetcode.md)
-  - [Miscellaneous (48)](Platforms/miscellaneous.md)
+  - [Miscellaneous (52)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -90,7 +90,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (55)](Companies/not-specified.md)
+  - [Not Specified (59)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -124,8 +124,8 @@
   <summary>Expand</summary>
 
   - [Easy (19)](Difficulty/easy.md)
-  - [Medium (29)](Difficulty/medium.md)
-  - [Hard (24)](Difficulty/hard.md)
+  - [Medium (31)](Difficulty/medium.md)
+  - [Hard (26)](Difficulty/hard.md)
   - [Not Specified (7)](Difficulty/not-specified.md)
 </details>
 
@@ -135,9 +135,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [5 Stars (2)](Rating/5-stars.md)
+  - [5 Stars (4)](Rating/5-stars.md)
   - [4 Stars (2)](Rating/4-stars.md)
-  - [Not Rated (75)](Rating/not-rated.md)
+  - [Not Rated (77)](Rating/not-rated.md)
 </details>
 
 ---
@@ -155,13 +155,13 @@
   - [Duplicates (5)](Miscellaneous%20Tags/duplicates.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
-  - [GFG (35)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (39)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
   - [Kadane (2)](Miscellaneous%20Tags/kadane.md)
-  - [kth (11)](Miscellaneous%20Tags/kth.md)
+  - [kth (12)](Miscellaneous%20Tags/kth.md)
   - [Longest (1)](Miscellaneous%20Tags/longest.md)
   - [Maximum (3)](Miscellaneous%20Tags/maximum.md)
-  - [Median (1)](Miscellaneous%20Tags/median.md)
+  - [Median (2)](Miscellaneous%20Tags/median.md)
   - [Merge (4)](Miscellaneous%20Tags/merge.md)
   - [Minimum (2)](Miscellaneous%20Tags/minimum.md)
   - [P & C (1)](Miscellaneous%20Tags/p-c.md)
@@ -171,8 +171,8 @@
   - [Predicate Search - Maximize Minimum (2)](Miscellaneous%20Tags/predicate-search-maximize-minimum.md)
   - [Predicate Search - Minimize Maximum (4)](Miscellaneous%20Tags/predicate-search-minimize-maximum.md)
   - [Quick select (3)](Miscellaneous%20Tags/quick-select.md)
-  - [Smallest (4)](Miscellaneous%20Tags/smallest.md)
-  - [Sorted (13)](Miscellaneous%20Tags/sorted.md)
+  - [Smallest (5)](Miscellaneous%20Tags/smallest.md)
+  - [Sorted (14)](Miscellaneous%20Tags/sorted.md)
   - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
   - [Subset (5)](Miscellaneous%20Tags/subset.md)
   - [Union (1)](Miscellaneous%20Tags/union.md)
@@ -213,3 +213,4 @@
 		+ [Disjoint Cycle Theorem](/Notes/Extras/Disjoint%20Cycle%20Theorem.md)
 	+ Radix Sort - [Radix Sort](/Notes/Radix%20Sort.md)
 	+ Bucket Sort - [Bucket Sort](/Notes/Bucket%20Sort.md)
+	+ Intervals pattern ⭐ - [Intervals & Ranges Pattern (Sorting)](/Notes/Intervals%20&%20Ranges%20Pattern%20(Sorting).md)
