@@ -1,0 +1,2 @@
+# This file tells GitHub Pages not to run Jekyll processing.
+# It ensures files starting with an underscore (like _sidebar.md) are not ignored.
