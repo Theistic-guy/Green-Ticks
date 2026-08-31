@@ -8,7 +8,7 @@ See Also
 + [spiral-traversal-of-a-matrix](../Problems/spiral-traversal-of-a-matrix.md)
 + [transpose-of-a-matrix](../Problems/transpose-of-a-matrix.md)
 + [median-in-a-row-wise-sorted-matrix](../Problems/median-in-a-row-wise-sorted-matrix.md)
-+ [rotate-matrix-by-90°-anti-clockwise](../Problems/rotate-matrix-by-90°-anti-clockwise.md)
++ [rotate-matrix-by-90-degrees-anti-clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 + Checkout fast pythonic tricks below
 
 # Initialization Quirk
