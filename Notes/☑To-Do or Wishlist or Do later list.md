@@ -61,6 +61,5 @@
 		- Employee Free Time (759) — flatten + merge sweep + gap-finding
 		
 		Category 1 and 4 both sort by start but diverge on what they track (merged range vs concurrent count) — that's the pair most people conflate. Category 3 is the one place the sort key flips to end, which is the fork worth drilling until it's automatic.
-
-		
++ Two heap approach
 		
