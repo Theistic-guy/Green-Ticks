@@ -516,6 +516,9 @@ So this problem reduces directly to
 
 Count submatrices whose sum equals `target`.
 
+[5. Maximum Sum Rectangle in a 2D Matrix ⭐⭐⭐⭐⭐](Maximum%20Subarray%20—%20Important%20Interview%20Variations.md#5.%20Maximum%20Sum%20Rectangle%20in%20a%202D%20Matrix%20⭐⭐⭐⭐⭐)
+
+
 ---
 
 ## Key Idea

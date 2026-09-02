@@ -5,6 +5,8 @@ Companies:
 Topics:
   - Arrays
   - Sliding Window
+  - Prefix Sum
+  - Hashing
 Platform:
   - Miscellaneous
 Difficulty: Medium
@@ -12,14 +14,19 @@ Other Tags:
   - GFG
   - Subarray
 Link: ""
+Rating:
+  - ⭐⭐⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # Subarray with given sum
 
-**Pattern:**  sliding window
+**Pattern:**  Prefix sum + hashing and also sliding window if numbers are positive
 
 **Idea:** 
+
+Variations : 
++ Subarray with zero sum
 
 ---
 
