@@ -9,6 +9,7 @@
 - [Majority Element](../Problems/majority-element.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 - [Minimum Consecutive Flips](../Problems/minimum-consecutive-flips.md)
+- [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
@@ -23,7 +24,7 @@
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
-- [Subarray with given sum](../Problems/subarray-with-given-sum.md)
+- [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
@@ -54,6 +55,7 @@
 
 ### Arrays + Hashing
 - [Contains Duplicate](../Problems/contains-duplicate.md)
+- [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Valid Anagram](../Problems/valid-anagram.md)
 
 ### Arrays + Prefix Sum
@@ -70,7 +72,6 @@
 
 ### Arrays + Sliding Window
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
-- [Subarray with given sum](../Problems/subarray-with-given-sum.md)
 
 ### Arrays + Sorting
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
@@ -103,6 +104,9 @@
 
 ### Arrays + Hashing + Heap + Sorting
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+
+### Arrays + Hashing + Prefix Sum + Sliding Window
+- [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Sorting + Strings
 - [Group Anagrams](../Problems/group-anagrams.md)

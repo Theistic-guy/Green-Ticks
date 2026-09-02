@@ -7,4 +7,4 @@
 
 ## Medium
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
-- [Subarray with given sum](../Problems/subarray-with-given-sum.md)
+- [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐

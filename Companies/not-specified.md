@@ -16,6 +16,7 @@
 - [Majority Element](../Problems/majority-element.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 - [Minimum Consecutive Flips](../Problems/minimum-consecutive-flips.md)
+- [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Prime Factors](../Problems/prime-factors.md)
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
@@ -40,7 +41,7 @@
 - [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
-- [Subarray with given sum](../Problems/subarray-with-given-sum.md)
+- [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
