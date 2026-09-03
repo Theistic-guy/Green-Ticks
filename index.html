@@ -9,6 +9,21 @@
     <!-- You can change 'vue.css' to 'buble.css', 'dark.css', or 'pure.css' for different themes -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
     <style>
+      /* Make the Home button / App name sticky at the top of the sidebar */
+      .app-name {
+        position: sticky !important;
+        top: 0;
+        background-color: #fff; /* Match vue.css sidebar background */
+        z-index: 100;
+        padding: 15px 0;
+        margin: 0 !important;
+        border-bottom: 1px solid #eee;
+      }
+      /* Ensure search box and navigation sit properly below the sticky header */
+      .sidebar-nav {
+        margin-top: 10px;
+      }
+      
       /* Collapsible sidebar sections */
       .sidebar-nav > ul > li > ul {
         display: none;
@@ -345,8 +360,42 @@
         });
       }
 
+      // Save scroll position exactly when a sidebar link is clicked
+      window.addEventListener('click', function(e) {
+        var sidebar = document.querySelector('.sidebar');
+        var sidebarNav = document.querySelector('.sidebar-nav');
+        
+        if (sidebar && sidebar.contains(e.target)) {
+          // Depending on the exact Docsify CSS, either the .sidebar or .sidebar-nav is scrolling
+          // We save both to be completely safe
+          sessionStorage.setItem('sidebarScrollTop', sidebar.scrollTop);
+          if (sidebarNav) {
+            sessionStorage.setItem('sidebarNavScrollTop', sidebarNav.scrollTop);
+          }
+        }
+      }, true);
+
+      function sidebarScrollPlugin(hook) {
+        hook.doneEach(function() {
+          // Restore scroll position after Docsify finishes rebuilding the sidebar
+          setTimeout(function() {
+            var sidebar = document.querySelector('.sidebar');
+            var sidebarNav = document.querySelector('.sidebar-nav');
+            
+            if (sidebar) {
+              var savedTop = sessionStorage.getItem('sidebarScrollTop');
+              if (savedTop !== null) sidebar.scrollTop = parseInt(savedTop, 10);
+            }
+            if (sidebarNav) {
+              var savedNavTop = sessionStorage.getItem('sidebarNavScrollTop');
+              if (savedNavTop !== null) sidebarNav.scrollTop = parseInt(savedNavTop, 10);
+            }
+          }, 150);
+        });
+      }
+
       if (!window.$docsify) window.$docsify = {};
-      window.$docsify.plugins = (window.$docsify.plugins || []).concat(sidebarCollapsePlugin);
+      window.$docsify.plugins = (window.$docsify.plugins || []).concat([sidebarCollapsePlugin, sidebarScrollPlugin]);
     </script>
 </body>
 

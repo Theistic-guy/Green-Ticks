@@ -5,6 +5,8 @@
 
 # 1. Count Subarrays with Given Sum (LeetCode 560)
 
+[count-subarrays-with-given-sum](../Problems/count-subarrays-with-given-sum.md)
+
 ## Problem
 
 Count the number of subarrays whose sum equals `k`.
@@ -66,6 +68,8 @@ def subarray_sum(nums, k):
 ---
 
 # 2. Longest Subarray with Given Sum
+
+[longest-subarray-with-given-sum](../Problems/longest-subarray-with-given-sum.md)
 
 ## Problem
 
