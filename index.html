@@ -13,6 +13,34 @@
 <body>
     <div id="app"></div>
     <script>
+        // 0. Patch querySelector to prevent Docsify from crashing on IDs that start with numbers
+        // Docsify internally uses document.querySelector('#' + id) for scrolling, which throws a DOMException
+        // if the ID starts with a number. This intercepts the crash and uses getElementById.
+        var origQuerySelector = document.querySelector;
+        document.querySelector = function(selectors) {
+            try {
+                return origQuerySelector.call(this, selectors);
+            } catch (err) {
+                if (typeof selectors === 'string' && selectors.startsWith('#')) {
+                    var el = document.getElementById(selectors.slice(1));
+                    if (el) return el;
+                }
+                throw err;
+            }
+        };
+        var origElementQuerySelector = Element.prototype.querySelector;
+        Element.prototype.querySelector = function(selectors) {
+            try {
+                return origElementQuerySelector.call(this, selectors);
+            } catch (err) {
+                if (typeof selectors === 'string' && selectors.startsWith('#')) {
+                    var el = document.getElementById(selectors.slice(1));
+                    if (el) return el;
+                }
+                throw err;
+            }
+        };
+
         // 1. Unified slugify function for both heading IDs and link anchors
         function customSlugify(text) {
             if (!text) return '';
@@ -46,8 +74,8 @@
             // 2. Query selector with CSS.escape if available
             try {
                 if (window.CSS && window.CSS.escape) {
-                    el = document.querySelector('#' + CSS.escape(cleanSlug)) ||
-                         document.querySelector('#' + CSS.escape(decoded));
+                    el = origQuerySelector.call(document, '#' + CSS.escape(cleanSlug)) ||
+                         origQuerySelector.call(document, '#' + CSS.escape(decoded));
                     if (el) return el;
                 }
             } catch (e) {}
@@ -72,21 +100,6 @@
             hook.init(function() {
                 if (window.Docsify) {
                     window.Docsify.slugify = customSlugify;
-
-                    // Safe-guard Docsify.dom.find against invalid CSS selectors (IDs starting with numbers)
-                    if (window.Docsify.dom && window.Docsify.dom.find) {
-                        var origFind = window.Docsify.dom.find;
-                        window.Docsify.dom.find = function (el, node) {
-                            try {
-                                return origFind(el, node);
-                            } catch (err) {
-                                if (typeof el === 'string' && el.startsWith('#')) {
-                                    return document.getElementById(el.slice(1)) || findHeading(el.slice(1));
-                                }
-                                return null;
-                            }
-                        };
-                    }
                 }
             });
 
