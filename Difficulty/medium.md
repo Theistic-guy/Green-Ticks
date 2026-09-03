@@ -5,6 +5,7 @@
 - [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Equal Partition](../Problems/equal-partition.md)
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)

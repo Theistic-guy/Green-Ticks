@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-84-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-86-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,7 +13,7 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 84 |
+| Problems | 86 |
 | Topics | 19 |
 | Platforms | 2 |
 | Companies | 52 |
@@ -26,22 +26,22 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (35)](Topics/arrays.md)
+  - [Arrays (37)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
   - [Greedy (6)](Topics/greedy.md)
-  - [Hashing (7)](Topics/hashing.md)
+  - [Hashing (9)](Topics/hashing.md)
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
   - [Matrix (6)](Topics/matrix.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
-  - [Prefix Sum (3)](Topics/prefix-sum.md)
+  - [Prefix Sum (5)](Topics/prefix-sum.md)
   - [Recursion (3)](Topics/recursion.md)
   - [Searching (25)](Topics/searching.md)
-  - [Sliding Window (4)](Topics/sliding-window.md)
+  - [Sliding Window (5)](Topics/sliding-window.md)
   - [Sorting (9)](Topics/sorting.md)
   - [Strings (1)](Topics/strings.md)
   - [Two Pointers (11)](Topics/two-pointers.md)
@@ -53,8 +53,8 @@
 <details>
   <summary>Expand</summary>
 
-  - [Leetcode (31)](Platforms/leetcode.md)
-  - [Miscellaneous (53)](Platforms/miscellaneous.md)
+  - [Leetcode (32)](Platforms/leetcode.md)
+  - [Miscellaneous (54)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -90,7 +90,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (60)](Companies/not-specified.md)
+  - [Not Specified (62)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -124,8 +124,8 @@
   <summary>Expand</summary>
 
   - [Easy (20)](Difficulty/easy.md)
-  - [Medium (31)](Difficulty/medium.md)
-  - [Hard (26)](Difficulty/hard.md)
+  - [Medium (32)](Difficulty/medium.md)
+  - [Hard (27)](Difficulty/hard.md)
   - [Not Specified (7)](Difficulty/not-specified.md)
 </details>
 
@@ -135,9 +135,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [5 Stars (5)](Rating/5-stars.md)
+  - [5 Stars (6)](Rating/5-stars.md)
   - [4 Stars (2)](Rating/4-stars.md)
-  - [Not Rated (77)](Rating/not-rated.md)
+  - [Not Rated (78)](Rating/not-rated.md)
 </details>
 
 ---
@@ -159,7 +159,7 @@
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
   - [Kadane (2)](Miscellaneous%20Tags/kadane.md)
   - [kth (12)](Miscellaneous%20Tags/kth.md)
-  - [Longest (1)](Miscellaneous%20Tags/longest.md)
+  - [Longest (2)](Miscellaneous%20Tags/longest.md)
   - [Maximum (3)](Miscellaneous%20Tags/maximum.md)
   - [Median (2)](Miscellaneous%20Tags/median.md)
   - [Merge (4)](Miscellaneous%20Tags/merge.md)
@@ -173,7 +173,7 @@
   - [Quick select (3)](Miscellaneous%20Tags/quick-select.md)
   - [Smallest (5)](Miscellaneous%20Tags/smallest.md)
   - [Sorted (14)](Miscellaneous%20Tags/sorted.md)
-  - [Subarray (3)](Miscellaneous%20Tags/subarray.md)
+  - [Subarray (5)](Miscellaneous%20Tags/subarray.md)
   - [Subset (5)](Miscellaneous%20Tags/subset.md)
   - [Union (1)](Miscellaneous%20Tags/union.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)

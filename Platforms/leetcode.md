@@ -8,6 +8,7 @@
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)

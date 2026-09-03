@@ -7,10 +7,12 @@
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 
 ## Medium
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Hard
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Contains Duplicate](../Problems/contains-duplicate.md)
@@ -24,6 +26,9 @@
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Valid Anagram](../Problems/valid-anagram.md)
 
+### Hashing + Arrays + Prefix Sum
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
+
 ### Hashing + Arrays + Sorting
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
@@ -31,6 +36,7 @@
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 
 ### Hashing + Arrays + Prefix Sum + Sliding Window
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Hashing + Arrays + Sorting + Strings

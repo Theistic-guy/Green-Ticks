@@ -27,6 +27,7 @@
 - [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Equal Partition](../Problems/equal-partition.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
@@ -57,6 +58,7 @@
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)

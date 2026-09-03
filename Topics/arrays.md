@@ -16,6 +16,7 @@
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
@@ -34,6 +35,7 @@
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
@@ -82,6 +84,9 @@
 - [3Sum](../Problems/3sum.md)
 - [Two Sum](../Problems/two-sum.md)
 
+### Arrays + Hashing + Prefix Sum
+- [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
+
 ### Arrays + Hashing + Sorting
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
@@ -106,6 +111,7 @@
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 
 ### Arrays + Hashing + Prefix Sum + Sliding Window
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Sorting + Strings

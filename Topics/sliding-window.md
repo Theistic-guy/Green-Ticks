@@ -9,6 +9,9 @@
 ## Medium
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
+## Hard
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
+
 ## Not Specified
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
 
@@ -21,4 +24,5 @@
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 
 ### Sliding Window + Arrays + Hashing + Prefix Sum
+- [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
