@@ -13,13 +13,135 @@
 <body>
     <div id="app"></div>
     <script>
+        // 1. Unified slugify function for both heading IDs and link anchors
+        function customSlugify(text) {
+            if (!text) return '';
+            try {
+                text = decodeURIComponent(text);
+            } catch (e) {}
+            return text
+                .toLowerCase()
+                .replace(/<(?:.|\n)*?>/gm, '') // Strips HTML tags (e.g. <span>)
+                .replace(/[^\w\s-]/g, '')     // Strips punctuation, periods, emojis (⭐), quotes, brackets
+                .trim()                        // Removes leading/trailing spaces
+                .replace(/\s+/g, '-');         // Replaces whitespace sequences with hyphens
+        }
+
+        // 2. Docsify plugin to parse Obsidian & Markdown heading links before rendering
+        function obsidianHeadingLinksPlugin(hook, vm) {
+            hook.beforeEach(function (content) {
+                if (!content) return content;
+
+                // A. Convert Obsidian wikilinks: [[Note#Heading|Display]], [[Note#Heading]], [[#Heading]], [[Note]]
+                content = content.replace(/\[\[([^\]#|]+)?(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]/g, function (match, file, heading, alias) {
+                    file = (file || '').trim();
+                    heading = (heading || '').trim();
+                    alias = (alias || '').trim();
+
+                    var slug = heading ? customSlugify(heading) : '';
+                    var displayText = alias || (file && heading ? (file + ' > ' + heading) : (heading || file));
+
+                    var target = '';
+                    if (file) {
+                        var filePath = file.endsWith('.md') ? file : file + '.md';
+                        target = slug ? (filePath + '?id=' + slug) : filePath;
+                    } else if (slug) {
+                        target = '?id=' + slug;
+                    }
+
+                    return '[' + displayText + '](' + target + ')';
+                });
+
+                // B. Process standard Markdown links with anchors: [Text](path.md#heading) or [Text](#heading)
+                content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, text, url) {
+                    url = url.trim();
+                    if (/^(?:https?:|\/\/|mailto:)/i.test(url)) {
+                        return match;
+                    }
+
+                    var hashIndex = url.indexOf('#');
+                    if (hashIndex !== -1) {
+                        var filePart = url.substring(0, hashIndex).trim();
+                        var hashPart = url.substring(hashIndex + 1).trim();
+                        var slug = customSlugify(hashPart);
+
+                        if (filePart) {
+                            return '[' + text + '](' + filePart + '?id=' + slug + ')';
+                        } else {
+                            return '[' + text + '](?id=' + slug + ')';
+                        }
+                    }
+                    return match;
+                });
+
+                // C. Process HTML <a> tags with hashes: <a href="...#...">
+                content = content.replace(/<a\s+([^>]*?)href=(["'])(.*?)\2([^>]*)>/gi, function (match, before, quote, href, after) {
+                    if (/^(?:https?:|\/\/|mailto:)/i.test(href)) {
+                        return match;
+                    }
+                    var hashIndex = href.indexOf('#');
+                    if (hashIndex !== -1) {
+                        var filePart = href.substring(0, hashIndex).trim();
+                        var hashPart = href.substring(hashIndex + 1).trim();
+                        var slug = customSlugify(hashPart);
+                        var newHref = filePart ? (filePart + '?id=' + slug) : ('?id=' + slug);
+                        return '<a ' + before + 'href=' + quote + newHref + quote + after + '>';
+                    }
+                    return match;
+                });
+
+                return content;
+            });
+
+            // Handle smooth scrolling after DOM rendering (supports IDs starting with numbers)
+            hook.doneEach(function () {
+                var id = vm.route.query && vm.route.query.id;
+                if (id) {
+                    var targetId = customSlugify(id);
+                    var el = document.getElementById(targetId) || document.getElementById(id);
+                    if (el) {
+                        setTimeout(function () {
+                            el.scrollIntoView({ behavior: 'smooth' });
+                        }, 150);
+                    }
+                }
+            });
+        }
+
         window.$docsify = {
             name: 'Green-Ticks',
             repo: 'https://github.com/Theistic-guy/Green-Ticks',
             loadSidebar: true,
             subMaxLevel: 2,
-            relativePath: true
-        }
+            relativePath: true,
+            markdown: {
+                slugify: customSlugify
+            },
+            plugins: [
+                obsidianHeadingLinksPlugin
+            ]
+        };
+
+        // Same-page click listener for heading links
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest('a');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href) return;
+
+            if (href.startsWith('?id=') || (href.startsWith('#') && !href.startsWith('#/'))) {
+                var rawId = href.startsWith('?id=') ? href.slice(4) : href.slice(1);
+                if (!rawId) return;
+                var targetId = customSlugify(rawId);
+                var el = document.getElementById(targetId) || document.getElementById(rawId);
+                if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                    var currentHash = window.location.hash.split('?')[0];
+                    history.pushState(null, '', currentHash + '?id=' + targetId);
+                }
+            }
+        });
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
