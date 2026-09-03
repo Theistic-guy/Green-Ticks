@@ -183,6 +183,18 @@
             loadSidebar: true,
             subMaxLevel: 2,
             relativePath: true,
+            markdown: {
+                renderer: {
+                    heading: function (text, level) {
+                        var slug = customSlugify(text);
+                        var currentRoute = (window.location.hash || '#/').split('?')[0];
+                        var url = currentRoute + '?id=' + slug;
+                        return '<h' + level + ' id="' + slug + '">' +
+                               '<a href="' + url + '" data-id="' + slug + '" class="anchor"><span>' + text + '</span></a>' +
+                               '</h' + level + '>';
+                    }
+                }
+            },
             plugins: [
                 obsidianHeadingLinksPlugin
             ]
