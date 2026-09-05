@@ -10,6 +10,8 @@ Difficulty: Medium
 Other Tags:
   - Brian Kernighan
   - GFG
+  - Bits
+  - Binary - 0 & 1
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>

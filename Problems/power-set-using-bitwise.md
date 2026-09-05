@@ -10,6 +10,8 @@ Difficulty: Medium
 Other Tags:
   - GFG
   - Subset
+  - Binary - 0 & 1
+  - Bits
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>

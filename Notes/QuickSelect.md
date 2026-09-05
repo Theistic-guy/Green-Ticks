@@ -305,4 +305,4 @@ Week 3+ (hard bar-raisers): 4 → 719 → 324 → 480
 - [[Dutch National Flag Partitioning]] — shared partition primitive
 - [[Heaps]] — streaming-data replacement for quickselect
 - [[Divide and Conquer]] — parent category; quickselect = asymmetric/decrease-and-conquer D&C
-- [[Kadane's Algorithm]], [[Floyd's Cycle Detection]], [[Boyer-Moore Majority Vote]] — other examples of "clever version hiding inside a brute-force algorithm's byproduct"
+- Kadane's Algorithm, Floyd's Cycle Detection, Boyer-Moore Majority Vote — other examples of "clever version hiding inside a brute-force algorithm's byproduct"

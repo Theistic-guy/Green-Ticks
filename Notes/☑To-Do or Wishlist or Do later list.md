@@ -1,13 +1,7 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 + next permutation (coming from [permutations-2-handling-duplicates](../Problems/permutations-2-handling-duplicates.md))
-+ bisect and sortedcontainers
 + implementations of basic data structures
-+ sliding window leetcode 239 note
-+ find all anangrams is leetcode 438
-+ n-k sliding window cards speatete note
-+ prefix sum LC 862 (see that )
-+ prefix sum (subarruy sum divisbly by k ) - sepatate note
 + tag every LC note with  #leetcode 
 + (../..Readme) path is diff for nested folders this needs to be fixed appropriately.
 + do problem notes on the intervals pattern [Intervals & Ranges Pattern (Sorting)](Intervals%20&%20Ranges%20Pattern%20(Sorting).md)
@@ -62,4 +56,5 @@
 		
 		Category 1 and 4 both sort by start but diverge on what they track (merged range vs concurrent count) — that's the pair most people conflate. Category 3 is the one place the sort key flips to end, which is the fork worth drilling until it's automatic.
 + Two heap approach
-		
++ [Complementary Counting](Complementary%20Counting.md)
+	+ do some problems

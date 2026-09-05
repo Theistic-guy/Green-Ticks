@@ -23,6 +23,7 @@ Rating:
 **Idea:** 
 
 **Variations** : 
++ count nice subarrays [8. Count Nice Subarrays (LeetCode 1248)](../Notes/Subarray%20with%20Given%20Sum%20—%20Important%20Interview%20Variations%20(Solutions).md#8.%20Count%20Nice%20Subarrays%20(LeetCode%201248))
 
 ---
 

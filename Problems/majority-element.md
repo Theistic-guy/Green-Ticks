@@ -19,6 +19,10 @@ Link: ""
 
 **Idea:** 
 
+**Variations**:
++ generalized Boyer-Moore  - [elements-occurring-more-than-(n÷k)-times](elements-occurring-more-than-(n÷k)-times.md)
+
+
 ---
 
 ## 💻 Code

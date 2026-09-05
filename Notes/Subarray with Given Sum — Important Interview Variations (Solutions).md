@@ -217,6 +217,9 @@ Use
 
 # 5. Subarray Sum Divisible by K (LeetCode 974)
 
+[subarray-sum-divisible-by-k](../Problems/subarray-sum-divisible-by-k.md)
+
+
 ## Problem
 
 Count subarrays whose sum is divisible by `k`.
@@ -411,6 +414,8 @@ Store only the **first occurrence** of every prefix sum.
 ---
 
 # 8. Count Nice Subarrays (LeetCode 1248)
+
+[count-subarrays-with-given-sum](../Problems/count-subarrays-with-given-sum.md)
 
 ## Problem
 

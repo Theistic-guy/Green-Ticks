@@ -27,6 +27,8 @@ Rating:
 
 Variations : 
 + Subarray with zero sum
++ [Subarray with Given Sum — Important Interview Variations (Solutions)](../Notes/Subarray%20with%20Given%20Sum%20—%20Important%20Interview%20Variations%20(Solutions).md)
+
 
 ---
 
