@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-86-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-102-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,12 +13,12 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 86 |
-| Topics | 19 |
-| Platforms | 2 |
+| Problems | 102 |
+| Topics | 22 |
+| Platforms | 3 |
 | Companies | 52 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 31 |
+| Miscellaneous Tags | 38 |
 | Templates | 4 |
 
 ---
@@ -26,24 +26,27 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (37)](Topics/arrays.md)
+  - [Arrays (50)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
-  - [Greedy (6)](Topics/greedy.md)
-  - [Hashing (9)](Topics/hashing.md)
+  - [Greedy (10)](Topics/greedy.md)
+  - [Hashing (16)](Topics/hashing.md)
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
-  - [Matrix (6)](Topics/matrix.md)
+  - [Matrix (9)](Topics/matrix.md)
   - [Monotonic Stack (1)](Topics/monotonic-stack.md)
+  - [Ordered Containers (2)](Topics/ordered-containers.md)
   - [Prefix and Suffix Arrays (1)](Topics/prefix-and-suffix-arrays.md)
-  - [Prefix Sum (5)](Topics/prefix-sum.md)
+  - [Prefix Sum (11)](Topics/prefix-sum.md)
+  - [Queue (2)](Topics/queue.md)
   - [Recursion (3)](Topics/recursion.md)
   - [Searching (25)](Topics/searching.md)
-  - [Sliding Window (5)](Topics/sliding-window.md)
-  - [Sorting (9)](Topics/sorting.md)
-  - [Strings (1)](Topics/strings.md)
+  - [Sliding Window (11)](Topics/sliding-window.md)
+  - [Sorting (10)](Topics/sorting.md)
+  - [Stack (2)](Topics/stack.md)
+  - [Strings (2)](Topics/strings.md)
   - [Two Pointers (11)](Topics/two-pointers.md)
 </details>
 
@@ -53,8 +56,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [Leetcode (32)](Platforms/leetcode.md)
-  - [Miscellaneous (54)](Platforms/miscellaneous.md)
+  - [GFG (2)](Platforms/gfg.md)
+  - [Leetcode (42)](Platforms/leetcode.md)
+  - [Miscellaneous (58)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -90,7 +94,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (62)](Companies/not-specified.md)
+  - [Not Specified (78)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -123,9 +127,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (20)](Difficulty/easy.md)
-  - [Medium (32)](Difficulty/medium.md)
-  - [Hard (27)](Difficulty/hard.md)
+  - [Easy (23)](Difficulty/easy.md)
+  - [Medium (35)](Difficulty/medium.md)
+  - [Hard (37)](Difficulty/hard.md)
   - [Not Specified (7)](Difficulty/not-specified.md)
 </details>
 
@@ -135,9 +139,10 @@
 <details>
   <summary>Expand</summary>
 
-  - [5 Stars (6)](Rating/5-stars.md)
-  - [4 Stars (2)](Rating/4-stars.md)
-  - [Not Rated (78)](Rating/not-rated.md)
+  - [5 Stars (13)](Rating/5-stars.md)
+  - [4 Stars (6)](Rating/4-stars.md)
+  - [3 Stars (1)](Rating/3-stars.md)
+  - [Not Rated (82)](Rating/not-rated.md)
 </details>
 
 ---
@@ -147,23 +152,29 @@
   <summary>Expand</summary>
 
   - [1D DP (1)](Miscellaneous%20Tags/1d-dp.md)
+  - [Binary - 0 & 1 (5)](Miscellaneous%20Tags/binary-0-1.md)
   - [Binary Search (24)](Miscellaneous%20Tags/binary-search.md)
-  - [Boyer-Moore Voting (1)](Miscellaneous%20Tags/boyer-moore-voting.md)
+  - [Bits (3)](Miscellaneous%20Tags/bits.md)
+  - [Boyer-Moore Voting (2)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
   - [Cycle (2)](Miscellaneous%20Tags/cycle.md)
   - [Cyclic Sort / Placement (2)](Miscellaneous%20Tags/cyclic-sort-placement.md)
+  - [Deque (2)](Miscellaneous%20Tags/deque.md)
   - [Duplicates (5)](Miscellaneous%20Tags/duplicates.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
-  - [GFG (40)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (42)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
-  - [Kadane (2)](Miscellaneous%20Tags/kadane.md)
-  - [kth (12)](Miscellaneous%20Tags/kth.md)
-  - [Longest (2)](Miscellaneous%20Tags/longest.md)
-  - [Maximum (3)](Miscellaneous%20Tags/maximum.md)
+  - [Kadane (3)](Miscellaneous%20Tags/kadane.md)
+  - [kth (15)](Miscellaneous%20Tags/kth.md)
+  - [Longest (5)](Miscellaneous%20Tags/longest.md)
+  - [Maximum (8)](Miscellaneous%20Tags/maximum.md)
   - [Median (2)](Miscellaneous%20Tags/median.md)
   - [Merge (4)](Miscellaneous%20Tags/merge.md)
-  - [Minimum (2)](Miscellaneous%20Tags/minimum.md)
+  - [Minimum (3)](Miscellaneous%20Tags/minimum.md)
+  - [Monotonic Queue (2)](Miscellaneous%20Tags/monotonic-queue.md)
+  - [Monotonic Stack (2)](Miscellaneous%20Tags/monotonic-stack.md)
+  - [Ordered Set (1)](Miscellaneous%20Tags/ordered-set.md)
   - [P & C (1)](Miscellaneous%20Tags/p-c.md)
   - [Pairs (2)](Miscellaneous%20Tags/pairs.md)
   - [Predicate Search - Basic (2)](Miscellaneous%20Tags/predicate-search-basic.md)
@@ -173,7 +184,8 @@
   - [Quick select (3)](Miscellaneous%20Tags/quick-select.md)
   - [Smallest (5)](Miscellaneous%20Tags/smallest.md)
   - [Sorted (14)](Miscellaneous%20Tags/sorted.md)
-  - [Subarray (5)](Miscellaneous%20Tags/subarray.md)
+  - [Subarray (11)](Miscellaneous%20Tags/subarray.md)
+  - [Subsequence (1)](Miscellaneous%20Tags/subsequence.md)
   - [Subset (5)](Miscellaneous%20Tags/subset.md)
   - [Union (1)](Miscellaneous%20Tags/union.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
@@ -196,6 +208,7 @@
 
 <!-- make sure to have these links relative as per repo home page -->
 # 🎲Check these Out !
++ Sorted Containers (must see) - [Sorted Containers in Python](/Notes/Extras/Sorted%20Containers%20in%20Python.md)
 + How memory (Stack, Heap,..) is allocated - [Python Memory Model for DSA & Interviews](/Notes/Python%20Memory%20Model%20for%20DSA%20&%20Interviews.md)
 + Turning into Tail Recursive Procedures - [How to convert to 'Tail Recursive Procedures'](/Notes/How%20to%20convert%20to%20'Tail%20Recursive%20Procedures'.md)
 + Basic Recursion Problems (complexities + recurrence relations)  - [Basic Problems Using Simple Recursion](Notes/Basic%20Problems%20Using%20Simple%20Recursion.md)
@@ -204,6 +217,8 @@
 + K-way merge problems - [K-way Merge](/Notes/K-way%20Merge.md)
 + Binary Search on Answer Pattern - [Binary Search on Answer ( Predicate Search) - 5⭐](/Notes/Binary%20Search%20on%20Answer%20(%20Predicate%20Search)%20-%205⭐.md)
 + Arrays as functional graphs (Floyd's cycle + Others) - [Arrays as Functional Graphs](/Notes/Arrays%20as%20Functional%20Graphs.md)
++ Complementary Counting (atleast, atmost, pick from both ends) star⭐ - [Complementary Counting](/Notes/Complementary%20Counting.md)
+
 + Sorting Patterns - 
 	+ Divide & Conquer merge strategy - [Merge Sort (Divide & Conquer) ](/Notes/Merge%20Sort%20(Divide%20&%20Conquer)%20Strategies.md)
 	+ Quickselect ($O(n)$) position finding - [QuickSelect](/Notes/QuickSelect.md)
@@ -214,3 +229,12 @@
 	+ Radix Sort - [Radix Sort](/Notes/Radix%20Sort.md)
 	+ Bucket Sort - [Bucket Sort](/Notes/Bucket%20Sort.md)
 	+ Intervals pattern ⭐ - [Intervals & Ranges Pattern (Sorting)](/Notes/Intervals%20&%20Ranges%20Pattern%20(Sorting).md)
++ Matrices
+	+ Master note - [Matrices Everywhere !!!](/Notes/Matrices%20Everywhere%20!!!.md)
+	+ Compressing patterns - [Row or Col compression in matrix](/Notes/Row%20or%20Col%20compression%20in%20matrix.md)
+	
++ Queue
+	+ [Monotonic Deque](/Notes/Monotonic%20Deque.md)
+	
++ DP
+	+ [What makes a problem DP](/Notes/What%20makes%20a%20problem%20DP.md)

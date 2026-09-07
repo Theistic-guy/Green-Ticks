@@ -7,6 +7,7 @@
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 
 ## Medium
+- [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
@@ -34,6 +35,9 @@
 
 ### Sorting + Backtracking + Maths
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+
+### Sorting + Arrays + Greedy + Hashing
+- [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 
 ### Sorting + Arrays + Greedy + Sliding Window
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
