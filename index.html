@@ -159,10 +159,8 @@
                     var target = '';
                     if (file) {
                         var filePath = file.endsWith('.md') ? file : file + '.md';
-                        // CROSS-PAGE requires ?id= for Docsify relative router to parse correctly
                         target = slug ? (filePath + '?id=' + slug) : filePath;
                     } else if (slug) {
-                        // IN-PAGE requires # so docsify treats it natively
                         target = '#' + slug;
                     } else {
                         return displayText;
@@ -185,8 +183,6 @@
                         if (!hashPart) return match;
 
                         var slug = customSlugify(hashPart);
-                        // CROSS-PAGE: ?id=
-                        // IN-PAGE: #
                         var newUrl = filePart ? (filePart + '?id=' + slug) : ('#' + slug);
                         return '[' + text + '](' + newUrl + ')';
                     }
@@ -206,8 +202,6 @@
                         if (!hashPart) return match;
 
                         var slug = customSlugify(hashPart);
-                        // CROSS-PAGE: ?id=
-                        // IN-PAGE: #
                         var newHref = filePart ? (filePart + '?id=' + slug) : ('#' + slug);
                         return '<a ' + before + 'href=' + quote + newHref + quote + after + '>';
                     }
@@ -222,10 +216,16 @@
                     content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, text, url) {
                         url = url.trim();
                         if (/^(?:https?:|\/\/|mailto:|\/|#|\?)/i.test(url)) return match;
-                        if (!url.startsWith('../') && !url.startsWith('./')) return match;
+                        
                         var qIdx = url.indexOf('?');
                         var pathPart = qIdx >= 0 ? url.substring(0, qIdx) : url;
                         var queryPart = qIdx >= 0 ? url.substring(qIdx) : '';
+                        
+                        var isRelative = pathPart.startsWith('../') || 
+                                         pathPart.startsWith('./') || 
+                                         pathPart.indexOf('/') === -1;
+                        if (!isRelative) return match;
+
                         var segments = currentDir.split('/').filter(Boolean);
                         pathPart.split('/').forEach(function (seg) {
                             if (seg === '..') segments.pop();
@@ -238,10 +238,16 @@
                     content = content.replace(/<a\s+([^>]*?)href=(["'])(.*?)\2([^>]*)>/gi, function (match, before, quote, href, after) {
                         href = href.trim();
                         if (/^(?:https?:|\/\/|mailto:|\/|#|\?)/i.test(href)) return match;
-                        if (!href.startsWith('../') && !href.startsWith('./')) return match;
+                        
                         var qIdx = href.indexOf('?');
                         var pathPart = qIdx >= 0 ? href.substring(0, qIdx) : href;
                         var queryPart = qIdx >= 0 ? href.substring(qIdx) : '';
+                        
+                        var isRelative = pathPart.startsWith('../') || 
+                                         pathPart.startsWith('./') || 
+                                         pathPart.indexOf('/') === -1;
+                        if (!isRelative) return match;
+
                         var segments = currentDir.split('/').filter(Boolean);
                         pathPart.split('/').forEach(function (seg) {
                             if (seg === '..') segments.pop();
@@ -280,6 +286,18 @@
                 noData: 'No Results!',
                 depth: 6,
                 hideOtherSidebarContent: false
+            },
+            markdown: {
+                renderer: {
+                    heading: function (text, level) {
+                        var slug = customSlugify(text);
+                        var currentRoute = (window.location.hash || '#/').split('?')[0];
+                        var url = currentRoute + '?id=' + slug;
+                        return '<h' + level + ' id="' + slug + '">' +
+                               '<a href="' + url + '" data-id="' + slug + '" class="anchor"><span>' + text + '</span></a>' +
+                               '</h' + level + '>';
+                    }
+                }
             },
             plugins: [
                 obsidianHeadingLinksPlugin
