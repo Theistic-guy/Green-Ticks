@@ -1,6 +1,7 @@
 
 See links:
 + [largest-rectangle-in-histogram](../Problems/largest-rectangle-in-histogram.md)
++ [maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md)
 
 # Row/Column Compression (Matrix → 1D)
 

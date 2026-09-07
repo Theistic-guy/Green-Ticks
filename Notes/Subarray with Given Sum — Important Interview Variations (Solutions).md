@@ -126,6 +126,8 @@ def longest_subarray(arr, k):
 
 # 3. Smallest Subarray with Sum ≥ K
 
+[shortest-subarray-with-sum-at-least-k](../Problems/shortest-subarray-with-sum-at-least-k.md)
+
 ## Problem
 
 Find the minimum length subarray whose sum is at least `k`.

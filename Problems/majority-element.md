@@ -20,7 +20,7 @@ Link: ""
 **Idea:** 
 
 **Variations**:
-+ generalized Boyer-Moore  - [elements-occurring-more-than-(n÷k)-times](elements-occurring-more-than-(n÷k)-times.md)
++ generalized Boyer-Moore  - [elements-occurring-more-than-n_div_k-times](elements-occurring-more-than-n_div_k-times.md)
 
 
 ---
