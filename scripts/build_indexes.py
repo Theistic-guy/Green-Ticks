@@ -76,8 +76,8 @@ def parse_rating(raw: Any) -> int:
 def sort_rating(value: str) -> tuple[int, str]:
     return (RATING_SORT_ORDER.get(value, 99), value.lower())
 
-# Restored from your original script
-FILENAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+# Allowed chars: a-z, 0-9, _, (), +, ×, ✕, ✖, -, −, ÷
+FILENAME_RE = re.compile(r"^[a-z0-9_()+\-−×✕✖÷]+\.md$")
 
 # Matches a leading numeric prefix (supports dot notation like 2, 2.3, 10.1)
 # followed by a hyphen (spaces around it are optional), e.g.:
@@ -195,12 +195,10 @@ def fail(errors: list[str]) -> None:
     sys.stderr.flush()
     raise RuntimeError("Validation failed. See errors above.")
 
-# Restored from your original script
 def validate_filename(path: Path) -> None:
     if not FILENAME_RE.fullmatch(path.name):
         raise ValueError(
-            "filename must be lowercase hyphenated only, like 'two-sum.md' or "
-            "'best-time-to-buy-and-sell-stock.md'"
+            "filename must contain no spaces. Allowed characters: lowercase a-z, 0-9, _, (), +, -, −, ×, ✕, ✖, ÷"
         )
 
 def validate_note(path: Path) -> dict[str, Any]:
