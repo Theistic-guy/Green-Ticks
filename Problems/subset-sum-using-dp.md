@@ -54,7 +54,7 @@ dp = [[-1]*(target+1) for _ in range(len(nums))]
 
 **Time complexity** - O(n * S) 
 **Aux. Space complexity** -  O(n * S)
-Basic Recursion - [6. Subset Sum Problem](Basic%20Problems%20Using%20Simple%20Recursion.md#6.%20Subset%20Sum%20Problem), Also below.
+Basic Recursion - [6. Subset Sum Problem](../Notes/Basic%20Problems%20Using%20Simple%20Recursion.md#6.%20Subset%20Sum%20Problem), Also below.
 Variations:-
 + [count-subsets-with-given-sum](count-subsets-with-given-sum.md)
 + [equal-partition](equal-partition.md)

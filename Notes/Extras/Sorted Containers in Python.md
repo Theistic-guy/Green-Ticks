@@ -3,7 +3,7 @@ See:
 + Removing element see below
 + irange and islice , see below
 
-![sorted_containers_python|566](../../assets/Images/sorted_containers_python.svg)
+![sorted_containers_python|700](../../assets/Images/sorted_containers_python1.svg)
 
 ## 📑 PKM Note: Sorted Containers (C++ STL vs. Python) & DSA Theory
 

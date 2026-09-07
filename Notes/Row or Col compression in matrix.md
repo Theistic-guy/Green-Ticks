@@ -2,6 +2,7 @@
 See links:
 + [largest-rectangle-in-histogram](../Problems/largest-rectangle-in-histogram.md)
 + [maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md)
++ [maximum-sum-of-rectangle-no-larger-than-k](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md)
 
 # Row/Column Compression (Matrix → 1D)
 
@@ -48,8 +49,10 @@ The pattern is always: **reduce a dimension by accumulation, then recognize the 
 
 **Direct row-compression + Kadane:**
 
-- 363. Max Sum of Rectangle No Larger Than K _(row-compress, then prefix-sum + TreeSet/sorted-list search, not plain Kadane since there's a constraint K)_
-- Maximum Sum Rectangle in a 2D Matrix (GfG / classic interview version of Kadane-on-compressed-rows — not on LC directly but frequently asked)
+- 363. Max Sum of Rectangle No Larger Than K _(row-compress, then prefix-sum + TreeSet/sorted-list search, not plain Kadane since there's a constraint K)_ - [maximum-sum-of-rectangle-no-larger-than-k](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md)
+
+- Maximum Sum Rectangle in a 2D Matrix (GfG / classic interview version of Kadane-on-compressed-rows — not on LC directly but frequently asked) - [maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md)
+
 
 **Histogram-via-column-compression (the other axis):**
 

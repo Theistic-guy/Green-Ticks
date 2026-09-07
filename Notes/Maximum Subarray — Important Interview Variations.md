@@ -599,6 +599,8 @@ For standard interview preparation, the **fixed-length version (LeetCode 643)** 
 
 # 5. Maximum Sum Rectangle in a 2D Matrix ⭐⭐⭐⭐⭐
 
+<mark>[maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md)</mark>
+
 ## Problem
 
 Given a 2D matrix, find the rectangular submatrix having the maximum sum.

@@ -472,6 +472,9 @@ Use the standard Prefix Sum + Frequency Hash Map solution.
 
 # 9. Minimum Operations to Reduce X to Zero (LeetCode 1658)
 
+[minimum-operations-to-reduce-x-to-zero](../Problems/minimum-operations-to-reduce-x-to-zero.md)
+
+
 ## Problem
 
 Remove elements from the left or right until their sum equals `x`.

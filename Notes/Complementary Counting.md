@@ -1,5 +1,10 @@
 #Array #SlidingWindow #PrefixSum #LeetCode 
 
+See links:
++ [minimum-operations-to-reduce-x-to-zero](../Problems/minimum-operations-to-reduce-x-to-zero.md)
++ [maximum-points-you-can-obtain-from-cards](../Problems/maximum-points-you-can-obtain-from-cards.md)
+
+
 # Complementary Counting
 
 **The move:** when "what I want" is awkward to count/track directly, reduce it to something easier — either by subtracting an unwanted count from a total, or by subtracting two easier counts from each other.
@@ -51,7 +56,11 @@ max picked from ends(k) = total_sum − min_subarray_sum(size n−k)
 ```
 
 - **1423. Maximize Points You Can Get from Cards**
+	 [maximum-points-you-can-obtain-from-cards](../Problems/maximum-points-you-can-obtain-from-cards.md)
+
 - **1658. Minimum Operations to Reduce X to Zero** — removing prefix+suffix summing to `x` ⟺ leaving a middle subarray summing to `total − x`; find the _longest_ such subarray, answer = `n − length`.
+	[minimum-operations-to-reduce-x-to-zero](../Problems/minimum-operations-to-reduce-x-to-zero.md)
+	
 
 ## Recognizing which pattern applies
 
