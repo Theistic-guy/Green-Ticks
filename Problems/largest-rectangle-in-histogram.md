@@ -4,7 +4,6 @@ Companies:
   - Not Specified
 Topics:
   - Arrays
-  - Monotonic Stack
   - Stack
 Platform:
   - Leetcode

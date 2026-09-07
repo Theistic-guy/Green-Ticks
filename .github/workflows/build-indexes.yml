@@ -34,13 +34,16 @@ jobs:
       - name: Generate indexes and README
         run: python scripts/build_indexes.py
 
+      - name: Generate sidebar
+        run: python scripts/generate_sidebar.py
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Only stage what we specifically want the bot to touch
-          git add Topics Platforms Companies Difficulty "Miscellaneous Tags" Rating README.md
+          git add Topics Platforms Companies Difficulty "Miscellaneous Tags" Rating README.md _sidebar.md
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

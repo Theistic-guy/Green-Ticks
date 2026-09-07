@@ -2,8 +2,37 @@ import os
 
 def format_title(filename):
     name = filename.replace('.md', '')
-    # Replace hyphens with spaces and capitalize words
-    return ' '.join(word.capitalize() for word in name.split('-'))
+    if '-' in name and ' ' not in name:
+        # e.g., two-sum.md -> Two Sum
+        return ' '.join(word.capitalize() for word in name.split('-'))
+    # Preserve original spacing, but ensure first letter is capitalized
+    return name[0].upper() + name[1:] if name else name
+
+def write_dir(f, current_path, current_rel, level=1):
+    items = sorted(os.listdir(current_path))
+    
+    dirs = []
+    files = []
+    for item in items:
+        # Skip hidden files/folders
+        if item.startswith('.'):
+            continue
+            
+        item_path = os.path.join(current_path, item)
+        if os.path.isdir(item_path):
+            dirs.append((item, item_path))
+        elif item.endswith('.md') and item.lower() != 'readme.md':
+            files.append((item, item_path))
+            
+    indent = "  " * level
+    for file, _ in files:
+        title = format_title(file)
+        rel_path = f"/{current_rel}/{file}".replace(" ", "%20")
+        f.write(f"{indent}- [{title}]({rel_path})\n")
+        
+    for d, d_path in dirs:
+        f.write(f"{indent}- **{d}**\n")
+        write_dir(f, d_path, f"{current_rel}/{d}", level + 1)
 
 def generate_sidebar():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,14 +60,7 @@ def generate_sidebar():
                 continue
                 
             f.write(f'- **{folder}**\n')
-            
-            # Sort files alphabetically
-            files = sorted(os.listdir(folder_path))
-            for file in files:
-                if file.endswith('.md'):
-                    title = format_title(file)
-                    # Note the leading slash to fix the Docsify 404 relative path issue
-                    f.write(f'  - [{title}](/{folder}/{file.replace(" ", "%20")})\n')
+            write_dir(f, folder_path, folder, 1)
             
             f.write('\n')
 

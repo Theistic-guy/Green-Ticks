@@ -56,7 +56,11 @@ The pattern is always: **reduce a dimension by accumulation, then recognize the 
 
 **Histogram-via-column-compression (the other axis):**
 
-- 85. Maximal Rectangle — compress _columns_ into running "height since last 0", then run Largest Rectangle in Histogram per row
+- 85. Maximal Rectangle — compress _columns_ into running "height since last 0", then run Largest Rectangle in Histogram per row.
+	<mark>Find here</mark> - [maximal-rectangle](../Problems/maximal-rectangle.md)
+
+
+
 - 84. Largest Rectangle in Histogram _(prerequisite 1D subroutine for 85 — study this first)_
 	 <mark>Find here</mark> - [largest-rectangle-in-histogram](../Problems/largest-rectangle-in-histogram.md)
 	
