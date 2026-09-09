@@ -32,9 +32,11 @@ Topics:
   - Hashing
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Medium
 Other Tags:
 Link: "[Leetcode](https://leetcode.com/problems/group-anagrams/)"
+Rating:
+  - ⭐⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 

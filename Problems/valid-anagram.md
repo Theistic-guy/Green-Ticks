@@ -13,10 +13,12 @@ Companies:
 Topics:
   - Arrays
   - Hashing
+  - Strings
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Easy
 Other Tags:
+  - GFG
 Link: "[Leetcode](https://leetcode.com/problems/valid-anagram/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
