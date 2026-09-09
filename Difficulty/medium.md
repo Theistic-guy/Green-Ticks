@@ -13,8 +13,10 @@
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐

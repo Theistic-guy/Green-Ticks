@@ -3,6 +3,7 @@
 # 4 Stars
 
 ## Medium
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐

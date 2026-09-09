@@ -2,5 +2,5 @@
 
 # Twilio
 
-## Not Specified
-- [Group Anagrams](../Problems/group-anagrams.md)
+## Medium
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐

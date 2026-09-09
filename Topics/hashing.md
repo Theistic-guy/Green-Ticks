@@ -8,10 +8,13 @@
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 
 ## Medium
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
@@ -23,15 +26,15 @@
 
 ## Not Specified
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Group Anagrams](../Problems/group-anagrams.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
 
 ## See As Combo-wise Listings
 
 ### Hashing + Arrays
 - [Contains Duplicate](../Problems/contains-duplicate.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+
+### Hashing + Strings
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 
 ### Hashing + Arrays + Greedy
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
@@ -48,6 +51,9 @@
 ### Hashing + Arrays + Sorting
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
+### Hashing + Arrays + Strings
+- [Valid Anagram](../Problems/valid-anagram.md)
+
 ### Hashing + Sliding Window + Strings
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
 
@@ -62,4 +68,4 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Hashing + Arrays + Sorting + Strings
-- [Group Anagrams](../Problems/group-anagrams.md)
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐

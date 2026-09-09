@@ -3,6 +3,7 @@
 # Greedy
 
 ## Easy
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 
@@ -32,6 +33,9 @@
 
 ### Greedy + Arrays + Matrix
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
+
+### Greedy + Strings + Two Pointers
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 
 ### Greedy + Arrays + Hashing + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐

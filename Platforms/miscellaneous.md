@@ -5,6 +5,7 @@
 ## Easy
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
 - [Check For Prime](../Problems/check-for-prime.md)
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Count Digits](../Problems/count-digits.md)
@@ -31,6 +32,7 @@
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)

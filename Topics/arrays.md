@@ -14,6 +14,7 @@
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium
@@ -24,6 +25,7 @@
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
@@ -57,8 +59,6 @@
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Group Anagrams](../Problems/group-anagrams.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
 
 ## See As Combo-wise Listings
 
@@ -71,7 +71,6 @@
 ### Arrays + Hashing
 - [Contains Duplicate](../Problems/contains-duplicate.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
 
 ### Arrays + Prefix Sum
 - [Equilibrium Point](../Problems/equilibrium-point.md)
@@ -120,6 +119,9 @@
 ### Arrays + Hashing + Sorting
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
+### Arrays + Hashing + Strings
+- [Valid Anagram](../Problems/valid-anagram.md)
+
 ### Arrays + Heap + Sorting
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
@@ -154,7 +156,7 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Sorting + Strings
-- [Group Anagrams](../Problems/group-anagrams.md)
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
 
 ### Arrays + Heap + Searching + Two Pointers
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐

@@ -4,6 +4,7 @@
 
 ## Easy
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Equilibrium Point](../Problems/equilibrium-point.md)
@@ -19,12 +20,14 @@
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Two Sum](../Problems/two-sum.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
 - [Count set bits](../Problems/count-set-bits.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)

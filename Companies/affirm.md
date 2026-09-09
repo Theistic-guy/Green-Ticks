@@ -2,6 +2,8 @@
 
 # Affirm
 
-## Not Specified
-- [Group Anagrams](../Problems/group-anagrams.md)
+## Easy
 - [Valid Anagram](../Problems/valid-anagram.md)
+
+## Medium
+- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
