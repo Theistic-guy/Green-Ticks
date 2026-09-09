@@ -18,6 +18,16 @@ PROBLEMS_DIR = ROOT / "Problems"
 README_FILE = ROOT / "README.md"
 template_dir = ROOT / "Templates"
 README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
+ASSETS_DIR = ROOT / "assets"
+
+CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
+    "Topics":             ASSETS_DIR / "Topics Sections",
+    "Platforms":          ASSETS_DIR / "Platforms Sections",
+    "Companies":          ASSETS_DIR / "Companies Sections",
+    "Difficulty":         ASSETS_DIR / "Difficulty Sections",
+    "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Sections",
+    "Rating":             ASSETS_DIR / "Rating Sections",
+}
 
 template_files = []
 
@@ -351,12 +361,18 @@ def render_grouped_by_difficulty(
     heading: str,
     problems: list[dict[str, Any]],
     combo_topic: str | None = None,
+    top_sections: str = "",
+    bottom_sections: str = "",
 ) -> None:
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for problem in problems:
         groups[problem["difficulty"]].append(problem)
 
     lines: list[str] = home_link_lines(index_file)
+    
+    if top_sections:
+        lines += [top_sections, "", "---", ""]
+        
     lines += [f"# {heading}", ""]
     for difficulty in sorted(groups.keys(), key=sort_difficulty):
         lines.append(f"## {difficulty}")
@@ -370,10 +386,24 @@ def render_grouped_by_difficulty(
     if combo_topic is not None:
         lines += build_combo_section(index_file, combo_topic, problems)
 
-    index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    final_text = "\n".join(lines).rstrip()
+    if bottom_sections:
+        final_text += "\n\n---\n\n" + bottom_sections
 
-def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, Any]]) -> None:
+    index_file.write_text(final_text + "\n", encoding="utf-8")
+
+def render_flat_index(
+    index_file: Path,
+    heading: str,
+    problems: list[dict[str, Any]],
+    top_sections: str = "",
+    bottom_sections: str = "",
+) -> None:
     lines: list[str] = home_link_lines(index_file)
+    
+    if top_sections:
+        lines += [top_sections, "", "---", ""]
+        
     lines += [f"# {heading}", ""]
     for problem in sorted(problems, key=sort_by_title_then_path):
         link_target = rel_link(index_file, problem["source_path"])
@@ -381,7 +411,11 @@ def render_flat_index(index_file: Path, heading: str, problems: list[dict[str, A
         suffix = f" {stars}" if stars else ""
         lines.append(f"- [{problem['title']}]({link_target}){suffix}")
 
-    index_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    final_text = "\n".join(lines).rstrip()
+    if bottom_sections:
+        final_text += "\n\n---\n\n" + bottom_sections
+
+    index_file.write_text(final_text + "\n", encoding="utf-8")
 
 def readme_section_sort_key(path: Path) -> tuple[int, tuple[int, ...], str]:
     """
@@ -417,6 +451,30 @@ def build_readme_sections_appendix(sections_dir: Path) -> str:
     for file in section_files:
         content = file.read_text(encoding="utf-8").strip()
         if content:
+            chunks.append(content)
+
+    if not chunks:
+        return ""
+
+    return "\n\n---\n\n".join(chunks)
+
+def build_category_sections(sections_dir: Path, sub: str) -> str:
+    """
+    Reads all .md files from `sections_dir / sub` (e.g. 'Top' or 'Bottom'),
+    orders them by the same numeric-prefix sort key used for ReadMe Sections,
+    strips empty files, and joins non-empty content with '\n\n---\n\n'.
+
+    Returns '' if the folder doesn't exist, has no .md files, or all are empty.
+    """
+    target = sections_dir / sub
+    if not target.exists():
+        return ""
+
+    section_files = sorted(target.glob("*.md"), key=readme_section_sort_key)
+    chunks: list[str] = []
+    for f in section_files:
+        content = f.read_text(encoding="utf-8").strip()
+        if content and content.lower() != "placeholder":
             chunks.append(content)
 
     if not chunks:
@@ -648,37 +706,67 @@ def main() -> None:
         by_difficulty[note["difficulty"]].append(note)
         by_rating[rating_label(note["rating"])].append(note)
 
+    category_top: dict[str, str] = {}
+    category_bottom: dict[str, str] = {}
+    for cat_name, sdir in CATEGORY_SECTIONS_DIRS.items():
+        category_top[cat_name] = build_category_sections(sdir, "Top")
+        category_bottom[cat_name] = build_category_sections(sdir, "Bottom")
+
     print("Generating index files...", flush=True)
 
     topics_dir = GENERATED_DIRS["Topics"]
     for topic, items in by_topic.items():
         index_file = topics_dir / f"{topic_slugs[topic]}.md"
-        render_grouped_by_difficulty(index_file, topic, items, combo_topic=topic)
+        render_grouped_by_difficulty(
+            index_file, topic, items, combo_topic=topic,
+            top_sections=category_top["Topics"],
+            bottom_sections=category_bottom["Topics"],
+        )
 
     platforms_dir = GENERATED_DIRS["Platforms"]
     for platform, items in by_platform.items():
         index_file = platforms_dir / f"{platform_slugs[platform]}.md"
-        render_grouped_by_difficulty(index_file, platform, items)
+        render_grouped_by_difficulty(
+            index_file, platform, items,
+            top_sections=category_top["Platforms"],
+            bottom_sections=category_bottom["Platforms"],
+        )
 
     companies_dir = GENERATED_DIRS["Companies"]
     for company, items in by_company.items():
         index_file = companies_dir / f"{company_slugs[company]}.md"
-        render_grouped_by_difficulty(index_file, company, items)
+        render_grouped_by_difficulty(
+            index_file, company, items,
+            top_sections=category_top["Companies"],
+            bottom_sections=category_bottom["Companies"],
+        )
 
     misc_dir = GENERATED_DIRS["Miscellaneous Tags"]
     for tag, items in by_other_tag.items():
         index_file = misc_dir / f"{other_tag_slugs[tag]}.md"
-        render_grouped_by_difficulty(index_file, tag, items)
+        render_grouped_by_difficulty(
+            index_file, tag, items,
+            top_sections=category_top["Miscellaneous Tags"],
+            bottom_sections=category_bottom["Miscellaneous Tags"],
+        )
 
     difficulty_dir = GENERATED_DIRS["Difficulty"]
     for difficulty, items in by_difficulty.items():
         index_file = difficulty_dir / f"{difficulty_slugs[difficulty]}.md"
-        render_flat_index(index_file, difficulty, items)
+        render_flat_index(
+            index_file, difficulty, items,
+            top_sections=category_top["Difficulty"],
+            bottom_sections=category_bottom["Difficulty"],
+        )
 
     rating_dir = GENERATED_DIRS["Rating"]
     for rating, items in by_rating.items():
         index_file = rating_dir / f"{rating_slugs[rating]}.md"
-        render_grouped_by_difficulty(index_file, rating, items)
+        render_grouped_by_difficulty(
+            index_file, rating, items,
+            top_sections=category_top["Rating"],
+            bottom_sections=category_bottom["Rating"],
+        )
 
     print("Appending ReadMe Sections...", flush=True)
     readme_sections_appendix = build_readme_sections_appendix(README_SECTIONS_DIR)
