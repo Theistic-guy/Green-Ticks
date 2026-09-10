@@ -22,6 +22,8 @@ Rating:
 **Idea:** 
 
 **Variations** : 
++ [leftmost-non-repeating-character](leftmost-non-repeating-character.md)
+
 
 ---
 
