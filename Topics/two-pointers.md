@@ -3,6 +3,7 @@
 # Two Pointers
 
 ## Easy
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Two Sum](../Problems/two-sum.md)
 
 ## Medium
@@ -40,6 +41,9 @@
 ### Two Pointers + Arrays + Searching
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
+
+### Two Pointers + Greedy + Strings
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 
 ### Two Pointers + Monotonic Stack + Prefix and Suffix Arrays
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)

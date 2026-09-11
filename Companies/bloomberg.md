@@ -4,6 +4,7 @@
 
 ## Easy
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 
 ## Hard
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
@@ -13,4 +14,3 @@
 - [Container With Most Water](../Problems/container-with-most-water.md)
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
-- [Valid Anagram](../Problems/valid-anagram.md)

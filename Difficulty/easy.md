@@ -4,6 +4,7 @@
 
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
 - [Check For Prime](../Problems/check-for-prime.md)
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Count Digits](../Problems/count-digits.md)
@@ -24,4 +25,5 @@
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)

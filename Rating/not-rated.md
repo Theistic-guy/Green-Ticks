@@ -5,6 +5,7 @@
 ## Easy
 - [All divisors of a number](../Problems/all-divisors-of-a-number.md)
 - [Check For Prime](../Problems/check-for-prime.md)
+- [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Count Digits](../Problems/count-digits.md)
@@ -25,6 +26,7 @@
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
+- [Valid Anagram](../Problems/valid-anagram.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium
@@ -40,6 +42,7 @@
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
@@ -87,7 +90,5 @@
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Group Anagrams](../Problems/group-anagrams.md)
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
