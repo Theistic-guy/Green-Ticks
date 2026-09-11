@@ -4,7 +4,9 @@
 
 ## Easy
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
+- [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
+- [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
 - [Valid Anagram](../Problems/valid-anagram.md)

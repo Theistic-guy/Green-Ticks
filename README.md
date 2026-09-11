@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-104-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-106-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,7 +13,7 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 104 |
+| Problems | 106 |
 | Topics | 22 |
 | Platforms | 3 |
 | Companies | 52 |
@@ -31,7 +31,7 @@
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
   - [Greedy (11)](Topics/greedy.md)
-  - [Hashing (17)](Topics/hashing.md)
+  - [Hashing (18)](Topics/hashing.md)
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
@@ -46,8 +46,8 @@
   - [Sliding Window (11)](Topics/sliding-window.md)
   - [Sorting (10)](Topics/sorting.md)
   - [Stack (2)](Topics/stack.md)
-  - [Strings (5)](Topics/strings.md)
-  - [Two Pointers (12)](Topics/two-pointers.md)
+  - [Strings (7)](Topics/strings.md)
+  - [Two Pointers (13)](Topics/two-pointers.md)
 </details>
 
 ---
@@ -57,7 +57,7 @@
   <summary>Expand</summary>
 
   - [GFG (2)](Platforms/gfg.md)
-  - [Leetcode (42)](Platforms/leetcode.md)
+  - [Leetcode (44)](Platforms/leetcode.md)
   - [Miscellaneous (60)](Platforms/miscellaneous.md)
 </details>
 
@@ -94,7 +94,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (80)](Companies/not-specified.md)
+  - [Not Specified (82)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -127,7 +127,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [Easy (25)](Difficulty/easy.md)
+  - [Easy (27)](Difficulty/easy.md)
   - [Medium (37)](Difficulty/medium.md)
   - [Hard (37)](Difficulty/hard.md)
   - [Not Specified (5)](Difficulty/not-specified.md)
@@ -140,9 +140,9 @@
   <summary>Expand</summary>
 
   - [5 Stars (13)](Rating/5-stars.md)
-  - [4 Stars (7)](Rating/4-stars.md)
+  - [4 Stars (8)](Rating/4-stars.md)
   - [3 Stars (1)](Rating/3-stars.md)
-  - [Not Rated (83)](Rating/not-rated.md)
+  - [Not Rated (84)](Rating/not-rated.md)
 </details>
 
 ---
@@ -163,7 +163,7 @@
   - [Duplicates (5)](Miscellaneous%20Tags/duplicates.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
-  - [GFG (45)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (47)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
   - [Kadane (3)](Miscellaneous%20Tags/kadane.md)
   - [kth (15)](Miscellaneous%20Tags/kth.md)

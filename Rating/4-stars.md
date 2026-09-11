@@ -2,6 +2,9 @@
 
 # 4 Stars
 
+## Easy
+- [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
+
 ## Medium
 - [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐

@@ -4,6 +4,7 @@
 
 ## Easy
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
+- [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Two Sum](../Problems/two-sum.md)
 
 ## Medium
@@ -33,6 +34,9 @@
 
 ### Two Pointers + Searching
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
+
+### Two Pointers + Strings
+- [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 
 ### Two Pointers + Arrays + Linked Lists
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)

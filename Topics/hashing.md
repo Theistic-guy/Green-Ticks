@@ -5,6 +5,7 @@
 ## Easy
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
+- [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
@@ -34,6 +35,7 @@
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 
 ### Hashing + Strings
+- [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 
 ### Hashing + Arrays + Greedy

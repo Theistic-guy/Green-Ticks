@@ -16,6 +16,7 @@
 - [Greatest Common Divisor](../Problems/greatest-common-divisor.md)
 - [If number is power of 2](../Problems/check-if-number-is-power-of-two.md)
 - [Least Common Multiple](../Problems/least-common-multiple.md)
+- [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Majority Element](../Problems/majority-element.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)

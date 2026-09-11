@@ -12,11 +12,13 @@
 - [Greatest Common Divisor](../Problems/greatest-common-divisor.md)
 - [If number is power of 2](../Problems/check-if-number-is-power-of-two.md)
 - [Least Common Multiple](../Problems/least-common-multiple.md)
+- [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 - [Minimum Consecutive Flips](../Problems/minimum-consecutive-flips.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Prime Factors](../Problems/prime-factors.md)
+- [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Two Sum](../Problems/two-sum.md)
