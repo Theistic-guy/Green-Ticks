@@ -3,7 +3,7 @@
 # Affirm
 
 ## Easy
-- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
-- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
+- [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐

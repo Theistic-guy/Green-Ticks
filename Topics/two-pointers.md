@@ -10,6 +10,7 @@
 ## Medium
 - [3Sum](../Problems/3sum.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
+- [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
 
 ## Hard
@@ -36,6 +37,7 @@
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
 
 ### Two Pointers + Strings
+- [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 
 ### Two Pointers + Arrays + Linked Lists

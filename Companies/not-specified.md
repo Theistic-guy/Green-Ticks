@@ -11,7 +11,7 @@
 - [Count Digits](../Problems/count-digits.md)
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
 - [Equilibrium Point](../Problems/equilibrium-point.md)
-- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
+- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐
 - [First Occurrence Last Occurrence & Count in a Sorted Array](../Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
 - [Greatest Common Divisor](../Problems/greatest-common-divisor.md)
 - [If number is power of 2](../Problems/check-if-number-is-power-of-two.md)
@@ -32,6 +32,7 @@
 ## Medium
 - [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
+- [Check if Two Strings are Rotations of Each Other (Leetcode 796)](../Problems/check-if-two-strings-are-rotations-of-each-other-(rotate-string-leetcode).md) ⭐⭐⭐⭐⭐
 - [Count set bits](../Problems/count-set-bits.md)
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
@@ -40,10 +41,14 @@
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
+- [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
+- [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
+- [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
@@ -70,6 +75,7 @@
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram.md) ⭐⭐⭐⭐⭐
+- [Lexicographic Rank of a String](../Problems/lexicographic-rank-of-a-string.md) ⭐⭐⭐
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐

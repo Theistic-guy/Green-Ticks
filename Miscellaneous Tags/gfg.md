@@ -22,11 +22,12 @@
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Two Sum](../Problems/two-sum.md)
-- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
 - [Binary Exponentiation](../Problems/binary-exponentiation.md)
+- [Check if Two Strings are Rotations of Each Other (Leetcode 796)](../Problems/check-if-two-strings-are-rotations-of-each-other-(rotate-string-leetcode).md) ⭐⭐⭐⭐⭐
 - [Count set bits](../Problems/count-set-bits.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
@@ -46,6 +47,7 @@
 ## Hard
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Find Peak Element](../Problems/find-peak-element.md)
+- [Lexicographic Rank of a String](../Problems/lexicographic-rank-of-a-string.md) ⭐⭐⭐
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐

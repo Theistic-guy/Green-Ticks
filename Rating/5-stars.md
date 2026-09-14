@@ -3,6 +3,8 @@
 # 5 Stars
 
 ## Medium
+- [Check if Two Strings are Rotations of Each Other (Leetcode 796)](../Problems/check-if-two-strings-are-rotations-of-each-other-(rotate-string-leetcode).md) ⭐⭐⭐⭐⭐
+- [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Hard

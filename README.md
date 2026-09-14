@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-106-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-113-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,13 +13,13 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 106 |
-| Topics | 22 |
+| Problems | 113 |
+| Topics | 23 |
 | Platforms | 3 |
 | Companies | 52 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 38 |
-| Templates | 4 |
+| Miscellaneous Tags | 43 |
+| Templates | 5 |
 
 ---
 ### 🧠 By Topics
@@ -28,10 +28,11 @@
 
   - [Arrays (50)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
+  - [Combinatorics (1)](Topics/combinatorics.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
-  - [Greedy (11)](Topics/greedy.md)
-  - [Hashing (18)](Topics/hashing.md)
+  - [Greedy (12)](Topics/greedy.md)
+  - [Hashing (21)](Topics/hashing.md)
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
   - [Maths (18)](Topics/maths.md)
@@ -42,12 +43,12 @@
   - [Prefix Sum (11)](Topics/prefix-sum.md)
   - [Queue (2)](Topics/queue.md)
   - [Recursion (3)](Topics/recursion.md)
-  - [Searching (25)](Topics/searching.md)
+  - [Searching (26)](Topics/searching.md)
   - [Sliding Window (11)](Topics/sliding-window.md)
-  - [Sorting (10)](Topics/sorting.md)
+  - [Sorting (11)](Topics/sorting.md)
   - [Stack (2)](Topics/stack.md)
-  - [Strings (7)](Topics/strings.md)
-  - [Two Pointers (13)](Topics/two-pointers.md)
+  - [Strings (14)](Topics/strings.md)
+  - [Two Pointers (14)](Topics/two-pointers.md)
 </details>
 
 ---
@@ -57,8 +58,8 @@
   <summary>Expand</summary>
 
   - [GFG (2)](Platforms/gfg.md)
-  - [Leetcode (44)](Platforms/leetcode.md)
-  - [Miscellaneous (60)](Platforms/miscellaneous.md)
+  - [Leetcode (50)](Platforms/leetcode.md)
+  - [Miscellaneous (61)](Platforms/miscellaneous.md)
 </details>
 
 ---
@@ -84,7 +85,7 @@
   - [Expedia (1)](Companies/expedia.md)
   - [Facebook (7)](Companies/facebook.md)
   - [Goldman Sachs (7)](Companies/goldman-sachs.md)
-  - [Google (20)](Companies/google.md)
+  - [Google (21)](Companies/google.md)
   - [IBM (1)](Companies/ibm.md)
   - [Intel (1)](Companies/intel.md)
   - [Intuit (2)](Companies/intuit.md)
@@ -94,7 +95,7 @@
   - [Microsoft (12)](Companies/microsoft.md)
   - [National Instruments (1)](Companies/national-instruments.md)
   - [Netflix (2)](Companies/netflix.md)
-  - [Not Specified (82)](Companies/not-specified.md)
+  - [Not Specified (88)](Companies/not-specified.md)
   - [Oracle (5)](Companies/oracle.md)
   - [Paypal (3)](Companies/paypal.md)
   - [Qualtrics (1)](Companies/qualtrics.md)
@@ -128,8 +129,8 @@
   <summary>Expand</summary>
 
   - [Easy (27)](Difficulty/easy.md)
-  - [Medium (37)](Difficulty/medium.md)
-  - [Hard (37)](Difficulty/hard.md)
+  - [Medium (42)](Difficulty/medium.md)
+  - [Hard (39)](Difficulty/hard.md)
   - [Not Specified (5)](Difficulty/not-specified.md)
 </details>
 
@@ -139,9 +140,9 @@
 <details>
   <summary>Expand</summary>
 
-  - [5 Stars (13)](Rating/5-stars.md)
-  - [4 Stars (8)](Rating/4-stars.md)
-  - [3 Stars (1)](Rating/3-stars.md)
+  - [5 Stars (15)](Rating/5-stars.md)
+  - [4 Stars (10)](Rating/4-stars.md)
+  - [3 Stars (4)](Rating/3-stars.md)
   - [Not Rated (84)](Rating/not-rated.md)
 </details>
 
@@ -152,32 +153,36 @@
   <summary>Expand</summary>
 
   - [1D DP (1)](Miscellaneous%20Tags/1d-dp.md)
+  - [Anagram (5)](Miscellaneous%20Tags/anagram.md)
   - [Binary - 0 & 1 (5)](Miscellaneous%20Tags/binary-0-1.md)
-  - [Binary Search (24)](Miscellaneous%20Tags/binary-search.md)
+  - [Binary Search (25)](Miscellaneous%20Tags/binary-search.md)
   - [Bits (3)](Miscellaneous%20Tags/bits.md)
   - [Boyer-Moore Voting (2)](Miscellaneous%20Tags/boyer-moore-voting.md)
   - [Brian Kernighan (2)](Miscellaneous%20Tags/brian-kernighan.md)
+  - [Comparator (1)](Miscellaneous%20Tags/comparator.md)
   - [Cycle (2)](Miscellaneous%20Tags/cycle.md)
   - [Cyclic Sort / Placement (2)](Miscellaneous%20Tags/cyclic-sort-placement.md)
   - [Deque (2)](Miscellaneous%20Tags/deque.md)
-  - [Duplicates (5)](Miscellaneous%20Tags/duplicates.md)
+  - [Duplicates (6)](Miscellaneous%20Tags/duplicates.md)
+  - [Factorial (1)](Miscellaneous%20Tags/factorial.md)
   - [Flips (1)](Miscellaneous%20Tags/flips.md)
   - [Floyd's Cycle-Finding (2)](Miscellaneous%20Tags/floyds-cycle-finding.md)
-  - [GFG (47)](Miscellaneous%20Tags/gfg.md)
+  - [GFG (49)](Miscellaneous%20Tags/gfg.md)
   - [In-place Array Modification (3)](Miscellaneous%20Tags/in-place-array-modification.md)
   - [Kadane (3)](Miscellaneous%20Tags/kadane.md)
   - [kth (15)](Miscellaneous%20Tags/kth.md)
-  - [Longest (5)](Miscellaneous%20Tags/longest.md)
+  - [Largest (1)](Miscellaneous%20Tags/largest.md)
+  - [Longest (7)](Miscellaneous%20Tags/longest.md)
   - [Maximum (8)](Miscellaneous%20Tags/maximum.md)
   - [Median (2)](Miscellaneous%20Tags/median.md)
   - [Merge (4)](Miscellaneous%20Tags/merge.md)
-  - [Minimum (3)](Miscellaneous%20Tags/minimum.md)
+  - [Minimum (5)](Miscellaneous%20Tags/minimum.md)
   - [Monotonic Queue (2)](Miscellaneous%20Tags/monotonic-queue.md)
   - [Monotonic Stack (2)](Miscellaneous%20Tags/monotonic-stack.md)
   - [Ordered Set (1)](Miscellaneous%20Tags/ordered-set.md)
   - [P & C (1)](Miscellaneous%20Tags/p-c.md)
   - [Pairs (2)](Miscellaneous%20Tags/pairs.md)
-  - [Predicate Search - Basic (2)](Miscellaneous%20Tags/predicate-search-basic.md)
+  - [Predicate Search - Basic (3)](Miscellaneous%20Tags/predicate-search-basic.md)
   - [Predicate Search - Counting (4)](Miscellaneous%20Tags/predicate-search-counting.md)
   - [Predicate Search - Maximize Minimum (2)](Miscellaneous%20Tags/predicate-search-maximize-minimum.md)
   - [Predicate Search - Minimize Maximum (4)](Miscellaneous%20Tags/predicate-search-minimize-maximum.md)
@@ -187,6 +192,7 @@
   - [Subarray (11)](Miscellaneous%20Tags/subarray.md)
   - [Subsequence (1)](Miscellaneous%20Tags/subsequence.md)
   - [Subset (5)](Miscellaneous%20Tags/subset.md)
+  - [Substring (3)](Miscellaneous%20Tags/substring.md)
   - [Union (1)](Miscellaneous%20Tags/union.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
 </details>
@@ -200,6 +206,7 @@
   - [2-Way-Partitioning](Templates/2-Way-Partitioning.md)
   - [Cyclic-sort-and-placement](Templates/Cyclic-sort-and-placement.md)
   - [Heap-Lazy-Deletion-(Decrease-Key)](Templates/Heap-Lazy-Deletion-(Decrease-Key).md)
+  - [KMP-string-matching](Templates/KMP-string-matching.md)
   - [Merging-two-sorted-arrays](Templates/Merging-two-sorted-arrays.md)
 
 </details>

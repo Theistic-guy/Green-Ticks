@@ -8,6 +8,7 @@
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 
 ## Hard
+- [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 
 ## Not Specified

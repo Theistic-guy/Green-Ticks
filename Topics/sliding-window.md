@@ -5,7 +5,7 @@
 ## Easy
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
-- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
+- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 
 ## Medium
@@ -35,7 +35,7 @@
 - [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
 
 ### Sliding Window + Hashing + Strings
-- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
+- [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐
 
 ### Sliding Window + Arrays + Greedy + Sorting
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
