@@ -14,7 +14,7 @@
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium
@@ -25,7 +25,7 @@
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
@@ -120,7 +120,7 @@
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Strings
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ### Arrays + Heap + Sorting
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
@@ -156,7 +156,7 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Sorting + Strings
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
 ### Arrays + Heap + Searching + Two Pointers
 - [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐

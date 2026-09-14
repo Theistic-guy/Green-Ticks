@@ -4,7 +4,7 @@
 
 ## Easy
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Hard
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

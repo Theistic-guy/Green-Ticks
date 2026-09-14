@@ -9,12 +9,12 @@
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
@@ -54,7 +54,7 @@
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
 ### Hashing + Arrays + Strings
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ### Hashing + Sliding Window + Strings
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
@@ -70,4 +70,4 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ### Hashing + Arrays + Sorting + Strings
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐

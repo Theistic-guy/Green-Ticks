@@ -4,11 +4,11 @@
 
 ## Easy
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)

@@ -59,7 +59,7 @@
   - [First Missing Positive](/Problems/first-missing-positive.md)
   - [First Occurrence Last Occurrence And Count In A Sorted Array](/Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
   - [Greatest Common Divisor](/Problems/greatest-common-divisor.md)
-  - [Group Anagrams](/Problems/group-anagrams.md)
+  - [Group Anagrams](Problems/group-anagrams-(leetcode-49).md)
   - [Intersection Of Two Sorted Arrays](/Problems/intersection-of-two-sorted-arrays.md)
   - [Josephus Problem](/Problems/josephus-problem.md)
   - [Koko Eating Bananas](/Problems/koko-eating-bananas.md)
@@ -129,7 +129,7 @@
   - [Two Odd Occurring](/Problems/two-odd-occurring.md)
   - [Two Sum](/Problems/two-sum.md)
   - [Union Of Two Sorted Arrays](/Problems/union-of-two-sorted-arrays.md)
-  - [Valid Anagram](/Problems/valid-anagram.md)
+  - [Valid Anagram](Problems/valid-anagram-(leetcode-242).md)
   - [Weighted Sum Range Queries](/Problems/weighted-sum-range-queries.md)
 
 - **Notes**

@@ -3,7 +3,7 @@
 # Yahoo
 
 ## Medium
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
 ## Not Specified
 - [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)

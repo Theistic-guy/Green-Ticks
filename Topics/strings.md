@@ -7,10 +7,10 @@
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 
 ## See As Combo-wise Listings
@@ -23,7 +23,7 @@
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 
 ### Strings + Arrays + Hashing
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 
 ### Strings + Greedy + Two Pointers
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
@@ -32,4 +32,4 @@
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md)
 
 ### Strings + Arrays + Hashing + Sorting
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐

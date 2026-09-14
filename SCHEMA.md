@@ -27,7 +27,7 @@ Green-Ticks/
 ## Problem file naming
 
 - Problem files live under `Problems/`
-- Use lowercase hyphenated filenames.
+- Use lowercase hyphenated filenames. Supports parenthesis and underscores too (updated) .
 - Example: `two-sum.md`
 - The filename is the stable identifier.
 - The `Title` field is the display name.

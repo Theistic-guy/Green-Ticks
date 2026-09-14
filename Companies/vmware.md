@@ -3,7 +3,7 @@
 # VMware
 
 ## Medium
-- [Group Anagrams](../Problems/group-anagrams.md) ⭐⭐⭐⭐
+- [Group Anagrams](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

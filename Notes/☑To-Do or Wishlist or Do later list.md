@@ -56,5 +56,7 @@
 		
 		Category 1 and 4 both sort by start but diverge on what they track (merged range vs concurrent count) — that's the pair most people conflate. Category 3 is the one place the sort key flips to end, which is the fork worth drilling until it's automatic.
 + Two heap approach
-+ [Complementary Counting](Complementary%20Counting.md)
-	+ do some problems
++ Strings variations and questions to do - [string variations and patterns](Extras/string%20variations%20and%20patterns.md)
+	+ Some of the anagrams, rotations, etc. already done.
+	+ do 1044, 5 , shortest palindrome
+	

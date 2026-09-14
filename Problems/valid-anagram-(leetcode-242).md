@@ -1,5 +1,5 @@
 ---
-Title: Valid Anagram
+Title: Valid Anagram (leetcode 242)
 Companies:
   - Amazon
   - Google
@@ -19,11 +19,13 @@ Platform:
 Difficulty: Easy
 Other Tags:
   - GFG
+  - Anagram
 Link: "[Leetcode](https://leetcode.com/problems/valid-anagram/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-# ✔️Valid Anagram
+# ✔️Valid Anagram (leetcode 242)
+#LeetCode 
 
 **Pattern:** Arrays
 

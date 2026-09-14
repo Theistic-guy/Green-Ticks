@@ -1,5 +1,5 @@
 ---
-Title: Group Anagrams
+Title: Group Anagrams (Leetcode 49)
 Companies:
   - Amazon
   - Google
@@ -34,13 +34,15 @@ Platform:
   - Leetcode
 Difficulty: Medium
 Other Tags:
+  - Anagram
 Link: "[Leetcode](https://leetcode.com/problems/group-anagrams/)"
 Rating:
   - ⭐⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-# 🔠Group Anagrams
+# 🔠Group Anagrams (LC 49)
+#LeetCode 
 
 **Pattern:** Arrays, Strings, Sorting
 

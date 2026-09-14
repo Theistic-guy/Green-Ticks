@@ -27,5 +27,5 @@
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
 - [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
 - [Two Sum](../Problems/two-sum.md)
-- [Valid Anagram](../Problems/valid-anagram.md)
+- [Valid Anagram](../Problems/valid-anagram-(leetcode-242).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)

@@ -10,8 +10,10 @@ Platform:
   - Leetcode
 Difficulty: Easy
 Other Tags:
+  - Anagram
 Link: ""
 Rating:
+  - ⭐⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
