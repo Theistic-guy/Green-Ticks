@@ -1,47 +1,70 @@
 ---
-Title: Palindrome number
+Title: Lexicographic Rank of a String
 Companies:
   - Not Specified
 Topics:
-  - Maths
+  - Strings
+  - Combinatorics
 Platform:
   - Miscellaneous
-Difficulty: Medium
+Difficulty: Hard
 Other Tags:
+  - GFG
+  - Factorial
 Link: ""
 Rating:
+  - ⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-# Palindrome Number
+# Lexicographic Rank of a String
 
 **Pattern:** 
 
 **Idea:** 
 
 **Variations** : 
++ with duplicates => divide by count
 
 ---
 
 ## 💻 Code
 
 ```Python
-def isPalindrome(x):
-    if x < 0:
-        return False
+def lexicographicRank(s):
+    n = len(s)
+    CHAR = 256
 
-    original = x
-    rev = 0
+    # factorial
+    fact = 1
+    for i in range(2, n + 1):
+        fact *= i
 
-    while x > 0:
-        digit = x % 10
-        rev = rev * 10 + digit
-        x //= 10
+    # frequency
+    count = [0] * CHAR
+    for ch in s:
+        count[ord(ch)] += 1
 
-    return original == rev
+    # prefix counts
+    for i in range(1, CHAR):
+        count[i] += count[i - 1]
+
+    rank = 1
+
+    for i in range(n):
+        fact //= (n - i)
+
+        smaller = count[ord(s[i]) - 1] if ord(s[i]) > 0 else 0
+        rank += smaller * fact
+
+        # remove current character
+        for j in range(ord(s[i]), CHAR):
+            count[j] -= 1
+
+    return rank
 
 ```
-**Time complexity** - O(D) , D is no of digits
+**Time complexity** - O(n)
 
 **Aux. Space complexity** -  O(1)
 
