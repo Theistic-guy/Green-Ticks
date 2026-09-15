@@ -4,7 +4,7 @@ Here's the real breakdown, organized by actual interview yield — not textbook 
 
 **Interview relevance: Low-Medium (mostly as a technique, rarely the intended solution)**
 
-- **1044. Longest Duplicate Substring** — Hard, the canonical rolling hash problem (binary search on length + Rabin-Karp check). Actually shows up at Google/senior rounds.
+- ✅ **1044. Longest Duplicate Substring** — Hard, the canonical rolling hash problem (binary search on length + Rabin-Karp check). Actually shows up at Google/senior rounds.
 - **187. Repeated DNA Sequences** — Medium, good warm-up, hashing fixed-length windows.
 - **28. Find the Index of the First Occurrence** — technically solvable with rolling hash, but nobody expects that solution; KMP or built-in is fine.
 - **1392. Longest Happy Prefix** — same idea as LPS array (see below) but often solved with rolling hash comparison of prefix/suffix hashes.
@@ -34,7 +34,7 @@ Reality check: full from-scratch KMP implementation under interview pressure is 
 
 **Interview relevance: High (as a trick), Low (as a topic)**
 
-- **796. Rotate String** — trivial, `s2 in s1+s1`. Very common as an "easy warm-up" or phone-screen filter question.
+- ✅**796. Rotate String** — trivial, `s2 in s1+s1`. Very common as an "easy warm-up" or phone-screen filter question.
 - **459. Repeated Substring Pattern** — same `s+s` trick.
 - **154 / 33 / 81** (rotated sorted array) — these are _array_ rotation, not string rotation; different pattern (binary search), don't conflate.
 
@@ -44,12 +44,12 @@ Reality check: the entire "rotation" topic for strings collapses into one trick:
 
 **Interview relevance: Very High — one of the most FAANG-tested string families**
 
-- **242. Valid Anagram** — baseline, must be instant.
-- **49. Group Anagrams** — extremely common (Amazon, Meta, Bloomberg), sort-key or count-key hashing.
-- **438. Find All Anagrams in a String** — sliding window + frequency count, this exact pattern reappears constantly.
+- ✅ **242. Valid Anagram** — baseline, must be instant.
+- ✅ **49. Group Anagrams** — extremely common (Amazon, Meta, Bloomberg), sort-key or count-key hashing.
+- ✅ **438. Find All Anagrams in a String** — sliding window + frequency count, this exact pattern reappears constantly.
 - **567. Permutation in String** — same sliding window skeleton as 438.
 - **76. Minimum Window Substring** — harder variant of the same frequency-window idea, very frequently asked at senior levels.
-- **1347. Minimum Number of Steps to Make Two Strings Anagram** — easy variant.
+- ✅ **1347. Minimum Number of Steps to Make Two Strings Anagram** — easy variant.
 
 Reality check: this is a **must-master bucket**. The fixed/variable sliding window + 26-length frequency array pattern (438/567/76) is one of the highest-frequency FAANG patterns overall, not just within strings.
 
@@ -60,8 +60,8 @@ Reality check: this is a **must-master bucket**. The fixed/variable sliding wind
 Break it into the sub-patterns that actually get asked:
 
 - **Sliding window (variable size)**: 3 (Longest Substring Without Repeating Characters — _extremely_ common), 76, 424, 340.
-- **Sliding window (fixed size)**: 438, 567, 187.
-- **Two-pointer + expand around center**: 5 (Longest Palindromic Substring — extremely common), 647 (Palindromic Substrings).
+- **Sliding window (fixed size)**: ✅438, 567, 187.
+- **Two-pointer + expand around center**: ✅5 (Longest Palindromic Substring — extremely common), 647 (Palindromic Substrings).
 - **DP on substrings**: 5 (DP version), 132 (Palindrome Partitioning II), 115 (Distinct Subsequences).
 - **Trie-based substring**: 208, and substring search variants in harder problems.
 - **Suffix structures**: mostly out of scope for standard loops (suffix array/tree essentially never hand-coded live).
@@ -71,9 +71,9 @@ Break it into the sub-patterns that actually get asked:
 
 **Interview relevance: Medium-High — a recurring "small trick, big signal" bucket**
 
-- **179. Largest Number** — custom comparator (`a+b > b+a`), the canonical lexicographic-ordering-for-a-non-lexicographic-goal problem. Frequently asked.
+- ✅**179. Largest Number** — custom comparator (`a+b > b+a`), the canonical lexicographic-ordering-for-a-non-lexicographic-goal problem. Frequently asked.
 - **60. Permutation Sequence** — factorial number system + lexicographic ordering of permutations without generating all of them. Common at senior/Google-style rounds.
-- **31. Next Permutation** — the core "next lexicographic arrangement" algorithm. Extremely high yield — shows up standalone and as a building block in other problems.
+- ✅ **31. Next Permutation** — the core "next lexicographic arrangement" algorithm. Extremely high yield — shows up standalone and as a building block in other problems.
 - **556. Next Greater Element III** — same next-permutation logic applied to digits of a number.
 - **440. K-th Smallest in Lexicographic Order** — lexicographic tree/trie-traversal counting trick (not sorting!). Hard, but a known Google favorite — worth recognizing the pattern even if you can't derive it cold.
 - **386. Lexicographical Numbers** — same DFS-over-implicit-10-ary-trie idea as 440, easier version.
@@ -101,10 +101,6 @@ If you're cramming with limited time, in order of expected value:
 6. **Rolling hash — know it conceptually for #1044 and as a fallback answer to "can you beat brute force"** — low direct-ask frequency.
 7. **2D Rabin-Karp — skip entirely** for standard FAANG loops.
 
-
----
-
-Here is an expanded, comprehensive PKM note formatted for tools like Obsidian or Notion. It fully documents both the interviewer-preferred Expand Around Center approach and your custom Split-Sign Rolling Hash + Binary Search technique.
 
 ---
 

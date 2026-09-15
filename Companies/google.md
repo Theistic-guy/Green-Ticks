@@ -3,18 +3,18 @@
 # Google
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 
 ## Hard
-- [Divide Chocolate](../Problems/divide-chocolate.md)
+- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)

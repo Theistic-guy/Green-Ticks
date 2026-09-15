@@ -1,6 +1,6 @@
 See :
 + [shortest-subarray-with-sum-at-least-k](../Problems/shortest-subarray-with-sum-at-least-k.md)
-+ [sliding-window-maximum](../Problems/sliding-window-maximum.md)
++ [sliding-window-maximum-(lc-239)](../Problems/sliding-window-maximum-(lc-239).md)
 
 
 ---

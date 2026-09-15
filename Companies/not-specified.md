@@ -59,14 +59,14 @@
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 - [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)

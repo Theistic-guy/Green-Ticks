@@ -11,7 +11,7 @@
 - [3Sum](../Problems/3sum.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
@@ -55,4 +55,4 @@
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
 
 ### Two Pointers + Arrays + Heap + Searching
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

@@ -23,7 +23,7 @@
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
@@ -39,7 +39,7 @@
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 - [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)

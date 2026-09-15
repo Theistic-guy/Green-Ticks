@@ -3,11 +3,11 @@
 # Heap
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
@@ -30,7 +30,7 @@
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 
 ### Heap + Arrays + Hashing + Sorting
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Heap + Arrays + Searching + Two Pointers
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

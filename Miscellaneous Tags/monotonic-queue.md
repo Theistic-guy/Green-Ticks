@@ -3,5 +3,5 @@
 # Monotonic Queue
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐

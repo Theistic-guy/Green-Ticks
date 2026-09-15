@@ -3,7 +3,7 @@
 # Microsoft
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium

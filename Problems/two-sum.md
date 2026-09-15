@@ -1,5 +1,5 @@
 ---
-Title: Two Sum
+Title: Two Sum (Leetcode 1)
 Companies:
   - Not Specified
 Topics:
@@ -15,6 +15,7 @@ Link: "[Leetcode](https://leetcode.com/problems/two-sum/)"
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # 2️⃣Two Sum
+#LeetCode 
 
 **Pattern:** Two Pointers
 

@@ -7,7 +7,7 @@
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
@@ -23,18 +23,18 @@
 - [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
 - [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [Divide Chocolate](../Problems/divide-chocolate.md)
+- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)

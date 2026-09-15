@@ -9,7 +9,7 @@
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐

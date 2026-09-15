@@ -14,7 +14,7 @@
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [Divide Chocolate](../Problems/divide-chocolate.md)
+- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
@@ -24,7 +24,7 @@
 
 ### Greedy + Searching
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [Divide Chocolate](../Problems/divide-chocolate.md)
+- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)

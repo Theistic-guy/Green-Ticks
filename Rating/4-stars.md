@@ -10,7 +10,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard

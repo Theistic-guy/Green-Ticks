@@ -1,5 +1,5 @@
 ---
-Title: Top K Frequent Elements
+Title: Top K Frequent Elements (Leetcode 347)
 Companies:
   - Amazon
   - Google

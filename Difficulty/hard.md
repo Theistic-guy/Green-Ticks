@@ -2,11 +2,11 @@
 
 # Hard
 
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
-- [Divide Chocolate](../Problems/divide-chocolate.md)
+- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)

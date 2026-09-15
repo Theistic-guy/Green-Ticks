@@ -339,7 +339,7 @@ if (
 
 ⭐⭐⭐⭐ Good to Know
 
-- Next Permutation (LeetCode 31)
+- Next Permutation (LeetCode 31) [next-permutation-(leetcode-31)](next-permutation-(leetcode-31).md)
     
 
     

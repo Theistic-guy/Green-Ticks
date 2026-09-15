@@ -12,7 +12,7 @@
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 - [Minimum Consecutive Flips](../Problems/minimum-consecutive-flips.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
@@ -33,11 +33,11 @@
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
@@ -136,7 +136,7 @@
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐
 
 ### Arrays + Queue + Sliding Window
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Searching + Two Pointers
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
@@ -149,7 +149,7 @@
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 
 ### Arrays + Hashing + Heap + Sorting
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Arrays + Hashing + Prefix Sum + Sliding Window
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
@@ -159,7 +159,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
 ### Arrays + Heap + Searching + Two Pointers
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Prefix Sum + Queue + Sliding Window
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐

@@ -8,7 +8,7 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram.md) ⭐⭐⭐⭐⭐

@@ -1,5 +1,5 @@
 ---
-Title: Divide Chocolate
+Title: Divide Chocolate (Leetcode 1231)
 Companies:
   - Google
 Topics:
@@ -67,6 +67,7 @@ def maximizeSweetness(sweetness, k):
 
 ---
 # Divide Chocolate
+#LeetCode 
 
 > **LeetCode 1231 — Binary Search on Answer + Greedy Partition**
 > 

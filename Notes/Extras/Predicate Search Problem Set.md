@@ -94,7 +94,7 @@ and you find the **last True**.
 | --- | ------------------------------------ | ---: | --------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | 10  | **Magnetic Force Between Two Balls** | 1552 | Greedy placement      | Amazon, Meta, Google | [magnetic-force-between-two-balls-or-aggressive-cows](../../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md) |
 | 11  | **Aggressive Cows**                  |    — | Same greedy placement | Amazon, Google       | [magnetic-force-between-two-balls-or-aggressive-cows](../../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md) |
-| 12  | **Divide Chocolate**                 | 1231 | Greedy partition      | Google               | [divide-chocolate](../../Problems/divide-chocolate.md)                                                                       |
+| 12  | **Divide Chocolate**                 | 1231 | Greedy partition      | Google               | [divide-chocolate_lc-1231](../../Problems/divide-chocolate_lc-1231.md)                                                                       |
 
 Again, **1552 is the one I'd learn properly**.
 
@@ -125,7 +125,7 @@ Instead of a straightforward greedy validator, you **count how many things satis
 | 13  | **K-th Smallest Pair Distance**                  |  719 | Two pointers + counting | Google, Amazon | [kth-smallest-pair-distance](../../Problems/kth-smallest-pair-distance.md)                                   |
 | 14  | **K-th Smallest Element in a Sorted Matrix**     |  378 | Count `<= X`            | Amazon, Google | [kth-smallest-element-in-a-sorted-matrix](../../Problems/kth-smallest-element-in-a-sorted-matrix.md)         |
 | 15  | **K-th Smallest Number in Multiplication Table** |  668 | Mathematical counting   | Google         | [kth-smallest-number-in-multiplication-table](../../Problems/kth-smallest-number-in-multiplication-table.md) |
-| 16  | **Maximum Candies Allocated to K Children**      | 2226 | Count pieces            | Google, Amazon | [maximum-candies-allocated-to-k-children](../../Problems/maximum-candies-allocated-to-k-children.md)         |
+| 16  | **Maximum Candies Allocated to K Children**      | 2226 | Count pieces            | Google, Amazon | [maximum-candies-allocated-to-k-children-(lc-2226)](../../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)         |
 
 This teaches a very useful abstraction:
 

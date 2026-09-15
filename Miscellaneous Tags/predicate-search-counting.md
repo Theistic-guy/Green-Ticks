@@ -3,7 +3,7 @@
 # Predicate Search - Counting
 
 ## Medium
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 
 ## Hard
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)

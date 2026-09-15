@@ -1,8 +1,8 @@
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-+ next permutation (coming from [permutations-2-handling-duplicates](../Problems/permutations-2-handling-duplicates.md))
++ tagging every leetcode problem with #LeetCode 
+	+ also making their names include leetcode and it's number
 + implementations of basic data structures
-+ tag every LC note with  #leetcode 
 + (../..Readme) path is diff for nested folders this needs to be fixed appropriately.
 + do problem notes on the intervals pattern [Intervals & Ranges Pattern (Sorting)](Intervals%20&%20Ranges%20Pattern%20(Sorting).md)
 	+ Problems
@@ -58,5 +58,6 @@
 + Two heap approach
 + Strings variations and questions to do - [string variations and patterns](Extras/string%20variations%20and%20patterns.md)
 	+ Some of the anagrams, rotations, etc. already done.
-	+ do 1044, 5 , shortest palindrome
+	+ shortest palindrome
+	+ have to learn trie to attempt a particular pattern
 	

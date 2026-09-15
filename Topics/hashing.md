@@ -8,7 +8,7 @@
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
@@ -71,7 +71,7 @@
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 
 ### Hashing + Arrays + Heap + Sorting
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Hashing + Arrays + Prefix Sum + Sliding Window
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐

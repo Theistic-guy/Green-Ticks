@@ -11,6 +11,7 @@ Difficulty: Hard
 Other Tags:
   - GFG
   - Factorial
+  - Lexicographical
 Link: ""
 Rating:
   - ⭐⭐⭐

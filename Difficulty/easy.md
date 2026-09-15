@@ -25,7 +25,7 @@
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)

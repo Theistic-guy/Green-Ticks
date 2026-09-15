@@ -1,5 +1,5 @@
 ---
-Title: Maximum Candies Allocated to K Children
+Title: Maximum Candies Allocated to K Children (LC 2226)
 Companies:
   - Google
   - Amazon
@@ -60,6 +60,7 @@ def maximumCandies(candies, k):
 
 ---
 # Maximum Candies Allocated to K Children
+#LeetCode 
 
 
 Given `candies[i]` piles of candies and `k` children, split the piles so that every child receives **the same number of candies**. Each child can receive candies from **only one pile**.

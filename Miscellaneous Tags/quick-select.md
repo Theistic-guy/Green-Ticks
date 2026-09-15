@@ -3,8 +3,8 @@
 # Quick select
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements.md) ⭐⭐⭐⭐
+- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

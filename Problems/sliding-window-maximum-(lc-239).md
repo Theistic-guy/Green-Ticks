@@ -1,5 +1,5 @@
 ---
-Title: "# Sliding Window Maximum (Leetcode 239)"
+Title: Sliding Window Maximum (Leetcode 239)
 Companies:
   - Not Specified
 Topics:

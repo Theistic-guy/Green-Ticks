@@ -13,7 +13,7 @@
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
@@ -32,7 +32,7 @@
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
 
 ### Sliding Window + Arrays + Queue
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum.md) ⭐⭐⭐⭐⭐
+- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 
 ### Sliding Window + Hashing + Strings
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐

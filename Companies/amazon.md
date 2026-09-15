@@ -3,7 +3,7 @@
 # Amazon
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements.md)
+- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
@@ -12,7 +12,7 @@
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children.md)
+- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 
