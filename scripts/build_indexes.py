@@ -21,13 +21,15 @@ README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
 ASSETS_DIR = ROOT / "assets"
 
 CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
-    "Topics":             ASSETS_DIR / "Topics Sections",
+    "Topics":             ASSETS_DIR / "Topics Sections" / "All",
     "Platforms":          ASSETS_DIR / "Platforms Sections",
     "Companies":          ASSETS_DIR / "Companies Sections",
     "Difficulty":         ASSETS_DIR / "Difficulty Sections",
     "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Sections",
     "Rating":             ASSETS_DIR / "Rating Sections",
 }
+
+TOPICS_SECTIONS_DIR = ASSETS_DIR / "Topics Sections"
 
 template_files = []
 
@@ -482,6 +484,45 @@ def build_category_sections(sections_dir: Path, sub: str) -> str:
 
     return "\n\n---\n\n".join(chunks)
 
+def build_topic_individual_section(slug: str, position: str) -> str:
+    """
+    Read the individual top.md or bottom.md from a per-topic subfolder.
+
+    For a topic with slug 'sliding-window', looks for:
+      assets/Topics Sections/sliding-window/top.md   (position='top')
+      assets/Topics Sections/sliding-window/bottom.md (position='bottom')
+
+    Returns '' if the folder or file doesn't exist, or the file is empty.
+    """
+    file_path = TOPICS_SECTIONS_DIR / slug / f"{position}.md"
+    if not file_path.exists():
+        return ""
+
+    content = file_path.read_text(encoding="utf-8").strip()
+    if not content or content.lower() == "placeholder":
+        return ""
+
+    return content
+
+def merge_topic_sections(all_section: str, individual_section: str, position: str) -> str:
+    """
+    Merge the All-level and individual-level sections for a topic.
+
+    For 'top': All first, then individual  (All encapsulates on the outside)
+    For 'bottom': individual first, then All
+
+    Returns the merged string, or '' if both are empty.
+    """
+    if position == "top":
+        parts = [p for p in [all_section, individual_section] if p]
+    else:  # bottom
+        parts = [p for p in [individual_section, all_section] if p]
+
+    if not parts:
+        return ""
+
+    return "\n\n---\n\n".join(parts)
+
 def build_templates_section(template_files: list[Path]) -> str:
     """Generate the Templates section of the README."""
 
@@ -496,7 +537,7 @@ def build_templates_section(template_files: list[Path]) -> str:
     ]
 
     for file in template_files:
-        lines.append(f"  - [{file.stem}](Templates/{file.name})")
+        lines.append(f"  - [{file.stem}](Templates/{quote(file.name)})")
 
     lines.extend([
         "",
@@ -716,11 +757,21 @@ def main() -> None:
 
     topics_dir = GENERATED_DIRS["Topics"]
     for topic, items in by_topic.items():
-        index_file = topics_dir / f"{topic_slugs[topic]}.md"
+        slug = topic_slugs[topic]
+        index_file = topics_dir / f"{slug}.md"
+
+        # Per-topic individual sections (from assets/Topics Sections/<slug>/)
+        indiv_top = build_topic_individual_section(slug, "top")
+        indiv_bottom = build_topic_individual_section(slug, "bottom")
+
+        # Merge: All encapsulates individual
+        merged_top = merge_topic_sections(category_top["Topics"], indiv_top, "top")
+        merged_bottom = merge_topic_sections(category_bottom["Topics"], indiv_bottom, "bottom")
+
         render_grouped_by_difficulty(
             index_file, topic, items, combo_topic=topic,
-            top_sections=category_top["Topics"],
-            bottom_sections=category_bottom["Topics"],
+            top_sections=merged_top,
+            bottom_sections=merged_bottom,
         )
 
     platforms_dir = GENERATED_DIRS["Platforms"]
