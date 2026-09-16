@@ -19,7 +19,7 @@ Companies:
   - Intuit
   - Yandex
   - JPMorgan
-  - Paypal
+  - PayPal
   - Spotify
   - Zoho
 Topics:

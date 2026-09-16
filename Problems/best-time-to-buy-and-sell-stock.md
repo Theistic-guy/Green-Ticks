@@ -22,7 +22,7 @@ Companies:
   - Visa
   - eBay
   - JPMorgan
-  - Paypal
+  - PayPal
   - Capital One
   - ServiceNow
   - Zoho

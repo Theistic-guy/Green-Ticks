@@ -14,7 +14,7 @@ Companies:
   - Snapchat
   - Intuit
   - Visa
-  - Paypal
+  - PayPal
   - Citadel
   - Qualtrics
   - ServiceNow
