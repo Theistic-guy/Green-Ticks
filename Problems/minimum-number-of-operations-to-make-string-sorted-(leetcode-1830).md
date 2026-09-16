@@ -4,10 +4,17 @@ Companies:
   - Not Specified
 Topics:
   - Maths
+  - Combinatorics
+  - Strings
+  - Greedy
 Platform:
-  - Miscellaneous
-Difficulty: Medium
+  - Leetcode
+Difficulty: Hard
 Other Tags:
+  - Factorial
+  - Sorted
+  - Minimum
+  - Lexicographical
 Link: ""
 Rating:
 ---
@@ -26,24 +33,53 @@ Rating:
 ## 💻 Code
 
 ```Python
-def isPalindrome(x):
-    if x < 0:
-        return False
+MOD = 10**9 + 7
 
-    original = x
-    rev = 0
+def makeStringSorted(s):
+    n = len(s)
 
-    while x > 0:
-        digit = x % 10
-        rev = rev * 10 + digit
-        x //= 10
+    fact = [1] * (n + 1)
+    invFact = [1] * (n + 1)
 
-    return original == rev
+    for i in range(1, n + 1):
+        fact[i] = fact[i - 1] * i % MOD
+
+    invFact[n] = pow(fact[n], MOD - 2, MOD)
+
+    for i in range(n, 0, -1):
+        invFact[i - 1] = invFact[i] * i % MOD
+
+    freq = [0] * 26
+    for ch in s:
+        freq[ord(ch) - 97] += 1
+
+    ans = 0
+
+    for i, ch in enumerate(s):
+        cur = ord(ch) - 97
+
+        for smaller in range(cur):
+            if freq[smaller] == 0:
+                continue
+
+            freq[smaller] -= 1
+
+            ways = fact[n - i - 1]
+            for f in freq:
+                ways = ways * invFact[f] % MOD
+
+            ans = (ans + ways) % MOD
+
+            freq[smaller] += 1
+
+        freq[cur] -= 1
+
+    return ans
 
 ```
-**Time complexity** - O(D) , D is no of digits
+**Time complexity** - O(n) 
 
-**Aux. Space complexity** -  O(1)
+**Aux. Space complexity** -  O(n)
 
 ---
 

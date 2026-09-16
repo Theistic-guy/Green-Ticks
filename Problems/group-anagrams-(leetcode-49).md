@@ -12,7 +12,7 @@ Companies:
   - Goldman Sachs
   - Yahoo
   - Salesforce
-  - tiktok
+  - TikTok
   - Cisco
   - VMware
   - Walmart Global Tech

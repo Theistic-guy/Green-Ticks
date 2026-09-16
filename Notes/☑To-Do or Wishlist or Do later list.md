@@ -58,6 +58,8 @@
 + Two heap approach
 + Strings variations and questions to do - [string variations and patterns](Extras/string%20variations%20and%20patterns.md)
 	+ Some of the anagrams, rotations, etc. already done.
-	+ shortest palindrome
 	+ have to learn trie to attempt a particular pattern
+	+ lc 386 to do after dfs
+	+ 336  - palindrome pairs (hard but popular)
+
 	

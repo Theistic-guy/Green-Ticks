@@ -1,5 +1,5 @@
 ---
-Title: Longest Substring Without Repeating Characters
+Title: Longest Substring Without Repeating Characters (leetcode 3)
 Companies:
   - Amazon
   - Google
@@ -24,16 +24,22 @@ Companies:
   - Zoho
 Topics:
   - Sliding Window
+  - Strings
+  - Hashing
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Medium
 Other Tags:
   - Longest
+  - Substring
+  - GFG
 Link: "[Leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # 🔤Longest Substring Without Repeating Characters
+
+#LeetCode 
 
 **Pattern:** Sliding Window
 

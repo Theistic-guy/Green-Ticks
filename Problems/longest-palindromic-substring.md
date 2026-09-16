@@ -11,6 +11,7 @@ Difficulty: Medium
 Other Tags:
   - Substring
   - Longest
+  - Palindrome
 Link: ""
 Rating:
   - ⭐⭐⭐⭐
@@ -112,6 +113,8 @@ class Solution:
 ---
 
 ## 🧠 Approach 2: Custom Split-Sign Hash + Binary Search on Answer
+
+see also : [Binary Search on Odd and Even range](../Templates/Binary%20Search%20on%20Odd%20and%20Even%20range.md)
 
 When constraints scale up to N = 10⁵, O(N²) time will trigger a Time Limit Exceeded (TLE) error. This custom approach optimizes runtime to $O(N \log N)$ by binary searching the max palindrome length and running a single-pass polynomial sliding window check.
 

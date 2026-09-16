@@ -15,7 +15,7 @@ Platform:
 Difficulty: Hard
 Other Tags:
   - Cyclic Sort / Placement
-  - In-place Array Modification
+  - In-place
 Link: ""
 Rating: ⭐⭐⭐⭐⭐
 ---

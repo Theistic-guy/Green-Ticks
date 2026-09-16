@@ -6,8 +6,8 @@ Here's the real breakdown, organized by actual interview yield — not textbook 
 
 - ✅ **1044. Longest Duplicate Substring** — Hard, the canonical rolling hash problem (binary search on length + Rabin-Karp check). Actually shows up at Google/senior rounds.
 - **187. Repeated DNA Sequences** — Medium, good warm-up, hashing fixed-length windows.
-- **28. Find the Index of the First Occurrence** — technically solvable with rolling hash, but nobody expects that solution; KMP or built-in is fine.
-- **1392. Longest Happy Prefix** — same idea as LPS array (see below) but often solved with rolling hash comparison of prefix/suffix hashes.
+- ✅ **28. Find the Index of the First Occurrence** — technically solvable with rolling hash, but nobody expects that solution; KMP or built-in is fine.
+- ✅ **1392. Longest Happy Prefix** — same idea as LPS array (see below) but often solved with rolling hash comparison of prefix/suffix hashes.
 
 Reality check: pure rolling-hash-as-the-answer questions are rare in FAANG loops. It's more often a _fallback tool_ you mention when the interviewer asks "can you do better than O(n²) string comparison." Know the double-hashing-to-avoid-collision trick if you bring it up.
 
@@ -24,7 +24,8 @@ Reality check: pure rolling-hash-as-the-answer questions are rare in FAANG loops
 **Interview relevance: Medium — mostly as _concept recognition_, not implementation**
 
 - **28. Find the Index of the First Occurrence in a String** — the direct KMP problem.
-- **459. Repeated Substring Pattern** — LPS array gives an elegant O(n) solution (`n % (n - lps[n-1]) == 0`).
+- ✅ **459. Repeated Substring Pattern** — LPS array gives an elegant O(n) solution (`n % (n - lps[n-1]) == 0`). [repeated-substring-pattern-(leetcode-459)](../../Problems/repeated-substring-pattern-(leetcode-459).md)
+
 - **1392. Longest Happy Prefix** — LPS array _is_ the answer (lps[n-1] length prefix).
 - **214. Shortest Palindrome** — KMP on `s + '#' + reverse(s)`, a genuine FAANG-asked hard.
 

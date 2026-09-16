@@ -13,7 +13,7 @@ Companies:
   - Goldman Sachs
   - Salesforce
   - ByteDance
-  - tiktok
+  - TikTok
   - Cisco
   - VMware
   - Expedia
@@ -26,7 +26,7 @@ Companies:
   - Capital One
   - ServiceNow
   - Zoho
-  - tcs
+  - TCS
   - Docusign
   - Zoom
   - Netflix

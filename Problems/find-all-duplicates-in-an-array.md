@@ -10,9 +10,9 @@ Platform:
   - Leetcode
 Difficulty: Medium
 Other Tags:
-  - In-place Array Modification
   - Cyclic Sort / Placement
   - Duplicates
+  - In-place
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
@@ -49,7 +49,7 @@ def findDuplicates(nums):
 
 ---
 # Find All Duplicates in an Array
-
+#LeetCode 
 
 
 > **LeetCode 442**

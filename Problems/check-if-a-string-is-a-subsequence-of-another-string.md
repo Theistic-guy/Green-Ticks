@@ -11,6 +11,7 @@ Platform:
 Difficulty: Easy
 Other Tags:
   - GFG
+  - Subsequence
 Link: ""
 Rating:
 ---

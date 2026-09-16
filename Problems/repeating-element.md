@@ -24,7 +24,7 @@ Other Tags:
   - GFG
   - Floyd's Cycle-Finding
   - Cycle
-  - In-place Array Modification
+  - In-place
 Link: ""
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>

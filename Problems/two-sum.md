@@ -1,7 +1,6 @@
 ---
 Title: Two Sum (Leetcode 1)
-Companies:
-  - Not Specified
+Companies: [Accenture, Adobe, Altimetrik, Amazon, Barclays, Bloomberg, Capgemini, Cisco, Citigroup, Comcast, Delhivery, Deloitte, Devsinc, EPAM Systems, EY, Expedia, Garmin, Google, HCL, Infosys, Intel, Mastercard, Meta, Microsoft, Microstrategy, MongoDB, NetApp, Pwc, SAP, Samsung, Sony, Synopsys, Tech Mahindra, Tinkoff, Western Digital, Wipro, Yahoo, ciena, tcs, Visa, American Express, Walmart Labs, Yelp, AMD, Cognizant, Dropbox, Oracle, Qualcomm, Zoho, Airbus SE, Morgan Stanley, Splunk, Apple, IBM, eBay, Huawei, Ozon, VK, Spotify, Criteo, Nvidia, Tiger Analytics, UKG, Warnermedia, KLA, persistent systems, Flipkart, Ola Cabs, Virtusa, Grab, Hubspot, Accolite, Tekion, DevRev, MindTree, PayPal, Toast, Tesla, Honeywell, Optum, Publicis Sapient, Dell, ThoughtWorks, Airbnb, Lowe's, ServiceNow, Snowflake, TikTok, Yandex, Akamai, ByteDance, jio, Deutsche Bank, Jane Street, Turing, Autodesk, HashedIn, Epic Systems, Intuit, Uber, Goldman Sachs, PhonePe, Roblox, Wix, LinkedIn, Palo Alto Networks, DoorDash, Juspay, Citadel, BlackRock, Capital One, Anduril, Atlassian, DE Shaw, Databricks, Salesforce]
 Topics:
   - Two Pointers
   - Arrays

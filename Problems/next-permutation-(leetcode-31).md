@@ -27,6 +27,7 @@ Difficulty: Hard
 Other Tags:
   - P & C
   - Lexicographical
+  - In-place
 Link: https://leetcode.com/problems/next-permutation/description/
 Rating:
   - ⭐⭐⭐⭐⭐
