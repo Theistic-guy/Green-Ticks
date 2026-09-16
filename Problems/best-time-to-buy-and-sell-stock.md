@@ -21,7 +21,7 @@ Companies:
   - Atlassian
   - Visa
   - eBay
-  - JPMorgan
+  - J.P. Morgan
   - PayPal
   - Capital One
   - ServiceNow

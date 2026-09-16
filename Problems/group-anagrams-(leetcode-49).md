@@ -19,7 +19,7 @@ Companies:
   - IBM
   - Visa
   - eBay
-  - JPMorgan
+  - J.P. Morgan
   - ServiceNow
   - Twilio
   - Affirm

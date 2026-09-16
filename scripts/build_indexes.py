@@ -11,14 +11,26 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
+import json
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
+ASSETS_DIR = ROOT / "assets"
+COMPANIES_JSON_FILE = ASSETS_DIR / "companies.json"
+
+# --- Logo.dev Configuration ---
+# Replace this with your actual logo.dev public key (pk_...)
+LOGO_DEV_TOKEN = "pk_cwa5LeR3RiifmBSonSReKw" 
+
+# You can customize the logo sizes here
+LOGO_SIZE_README = 16
+LOGO_SIZE_HEADING = 32
+# ------------------------------
 PROBLEMS_DIR = ROOT / "Problems"
 README_FILE = ROOT / "README.md"
 template_dir = ROOT / "Templates"
 README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
-ASSETS_DIR = ROOT / "assets"
+README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
 
 CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
     "Topics":             ASSETS_DIR / "Topics Sections" / "All",
@@ -556,7 +568,11 @@ def build_readme_section(
     values: list[str],
     slug_map: dict[str, str],
     counts: dict[str, int],
+    logos: dict[str, str] = None,
 ) -> str:
+    if logos is None:
+        logos = {}
+        
     lines = [
         f"### {emoji} By {title}",
         "<details>",
@@ -571,8 +587,12 @@ def build_readme_section(
         encoded_folder = folder.replace(" ", "%20")
         count = counts[value]
 
+        logo_html = ""
+        if value in logos:
+            logo_html = f'<img src="{logos[value]}" width="{LOGO_SIZE_README}" height="{LOGO_SIZE_README}" align="absmiddle" style="margin-right: 5px;" /> '
+
         lines.append(
-            f"  - [{value} ({count})]({encoded_folder}/{slug}.md)"
+            f"  - {logo_html}[{value} ({count})]({encoded_folder}/{slug}.md)"
         )
 
     lines.extend([
@@ -604,6 +624,7 @@ def generate_readme(
     by_difficulty,
     by_rating,
     template_files,
+    company_logos: dict[str, str],
     readme_sections_appendix: str = ""
 ) -> None:
 
@@ -642,7 +663,8 @@ def generate_readme(
         sections.append(section)
     section = build_readme_section(
         "Companies", "🏢", "Companies", company_values, company_slugs,
-        counts={k: len(v) for k, v in by_company.items()}
+        counts={k: len(v) for k, v in by_company.items()},
+        logos=company_logos
     )
 
     if section:
@@ -753,6 +775,17 @@ def main() -> None:
         category_top[cat_name] = build_category_sections(sdir, "Top")
         category_bottom[cat_name] = build_category_sections(sdir, "Bottom")
 
+    # Load companies for logos
+    companies_info = {}
+    if COMPANIES_JSON_FILE.exists():
+        with open(COMPANIES_JSON_FILE, "r", encoding="utf-8") as f:
+            companies_info = json.load(f)
+
+    company_logos = {}
+    for comp, domain in companies_info.items():
+        if LOGO_DEV_TOKEN and LOGO_DEV_TOKEN != "your_token_here":
+            company_logos[comp] = f"https://img.logo.dev/{domain}?token={LOGO_DEV_TOKEN}"
+
     print("Generating index files...", flush=True)
 
     topics_dir = GENERATED_DIRS["Topics"]
@@ -786,8 +819,13 @@ def main() -> None:
     companies_dir = GENERATED_DIRS["Companies"]
     for company, items in by_company.items():
         index_file = companies_dir / f"{company_slugs[company]}.md"
+        
+        heading = company
+        if company in company_logos:
+            heading = f'<img src="{company_logos[company]}" width="{LOGO_SIZE_HEADING}" height="{LOGO_SIZE_HEADING}" align="absmiddle" style="margin-right: 10px;" /> {company}'
+            
         render_grouped_by_difficulty(
-            index_file, company, items,
+            index_file, heading, items,
             top_sections=category_top["Companies"],
             bottom_sections=category_bottom["Companies"],
         )
@@ -844,6 +882,7 @@ def main() -> None:
         by_difficulty=by_difficulty,
         by_rating=by_rating,
         template_files=template_files,
+        company_logos=company_logos,
         readme_sections_appendix=readme_sections_appendix
     )
 

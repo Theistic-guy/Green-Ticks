@@ -18,7 +18,7 @@ Companies:
   - Walmart Global Tech
   - Intuit
   - Yandex
-  - JPMorgan
+  - J.P. Morgan
   - PayPal
   - Spotify
   - Zoho

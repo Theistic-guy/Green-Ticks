@@ -2,7 +2,7 @@
 Title: Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)
 Companies:
   - Expedia
-  - Factset
+  - FactSet
   - Increff
   - ByteDance
   - Paytm
