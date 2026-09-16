@@ -11,7 +11,7 @@ Companies:
   - Uber
   - Bloomberg
   - ByteDance
-  - tiktok
+  - TikTok
   - Adobe
   - DoorDash
   - Qualcomm

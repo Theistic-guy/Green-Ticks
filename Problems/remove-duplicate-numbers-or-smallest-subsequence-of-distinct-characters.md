@@ -6,7 +6,7 @@ Companies:
   - Increff
   - ByteDance
   - Paytm
-  - tiktok
+  - TikTok
   - Zoho
   - Amazon
   - Bloomberg

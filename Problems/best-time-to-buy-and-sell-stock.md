@@ -26,7 +26,7 @@ Companies:
   - Capital One
   - ServiceNow
   - Zoho
-  - TCS
+  - tcs
   - Docusign
   - Zoom
   - Netflix
