@@ -26,7 +26,6 @@
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
-- [Two Sum](../Problems/two-sum.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium
@@ -59,14 +58,13 @@
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Subset sum using DP](../Problems/subset-sum-using-dp.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Tower Of Hanoi](../Problems/tower-of-hanoi.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 - [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Count Subsets with Given Sum](../Problems/count-subsets-with-given-sum.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
@@ -86,10 +84,12 @@
 - [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
+- [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
+- [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
 - [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 - [Subarray Sum Divisible by K](../Problems/subarray-sum-divisible-by-k.md) ⭐⭐⭐⭐

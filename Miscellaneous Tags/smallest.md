@@ -4,6 +4,7 @@
 
 ## Medium
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)

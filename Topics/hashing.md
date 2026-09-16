@@ -8,7 +8,7 @@
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
@@ -17,8 +17,10 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
 - [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
+- [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
 ## Hard
@@ -66,12 +68,13 @@
 
 ### Hashing + Sliding Window + Strings
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 
 ### Hashing + Arrays + Greedy + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 
 ### Hashing + Arrays + Heap + Sorting
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Hashing + Arrays + Prefix Sum + Sliding Window
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
@@ -79,3 +82,6 @@
 
 ### Hashing + Arrays + Sorting + Strings
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
+
+### Hashing + Greedy + Monotonic Stack + Stack + Strings
+- [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐

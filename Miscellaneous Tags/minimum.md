@@ -11,4 +11,5 @@
 - [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
 
 ## Hard
+- [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐

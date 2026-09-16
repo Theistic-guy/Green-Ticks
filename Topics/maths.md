@@ -23,6 +23,7 @@
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
 ## Hard
+- [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
@@ -33,3 +34,6 @@
 
 ### Maths + Backtracking + Sorting
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+
+### Maths + Combinatorics + Greedy + Strings
+- [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)

@@ -2,5 +2,8 @@
 
 # Walmart Labs
 
+## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
 ## Hard
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

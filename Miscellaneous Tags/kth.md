@@ -5,11 +5,11 @@
 ## Easy
 - [Check if the K-th Bit is Set or Not](../Problems/check-if-kth-bit-is-set-or-not.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)

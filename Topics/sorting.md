@@ -4,7 +4,7 @@
 
 ## Easy
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
@@ -45,7 +45,7 @@
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 
 ### Sorting + Arrays + Hashing + Heap
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Sorting + Arrays + Hashing + Strings
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐

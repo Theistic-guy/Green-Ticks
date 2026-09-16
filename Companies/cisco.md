@@ -3,7 +3,8 @@
 # Cisco
 
 ## Easy
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
