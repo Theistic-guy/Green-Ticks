@@ -1,6 +1,6 @@
 [<h1 align='right'><a href='../README.md'>⇐🏠</a></h1>](../README.md)
 
-# Publicis Sapient
+# <img src="https://img.logo.dev/publicissapient.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Publicis Sapient
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)

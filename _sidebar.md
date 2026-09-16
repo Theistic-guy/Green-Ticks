@@ -275,7 +275,7 @@
   - [Intuit](/Companies/intuit.md)
   - [Jane Street](/Companies/jane-street.md)
   - [Jio](/Companies/jio.md)
-  - [Jpmorgan](/Companies/jpmorgan.md)
+  - [Jp Morgan](/Companies/jp-morgan.md)
   - [Juspay](/Companies/juspay.md)
   - [Kla](/Companies/kla.md)
   - [Linkedin](/Companies/linkedin.md)
