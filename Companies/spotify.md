@@ -3,7 +3,8 @@
 # Spotify
 
 ## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
-## Not Specified
-- [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
+## Medium
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)

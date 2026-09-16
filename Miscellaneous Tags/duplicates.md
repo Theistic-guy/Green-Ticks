@@ -6,6 +6,7 @@
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
+- [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 
 ## Hard
 - [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)

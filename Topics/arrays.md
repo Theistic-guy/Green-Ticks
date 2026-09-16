@@ -12,8 +12,8 @@
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
 - [Minimum Consecutive Flips](../Problems/minimum-consecutive-flips.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
-- [Two Sum](../Problems/two-sum.md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
@@ -33,11 +33,10 @@
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Count Inversions in Array](../Problems/count-inversions-in-array.md) ⭐⭐⭐⭐⭐
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
@@ -51,9 +50,11 @@
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
+- [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
+- [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Subarray Sum Divisible by K](../Problems/subarray-sum-divisible-by-k.md) ⭐⭐⭐⭐
 
 ## Not Specified
@@ -99,13 +100,16 @@
 
 ### Arrays + Two Pointers
 - [3Sum](../Problems/3sum.md)
-- [Two Sum](../Problems/two-sum.md)
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
 ### Arrays + Greedy + Hashing
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 
 ### Arrays + Greedy + Matrix
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
+
+### Arrays + Greedy + Two Pointers
+- [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Hashing + Prefix Sum
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
@@ -136,7 +140,7 @@
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐
 
 ### Arrays + Queue + Sliding Window
-- [# Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
+- [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Searching + Two Pointers
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
@@ -149,7 +153,7 @@
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
 
 ### Arrays + Hashing + Heap + Sorting
-- [Top K Frequent Elements](../Problems/top-k-frequent-elements-(lc-347).md)
+- [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ### Arrays + Hashing + Prefix Sum + Sliding Window
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
@@ -159,7 +163,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
 ### Arrays + Heap + Searching + Two Pointers
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Prefix Sum + Queue + Sliding Window
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐

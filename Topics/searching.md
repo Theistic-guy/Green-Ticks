@@ -12,15 +12,15 @@
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
-- [Maximum Candies Allocated to K Children](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
+- [Maximum Candies Allocated to K Children (LC 2226)](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
+- [Divide Chocolate (Leetcode 1231)](../Problems/divide-chocolate_lc-1231.md)
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)
@@ -46,7 +46,7 @@
 
 ### Searching + Greedy
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)
-- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
+- [Divide Chocolate (Leetcode 1231)](../Problems/divide-chocolate_lc-1231.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
@@ -68,4 +68,4 @@
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 
 ### Searching + Arrays + Heap + Two Pointers
-- [Top K closest Elements](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
+- [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

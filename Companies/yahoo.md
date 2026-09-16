@@ -2,8 +2,9 @@
 
 # Yahoo
 
+## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
-
-## Not Specified
-- [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)

@@ -2,5 +2,8 @@
 
 # Capital One
 
+## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

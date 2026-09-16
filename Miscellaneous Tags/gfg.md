@@ -21,7 +21,7 @@
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
-- [Two Sum](../Problems/two-sum.md)
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ## Medium
@@ -31,6 +31,7 @@
 - [Count set bits](../Problems/count-set-bits.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)

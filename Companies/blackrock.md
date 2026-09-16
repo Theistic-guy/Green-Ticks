@@ -2,5 +2,8 @@
 
 # BlackRock
 
+## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐

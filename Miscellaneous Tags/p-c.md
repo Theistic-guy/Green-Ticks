@@ -4,3 +4,6 @@
 
 ## Medium
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
+
+## Hard
+- [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

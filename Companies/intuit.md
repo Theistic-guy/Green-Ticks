@@ -2,6 +2,11 @@
 
 # Intuit
 
+## Easy
+- [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
+## Medium
+- [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
+
 ## Not Specified
-- [Longest Substring Without Repeating Characters](../Problems/longest-substring-without-repeating-characters.md)
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)

@@ -6,4 +6,4 @@
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 
 ## Hard
-- [Divide Chocolate](../Problems/divide-chocolate_lc-1231.md)
+- [Divide Chocolate (Leetcode 1231)](../Problems/divide-chocolate_lc-1231.md)
