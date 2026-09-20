@@ -202,6 +202,7 @@
     - [Valley Peak approach](/Notes/Extras/Valley%20Peak%20approach.md)
     - [Variants of Josephus problem](/Notes/Extras/Variants%20of%20Josephus%20problem.md)
     - [Why finding peak element using binary search works](/Notes/Extras/Why%20finding%20peak%20element%20using%20binary%20search%20works.md)
+    - [Linked lists variations and patterns](/Notes/Extras/linked%20lists%20variations%20and%20patterns.md)
     - [String variations and patterns](/Notes/Extras/string%20variations%20and%20patterns.md)
     - [📚Resources](/Notes/Extras/📚Resources.md)
 
