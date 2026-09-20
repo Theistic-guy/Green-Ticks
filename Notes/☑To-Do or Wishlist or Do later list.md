@@ -61,5 +61,5 @@
 	+ have to learn trie to attempt a particular pattern
 	+ lc 386 to do after dfs
 	+ 336  - palindrome pairs (hard but popular)
-
++ linked list questions to put here
 	

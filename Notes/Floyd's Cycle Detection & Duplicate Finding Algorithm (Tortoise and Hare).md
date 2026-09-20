@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=wjYnzkAhcNk
 
-+ [repeating-element](../Problems/repeating-element.md)
++ [repeating-element](../Problems/repeating-element.md)  ( Contains maths derivation )
 + [find-duplicate-number](../Problems/find-duplicate-number.md)
 # Floyd's Duplicate Detection — Key Insights
 
@@ -268,3 +268,13 @@ $$\text{Distance from Start to Loop Entrance} = \text{Remaining Distance within 
 If an array had no tail (a perfect circle), it would be a perfect permutation where every number appears exactly once. The exclusion of `0` from the values forces a bottleneck, mathematically guaranteeing that a duplicate _must_ exist to bridge the tail into a loop. [7]
 
 ---
+
+## Maths 
+
+Before first meeting point
+
+(Distance travelled by slow pointer) * 2  = Distance travelled by fast pointer
+
+![](../assets/Images/floyd%20cycle%20detection%201.png)
+
+![](../assets/Images/floyd%20cycle%20detection%202.png)

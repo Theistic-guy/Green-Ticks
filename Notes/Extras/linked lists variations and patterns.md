@@ -56,3 +56,5 @@ Manipulating pointers in place — extremely common, tests pointer discipline.
 **If you only have time for a subset**, prioritize in this order: 206, 21, 141/142, 19, 2, 23, 138, 146, 25, 92. These cover every core pattern and show up across Google/Meta/Amazon rotations repeatedly, whereas things like 707 or niche variations rarely appear anymore.
 
 Want me to pull a similar breakdown for another topic (Trees, Sliding Window, etc.) or turn this into a study tracker?
+
+## Literally do all these problems ntoes as they are the most fundamental no doubt
