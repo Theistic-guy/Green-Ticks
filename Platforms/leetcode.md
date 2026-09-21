@@ -10,6 +10,7 @@
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
 - [3Sum](../Problems/3sum.md)
@@ -32,6 +33,7 @@
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
+- [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard

@@ -7,5 +7,5 @@
 
 ## See As Combo-wise Listings
 
-### Prefix and Suffix Arrays + Monotonic Stack + Two Pointers
+### Prefix and Suffix Arrays + Stack + Two Pointers
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)

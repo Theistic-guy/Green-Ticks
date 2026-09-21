@@ -4,6 +4,7 @@
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
@@ -11,6 +12,7 @@
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
+- [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Capacity to Ship Packages Within D Days](../Problems/capacity-to-ship-packages.md)

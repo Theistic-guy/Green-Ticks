@@ -4,6 +4,7 @@
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Hard
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

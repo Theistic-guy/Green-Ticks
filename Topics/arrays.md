@@ -7,6 +7,7 @@
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
 - [Equilibrium Point](../Problems/equilibrium-point.md)
 - [First Occurrence Last Occurrence & Count in a Sorted Array](../Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
+- [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Majority Element](../Problems/majority-element.md)
 - [Maximum sum of K consecutive elements](../Problems/maximum-sum-of-k-consecutive-elements.md)
@@ -32,6 +33,7 @@
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
+- [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
@@ -96,6 +98,7 @@
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ### Arrays + Stack
+- [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 - [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram.md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Two Pointers
@@ -107,6 +110,9 @@
 
 ### Arrays + Greedy + Matrix
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
+
+### Arrays + Greedy + Stack
+- [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Two Pointers
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

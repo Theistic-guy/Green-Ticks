@@ -5,10 +5,12 @@
 ## Easy
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
+- [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

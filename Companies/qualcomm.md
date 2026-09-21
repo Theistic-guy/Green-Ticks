@@ -4,6 +4,7 @@
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Hard
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

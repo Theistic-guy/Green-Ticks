@@ -6,6 +6,7 @@
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
 - [Find the Smallest Divisor Given a Threshold](../Problems/find-the-smallest-divisor-given-a-threshold.md)

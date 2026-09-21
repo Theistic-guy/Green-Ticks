@@ -83,5 +83,5 @@
 ### Hashing + Arrays + Sorting + Strings
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
-### Hashing + Greedy + Monotonic Stack + Stack + Strings
+### Hashing + Greedy + Stack + Strings
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐

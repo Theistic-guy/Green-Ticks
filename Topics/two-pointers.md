@@ -55,7 +55,7 @@
 ### Two Pointers + Greedy + Strings
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 
-### Two Pointers + Monotonic Stack + Prefix and Suffix Arrays
+### Two Pointers + Prefix and Suffix Arrays + Stack
 - [Trapping Rain Water](../Problems/trapping-rain-water.md)
 
 ### Two Pointers + Arrays + Heap + Searching
