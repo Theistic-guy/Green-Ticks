@@ -62,4 +62,4 @@
 	+ lc 386 to do after dfs
 	+ 336  - palindrome pairs (hard but popular)
 + linked list questions to put here
-	
++ leetcode 556 is a varation of [next-permutation-(leetcode-31)](../Problems/next-permutation-(leetcode-31).md) and nothing to do with monotonic stack. Do it also

@@ -22,16 +22,19 @@ Other Tags:
 Link: ""
 Rating:
   - ⭐⭐⭐⭐
+Groups:
+  - Stack-Based Nearest Neighbor
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
-# Stock Span Problem
+# Stock Span Problem (very close to LC 901)
 
 **Pattern:** 
 
 **Idea:** 
 
 **Variations** : 
++ Stack based nearest neighbor
 
 ---
 
