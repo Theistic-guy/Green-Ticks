@@ -11,6 +11,8 @@
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
@@ -44,6 +46,8 @@
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 
 ### Greedy + Arrays + Stack
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ### Greedy + Arrays + Two Pointers

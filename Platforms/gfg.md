@@ -6,5 +6,9 @@
 - [Count Distinct Elements in Every Window](../Problems/count-distinct-elements-in-every-window.md)
 - [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 
+## Medium
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
+
 ## Hard
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐

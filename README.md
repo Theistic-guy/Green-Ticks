@@ -3,7 +3,7 @@
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-121-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-123-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -13,13 +13,13 @@
 
 | Metric | Count |
 |--------|------:|
-| Problems | 121 |
+| Problems | 123 |
 | Topics | 22 |
 | Platforms | 3 |
 | Companies | 167 |
 | Difficulty Levels | 4 |
 | Miscellaneous Tags | 48 |
-| Groups | 0 |
+| Groups | 1 |
 | Templates | 7 |
 
 ---
@@ -27,12 +27,12 @@
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (53)](Topics/arrays.md)
+  - [Arrays (55)](Topics/arrays.md)
   - [Backtracking (2)](Topics/backtracking.md)
   - [Combinatorics (2)](Topics/combinatorics.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [DP (5)](Topics/dp.md)
-  - [Greedy (17)](Topics/greedy.md)
+  - [Greedy (19)](Topics/greedy.md)
   - [Hashing (23)](Topics/hashing.md)
   - [Heap (7)](Topics/heap.md)
   - [Linked Lists (3)](Topics/linked-lists.md)
@@ -46,7 +46,7 @@
   - [Searching (26)](Topics/searching.md)
   - [Sliding Window (11)](Topics/sliding-window.md)
   - [Sorting (11)](Topics/sorting.md)
-  - [Stack (7)](Topics/stack.md)
+  - [Stack (9)](Topics/stack.md)
   - [Strings (20)](Topics/strings.md)
   - [Two Pointers (15)](Topics/two-pointers.md)
 </details>
@@ -57,7 +57,7 @@
 <details>
   <summary>Expand</summary>
 
-  - [GFG (3)](Platforms/gfg.md)
+  - [GFG (5)](Platforms/gfg.md)
   - [Leetcode (57)](Platforms/leetcode.md)
   - [Miscellaneous (61)](Platforms/miscellaneous.md)
 </details>
@@ -162,7 +162,7 @@
   - <img src="https://img.logo.dev/netflix.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Netflix (2)](Companies/netflix.md)
   - <img src="https://img.logo.dev/nike.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Nike (1)](Companies/nike.md)
   - <img src="https://img.logo.dev/nokia.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Nokia (1)](Companies/nokia.md)
-  - [Not Specified (89)](Companies/not-specified.md)
+  - [Not Specified (91)](Companies/not-specified.md)
   - <img src="https://img.logo.dev/nvidia.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Nvidia (2)](Companies/nvidia.md)
   - <img src="https://img.logo.dev/odoo.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Odoo (1)](Companies/odoo.md)
   - <img src="https://img.logo.dev/olacabs.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Ola Cabs (1)](Companies/ola-cabs.md)
@@ -244,7 +244,7 @@
   <summary>Expand</summary>
 
   - [Easy (29)](Difficulty/easy.md)
-  - [Medium (46)](Difficulty/medium.md)
+  - [Medium (48)](Difficulty/medium.md)
   - [Hard (42)](Difficulty/hard.md)
   - [Not Specified (4)](Difficulty/not-specified.md)
 </details>
@@ -258,7 +258,7 @@
   - [5 Stars (16)](Rating/5-stars.md)
   - [4 Stars (13)](Rating/4-stars.md)
   - [3 Stars (5)](Rating/3-stars.md)
-  - [Not Rated (87)](Rating/not-rated.md)
+  - [Not Rated (89)](Rating/not-rated.md)
 </details>
 
 ---
@@ -295,7 +295,7 @@
   - [Merge (4)](Miscellaneous%20Tags/merge.md)
   - [Minimum (6)](Miscellaneous%20Tags/minimum.md)
   - [Monotonic Queue (2)](Miscellaneous%20Tags/monotonic-queue.md)
-  - [Monotonic Stack (5)](Miscellaneous%20Tags/monotonic-stack.md)
+  - [Monotonic Stack (7)](Miscellaneous%20Tags/monotonic-stack.md)
   - [Ordered Set (1)](Miscellaneous%20Tags/ordered-set.md)
   - [P & C (2)](Miscellaneous%20Tags/p-c.md)
   - [Pairs (2)](Miscellaneous%20Tags/pairs.md)
@@ -315,6 +315,15 @@
   - [Substring (4)](Miscellaneous%20Tags/substring.md)
   - [Union (1)](Miscellaneous%20Tags/union.md)
   - [XOR (2)](Miscellaneous%20Tags/xor.md)
+</details>
+
+---
+
+### 📦 By Groups
+<details>
+  <summary>Expand</summary>
+
+  - [Stack-Based Nearest Neighbor (3)](Groups/stack-based-nearest-neighbor.md)
 </details>
 
 ---
