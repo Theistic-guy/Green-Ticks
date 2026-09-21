@@ -8,6 +8,7 @@
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
 - [Check if Two Strings are Rotations of Each Other (Leetcode 796)](../Problems/check-if-two-strings-are-rotations-of-each-other-(rotate-string-leetcode).md) ⭐⭐⭐⭐⭐
@@ -41,6 +42,9 @@
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
 - [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
 
+### Strings + Stack
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
+
 ### Strings + Two Pointers
 - [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
@@ -67,5 +71,5 @@
 ### Strings + Combinatorics + Greedy + Maths
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 
-### Strings + Greedy + Hashing + Monotonic Stack + Stack
+### Strings + Greedy + Hashing + Stack
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐

@@ -2,5 +2,8 @@
 
 # <img src="https://img.logo.dev/paytm.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Paytm
 
+## Easy
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
+
 ## Medium
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐

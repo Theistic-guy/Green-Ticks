@@ -14,6 +14,7 @@
 - [First Occurrence Last Occurrence & Count in a Sorted Array](../Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
 - [Greatest Common Divisor](../Problems/greatest-common-divisor.md)
 - [If number is power of 2](../Problems/check-if-number-is-power-of-two.md)
+- [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 - [Least Common Multiple](../Problems/least-common-multiple.md)
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
@@ -27,6 +28,7 @@
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
+- [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
 ## Medium

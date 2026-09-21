@@ -2,6 +2,9 @@
 
 # In-place
 
+## Easy
+- [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
+
 ## Medium
 - [Find All Duplicates in an Array (LC 442)](../Problems/find-all-duplicates-in-an-array.md)
 
