@@ -19,7 +19,6 @@ Topics:
   - Greedy
   - Hashing
   - Stack
-  - Monotonic Stack
 Platform:
   - Leetcode
 Difficulty: Medium
@@ -28,6 +27,7 @@ Other Tags:
   - Smallest
   - Subsequence
   - Lexicographical
+  - Monotonic Stack
 Link: https://leetcode.com/problems/remove-duplicate-letters/description/
 Rating:
   - ⭐⭐⭐⭐

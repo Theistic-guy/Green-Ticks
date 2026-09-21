@@ -30,7 +30,6 @@ PROBLEMS_DIR = ROOT / "Problems"
 README_FILE = ROOT / "README.md"
 template_dir = ROOT / "Templates"
 README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
-README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
 
 CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
     "Topics":             ASSETS_DIR / "Topics Sections" / "All",
@@ -39,6 +38,7 @@ CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
     "Difficulty":         ASSETS_DIR / "Difficulty Sections",
     "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Sections",
     "Rating":             ASSETS_DIR / "Rating Sections",
+    "Groups":             ASSETS_DIR / "Groups Sections",
 }
 
 TOPICS_SECTIONS_DIR = ASSETS_DIR / "Topics Sections"
@@ -56,6 +56,7 @@ GENERATED_DIRS = {
     "Difficulty": ROOT / "Difficulty",
     "Miscellaneous Tags": ROOT / "Miscellaneous Tags",
     "Rating": ROOT / "Rating",
+    "Groups": ROOT / "Groups",
 }
 
 DIFFICULTY_ORDER = {
@@ -66,7 +67,12 @@ DIFFICULTY_ORDER = {
 }
 
 REQUIRED_KEYS = {"Title", "Topics", "Platform", "Companies", "Difficulty"}
-ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating"}
+ALL_KEYS = REQUIRED_KEYS | {"Link", "Other Tags", "Rating", "Groups"}
+
+# --- Filename Safety ---
+BANNED_FILENAME_CHARS = set('*?"<>|:\\/')
+SCAN_DIRS = ["Problems", "Templates", "Notes", "Topics", "Platforms",
+             "Companies", "Difficulty", "Miscellaneous Tags", "Rating", "Groups"]
 
 HOME_LINK_TEXT = "<h1 align='right'><a href='../README.md'>⇐🏠</a></h1>"
 
@@ -244,6 +250,7 @@ def validate_note(path: Path) -> dict[str, Any]:
     difficulty = as_single(meta.get("Difficulty"))
     link = as_single(meta.get("Link")) if meta.get("Link") not in (None, "") else ""
     other_tags = as_list(meta.get("Other Tags"))
+    groups = as_list(meta.get("Groups"))
 
     rating_field = meta.get("Rating")
     rating: int | None = None
@@ -286,7 +293,27 @@ def validate_note(path: Path) -> dict[str, Any]:
         "link": link,
         "other_tags": other_tags,
         "rating": rating,
+        "groups": groups,
     }
+
+def validate_all_filenames() -> list[str]:
+    """Scan all .md files in the repo for Obsidian/Windows-unsafe characters."""
+    errors = []
+    for dirname in SCAN_DIRS:
+        scan_dir = ROOT / dirname
+        if not scan_dir.exists():
+            continue
+        for path in scan_dir.rglob("*.md"):
+            name = path.name
+            if name.startswith("."):
+                errors.append(f"{path.as_posix()}: filename starts with '.' (hidden in Obsidian)")
+            bad_chars = BANNED_FILENAME_CHARS & set(name)
+            if bad_chars:
+                errors.append(
+                    f"{path.as_posix()}: filename contains banned character(s): "
+                    f"{', '.join(repr(c) for c in sorted(bad_chars))}"
+                )
+    return errors
 
 def clean_generated_dirs() -> None:
     for out_dir in GENERATED_DIRS.values():
@@ -611,18 +638,21 @@ def generate_readme(
     difficulty_values: list[str],
     other_tag_values: list[str],
     rating_values: list[str],
+    group_values: list[str],
     topic_slugs: dict[str, str],
     platform_slugs: dict[str, str],
     company_slugs: dict[str, str],
     difficulty_slugs: dict[str, str],
     other_tag_slugs: dict[str, str],
     rating_slugs: dict[str, str],
+    group_slugs: dict[str, str],
     by_topic,
     by_platform,
     by_company,
     by_other_tag,
     by_difficulty,
     by_rating,
+    by_group,
     template_files,
     company_logos: dict[str, str],
     readme_sections_appendix: str = ""
@@ -639,6 +669,7 @@ def generate_readme(
     | Companies | {len(company_values)} |
     | Difficulty Levels | {len(difficulty_values)} |
     | Miscellaneous Tags | {len(other_tag_values)} |
+    | Groups | {len(group_values)} |
     | Templates | {len(template_files)} |
 
     ---
@@ -691,6 +722,14 @@ def generate_readme(
     if section:
         sections.append(section)
 
+    section = build_readme_section(
+        "Groups", "📦", "Groups", group_values, group_slugs,
+        counts={k: len(v) for k, v in by_group.items()}
+    )
+
+    if section:
+        sections.append(section)
+
     template_section = build_templates_section(template_files)
 
     if template_section:
@@ -718,6 +757,12 @@ def main() -> None:
     if not PROBLEMS_DIR.exists():
         fail([f"Problems/ folder does not exist at: {PROBLEMS_DIR}"])
 
+    # Validate all filenames across the repo for Obsidian/Windows safety
+    print("Validating filenames...", flush=True)
+    filename_errors = validate_all_filenames()
+    if filename_errors:
+        fail(filename_errors)
+
     notes: list[dict[str, Any]] = []
     validation_errors: list[str] = []
 
@@ -742,6 +787,7 @@ def main() -> None:
     other_tag_values = sorted({t for note in notes for t in note["other_tags"]}, key=str.lower)
     difficulty_values = sorted({note["difficulty"] for note in notes}, key=sort_difficulty)
     rating_values = sorted({rating_label(note["rating"]) for note in notes}, key=sort_rating)
+    group_values = sorted({g for note in notes for g in note["groups"]}, key=str.lower)
 
     topic_slugs = ensure_no_slug_collisions("Topic", topic_values)
     platform_slugs = ensure_no_slug_collisions("Platform", platform_values)
@@ -749,6 +795,7 @@ def main() -> None:
     other_tag_slugs = ensure_no_slug_collisions("Miscellaneous Tag", other_tag_values)
     difficulty_slugs = ensure_no_slug_collisions("Difficulty", difficulty_values)
     rating_slugs = ensure_no_slug_collisions("Rating", rating_values)
+    group_slugs = ensure_no_slug_collisions("Group", group_values)
 
     by_topic: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_platform: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -756,6 +803,7 @@ def main() -> None:
     by_other_tag: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_difficulty: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_rating: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_group: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     for note in notes:
         for topic in note["topics"]:
@@ -766,6 +814,8 @@ def main() -> None:
             by_company[company].append(note)
         for tag in note["other_tags"]:
             by_other_tag[tag].append(note)
+        for group in note["groups"]:
+            by_group[group].append(note)
         by_difficulty[note["difficulty"]].append(note)
         by_rating[rating_label(note["rating"])].append(note)
 
@@ -857,6 +907,15 @@ def main() -> None:
             bottom_sections=category_bottom["Rating"],
         )
 
+    groups_dir = GENERATED_DIRS["Groups"]
+    for group, items in by_group.items():
+        index_file = groups_dir / f"{group_slugs[group]}.md"
+        render_grouped_by_difficulty(
+            index_file, group, items,
+            top_sections=category_top.get("Groups", ""),
+            bottom_sections=category_bottom.get("Groups", ""),
+        )
+
     print("Appending ReadMe Sections...", flush=True)
     readme_sections_appendix = build_readme_sections_appendix(README_SECTIONS_DIR)
 
@@ -869,18 +928,21 @@ def main() -> None:
         difficulty_values=difficulty_values,
         other_tag_values=other_tag_values,
         rating_values=rating_values,
+        group_values=group_values,
         topic_slugs=topic_slugs,
         platform_slugs=platform_slugs,
         company_slugs=company_slugs,
         difficulty_slugs=difficulty_slugs,
         other_tag_slugs=other_tag_slugs,
         rating_slugs=rating_slugs,
+        group_slugs=group_slugs,
         by_topic=by_topic,
         by_platform=by_platform,
         by_company=by_company,
         by_other_tag=by_other_tag,
         by_difficulty=by_difficulty,
         by_rating=by_rating,
+        by_group=by_group,
         template_files=template_files,
         company_logos=company_logos,
         readme_sections_appendix=readme_sections_appendix

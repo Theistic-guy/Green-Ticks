@@ -43,6 +43,7 @@ def generate_sidebar():
         'Topics',
         'Problems',
         'Notes',
+        'Groups',
         'Platforms',
         'Companies',
         'Difficulty',

@@ -25,13 +25,14 @@ Companies:
   - Sapient
 Topics:
   - Two Pointers
-  - Monotonic Stack
   - Prefix and Suffix Arrays
+  - Stack
 Platform:
   - Leetcode
 Difficulty: Not Specified
 Other Tags:
   - GFG
+  - Monotonic Stack
 Link: "[Leetcode](https://leetcode.com/problems/trapping-rain-water/)"
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>

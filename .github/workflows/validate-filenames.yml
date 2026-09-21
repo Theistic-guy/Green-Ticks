@@ -1,0 +1,37 @@
+name: Validate filenames
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for banned characters in filenames
+        run: |
+          BANNED='[*?"<>|:\\/]'
+          ERRORS=0
+          while IFS= read -r -d '' file; do
+            basename=$(basename "$file")
+            if [[ "$basename" =~ $BANNED ]]; then
+              echo "::error file=$file::Filename contains banned character(s) (unsafe for Windows/Obsidian): $basename"
+              ERRORS=$((ERRORS + 1))
+            fi
+            if [[ "$basename" == .* ]]; then
+              echo "::error file=$file::Filename starts with '.' (hidden in Obsidian): $basename"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done < <(find . -name '*.md' -not -path './.git/*' -print0)
+
+          if [ $ERRORS -gt 0 ]; then
+            echo ""
+            echo "❌ Found $ERRORS file(s) with unsafe names."
+            echo "Allowed: any characters EXCEPT  * ? \" < > | : \\ /"
+            echo "Filenames must not start with a dot."
+            exit 1
+          fi
+          echo "✅ All filenames are safe."

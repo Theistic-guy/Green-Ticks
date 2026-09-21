@@ -4,7 +4,7 @@
 
 - `Problems/` contains the original problem notes.
 - `Templates/` contains manually maintained algorithm and data structure reference notes.
-- `Topics/`, `Platforms/`, `Companies/`, `Difficulty/`, `Miscellaneous Tags/`, and `README.md` are generated automatically.
+- `Topics/`, `Platforms/`, `Companies/`, `Difficulty/`, `Miscellaneous Tags/`, `Rating/`, `Groups/`, and `README.md` are generated automatically.
 - Generated index files and `README.md` must not be edited manually.
 
 ## Folder structure
@@ -17,6 +17,8 @@ Green-Ticks/
 ├── Companies/
 ├── Difficulty/
 ├── Miscellaneous Tags/
+├── Rating/
+├── Groups/
 ├── Templates/
 ├── scripts/
 ├── .github/
@@ -46,6 +48,8 @@ Optional keys:
 
 - `Link`
 - `Other Tags`
+- `Rating` (1-5)
+- `Groups` (list of group names, e.g. "Blind 75", "Top Interview 150")
 
 ## Validation rules
 
@@ -60,6 +64,8 @@ The generator creates:
 - Company indexes
 - Difficulty indexes
 - Miscellaneous Tag indexes
+- Rating indexes
+- Group indexes
 - A fully generated `README.md`
 
 ### Generated index layout
@@ -70,6 +76,7 @@ Platforms/neetcode.md
 Companies/amazon.md
 Difficulty/easy.md
 Miscellaneous Tags/blind-75.md
+Groups/top-interview-150.md
 ```
 
 ### README generation
