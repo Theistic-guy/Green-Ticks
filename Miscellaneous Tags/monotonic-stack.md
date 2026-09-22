@@ -7,8 +7,8 @@
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ## Hard
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle.md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

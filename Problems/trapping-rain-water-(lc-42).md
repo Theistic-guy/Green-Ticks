@@ -1,5 +1,5 @@
 ---
-Title: Trapping Rain Water
+Title: Trapping Rain Water (LC 42)
 Companies:
   - Amazon
   - Google
@@ -23,21 +23,84 @@ Companies:
   - Intel
   - National Instruments
   - Sapient
+  - Cadence
+  - Docusign
+  - ThousandEyes
+  - Zenefits
+  - X
+  - Walmart Labs
+  - Ola Cabs
+  - Samsung
+  - Snowflake
+  - Rakuten
+  - Urban Company
+  - Hive
+  - Wix
+  - Zoho
+  - IMC
+  - TikTok
+  - Zopsmart
+  - Tekion
+  - Moloco
+  - Qualcomm
+  - Squarepoint Capital
+  - Infosys
+  - Nvidia
+  - Media.net
+  - Zeta
+  - Flipkart
+  - PhonePe
+  - Airbnb
+  - HashedIn
+  - Mindtickle
+  - Navi
+  - Paytm
+  - Swiggy
+  - BitGo
+  - Publicis Sapient
+  - CrowdStrike
+  - InMobi
+  - Huawei
+  - MakeMyTrip
+  - Sprinklr
+  - EPAM Systems
+  - Meta
+  - Yandex
+  - HCL
+  - Nutanix
+  - DE Shaw
+  - Dell
+  - SAP
+  - Expedia
+  - tcs
+  - Capgemini
+  - Roblox
+  - Accenture
+  - OpenAI
+  - Salesforce
+  - ByteDance
+  - Grammarly
+  - IBM
 Topics:
   - Two Pointers
   - Prefix and Suffix Arrays
   - Stack
 Platform:
   - Leetcode
-Difficulty: Not Specified
+Difficulty: Hard
 Other Tags:
   - GFG
   - Monotonic Stack
 Link: "[Leetcode](https://leetcode.com/problems/trapping-rain-water/)"
+Groups:
+  - Rectangles
+Rating:
+  - ⭐⭐⭐⭐⭐
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
 # 🌧️Trapping Rain Water
+#LeetCode 
 
 **Pattern:** Two Pointers, Monotonic Stack, Prefix & Suffix arrays
 
@@ -74,7 +137,7 @@ def trap(heights: List[int]) -> int:
 
 ```
 
-
+I couldn't get convinced of Two pointers solution.
 
 ## ✏️ Note
 <details>

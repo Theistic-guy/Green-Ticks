@@ -1,6 +1,6 @@
 
 See links:
-+ [largest-rectangle-in-histogram](../Problems/largest-rectangle-in-histogram.md)
++ [largest-rectangle-in-histogram-(lc-84)](../Problems/largest-rectangle-in-histogram-(lc-84).md)
 + [maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md)
 + [maximum-sum-of-rectangle-no-larger-than-k](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md)
 
@@ -57,12 +57,12 @@ The pattern is always: **reduce a dimension by accumulation, then recognize the 
 **Histogram-via-column-compression (the other axis):**
 
 - 85. Maximal Rectangle — compress _columns_ into running "height since last 0", then run Largest Rectangle in Histogram per row.
-	<mark>Find here</mark> - [maximal-rectangle](../Problems/maximal-rectangle.md)
+	<mark>Find here</mark> - [maximal-rectangle-(lc-85)](../Problems/maximal-rectangle-(lc-85).md)
 
 
 
 - 84. Largest Rectangle in Histogram _(prerequisite 1D subroutine for 85 — study this first)_
-	 <mark>Find here</mark> - [largest-rectangle-in-histogram](../Problems/largest-rectangle-in-histogram.md)
+	 <mark>Find here</mark> - [largest-rectangle-in-histogram-(lc-84)](../Problems/largest-rectangle-in-histogram-(lc-84).md)
 	
 - 221. Maximal Square — related family, but solved via DP directly, not compression; good contrast case for "when compression does NOT apply"
 

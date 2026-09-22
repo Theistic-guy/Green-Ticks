@@ -3,4 +3,4 @@
 # <img src="https://img.logo.dev/qualtrics.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Qualtrics
 
 ## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

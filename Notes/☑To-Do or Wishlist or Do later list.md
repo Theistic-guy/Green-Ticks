@@ -63,3 +63,6 @@
 	+ 336  - palindrome pairs (hard but popular)
 + linked list questions to put here
 + leetcode 556 is a varation of [next-permutation-(leetcode-31)](../Problems/next-permutation-(leetcode-31).md) and nothing to do with monotonic stack. Do it also
++ Stack
+	+ leetcode 224 (basic calculator) solving infix strings - do it 
+	+ 

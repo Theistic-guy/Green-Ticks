@@ -6,4 +6,4 @@
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
 ## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

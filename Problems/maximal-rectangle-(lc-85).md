@@ -1,7 +1,6 @@
 ---
-Title: Maximal Rectangle (Leetcode 85)
-Companies:
-  - Not Specified
+Title: Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)
+Companies: [Zeta, Sprinklr, Google, Zoho, Microsoft, Amazon, Intuit, Bloomberg, Meta, Visa, DE Shaw, Goldman Sachs, Salesforce, tcs]
 Topics:
   - Matrix
   - Stack
@@ -13,6 +12,8 @@ Other Tags:
 Link: ""
 Rating:
   - ⭐⭐⭐⭐⭐
+Groups:
+  - Rectangles
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
@@ -23,7 +24,7 @@ Rating:
 **Idea:** 
 
 **Variations** : 
-+ 1D version - [largest-rectangle-in-histogram](largest-rectangle-in-histogram.md)
++ 1D version - [largest-rectangle-in-histogram-(lc-84)](largest-rectangle-in-histogram-(lc-84).md)
 
 
 ---

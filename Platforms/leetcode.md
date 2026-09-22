@@ -45,10 +45,10 @@
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram.md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle.md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
@@ -65,4 +65,4 @@
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

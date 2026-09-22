@@ -3,9 +3,9 @@
 # Prefix and Suffix Arrays
 
 ## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
 
 ## See As Combo-wise Listings
 
 ### Prefix and Suffix Arrays + Stack + Two Pointers
-- [Trapping Rain Water](../Problems/trapping-rain-water.md)
+- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
