@@ -30,10 +30,12 @@
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
 - [Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md) ⭐⭐⭐
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)

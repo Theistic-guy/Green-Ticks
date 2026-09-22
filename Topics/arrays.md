@@ -32,6 +32,8 @@
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
@@ -112,6 +114,8 @@
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Greedy + Stack
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Two Pointers

@@ -3,6 +3,8 @@
 # Monotonic Stack
 
 ## Medium
+- [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
+- [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 

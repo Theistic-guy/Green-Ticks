@@ -105,6 +105,7 @@
   - [Minimum Number Of Steps To Make Two Strings Anagram (lc 1347)](/Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md)
   - [Minimum Number Of Steps To Make Two Strings Anagram Ii (lc 2186)](/Problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-(lc-2186).md)
   - [Minimum Operations To Reduce X To Zero](/Problems/minimum-operations-to-reduce-x-to-zero.md)
+  - [Next Greater Element (nge)](/Problems/next-greater-element-(nge).md)
   - [Next Permutation (leetcode 31)](/Problems/next-permutation-(leetcode-31).md)
   - [Odd One Occurring](/Problems/odd-one-occurring.md)
   - [Pair With Given Sum In An Unsorted Array](/Problems/pair-with-given-sum-in-an-unsorted-array.md)
@@ -112,6 +113,7 @@
   - [Permutations 2 Handling Duplicates](/Problems/permutations-2-handling-duplicates.md)
   - [Power Set Using Bitwise](/Problems/power-set-using-bitwise.md)
   - [Power Set With Duplicates](/Problems/power-set-with-duplicates.md)
+  - [Previous Greater Element (pge)](/Problems/previous-greater-element-(pge).md)
   - [Prime Factors](/Problems/prime-factors.md)
   - [Remove Duplicate Numbers Or Smallest Subsequence Of Distinct Characters](/Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md)
   - [Repeated Substring Pattern (leetcode 459)](/Problems/repeated-substring-pattern-(leetcode-459).md)
@@ -210,6 +212,7 @@
     - [📚Resources](/Notes/Extras/📚Resources.md)
 
 - **Groups**
+  - [Stack Based Nearest Neighbor](/Groups/stack-based-nearest-neighbor.md)
 
 - **Platforms**
   - [Gfg](/Platforms/gfg.md)
