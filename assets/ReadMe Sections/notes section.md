@@ -31,3 +31,6 @@
 + DP
 	+ [What makes a problem DP](/Notes/What%20makes%20a%20problem%20DP.md)
 	
+---
+
+>Feel free to read and learn from these notes! However, please respect the time and effort put into this repository by not cloning or re-hosting this content as your own work. See the LICENSE for details.

@@ -63,6 +63,11 @@
 	+ 336  - palindrome pairs (hard but popular)
 + linked list questions to put here
 + leetcode 556 is a varation of [next-permutation-(leetcode-31)](../Problems/next-permutation-(leetcode-31).md) and nothing to do with monotonic stack. Do it also
-+ Stack
++ Stack - [stack patterns and variations (to do)](Extras/stack%20patterns%20and%20variations%20(to%20do).md)
 	+ leetcode 224 (basic calculator) solving infix strings - do it 
-	+ 
+
++ Queue  - [Queue patterns and Variations](Extras/Queue%20patterns%20and%20Variations.md)
++ To do but not queue patterns  (some bfs or combinatorial pattern) - [BFS-Backtracking based Queue but not queue patterns](Extras/BFS-Backtracking%20based%20Queue%20but%20not%20queue%20patterns.md)
++ genearate parenthesis - leetcode 22
++ leetcode - 17
++ 
