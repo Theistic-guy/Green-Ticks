@@ -5,3 +5,7 @@
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
+
+## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

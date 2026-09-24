@@ -11,6 +11,7 @@
 
 ## Hard
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

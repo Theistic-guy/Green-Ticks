@@ -10,6 +10,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Longest Palindromic Substring (leetcode 5)](../Problems/longest-palindromic-substring.md) ⭐⭐⭐⭐
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

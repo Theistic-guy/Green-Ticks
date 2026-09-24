@@ -4,3 +4,6 @@
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
+## Medium
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐

@@ -8,3 +8,6 @@
 
 ## Medium
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
+
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

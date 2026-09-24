@@ -55,6 +55,7 @@
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
@@ -73,14 +74,14 @@
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
+- [Infix to Postfix (Shunting Yard Algorithm)](../Problems/infix-to-postfix-(shunting-yard-algorithm).md)
+- [Infix to Prefix (Shunting Yard Variant)](../Problems/infix-to-prefix.md)
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Lexicographic Rank of a String](../Problems/lexicographic-rank-of-a-string.md) ⭐⭐⭐
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
@@ -90,6 +91,7 @@
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+- [Prefix to Infix & Evaluation of Prefix](../Problems/prefix-to-infix-and-evaluation-of-prefix.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
 - [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐

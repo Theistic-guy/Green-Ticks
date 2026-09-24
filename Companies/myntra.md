@@ -4,3 +4,6 @@
 
 ## Medium
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
+
+## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐

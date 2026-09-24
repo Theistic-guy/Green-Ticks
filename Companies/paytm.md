@@ -6,4 +6,8 @@
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
+
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

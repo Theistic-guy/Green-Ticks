@@ -7,4 +7,6 @@
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

@@ -38,6 +38,7 @@
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)

@@ -4,9 +4,11 @@
 
 ## Easy
 - [Find All Anagrams in a String (Leetcode 438)](../Problems/find-all-anagrams-in-a-string.md) ⭐⭐⭐⭐
+- [Implement Queue using Stacks (LeetCode 232)](../Problems/implement-queue-using-stacks-(leetcode-232).md)
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
+- [Stack using Queue (LeetCode 225)](../Problems/stack-using-queue-(leetcode-225).md)
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
@@ -26,6 +28,7 @@
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Maximum Candies Allocated to K Children (LC 2226)](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
@@ -45,24 +48,25 @@
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Merge K Sorted Lists — K-Way Merge](../Problems/merge-k-sorted-lists.md)
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
+- [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
 - [Sliding Window Maximum (Leetcode 239)](../Problems/shortest-subarray-with-sum-at-least-k.md) ⭐⭐⭐⭐⭐
 - [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 - [Smallest Range Covering Elements from K Sorted Lists](../Problems/smallest-range-covering-elements-from-k-sorted-lists.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 - [Subarray Sum Divisible by K](../Problems/subarray-sum-divisible-by-k.md) ⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
 - [Contains Duplicate](../Problems/contains-duplicate.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

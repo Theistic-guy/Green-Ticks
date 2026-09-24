@@ -46,7 +46,7 @@
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
@@ -101,7 +101,7 @@
 
 ### Arrays + Stack
 - [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 
 ### Arrays + Two Pointers
 - [3Sum](../Problems/3sum.md)

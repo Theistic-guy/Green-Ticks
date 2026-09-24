@@ -10,19 +10,21 @@
 - [Find K Pairs With Smallest Sums](../Problems/find-k-pairs-with-smallest-sums.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
+- [Infix to Postfix (Shunting Yard Algorithm)](../Problems/infix-to-postfix-(shunting-yard-algorithm).md)
+- [Infix to Prefix (Shunting Yard Variant)](../Problems/infix-to-prefix.md)
 - [Josephus Problem](../Problems/josephus-problem.md)
 - [K-th Smallest Number in Multiplication Table](../Problems/kth-smallest-number-in-multiplication-table.md)
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
-- [Largest Rectangle in Histogram](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Lexicographic Rank of a String](../Problems/lexicographic-rank-of-a-string.md) ⭐⭐⭐
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)
 - [Longest Subarray With Given Sum](../Problems/longest-subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Maximum Appearing Element](../Problems/maximum-appearing-element.md)
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
@@ -33,7 +35,9 @@
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
 - [Minimum Operations to Reduce X to Zero (Leetcode 1658)](../Problems/minimum-operations-to-reduce-x-to-zero.md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
+- [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+- [Prefix to Infix & Evaluation of Prefix](../Problems/prefix-to-infix-and-evaluation-of-prefix.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Search in Rotated Sorted Array II (With Duplicates)](../Problems/search-in-rotated-sorted-array-ii.md)
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
@@ -43,4 +47,5 @@
 - [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 - [Subarray Sum Divisible by K](../Problems/subarray-sum-divisible-by-k.md) ⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 - [Two odd occurring](../Problems/two-odd-occurring.md)

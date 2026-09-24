@@ -9,6 +9,8 @@
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

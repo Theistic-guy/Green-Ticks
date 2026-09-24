@@ -5,3 +5,6 @@
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
+
+## Medium
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐

@@ -9,5 +9,6 @@
 ## Medium
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 
-## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
+## Hard
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

@@ -20,10 +20,10 @@
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Container With Most Water](../Problems/container-with-most-water.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
 
 ## See As Combo-wise Listings
 
@@ -56,7 +56,7 @@
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 
 ### Two Pointers + Prefix and Suffix Arrays + Stack
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ### Two Pointers + Arrays + Heap + Searching
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐

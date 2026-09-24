@@ -10,7 +10,7 @@
 - [Find a peak element in 2D matrix](../Problems/find-a-peak-element-in-2d-matrix.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 - [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
 - [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
@@ -18,7 +18,7 @@
 ## See As Combo-wise Listings
 
 ### Matrix + Stack
-- [Maximal Rectangle (Leetcode 85)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 
 ### Matrix + Arrays + Greedy
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐

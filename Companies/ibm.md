@@ -8,4 +8,8 @@
 
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
+
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

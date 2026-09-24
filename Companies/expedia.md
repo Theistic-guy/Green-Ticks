@@ -9,5 +9,8 @@
 ## Medium
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

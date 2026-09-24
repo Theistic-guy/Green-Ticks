@@ -10,7 +10,9 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

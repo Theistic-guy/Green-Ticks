@@ -19,6 +19,7 @@
 - [Palindrome number](../Problems/palindrome-number.md)
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 - [Sieve Of Eratosthenes](../Problems/seive-of-eratosthenes.md)
 - [Trailing zeroes in a factorial](../Problems/trailing-zeroes-in-a-factorial.md)
 
@@ -31,6 +32,9 @@
 
 ### Maths + Backtracking
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
+
+### Maths + Queue
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 
 ### Maths + Backtracking + Sorting
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)

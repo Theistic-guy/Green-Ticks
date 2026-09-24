@@ -11,6 +11,7 @@
 - [First Occurrence Last Occurrence & Count in a Sorted Array](../Problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array.md)
 - [Greatest Common Divisor](../Problems/greatest-common-divisor.md)
 - [If number is power of 2](../Problems/check-if-number-is-power-of-two.md)
+- [Implement Queue using Stacks (LeetCode 232)](../Problems/implement-queue-using-stacks-(leetcode-232).md)
 - [Least Common Multiple](../Problems/least-common-multiple.md)
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
@@ -21,6 +22,7 @@
 - [Reverse Words in a String (Leetcode 151)](../Problems/reverse-words-in-a-string.md) ⭐⭐⭐⭐
 - [Search in an Infinite Sorted Array](../Problems/search-in-infinite-sorted-array.md)
 - [Square root using binary search](../Problems/square-root-using-binary-search.md)
+- [Stack using Queue (LeetCode 225)](../Problems/stack-using-queue-(leetcode-225).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
@@ -33,8 +35,10 @@
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Odd one occurring](../Problems/odd-one-occurring.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)
 - [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
@@ -56,7 +60,5 @@
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 - [Two odd occurring](../Problems/two-odd-occurring.md)
-
-## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

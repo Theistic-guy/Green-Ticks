@@ -10,10 +10,13 @@
 ## Medium
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 
 ## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
+- [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

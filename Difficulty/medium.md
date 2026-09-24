@@ -26,6 +26,7 @@
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
 - [Maximum Candies Allocated to K Children (LC 2226)](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
 - [Maximum Subarray Sum](../Problems/maximum-subarray-sum.md)
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Minimum Number of Steps to Make Two Strings Anagram (LC 1347)](../Problems/minimum-number-of-steps-to-make-two-strings-anagram-(lc-1347).md) ⭐⭐⭐
@@ -36,6 +37,7 @@
 - [Permutations 2 (handling duplicates)](../Problems/permutations-2-handling-duplicates.md)
 - [Power Set using Bitwise](../Problems/power-set-using-bitwise.md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
+- [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
 - [Rope Cutting With DP](../Problems/rope-cutting-with-dp.md)

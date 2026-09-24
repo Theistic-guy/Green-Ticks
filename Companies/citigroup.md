@@ -4,3 +4,6 @@
 
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
+
+## Hard
+- [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐

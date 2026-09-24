@@ -6,4 +6,5 @@
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
 ## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

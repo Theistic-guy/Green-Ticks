@@ -8,3 +8,7 @@
 
 ## Medium
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
+
+## Hard
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

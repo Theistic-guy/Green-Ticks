@@ -11,4 +11,7 @@
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 
 ## Hard
+- [Infix to Postfix (Shunting Yard Algorithm)](../Problems/infix-to-postfix-(shunting-yard-algorithm).md)
+- [Infix to Prefix (Shunting Yard Variant)](../Problems/infix-to-prefix.md)
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
+- [Prefix to Infix & Evaluation of Prefix](../Problems/prefix-to-infix-and-evaluation-of-prefix.md)

@@ -3,6 +3,8 @@
 # <img src="https://img.logo.dev/amazon.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Amazon
 
 ## Easy
+- [Implement Queue using Stacks (LeetCode 232)](../Problems/implement-queue-using-stacks-(leetcode-232).md)
+- [Stack using Queue (LeetCode 225)](../Problems/stack-using-queue-(leetcode-225).md)
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
@@ -16,6 +18,7 @@
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Maximum Candies Allocated to K Children (LC 2226)](../Problems/maximum-candies-allocated-to-k-children-(lc-2226).md)
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 - [Minimized Maximum of Products Distributed to Any Store](../Problems/minimized-maximum-of-products-distributed-to-any-store.md)
 - [Minimum Limit of Balls in a Bag](../Problems/minimum-limit-of-balls-in-a-bag.md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
@@ -28,12 +31,15 @@
 - [Koko Eating Bananas - Predicate Search](../Problems/koko-eating-bananas.md)
 - [Kth Smallest Element in a Sorted Matrix](../Problems/kth-smallest-element-in-a-sorted-matrix.md)
 - [Kth smallest pair distance](../Problems/kth-smallest-pair-distance.md)
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
+- [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
 
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)
 - [Container With Most Water](../Problems/container-with-most-water.md)
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)

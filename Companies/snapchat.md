@@ -2,5 +2,5 @@
 
 # Snapchat
 
-## Not Specified
-- [Trapping Rain Water](../Problems/trapping-rain-water-(lc-42).md)
+## Hard
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

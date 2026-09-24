@@ -6,5 +6,10 @@
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
+## Medium
+- [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
+
 ## Hard
+- [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
+- [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐
