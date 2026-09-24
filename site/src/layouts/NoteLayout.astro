@@ -1,0 +1,62 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+import { getSidebar } from '../utils/content';
+
+interface Props {
+  title: string;
+  pathSegments?: string[];
+}
+
+const { title, pathSegments = [] } = Astro.props;
+
+const sidebarSections = getSidebar();
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={title}>
+  <Navbar />
+  <div class="layout-container">
+    <Sidebar sections={sidebarSections} currentPath={currentPath} />
+    
+    <main class="content-area">
+      <article class="prose note-article">
+        {pathSegments.length > 0 && <Breadcrumbs segments={pathSegments} />}
+        
+        <div class="markdown-content">
+          <slot />
+        </div>
+      </article>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .layout-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+  }
+
+  .content-area {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: var(--space-8) var(--space-6) var(--space-16);
+    max-width: 1000px;
+    margin-right: auto;
+  }
+
+  .note-article {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      margin-left: 0;
+    }
+  }
+</style>

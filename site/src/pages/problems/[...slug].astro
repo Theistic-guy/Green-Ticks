@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProblemLayout from '../../layouts/ProblemLayout.astro';
+import { loadCompanyLogos } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const problems = await getCollection('problems');
+  return problems.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Transform the raw frontmatter to match the Problem interface expected by ProblemLayout
+const data = entry.data;
+
+const asList = (val: unknown) => {
+  if (!val) return [];
+  if (Array.isArray(val)) return val.map(String);
+  if (typeof val === 'string') return val.split(',').map(s => s.trim());
+  return [String(val)];
+};
+
+let rating = null;
+if (data.Rating != null) {
+  const str = String(data.Rating).trim();
+  const starCount = [...str].filter((c) => c === '⭐').length;
+  rating = starCount > 0 ? starCount : parseInt(str, 10) || null;
+}
+
+const problem = {
+  slug: entry.id,
+  filePath: entry.filePath || '',
+  title: data.Title || entry.id,
+  topics: asList(data.Topics),
+  platforms: asList(data.Platform),
+  companies: asList(data.Companies),
+  difficulty: data.Difficulty || 'Not Specified',
+  link: data.Link || '',
+  otherTags: asList(data['Other Tags']),
+  rating,
+  groups: asList(data.Groups),
+  rawContent: entry.body || '',
+};
+---
+
+<ProblemLayout problem={problem}>
+  <Content />
+</ProblemLayout>

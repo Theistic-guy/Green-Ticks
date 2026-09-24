@@ -1,0 +1,39 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../utils/content';
+
+const notes = await getCollection('notes');
+
+// Structure them nicely for the grid
+const noteItems = notes.map(note => {
+  const parts = note.id.split('/');
+  const slug = parts.map(slugify).join('/');
+  const title = note.data.Title || parts[parts.length - 1];
+  const folder = parts.length > 1 ? parts[0] : '';
+  
+  return { title, slug, folder };
+}).sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<IndexLayout title="Notes" description="In-depth topic explanations and guides.">
+  <div class="card-grid">
+    {noteItems.map(item => (
+      <Card 
+        title={item.title} 
+        href={`/notes/${item.slug}`} 
+        icon="📓"
+        description={item.folder}
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

@@ -1,0 +1,101 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { loadProblems } from '../../utils/content';
+
+const problems = loadProblems();
+
+// Group problems by difficulty for the index
+const easyProblems = problems.filter(p => p.difficulty === 'Easy');
+const mediumProblems = problems.filter(p => p.difficulty === 'Medium');
+const hardProblems = problems.filter(p => p.difficulty === 'Hard');
+const uncategorizedProblems = problems.filter(p => p.difficulty === 'Not Specified');
+---
+
+<IndexLayout title="Problems" description="All coding problems organized by difficulty.">
+  <div class="problems-container">
+    {easyProblems.length > 0 && (
+      <section class="difficulty-section">
+        <h2 class="difficulty-title easy">Easy ({easyProblems.length})</h2>
+        <div class="card-grid">
+          {easyProblems.map(p => (
+            <Card 
+              title={p.title} 
+              href={`/problems/${p.slug}`} 
+              description={p.topics.join(' • ')} 
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {mediumProblems.length > 0 && (
+      <section class="difficulty-section">
+        <h2 class="difficulty-title medium">Medium ({mediumProblems.length})</h2>
+        <div class="card-grid">
+          {mediumProblems.map(p => (
+            <Card 
+              title={p.title} 
+              href={`/problems/${p.slug}`} 
+              description={p.topics.join(' • ')} 
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {hardProblems.length > 0 && (
+      <section class="difficulty-section">
+        <h2 class="difficulty-title hard">Hard ({hardProblems.length})</h2>
+        <div class="card-grid">
+          {hardProblems.map(p => (
+            <Card 
+              title={p.title} 
+              href={`/problems/${p.slug}`} 
+              description={p.topics.join(' • ')} 
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {uncategorizedProblems.length > 0 && (
+      <section class="difficulty-section">
+        <h2 class="difficulty-title default">Not Specified ({uncategorizedProblems.length})</h2>
+        <div class="card-grid">
+          {uncategorizedProblems.map(p => (
+            <Card 
+              title={p.title} 
+              href={`/problems/${p.slug}`} 
+              description={p.topics.join(' • ')} 
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</IndexLayout>
+
+<style>
+  .difficulty-section {
+    margin-bottom: var(--space-12);
+  }
+
+  .difficulty-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .difficulty-title.easy { color: var(--color-easy); border-bottom-color: var(--color-easy-bg); }
+  .difficulty-title.medium { color: var(--color-medium); border-bottom-color: var(--color-medium-bg); }
+  .difficulty-title.hard { color: var(--color-hard); border-bottom-color: var(--color-hard-bg); }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

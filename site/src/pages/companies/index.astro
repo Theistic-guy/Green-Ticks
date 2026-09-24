@@ -1,0 +1,42 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { loadProblems, loadCompanyLogos, groupByField, slugify } from '../../utils/content';
+
+const problems = loadProblems();
+const byCompany = groupByField(problems, 'companies');
+
+const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+
+const companies = Object.entries(byCompany)
+  .map(([name, items]) => ({
+    name,
+    slug: slugify(name),
+    count: items.length,
+    logoUrl: companyLogos[name]
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<IndexLayout title="Companies" description="Problems grouped by the companies that ask them.">
+  <div class="card-grid">
+    {companies.map(company => (
+      <Card 
+        title={company.name} 
+        href={`/companies/${company.slug}`} 
+        count={company.count}
+        logoUrl={company.logoUrl}
+        icon={!company.logoUrl ? "🏢" : undefined}
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

@@ -1,0 +1,205 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import DifficultyBadge from '../components/DifficultyBadge.astro';
+import type { Problem } from '../utils/content';
+
+import { getSidebar } from '../utils/content';
+
+interface Props {
+  problem: Problem;
+}
+
+const { problem } = Astro.props;
+
+const sidebarSections = getSidebar();
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={problem.title} description={`Solution for ${problem.title}`}>
+  <Navbar />
+  <div class="layout-container">
+    <Sidebar sections={sidebarSections} currentPath={currentPath} />
+    
+    <main class="content-area">
+      <article class="prose problem-article">
+        <header class="problem-header">
+          <h1>{problem.title}</h1>
+          
+          <div class="problem-metadata">
+            <DifficultyBadge difficulty={problem.difficulty} size="md" />
+            
+            {problem.platforms.length > 0 && (
+              <div class="meta-group">
+                {problem.platforms.map(platform => (
+                  <span class="chip platform-chip">{platform}</span>
+                ))}
+              </div>
+            )}
+            
+            {problem.rating != null && (
+              <div class="meta-group rating" title={`Rating: ${problem.rating}/5`}>
+                {'⭐'.repeat(problem.rating)}
+              </div>
+            )}
+
+            {problem.link && (
+              <a href={problem.link} target="_blank" rel="noopener noreferrer" class="external-link btn btn-secondary btn-sm">
+                View on Platform ↗
+              </a>
+            )}
+          </div>
+
+          <div class="meta-row">
+            {problem.topics.length > 0 && (
+              <div class="tag-group">
+                <span class="tag-label">Topics:</span>
+                {problem.topics.map(topic => (
+                  <a href={`/topics/${topic.toLowerCase().replace(/\s+/g, '-')}`} class="chip topic-chip">{topic}</a>
+                ))}
+              </div>
+            )}
+          </div>
+          
+          <div class="meta-row">
+            {problem.companies.length > 0 && (
+              <div class="tag-group">
+                <span class="tag-label">Companies:</span>
+                {problem.companies.map(company => (
+                  <a href={`/companies/${company.toLowerCase().replace(/\s+/g, '-')}`} class="chip company-chip">{company}</a>
+                ))}
+              </div>
+            )}
+          </div>
+        </header>
+
+        <div class="markdown-content">
+          <slot />
+        </div>
+      </article>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .layout-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+  }
+
+  .content-area {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: var(--space-8) var(--space-6) var(--space-16);
+    max-width: 100%;
+  }
+
+  .problem-article {
+    margin: 0 auto;
+  }
+
+  .problem-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .problem-header h1 {
+    margin-bottom: var(--space-4);
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .problem-metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .meta-group {
+    display: flex;
+    gap: var(--space-2);
+  }
+  
+  .rating {
+    color: var(--color-accent);
+    font-size: var(--text-lg);
+  }
+
+  .meta-row {
+    margin-bottom: var(--space-3);
+  }
+
+  .tag-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tag-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .platform-chip {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+  }
+
+  .topic-chip {
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    border: 1px solid transparent;
+  }
+
+  .topic-chip:hover {
+    border-color: var(--color-primary);
+    background: transparent;
+  }
+
+  .company-chip {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  .company-chip:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-bg-tertiary);
+  }
+
+  .external-link {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    padding: 4px 12px;
+  }
+
+  .btn-sm {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      margin-left: 0;
+    }
+  }
+</style>

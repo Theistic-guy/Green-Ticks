@@ -1,5 +1,4 @@
 
----
 ## Implementation Based
 
 - **Min Stack** → [LeetCode 155 - Min Stack](https://leetcode.com/problems/min-stack/) (Medium, but very frequently asked at FAANG — Amazon, Google, Bloomberg especially)

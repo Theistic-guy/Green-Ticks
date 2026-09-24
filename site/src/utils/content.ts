@@ -225,3 +225,65 @@ const DIFFICULTY_ORDER: Record<string, number> = {
 export function sortDifficulty(a: string, b: string): number {
   return (DIFFICULTY_ORDER[a] ?? 99) - (DIFFICULTY_ORDER[b] ?? 99);
 }
+
+/**
+ * Generate sidebar navigation tree.
+ */
+export function getSidebar(): any[] {
+  const problems = loadProblems();
+  const notes = loadMarkdownDir('Notes');
+  const templates = loadMarkdownDir('Templates');
+
+  // Helper to build a nested tree from paths
+  function buildTree(pages: MarkdownPage[], basePath: string) {
+    const root: any[] = [];
+    
+    for (const page of pages) {
+      const parts = page.pathSegments;
+      let currentLevel = root;
+      
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+        const isLeaf = i === parts.length - 1;
+        
+        let existingNode = currentLevel.find((n: any) => n.label === part);
+        
+        if (!existingNode) {
+          existingNode = { 
+            label: part, 
+            href: isLeaf ? `/${basePath}/${page.slug}` : undefined,
+            children: isLeaf ? undefined : []
+          };
+          currentLevel.push(existingNode);
+        }
+        
+        if (!isLeaf) {
+          currentLevel = existingNode.children;
+        }
+      }
+    }
+    
+    return root;
+  }
+
+  return [
+    {
+      label: 'Explore',
+      children: [
+        { label: 'Problems', href: '/problems', count: problems.length },
+        { label: 'Topics', href: '/topics' },
+        { label: 'Companies', href: '/companies' }
+      ]
+    },
+    {
+      label: 'Templates',
+      href: '/templates',
+      children: buildTree(templates, 'templates')
+    },
+    {
+      label: 'Notes',
+      href: '/notes',
+      children: buildTree(notes, 'notes')
+    }
+  ];
+}

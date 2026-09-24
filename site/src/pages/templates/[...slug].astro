@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+import { slugify } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const templates = await getCollection('templates');
+  return templates.map(entry => {
+    const parts = entry.id.split('/');
+    const slug = parts.map(slugify).join('/');
+    
+    return {
+      params: { slug },
+      props: { entry, parts },
+    };
+  });
+}
+
+const { entry, parts } = Astro.props;
+const { Content } = await render(entry);
+
+const fileName = parts[parts.length - 1];
+const title = entry.data?.Title || fileName.replace(/-/g, ' ');
+---
+
+<NoteLayout title={title} pathSegments={parts}>
+  <Content />
+</NoteLayout>

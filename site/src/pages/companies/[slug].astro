@@ -1,0 +1,65 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const problems = loadProblems();
+  const byCompany = groupByField(problems, 'companies');
+  
+  const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+  const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+  
+  return Object.entries(byCompany).map(([company, items]) => {
+    const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    
+    return {
+      params: { slug: slugify(company) },
+      props: { 
+        company, 
+        problems: sortedItems,
+        logoUrl: companyLogos[company]
+      },
+    };
+  });
+}
+
+const { company, problems, logoUrl } = Astro.props;
+---
+
+<IndexLayout title={company} description={`${problems.length} problems asked at ${company}.`}>
+  {logoUrl && (
+    <div class="company-header-logo">
+      <img src={logoUrl} alt={company} width="64" height="64" />
+    </div>
+  )}
+
+  <div class="card-grid">
+    {problems.map(p => (
+      <Card 
+        title={p.title} 
+        href={`/problems/${p.slug}`} 
+        description={`${p.difficulty} • ${p.topics.slice(0, 3).join(', ')}${p.topics.length > 3 ? '...' : ''}`} 
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .company-header-logo {
+    margin-bottom: var(--space-6);
+  }
+  
+  .company-header-logo img {
+    border-radius: var(--radius-md);
+    background: white;
+    padding: var(--space-1);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

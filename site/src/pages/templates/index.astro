@@ -1,0 +1,36 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../utils/content';
+
+const templates = await getCollection('templates');
+
+const templateItems = templates.map(temp => {
+  const parts = temp.id.split('/');
+  const slug = parts.map(slugify).join('/');
+  const title = temp.data.Title || parts[parts.length - 1];
+  
+  return { title, slug };
+}).sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<IndexLayout title="Templates" description="Reusable algorithm templates and patterns.">
+  <div class="card-grid">
+    {templateItems.map(item => (
+      <Card 
+        title={item.title} 
+        href={`/templates/${item.slug}`} 
+        icon="📄"
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+</style>
