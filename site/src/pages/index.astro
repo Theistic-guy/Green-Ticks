@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Card from '../components/Card.astro';
+import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify } from '../utils/content';
+
+// Load all data at build time
+const problems = loadProblems();
+const templates = loadMarkdownDir('Templates');
+const notes = loadMarkdownDir('Notes');
+
+const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+
+// Compute stats
+const byTopic = groupByField(problems, 'topics');
+const byCompany = groupByField(problems, 'companies');
+const byPlatform = groupByField(problems, 'platforms');
+const byGroup = groupByField(problems, 'groups');
+
+const topicCount = Object.keys(byTopic).length;
+const companyCount = Object.keys(byCompany).length;
+const platformCount = Object.keys(byPlatform).length;
+const groupCount = Object.keys(byGroup).length;
+
+// Difficulty breakdown
+const easyCount = problems.filter(p => p.difficulty === 'Easy').length;
+const mediumCount = problems.filter(p => p.difficulty === 'Medium').length;
+const hardCount = problems.filter(p => p.difficulty === 'Hard').length;
+
+// Top topics (by problem count, top 8)
+const topTopics = Object.entries(byTopic)
+  .sort((a, b) => b[1].length - a[1].length)
+  .slice(0, 8);
+
+// Top companies (by problem count, top 8)
+const topCompanies = Object.entries(byCompany)
+  .sort((a, b) => b[1].length - a[1].length)
+  .slice(0, 8);
+---
+
+<BaseLayout title="Home">
+  <Navbar />
+
+  <main class="home">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Open Source Knowledge Base</div>
+        <h1 class="hero-title">
+          Green-Ticks
+          <span class="hero-icon">✅</span>
+        </h1>
+        <p class="hero-subtitle">
+          A curated collection of <strong>{problems.length}</strong> coding problems, 
+          solutions, templates, and notes — organized, tagged, and searchable.
+        </p>
+        <div class="hero-actions">
+          <a href="/problems" class="btn btn-primary">Browse Problems</a>
+          <a href="/topics" class="btn btn-secondary">Explore Topics</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-value">{problems.length}</span>
+          <span class="stat-label">Problems</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{topicCount}</span>
+          <span class="stat-label">Topics</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{companyCount}</span>
+          <span class="stat-label">Companies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{platformCount}</span>
+          <span class="stat-label">Platforms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{templates.length}</span>
+          <span class="stat-label">Templates</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">{notes.length}</span>
+          <span class="stat-label">Notes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Difficulty Breakdown -->
+    <section class="section">
+      <h2 class="section-title">Difficulty Breakdown</h2>
+      <div class="difficulty-bars">
+        <div class="diff-bar">
+          <div class="diff-info">
+            <span class="diff-label easy">Easy</span>
+            <span class="diff-count">{easyCount}</span>
+          </div>
+          <div class="diff-track">
+            <div class="diff-fill easy" style={`width: ${(easyCount / problems.length * 100).toFixed(1)}%`}></div>
+          </div>
+        </div>
+        <div class="diff-bar">
+          <div class="diff-info">
+            <span class="diff-label medium">Medium</span>
+            <span class="diff-count">{mediumCount}</span>
+          </div>
+          <div class="diff-track">
+            <div class="diff-fill medium" style={`width: ${(mediumCount / problems.length * 100).toFixed(1)}%`}></div>
+          </div>
+        </div>
+        <div class="diff-bar">
+          <div class="diff-info">
+            <span class="diff-label hard">Hard</span>
+            <span class="diff-count">{hardCount}</span>
+          </div>
+          <div class="diff-track">
+            <div class="diff-fill hard" style={`width: ${(hardCount / problems.length * 100).toFixed(1)}%`}></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation Cards -->
+    <section class="section">
+      <h2 class="section-title">Explore</h2>
+      <div class="nav-grid">
+        <Card title="Problems" href="/problems" icon="📝" count={problems.length} description="All coding problems organized by difficulty" />
+        <Card title="Topics" href="/topics" icon="🧠" count={topicCount} description="Browse by algorithm & data structure topics" />
+        <Card title="Companies" href="/companies" icon="🏢" count={companyCount} description="Problems asked at specific companies" />
+        <Card title="Platforms" href="/platforms" icon="📚" count={platformCount} description="Problems from different coding platforms" />
+        {groupCount > 0 && (
+          <Card title="Groups" href="/groups" icon="📦" count={groupCount} description="Custom problem groupings" />
+        )}
+        <Card title="Templates" href="/templates" icon="📄" count={templates.length} description="Reusable algorithm templates & patterns" />
+        <Card title="Notes" href="/notes" icon="📓" count={notes.length} description="In-depth topic explanations & guides" />
+      </div>
+    </section>
+
+    <!-- Top Topics -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Popular Topics</h2>
+        <a href="/topics" class="see-all">View all →</a>
+      </div>
+      <div class="card-grid">
+        {topTopics.map(([topic, items]) => (
+          <Card title={topic} href={`/topics/${slugify(topic)}`} count={items.length} />
+        ))}
+      </div>
+    </section>
+
+    <!-- Top Companies -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Top Companies</h2>
+        <a href="/companies" class="see-all">View all →</a>
+      </div>
+      <div class="card-grid">
+        {topCompanies.map(([company, items]) => (
+          <Card
+            title={company}
+            href={`/companies/${slugify(company)}`}
+            count={items.length}
+            logoUrl={companyLogos[company]}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+      <p>Built with ❤️ by <a href="https://github.com/Theistic-Guy" target="_blank">@Theistic-Guy</a></p>
+      <p class="footer-note">Feel free to read and learn! Please respect the effort — see the <a href="https://github.com/Theistic-Guy/Green-Ticks/blob/main/LICENSE" target="_blank">LICENSE</a> for details.</p>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  .home {
+    padding-top: var(--navbar-height);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+
+  /* Hero */
+  .hero {
+    padding: var(--space-16) 0 var(--space-12);
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    background: var(--color-primary-bg);
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-icon {
+    -webkit-text-fill-color: initial;
+    display: inline-block;
+    animation: bounce 2s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-8);
+    line-height: var(--leading-relaxed);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+  }
+
+  /* Stats */
+  .stats-bar {
+    padding: var(--space-6) 0;
+    margin-bottom: var(--space-8);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-4);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: var(--space-12);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+
+  .section-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+  }
+
+  .section-header .section-title {
+    margin-bottom: 0;
+  }
+
+  .see-all {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Navigation grid */
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+  }
+
+  /* Difficulty bars */
+  .difficulty-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .diff-bar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .diff-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .diff-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .diff-label.easy { color: var(--color-easy); }
+  .diff-label.medium { color: var(--color-medium); }
+  .diff-label.hard { color: var(--color-hard); }
+
+  .diff-count {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .diff-track {
+    height: 8px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .diff-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+  }
+
+  .diff-fill.easy { background: var(--color-easy); }
+  .diff-fill.medium { background: var(--color-medium); }
+  .diff-fill.hard { background: var(--color-hard); }
+
+  /* Footer */
+  .home-footer {
+    text-align: center;
+    padding: var(--space-12) 0 var(--space-8);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+  }
+
+  .footer-note {
+    margin-top: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero { padding: var(--space-10) 0 var(--space-8); }
+    .nav-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

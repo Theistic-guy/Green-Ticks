@@ -1,0 +1,257 @@
+---
+/**
+ * Collapsible sidebar navigation with folder tree.
+ * Sections are passed as props so each page type can customize what's shown.
+ */
+interface SidebarItem {
+  label: string;
+  href?: string;
+  children?: SidebarItem[];
+  count?: number;
+}
+
+interface Props {
+  sections: SidebarItem[];
+  currentPath?: string;
+}
+
+const { sections, currentPath = '' } = Astro.props;
+
+function isActive(href: string | undefined, current: string): boolean {
+  if (!href) return false;
+  return current === href || current.startsWith(href + '/');
+}
+---
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-inner">
+    {sections.map((section) => (
+      <div class="sidebar-section">
+        {section.href ? (
+          <a
+            class={`sidebar-section-title ${isActive(section.href, currentPath) ? 'active' : ''}`}
+            href={section.href}
+          >
+            {section.label}
+            {section.count != null && <span class="sidebar-count">{section.count}</span>}
+          </a>
+        ) : (
+          <div class="sidebar-section-title">{section.label}</div>
+        )}
+
+        {section.children && section.children.length > 0 && (
+          <ul class="sidebar-list">
+            {section.children.map((item) => (
+              <li class="sidebar-item">
+                {item.children && item.children.length > 0 ? (
+                  <details open={isActive(item.href, currentPath)}>
+                    <summary class={`sidebar-folder ${isActive(item.href, currentPath) ? 'active' : ''}`}>
+                      <svg class="folder-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                      {item.href ? (
+                        <a href={item.href}>{item.label}</a>
+                      ) : (
+                        <span>{item.label}</span>
+                      )}
+                      {item.count != null && <span class="sidebar-count">{item.count}</span>}
+                    </summary>
+                    <ul class="sidebar-list nested">
+                      {item.children.map((child) => (
+                        <li class="sidebar-item">
+                          <a
+                            class={`sidebar-link ${currentPath === child.href ? 'active' : ''}`}
+                            href={child.href}
+                          >
+                            {child.label}
+                            {child.count != null && <span class="sidebar-count">{child.count}</span>}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <a
+                    class={`sidebar-link ${currentPath === item.href ? 'active' : ''}`}
+                    href={item.href}
+                  >
+                    {item.label}
+                    {item.count != null && <span class="sidebar-count">{item.count}</span>}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<style>
+  .sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--color-bg-sidebar);
+    border-right: 1px solid var(--color-border);
+    overflow-y: auto;
+    z-index: var(--z-sidebar);
+    transition: transform var(--transition-slow);
+  }
+
+  .sidebar-inner {
+    padding: var(--space-4) 0;
+  }
+
+  .sidebar-section {
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+  }
+
+  a.sidebar-section-title:hover {
+    color: var(--color-text-primary);
+  }
+
+  a.sidebar-section-title.active {
+    color: var(--color-primary);
+  }
+
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-list.nested {
+    padding-left: var(--space-4);
+  }
+
+  .sidebar-item {
+    margin: 0;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-1) var(--space-4) var(--space-1) var(--space-6);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: 0;
+    transition: all var(--transition-fast);
+    border-left: 2px solid transparent;
+  }
+
+  .sidebar-link:hover {
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+  }
+
+  .sidebar-link.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    background: var(--color-primary-bg);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .sidebar-folder {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+  }
+
+  .sidebar-folder:hover {
+    color: var(--color-text-primary);
+  }
+
+  .sidebar-folder a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sidebar-folder a:hover {
+    color: var(--color-primary);
+  }
+
+  .folder-arrow {
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  details[open] > summary .folder-arrow {
+    transform: rotate(90deg);
+  }
+
+  .sidebar-count {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+    background: var(--color-bg-secondary);
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Overlay for mobile */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg-overlay);
+    z-index: calc(var(--z-sidebar) - 1);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar.open + .sidebar-overlay {
+      display: block;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Sidebar toggle for mobile
+  const toggle = document.getElementById('sidebar-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+
+  function closeSidebar() {
+    sidebar?.classList.remove('open');
+  }
+
+  toggle?.addEventListener('click', () => {
+    sidebar?.classList.toggle('open');
+  });
+
+  overlay?.addEventListener('click', closeSidebar);
+</script>

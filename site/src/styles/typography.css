@@ -1,0 +1,198 @@
+/* ============================================================
+   Prose / Typography — styles for rendered markdown content
+   ============================================================ */
+
+.prose {
+  max-width: var(--content-max-width);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+}
+
+/* --- Headings --- */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  scroll-margin-top: calc(var(--navbar-height) + var(--space-4));
+}
+
+.prose h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0;
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.prose h2 {
+  font-size: var(--text-2xl);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prose h3 {
+  font-size: var(--text-xl);
+}
+
+.prose h4 {
+  font-size: var(--text-lg);
+}
+
+/* Anchor links on headings */
+.prose h1 a.heading-anchor,
+.prose h2 a.heading-anchor,
+.prose h3 a.heading-anchor,
+.prose h4 a.heading-anchor,
+.prose h5 a.heading-anchor,
+.prose h6 a.heading-anchor {
+  opacity: 0;
+  margin-left: 0.3em;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.prose h1:hover a.heading-anchor,
+.prose h2:hover a.heading-anchor,
+.prose h3:hover a.heading-anchor,
+.prose h4:hover a.heading-anchor,
+.prose h5:hover a.heading-anchor,
+.prose h6:hover a.heading-anchor {
+  opacity: 1;
+}
+
+/* --- Paragraphs --- */
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+/* --- Lists --- */
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-bottom: 0.35em;
+}
+
+.prose li > ul,
+.prose li > ol {
+  margin-top: 0.35em;
+  margin-bottom: 0;
+}
+
+/* --- Blockquotes --- */
+.prose blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-6) 0;
+  background: var(--color-primary-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Code blocks --- */
+.prose pre {
+  position: relative;
+  padding: var(--space-4);
+  margin: var(--space-6) 0;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  border: 1px solid var(--color-border);
+}
+
+/* --- Tables --- */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+
+.prose th,
+.prose td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.prose th {
+  background: var(--color-bg-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.prose tr:nth-child(even) {
+  background: var(--color-bg-secondary);
+}
+
+/* --- Images --- */
+.prose img {
+  border-radius: var(--radius-md);
+  margin: var(--space-6) auto;
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Horizontal rules --- */
+.prose hr {
+  margin: var(--space-8) 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --- Strong / Em --- */
+.prose strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.prose em {
+  font-style: italic;
+}
+
+/* --- KaTeX math --- */
+.prose .katex-display {
+  margin: var(--space-6) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--space-2) 0;
+}
+
+.prose .katex {
+  font-size: 1.1em;
+}
+
+/* --- Details / Summary (collapsible) --- */
+.prose details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0;
+  background: var(--color-bg-card);
+}
+
+.prose summary {
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  user-select: none;
+}
+
+.prose details[open] summary {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
