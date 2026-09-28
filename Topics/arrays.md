@@ -30,6 +30,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
@@ -163,6 +164,9 @@
 ### Arrays + Searching + Two Pointers
 - [Kth element in two sorted arrays](../Problems/kth-element-in-two-sorted-arrays.md)
 - [Median of Two Sorted Arrays](../Problems/median-of-two-sorted-arrays.md)
+
+### Arrays + Disjoint Set Union + Greedy + Sorting
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Hashing + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐

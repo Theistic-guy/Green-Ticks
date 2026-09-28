@@ -4,6 +4,7 @@
 
 ## Easy
 - [Implement Queue using Stacks (LeetCode 232)](../Problems/implement-queue-using-stacks-(leetcode-232).md)
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
 - [Stack using Queue (LeetCode 225)](../Problems/stack-using-queue-(leetcode-225).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
@@ -24,6 +25,7 @@
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 - [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
 - [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)

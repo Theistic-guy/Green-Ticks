@@ -41,6 +41,7 @@
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)

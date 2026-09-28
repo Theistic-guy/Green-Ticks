@@ -4,12 +4,14 @@
 
 ## Easy
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
@@ -26,6 +28,9 @@
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
+### Sorting + Greedy
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
+
 ### Sorting + Arrays + Hashing
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
@@ -37,6 +42,9 @@
 
 ### Sorting + Greedy + Strings
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
+
+### Sorting + Arrays + Disjoint Set Union + Greedy
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 
 ### Sorting + Arrays + Greedy + Hashing
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐

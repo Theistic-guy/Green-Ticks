@@ -19,6 +19,7 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)

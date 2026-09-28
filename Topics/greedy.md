@@ -5,11 +5,13 @@
 ## Easy
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 
 ## Medium
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
 - [Magnetic Force Between Two Balls / Aggressive Cows](../Problems/magnetic-force-between-two-balls-or-aggressive-cows.md)
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
@@ -37,6 +39,9 @@
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
 - [Split Array Largest Sum](../Problems/split-array-largest-sum.md)
 
+### Greedy + Sorting
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
+
 ### Greedy + Strings
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
 
@@ -62,6 +67,9 @@
 
 ### Greedy + Strings + Two Pointers
 - [Check if a String is a Subsequence of Another String](../Problems/check-if-a-string-is-a-subsequence-of-another-string.md)
+
+### Greedy + Arrays + Disjoint Set Union + Sorting
+- [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
 
 ### Greedy + Arrays + Hashing + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐

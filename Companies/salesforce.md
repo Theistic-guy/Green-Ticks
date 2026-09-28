@@ -3,6 +3,7 @@
 # <img src="https://img.logo.dev/salesforce.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Salesforce
 
 ## Easy
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 

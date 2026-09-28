@@ -17,6 +17,7 @@
 - [Implement Queue using Stacks (LeetCode 232)](../Problems/implement-queue-using-stacks-(leetcode-232).md)
 - [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 - [Least Common Multiple](../Problems/least-common-multiple.md)
+- [Leetcode 1710 — Maximum Units on a Truck](../Problems/maximum-units-on-a-truck-(leetcode-1710).md)
 - [Leftmost Non-Repeating Character (Leetcode 387)](../Problems/leftmost-non-repeating-character.md)
 - [Longest Consecutive Subsequence (Leetcode 128)](../Problems/longest-consecutive-sequence.md)
 - [Majority Element](../Problems/majority-element.md)
