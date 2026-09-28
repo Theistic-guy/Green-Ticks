@@ -379,7 +379,7 @@
   - [Heap-Lazy-Deletion-(Decrease-Key)](Templates/Heap-Lazy-Deletion-%28Decrease-Key%29.md)
   - [KMP-string-matching](Templates/KMP-string-matching.md)
   - [Merging-two-sorted-arrays](Templates/Merging-two-sorted-arrays.md)
-  - [Trie — Implementation](Templates/Trie%20%E2%80%94%20Implementation.md)
+  - [Trie — Implementation](Notes/Trie%20—%20Implementation.md)
 
 </details>
 

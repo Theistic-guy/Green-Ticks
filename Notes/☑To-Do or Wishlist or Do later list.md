@@ -12,8 +12,8 @@
 		1. **Merge Intervals (LC 56)** — the pattern itself. Asked everywhere (Google, Meta, Amazon). If you only do one, this is it.
 		2. **Insert Interval (LC 57)** — Google favorite. Tests real understanding vs memorized loop.
 		3. **Meeting Rooms II (LC 253)** — Amazon/Meta staple. First heap-based sweep, very common as a "design a scheduler" follow-up too.
-		4. **Non-overlapping Intervals (LC 435)** — the greedy/sort-by-end fork. Amazon, Bloomberg regulars.
-		5. **Minimum Arrows to Burst Balloons (LC 452)** — same idea as #4 restated, high frequency at Amazon/Google, good to confirm you generalize the pattern not memorize the problem.
+		4. **Non-overlapping Intervals (LC 435)** — the greedy/sort-by-end fork. Amazon, Bloomberg regulars. (MUST DO)
+		5. **Minimum Arrows to Burst Balloons (LC 452)** — same idea as #4 restated, high frequency at Amazon/Google, good to confirm you generalize the pattern not memorize the problem. (must do)
 		6. **Interval List Intersections (LC 986)** — two-pointer variant, Facebook/Meta favorite, cheap win once merge is solid.
 		7. **Meeting Rooms (LC 252)** — quick, but shows up as a warm-up/phone-screen filter before II.
 		8. **Car Pooling (LC 1094)** — diff array tool, Uber/Amazon-flavored, distinct technique from heap/merge so it rounds out coverage.
@@ -79,5 +79,5 @@
 	+ combination sum and all patterns - looks important
 	+ overlaps a lot with dfs, DP and some problems are already done.
 + Greedy patterns
-	
-		
++ see huffman coding indirectly inspired problems - [Huffman Coding (indirectly inspired)](Extras/Huffman%20Coding%20(indirectly%20inspired).md)
++ see as well - [Scheduling - Greedy - DP - Heap cluster](Extras/Scheduling%20-%20Greedy%20-%20DP%20-%20Heap%20cluster.md)

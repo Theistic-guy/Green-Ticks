@@ -1,6 +1,11 @@
-
-
-#intervals, #sorting, #greedy 
+---
+tags:
+  - intervals
+  - Sorting
+  - Greedy
+---
+See Also:
++ [Scheduling - Greedy - DP - Heap cluster](Extras/Scheduling%20-%20Greedy%20-%20DP%20-%20Heap%20cluster.md)
 
 # Intervals / Ranges Pattern
 
