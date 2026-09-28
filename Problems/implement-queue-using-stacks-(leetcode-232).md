@@ -1,6 +1,18 @@
 ---
 Title: Implement Queue using Stacks (LeetCode 232)
-Companies: [Qualcomm, Arista Networks, SAP, Apple, Infosys, Microsoft, Bloomberg, Amazon, Google, Yandex, TikTok, Meta]
+Companies:
+  - Qualcomm
+  - Arista Networks
+  - SAP
+  - Apple
+  - Infosys
+  - Microsoft
+  - Bloomberg
+  - Amazon
+  - Google
+  - Yandex
+  - TikTok
+  - Meta
 Topics:
   - Stack
   - Queue
@@ -12,6 +24,7 @@ Other Tags:
 Link: ""
 Rating:
 Groups:
+  - Implementation
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 

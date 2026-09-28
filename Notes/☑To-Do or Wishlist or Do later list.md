@@ -70,4 +70,7 @@
 + To do but not queue patterns  (some bfs or combinatorial pattern) - [BFS-Backtracking based Queue but not queue patterns](Extras/BFS-Backtracking%20based%20Queue%20but%20not%20queue%20patterns.md)
 + genearate parenthesis - leetcode 22
 + leetcode - 17
-+ 
++ leetcode - jump game VI, leetcode 1438  (deque, queue)
++ trie variations
+	+ implement trie leetcode and others
+		
