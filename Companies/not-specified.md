@@ -35,6 +35,7 @@
 - [Check if Two Strings are Rotations of Each Other (Leetcode 796)](../Problems/check-if-two-strings-are-rotations-of-each-other-(rotate-string-leetcode).md) ⭐⭐⭐⭐⭐
 - [Count set bits](../Problems/count-set-bits.md)
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Equal Partition](../Problems/equal-partition.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)

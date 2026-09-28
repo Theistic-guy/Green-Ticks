@@ -8,6 +8,7 @@
 
 ## Medium
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
+- [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 
@@ -24,6 +25,9 @@
 ### Prefix Sum + Arrays
 - [Equilibrium Point](../Problems/equilibrium-point.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
+
+### Prefix Sum + Arrays + Greedy
+- [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
 
 ### Prefix Sum + Arrays + Hashing
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)

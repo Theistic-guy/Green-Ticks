@@ -26,7 +26,9 @@
 - [Find duplicate number (LC-287)](../Problems/find-duplicate-number.md)
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find peak in mountain array](../Problems/find-peak-in-mountain-array.md)
+- [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
+- [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
@@ -81,6 +83,9 @@
 - [Equilibrium Point](../Problems/equilibrium-point.md)
 - [Weighted Sum range queries](../Problems/weighted-sum-range-queries.md)
 
+### Arrays + Queue
+- [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
+
 ### Arrays + Searching
 - [Find Minimum Element in a Sorted Rotated Array](../Problems/find-minimum-element-in-a-sorted-rotated-array.md)
 - [Find Peak Element](../Problems/find-peak-element.md)
@@ -112,6 +117,9 @@
 
 ### Arrays + Greedy + Matrix
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
+
+### Arrays + Greedy + Prefix Sum
+- [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
 
 ### Arrays + Greedy + Stack
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)

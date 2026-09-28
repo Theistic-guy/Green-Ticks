@@ -7,6 +7,7 @@
 - [Stack using Queue (LeetCode 225)](../Problems/stack-using-queue-(leetcode-225).md)
 
 ## Medium
+- [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)
 
 ## Hard
@@ -14,6 +15,9 @@
 - [Sliding Window Maximum (Leetcode 239)](../Problems/sliding-window-maximum-(lc-239).md) ⭐⭐⭐⭐⭐
 
 ## See As Combo-wise Listings
+
+### Queue + Arrays
+- [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 
 ### Queue + Maths
 - [Print First N Numbers Formed Using a Given Digit Set](../Problems/print-first-n-numbers-formed-using-a-given-digit-set.md)

@@ -7,6 +7,7 @@
 - [Implement Two Stacks in One Array](../Problems/implement-two-stacks-in-one-array.md)
 
 ## Medium
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 

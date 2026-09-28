@@ -13,6 +13,7 @@
 
 ## Medium
 - [Count Subarrays with Given Sum](../Problems/count-subarrays-with-given-sum.md)
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Leftmost Repeating Character](../Problems/leftmost-repeating-character.md)
@@ -85,3 +86,6 @@
 
 ### Hashing + Greedy + Stack + Strings
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
+
+### Hashing + Matrix + Strings + Trie
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)

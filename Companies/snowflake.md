@@ -6,6 +6,7 @@
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
 ## Medium
+- [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 
 ## Hard

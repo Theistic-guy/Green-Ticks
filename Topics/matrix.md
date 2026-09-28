@@ -3,6 +3,7 @@
 # Matrix
 
 ## Medium
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
 - [Rotate Matrix by 90° Anti-Clockwise](../Problems/rotate-matrix-by-90-degrees-anti-clockwise.md)
 - [Transpose of a Matrix](../Problems/transpose-of-a-matrix.md)
 
@@ -31,3 +32,6 @@
 
 ### Matrix + Ordered Containers + Prefix Sum
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
+
+### Matrix + Hashing + Strings + Trie
+- [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
