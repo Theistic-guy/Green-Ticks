@@ -62,15 +62,22 @@
 	+ lc 386 to do after dfs
 	+ 336  - palindrome pairs (hard but popular)
 + linked list questions to put here
-+ leetcode 556 is a varation of [next-permutation-(leetcode-31)](../Problems/next-permutation-(leetcode-31).md) and nothing to do with monotonic stack. Do it also
++ leetcode 556 is a variation of [next-permutation-(leetcode-31)](../Problems/next-permutation-(leetcode-31).md) and nothing to do with monotonic stack. Do it also
 + Stack - [stack patterns and variations (to do)](Extras/stack%20patterns%20and%20variations%20(to%20do).md)
 	+ leetcode 224 (basic calculator) solving infix strings - do it 
 
 + Queue  - [Queue patterns and Variations](Extras/Queue%20patterns%20and%20Variations.md)
 + To do but not queue patterns  (some bfs or combinatorial pattern) - [BFS-Backtracking based Queue but not queue patterns](Extras/BFS-Backtracking%20based%20Queue%20but%20not%20queue%20patterns.md)
-+ genearate parenthesis - leetcode 22
++ generate parenthesis - leetcode 22
 + leetcode - 17
 + leetcode - jump game VI, leetcode 1438  (deque, queue)
 + trie variations
 	+ implement trie leetcode and others
++ Disjoint set union variations
++ Deque patterns variations
++ backtracking
+	+ combination sum and all patterns - looks important
+	+ overlaps a lot with dfs, DP and some problems are already done.
++ Greedy patterns
+	
 		
