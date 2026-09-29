@@ -8,15 +8,28 @@ export async function GET() {
 
   const searchIndex = [];
 
-  // Add problems
+  // Add problems with rich tag metadata
   for (const p of problems) {
     searchIndex.push({
       title: p.title,
       type: 'Problem',
+      difficulty: p.difficulty,
       url: `/problems/${p.slug}`,
-      tags: [...p.topics, ...p.companies, ...p.platforms, p.difficulty].filter(Boolean),
-      // We don't include full rawContent to keep the JSON small, 
-      // but we could include a snippet or let Fuse search the title + tags.
+      // All tags flattened for general search
+      tags: [
+        ...p.topics,
+        ...p.companies,
+        ...p.platforms,
+        ...p.otherTags,
+        ...p.groups,
+        p.difficulty
+      ].filter(Boolean),
+      // Separate tag categories for #tag search
+      topics: p.topics,
+      companies: p.companies,
+      platforms: p.platforms,
+      otherTags: p.otherTags,
+      groups: p.groups,
     });
   }
 
@@ -30,7 +43,12 @@ export async function GET() {
       title: title,
       type: 'Note',
       url: `/notes/${slug}`,
-      tags: [parts[0]], // Folder name as a tag
+      tags: [parts[0]],
+      topics: [],
+      companies: [],
+      platforms: [],
+      otherTags: [],
+      groups: [],
     });
   }
 
@@ -45,6 +63,11 @@ export async function GET() {
       type: 'Template',
       url: `/templates/${slug}`,
       tags: ['Template', parts.length > 1 ? parts[0] : ''].filter(Boolean),
+      topics: [],
+      companies: [],
+      platforms: [],
+      otherTags: [],
+      groups: [],
     });
   }
 

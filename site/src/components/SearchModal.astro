@@ -1,6 +1,7 @@
 ---
 // Search Modal Component
 // Triggered by Ctrl+K or clicking the search button in the navbar.
+// Supports #tag filtering: typing #Arrays will filter by tag match.
 ---
 
 <dialog id="search-modal" class="search-modal">
@@ -14,7 +15,7 @@
         type="text" 
         id="search-input" 
         class="search-input" 
-        placeholder="Search problems, topics, templates..." 
+        placeholder="Search problems, notes... or #tag to filter by tag" 
         autocomplete="off"
         spellcheck="false"
       />
@@ -25,16 +26,22 @@
 
     <div class="search-results" id="search-results">
       <div class="search-empty-state">
-        Type to search...
+        <div class="search-hint-title">Start typing to search</div>
+        <div class="search-hint-examples">
+          <span>Try: <code>two sum</code> or <code>#Arrays</code> or <code>#Amazon</code></span>
+        </div>
       </div>
     </div>
     
     <footer class="search-footer">
       <div class="search-footer-hint">
-        <span>Navigate</span> <kbd>↑</kbd> <kbd>↓</kbd>
+        <kbd>↑</kbd> <kbd>↓</kbd> <span>Navigate</span>
       </div>
       <div class="search-footer-hint">
-        <span>Open</span> <kbd>Enter</kbd>
+        <kbd>Enter</kbd> <span>Open</span>
+      </div>
+      <div class="search-footer-hint">
+        <kbd>#</kbd> <span>Filter by tag</span>
       </div>
     </footer>
   </div>
@@ -47,27 +54,27 @@
   .search-modal {
     padding: 0;
     margin: auto;
+    margin-top: 12vh;
     width: 100%;
-    max-width: 600px;
+    max-width: 620px;
     background: transparent;
     border: none;
-    backdrop-filter: blur(4px);
     overflow: visible;
   }
 
   .search-modal::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
   }
 
   .search-container {
     background: var(--color-bg-primary);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow: hidden;
   }
 
@@ -76,19 +83,18 @@
     align-items: center;
     padding: 0 var(--space-4);
     border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg-secondary);
   }
 
   .search-icon {
-    color: var(--color-text-secondary);
-    margin-right: var(--space-3);
+    color: var(--color-text-tertiary);
+    flex-shrink: 0;
   }
 
   .search-input {
     flex: 1;
     background: transparent;
     border: none;
-    padding: var(--space-4) 0;
+    padding: var(--space-4) var(--space-3);
     font-size: var(--text-base);
     color: var(--color-text-primary);
     outline: none;
@@ -115,31 +121,51 @@
     padding: 2px 6px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
   }
 
   .search-results {
     flex: 1;
     overflow-y: auto;
     padding: var(--space-2);
-    min-height: 100px;
+    min-height: 80px;
+    max-height: 55vh;
   }
 
   .search-empty-state {
-    padding: var(--space-8);
+    padding: var(--space-8) var(--space-4);
     text-align: center;
     color: var(--color-text-tertiary);
-    font-size: var(--text-sm);
   }
 
-  /* Global result styles used by JS */
+  .search-hint-title {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+
+  .search-hint-examples {
+    font-size: var(--text-xs);
+  }
+
+  .search-hint-examples code {
+    background: var(--color-bg-tertiary);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+
+  /* Result item styles (injected via JS) */
   :global(.search-result-item) {
     display: flex;
     flex-direction: column;
-    padding: var(--space-3);
+    padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-md);
     text-decoration: none;
     color: var(--color-text-primary);
+    cursor: pointer;
     border-left: 2px solid transparent;
+    transition: background var(--transition-fast);
   }
 
   :global(.search-result-item[aria-selected="true"]),
@@ -148,10 +174,7 @@
     border-left-color: var(--color-primary);
   }
 
-  :global(.search-result-title) {
-    font-size: var(--text-sm);
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--space-1);
+  :global(.search-result-row) {
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -161,30 +184,103 @@
     font-size: 10px;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     padding: 1px 6px;
     border-radius: var(--radius-sm);
     background: var(--color-bg-tertiary);
     color: var(--color-text-secondary);
+    flex-shrink: 0;
   }
   
-  :global(.search-result-type.Problem) {
+  :global(.search-result-type.type-Problem) {
     color: var(--color-primary);
     background: var(--color-primary-bg);
+  }
+
+  :global(.search-result-type.type-Note) {
+    color: var(--color-easy);
+    background: var(--color-easy-bg);
+  }
+
+  :global(.search-result-type.type-Template) {
+    color: var(--color-accent);
+    background: rgba(245, 158, 11, 0.1);
+  }
+
+  :global(.search-result-name) {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.search-result-difficulty) {
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  :global(.search-result-difficulty.diff-Easy) {
+    color: var(--color-easy);
+    background: var(--color-easy-bg);
+  }
+
+  :global(.search-result-difficulty.diff-Medium) {
+    color: var(--color-medium);
+    background: var(--color-medium-bg);
+  }
+
+  :global(.search-result-difficulty.diff-Hard) {
+    color: var(--color-hard);
+    background: var(--color-hard-bg);
   }
 
   :global(.search-result-tags) {
     font-size: var(--text-xs);
     color: var(--color-text-tertiary);
+    margin-top: 2px;
+    padding-left: calc(6px + var(--space-2));  /* align with title after badge */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.search-tag-match) {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  :global(.search-section-header) {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-tertiary);
+    padding: var(--space-2) var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  :global(.search-tag-mode-hint) {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    background: var(--color-primary-bg);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
     display: flex;
+    align-items: center;
     gap: var(--space-2);
-    flex-wrap: wrap;
   }
 
   .search-footer {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-2) var(--space-4);
     border-top: 1px solid var(--color-border);
     background: var(--color-bg-secondary);
     font-size: var(--text-xs);
@@ -194,16 +290,25 @@
   .search-footer-hint {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1);
   }
 
   kbd {
     background: var(--color-bg-tertiary);
     border: 1px solid var(--color-border);
     border-radius: 3px;
-    padding: 1px 4px;
+    padding: 0px 4px;
     font-family: var(--font-mono);
+    font-size: 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .search-modal {
+      max-width: calc(100% - 2rem);
+      margin-top: 8vh;
+    }
   }
 </style>
 
@@ -213,26 +318,36 @@
     const input = document.getElementById('search-input');
     const resultsContainer = document.getElementById('search-results');
     const closeBtn = document.getElementById('search-close');
-    const triggerBtn = document.getElementById('search-trigger'); // in Navbar
+    const triggerBtn = document.getElementById('search-trigger');
 
     let fuse = null;
+    let searchData = null;
     let indexLoaded = false;
     let selectedIndex = -1;
     let currentResults = [];
+
+    const defaultEmptyHtml = `
+      <div class="search-empty-state">
+        <div class="search-hint-title">Start typing to search</div>
+        <div class="search-hint-examples">
+          <span>Try: <code>two sum</code> or <code>#Arrays</code> or <code>#Amazon</code></span>
+        </div>
+      </div>
+    `;
 
     async function loadIndex() {
       if (indexLoaded) return;
       try {
         const res = await fetch('/search.json');
-        const data = await res.json();
-        // @ts-ignore - Fuse is loaded via CDN above
-        fuse = new Fuse(data, {
+        searchData = await res.json();
+        fuse = new Fuse(searchData, {
           keys: [
             { name: 'title', weight: 2 },
             { name: 'tags', weight: 1 }
           ],
           threshold: 0.3,
-          includeMatches: true
+          includeMatches: true,
+          minMatchCharLength: 2
         });
         indexLoaded = true;
       } catch (err) {
@@ -245,7 +360,9 @@
       modal.showModal();
       document.body.style.overflow = 'hidden';
       input.value = '';
-      resultsContainer.innerHTML = '<div class="search-empty-state">Type to search...</div>';
+      resultsContainer.innerHTML = defaultEmptyHtml;
+      selectedIndex = -1;
+      currentResults = [];
       input.focus();
       loadIndex();
     }
@@ -255,39 +372,101 @@
       document.body.style.overflow = '';
     }
 
-    function renderResults(results) {
+    /**
+     * Tag-based search: when the query starts with #, we do a direct
+     * case-insensitive match across all tag fields instead of fuzzy search.
+     */
+    function searchByTag(tagQuery) {
+      if (!searchData) return [];
+      const q = tagQuery.toLowerCase();
+      
+      return searchData.filter(function(item) {
+        // Search across all tag categories
+        var allTags = [].concat(
+          item.topics || [],
+          item.companies || [],
+          item.platforms || [],
+          item.otherTags || [],
+          item.groups || [],
+          item.tags || []
+        );
+        return allTags.some(function(tag) {
+          return tag.toLowerCase().includes(q);
+        });
+      }).map(function(item) {
+        // Wrap in the same shape fuse returns for consistency
+        return { item: item, tagMatch: true };
+      });
+    }
+
+    function renderDifficultyBadge(difficulty) {
+      if (!difficulty || difficulty === 'Not Specified') return '';
+      return '<span class="search-result-difficulty diff-' + difficulty + '">' + difficulty + '</span>';
+    }
+
+    function renderResults(results, isTagMode, tagQuery) {
       if (results.length === 0) {
         resultsContainer.innerHTML = '<div class="search-empty-state">No results found.</div>';
         currentResults = [];
+        selectedIndex = -1;
         return;
       }
 
-      currentResults = results.slice(0, 15); // Limit to top 15
-      selectedIndex = 0; // auto-select first
+      currentResults = results.slice(0, 20);
+      selectedIndex = 0;
 
-      const html = currentResults.map((result, i) => {
-        const item = result.item;
-        return `
-          <a href="${item.url}" class="search-result-item" id="result-item-${i}" aria-selected="${i === 0}">
-            <div class="search-result-title">
-              <span class="search-result-type ${item.type}">${item.type}</span>
-              ${item.title}
-            </div>
-            ${item.tags && item.tags.length > 0 ? `
-              <div class="search-result-tags">
-                ${item.tags.slice(0, 4).join(' • ')}${item.tags.length > 4 ? '...' : ''}
-              </div>
-            ` : ''}
-          </a>
-        `;
-      }).join('');
+      var html = '';
+
+      if (isTagMode) {
+        html += '<div class="search-tag-mode-hint">';
+        html += '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>';
+        html += 'Tag filter: <strong>#' + tagQuery + '</strong> — ' + results.length + ' result(s)';
+        html += '</div>';
+      }
+
+      currentResults.forEach(function(result, i) {
+        var item = result.item;
+        var matchedTags = [];
+        
+        if (isTagMode && tagQuery) {
+          var q = tagQuery.toLowerCase();
+          var allTagArrays = [item.topics, item.companies, item.platforms, item.otherTags, item.groups];
+          allTagArrays.forEach(function(arr) {
+            if (arr) {
+              arr.forEach(function(tag) {
+                if (tag.toLowerCase().includes(q)) {
+                  matchedTags.push(tag);
+                }
+              });
+            }
+          });
+        }
+
+        var tagsDisplay = '';
+        if (matchedTags.length > 0) {
+          tagsDisplay = matchedTags.map(function(t) { return '<span class="search-tag-match">#' + t + '</span>'; }).join(' ');
+        } else if (item.tags && item.tags.length > 0) {
+          tagsDisplay = item.tags.slice(0, 5).join(' · ');
+        }
+
+        html += '<a href="' + item.url + '" class="search-result-item" id="result-item-' + i + '" aria-selected="' + (i === 0) + '">';
+        html += '  <div class="search-result-row">';
+        html += '    <span class="search-result-type type-' + item.type + '">' + item.type + '</span>';
+        html += '    <span class="search-result-name">' + item.title + '</span>';
+        html += renderDifficultyBadge(item.difficulty);
+        html += '  </div>';
+        if (tagsDisplay) {
+          html += '  <div class="search-result-tags">' + tagsDisplay + '</div>';
+        }
+        html += '</a>';
+      });
 
       resultsContainer.innerHTML = html;
     }
 
     function updateSelection() {
-      const items = resultsContainer.querySelectorAll('.search-result-item');
-      items.forEach((el, i) => {
+      var items = resultsContainer.querySelectorAll('.search-result-item');
+      items.forEach(function(el, i) {
         if (i === selectedIndex) {
           el.setAttribute('aria-selected', 'true');
           el.scrollIntoView({ block: 'nearest' });
@@ -304,38 +483,45 @@
     
     closeBtn.addEventListener('click', closeModal);
     
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal(); // click outside
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
     });
 
-    document.addEventListener('keydown', (e) => {
-      // Ctrl+K to open
+    document.addEventListener('keydown', function(e) {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         openModal();
       }
-      
-      // Close on Escape is handled natively by <dialog>, but let's make sure body overflow resets
       if (e.key === 'Escape' && modal.open) {
         closeModal();
       }
     });
 
-    input.addEventListener('input', (e) => {
-      const query = e.target.value.trim();
+    input.addEventListener('input', function(e) {
+      var query = e.target.value.trim();
       if (!query) {
-        resultsContainer.innerHTML = '<div class="search-empty-state">Type to search...</div>';
+        resultsContainer.innerHTML = defaultEmptyHtml;
         currentResults = [];
+        selectedIndex = -1;
         return;
       }
 
+      // Tag mode: query starts with #
+      if (query.startsWith('#') && query.length > 1) {
+        var tagQuery = query.substring(1);
+        var results = searchByTag(tagQuery);
+        renderResults(results, true, tagQuery);
+        return;
+      }
+
+      // Normal fuzzy search
       if (fuse) {
-        const results = fuse.search(query);
-        renderResults(results);
+        var results = fuse.search(query);
+        renderResults(results, false, '');
       }
     });
 
-    input.addEventListener('keydown', (e) => {
+    input.addEventListener('keydown', function(e) {
       if (currentResults.length === 0) return;
 
       if (e.key === 'ArrowDown') {
@@ -354,11 +540,10 @@
       }
     });
 
-    // Hover to select
-    resultsContainer.addEventListener('mouseover', (e) => {
-      const item = e.target.closest('.search-result-item');
+    resultsContainer.addEventListener('mouseover', function(e) {
+      var item = e.target.closest('.search-result-item');
       if (item) {
-        const id = item.id.replace('result-item-', '');
+        var id = item.id.replace('result-item-', '');
         selectedIndex = parseInt(id, 10);
         updateSelection();
       }

@@ -269,19 +269,24 @@ export function getSidebar(): any[] {
   return [
     {
       label: 'Explore',
+      icon: 'compass',
       children: [
         { label: 'Problems', href: '/problems', count: problems.length },
         { label: 'Topics', href: '/topics' },
-        { label: 'Companies', href: '/companies' }
+        { label: 'Companies', href: '/companies' },
+        { label: 'Misc Tags', href: '/misc' },
+        { label: 'Groups', href: '/groups' },
       ]
     },
     {
       label: 'Templates',
+      icon: 'file-text',
       href: '/templates',
       children: buildTree(templates, 'templates')
     },
     {
       label: 'Notes',
+      icon: 'book',
       href: '/notes',
       children: buildTree(notes, 'notes')
     }

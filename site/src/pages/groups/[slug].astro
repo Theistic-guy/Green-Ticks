@@ -1,0 +1,40 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { loadProblems, groupByField, slugify, sortDifficulty } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const problems = loadProblems();
+  const byGroup = groupByField(problems, 'groups');
+  
+  return Object.entries(byGroup).map(([group, items]) => {
+    const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    return {
+      params: { slug: slugify(group) },
+      props: { group, problems: sortedItems },
+    };
+  });
+}
+
+const { group, problems } = Astro.props;
+---
+
+<IndexLayout title={group} description={`${problems.length} problems in group "${group}".`}>
+  <div class="card-grid">
+    {problems.map(p => (
+      <Card 
+        title={p.title} 
+        href={`/problems/${p.slug}`} 
+        description={`${p.difficulty} • ${p.topics.slice(0, 3).join(', ')}${p.topics.length > 3 ? '...' : ''}`} 
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+</style>
