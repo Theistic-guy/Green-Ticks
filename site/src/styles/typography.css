@@ -114,6 +114,26 @@
   font-size: var(--text-sm);
   line-height: 1.7;
   border: 1px solid var(--color-border);
+  background-color: var(--color-bg-code-block);
+  color: var(--color-text-primary);
+}
+
+/* Shiki Dual-Theme Dark Mode:
+   Astro Shiki renders light theme by default with inline styles and exposes
+   --shiki-dark and --shiki-dark-bg CSS variables for the dark theme.
+   In dark mode, activate the dark theme variables. */
+[data-theme="dark"] pre.astro-code,
+[data-theme="dark"] .astro-code {
+  color: var(--shiki-dark, var(--color-text-primary)) !important;
+  background-color: var(--shiki-dark-bg, var(--color-bg-code-block)) !important;
+}
+
+[data-theme="dark"] pre.astro-code span,
+[data-theme="dark"] .astro-code span {
+  color: var(--shiki-dark, inherit) !important;
+  font-style: var(--shiki-dark-font-style, inherit) !important;
+  font-weight: var(--shiki-dark-font-weight, inherit) !important;
+  text-decoration: var(--shiki-dark-text-decoration, inherit) !important;
 }
 
 /* --- Tables --- */
