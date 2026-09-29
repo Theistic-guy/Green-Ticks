@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { remarkLinkResolver } from './src/plugins/remark-link-resolver.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
   markdown: {
     // Use the unified processor to support remark/rehype plugins
     processor: unified({
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkLinkResolver, remarkMath],
       rehypePlugins: [rehypeKatex],
     }),
     shikiConfig: {

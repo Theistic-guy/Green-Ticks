@@ -86,7 +86,7 @@ export function loadProblems(): Problem[] {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(raw);
 
-    const slug = file.replace(/\.md$/, '');
+    const slug = slugify(file.replace(/\.md$/, ''));
     const ratingRaw = data.Rating;
     let rating: number | null = null;
     if (ratingRaw != null && ratingRaw !== '') {
