@@ -20,6 +20,7 @@
   margin-top: 2em;
   margin-bottom: 0.75em;
   scroll-margin-top: calc(var(--navbar-height) + var(--space-4));
+  color: var(--color-text-heading, inherit);
 }
 
 .prose h1 {
@@ -28,6 +29,7 @@
   margin-top: 0;
   padding-bottom: var(--space-3);
   border-bottom: 2px solid var(--color-border);
+  color: var(--color-text-h1, inherit);
 }
 
 .prose h2 {
@@ -177,11 +179,12 @@
 /* --- Strong / Em --- */
 .prose strong {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  color: var(--color-text-bold, var(--color-text-primary));
 }
 
 .prose em {
   font-style: italic;
+  color: var(--color-text-italic, inherit);
 }
 
 /* --- KaTeX math --- */

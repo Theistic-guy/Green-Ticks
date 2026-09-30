@@ -297,8 +297,8 @@ const hasRating = problem.rating != null && problem.rating > 0;
   }
 
   .other-chip {
-    background: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
+    background: var(--color-tag-bg, var(--color-bg-tertiary));
+    color: var(--color-tag-text, var(--color-text-secondary));
     border: 1px solid var(--color-border);
   }
 

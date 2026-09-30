@@ -19,7 +19,7 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: 'github-light',
-        dark: 'one-dark-pro',
+        dark: 'nord',
       },
       langAlias: {
         Python: 'python',
