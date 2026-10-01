@@ -1,6 +1,6 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
-import Card from '../../components/Card.astro';
+import ProblemGroupList from '../../components/ProblemGroupList.astro';
 import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty } from '../../utils/content';
 
 export async function getStaticPaths() {
@@ -34,15 +34,7 @@ const { company, problems, logoUrl } = Astro.props;
     </div>
   )}
 
-  <div class="card-grid">
-    {problems.map(p => (
-      <Card 
-        title={p.title} 
-        href={`/problems/${p.slug}`} 
-        description={`${p.difficulty} • ${p.topics.slice(0, 3).join(', ')}${p.topics.length > 3 ? '...' : ''}`} 
-      />
-    ))}
-  </div>
+  <ProblemGroupList problems={problems} />
 </IndexLayout>
 
 <style>
@@ -55,11 +47,5 @@ const { company, problems, logoUrl } = Astro.props;
     background: white;
     padding: var(--space-1);
     box-shadow: var(--shadow-sm);
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-4);
   }
 </style>

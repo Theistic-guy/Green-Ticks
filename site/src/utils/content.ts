@@ -263,6 +263,19 @@ export function getSidebar(): any[] {
       }
     }
     
+    function sortTree(nodes: any[]) {
+      nodes.sort((a, b) => {
+        const aIsFolder = a.children ? 1 : 0;
+        const bIsFolder = b.children ? 1 : 0;
+        if (aIsFolder !== bIsFolder) return bIsFolder - aIsFolder;
+        return a.label.localeCompare(b.label);
+      });
+      for (const node of nodes) {
+        if (node.children) sortTree(node.children);
+      }
+    }
+
+    sortTree(root);
     return root;
   }
 

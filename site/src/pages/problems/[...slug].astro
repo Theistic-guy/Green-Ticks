@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 // Transform the raw frontmatter to match the Problem interface expected by ProblemLayout
 const data = entry.data;
@@ -47,6 +47,6 @@ const problem = {
 };
 ---
 
-<ProblemLayout problem={problem}>
+<ProblemLayout problem={problem} headings={headings}>
   <Content />
 </ProblemLayout>

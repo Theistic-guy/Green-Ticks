@@ -3,15 +3,17 @@ import BaseLayout from './BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 import { getSidebar } from '../utils/content';
 
 interface Props {
   title: string;
   pathSegments?: string[];
+  headings?: any[];
 }
 
-const { title, pathSegments = [] } = Astro.props;
+const { title, pathSegments = [], headings = [] } = Astro.props;
 
 const sidebarSections = getSidebar();
 
@@ -25,6 +27,10 @@ const currentPath = Astro.url.pathname;
     
     <main class="content-area">
       <article class="prose note-article">
+        <button onclick="history.length > 1 ? history.back() : (window.location.href='/notes')" class="back-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back
+        </button>
         {pathSegments.length > 0 && <Breadcrumbs segments={pathSegments} />}
         
         <div class="markdown-content">
@@ -32,6 +38,8 @@ const currentPath = Astro.url.pathname;
         </div>
       </article>
     </main>
+    
+    <TableOfContents headings={headings} />
   </div>
 </BaseLayout>
 
@@ -46,8 +54,21 @@ const currentPath = Astro.url.pathname;
     flex: 1;
     margin-left: var(--sidebar-width);
     padding: var(--space-8) var(--space-6) var(--space-16);
-    max-width: 1000px;
-    margin-right: auto;
+    /* Calculate max-width by subtracting sidebar and toc (if visible) */
+    max-width: calc(100% - var(--sidebar-width) - var(--toc-width));
+  }
+
+  @media (max-width: 1200px) {
+    .content-area {
+      max-width: calc(100% - var(--sidebar-width));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      margin-left: 0;
+      max-width: 100%;
+    }
   }
 
   .note-article {

@@ -1,0 +1,143 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings = [] } = Astro.props;
+// Only show headings from H2 to H4
+const tocHeadings = headings.filter(h => h.depth >= 2 && h.depth <= 4);
+---
+
+{tocHeadings.length > 0 && (
+  <aside class="toc-sidebar">
+    <div class="toc-inner">
+      <h3 class="toc-title">On this page</h3>
+      <nav class="toc-nav" aria-label="Table of Contents">
+        <ul>
+          {tocHeadings.map(heading => (
+            <li class={`toc-item depth-${heading.depth}`}>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </aside>
+)}
+
+<style>
+  .toc-sidebar {
+    width: var(--toc-width);
+    flex-shrink: 0;
+    position: sticky;
+    top: calc(var(--navbar-height) + var(--space-8));
+    height: calc(100vh - var(--navbar-height) - var(--space-16));
+    overflow-y: auto;
+    padding-left: var(--space-6);
+    display: none;
+  }
+
+  @media (min-width: 1200px) {
+    .toc-sidebar {
+      display: block;
+    }
+  }
+
+  .toc-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-4);
+  }
+
+  .toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .toc-item {
+    margin-bottom: var(--space-2);
+  }
+
+  .toc-item a {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    padding: 2px 0 2px var(--space-3);
+    position: relative;
+  }
+
+  .toc-item a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .toc-item.active > a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Active indicator line */
+  .toc-item.active > a::before {
+    content: '';
+    position: absolute;
+    left: -2px; /* Pull over the border */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-primary);
+  }
+
+  .depth-2 { padding-left: 0; }
+  .depth-3 { padding-left: var(--space-3); }
+  .depth-4 { padding-left: var(--space-6); }
+
+  /* Hide scrollbar for ToC */
+  .toc-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  .toc-sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the topmost visible heading
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          const id = visibleEntries[0].target.id;
+          
+          // Clear active classes
+          document.querySelectorAll('.toc-item').forEach(el => el.classList.remove('active'));
+          
+          // Add active class to corresponding nav link
+          const activeLink = document.querySelector(`.toc-item a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.parentElement.classList.add('active');
+          }
+        }
+      },
+      { rootMargin: '0px 0px -80% 0px' } // Trigger when heading is in the top 20% of viewport
+    );
+
+    document.querySelectorAll('h2, h3, h4').forEach((heading) => {
+      observer.observe(heading);
+    });
+  });
+</script>
