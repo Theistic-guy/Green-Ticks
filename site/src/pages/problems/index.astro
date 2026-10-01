@@ -1,11 +1,33 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import ProblemGroupList from '../../components/ProblemGroupList.astro';
-import { loadProblems } from '../../utils/content';
+import FilterBar from '../../components/FilterBar.astro';
+import type { FilterData } from '../../components/FilterBar.astro';
+import { loadProblems, loadCompanyLogos, computeFacets, sortDifficulty } from '../../utils/content';
 
-const problems = loadProblems();
+const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+
+const problemsRaw = loadProblems();
+const problems = [...problemsRaw].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+
+const filterData: FilterData = {
+  baseDimension: null,
+  problems: problems.map(p => ({
+    slug: p.slug,
+    title: p.title,
+    difficulty: p.difficulty,
+    topics: p.topics,
+    companies: p.companies,
+    otherTags: p.otherTags,
+    groups: p.groups
+  })),
+  facets: computeFacets(problems),
+  companyLogos
+};
 ---
 
 <IndexLayout title="Problems" description="All coding problems organized by difficulty.">
+  <FilterBar data={filterData} />
   <ProblemGroupList problems={problems} />
 </IndexLayout>

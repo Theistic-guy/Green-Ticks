@@ -335,12 +335,37 @@ function isActive(href: string | undefined, current: string): boolean {
 
   overlay?.addEventListener('click', closeSidebar);
 
-  // Preserve scroll position
+  // Preserve scroll and collapse state
   const SCROLL_KEY = 'sidebar-scroll';
+  const COLLAPSE_KEY = 'sidebar-collapse';
   
-  // Restore scroll
+  // Restore scroll and collapse state
   document.addEventListener('DOMContentLoaded', () => {
     if (sidebar) {
+      // 1. Restore collapse state
+      const storedCollapse = sessionStorage.getItem(COLLAPSE_KEY);
+      if (storedCollapse) {
+        try {
+          const collapseState = JSON.parse(storedCollapse);
+          const detailsElements = sidebar.querySelectorAll('details');
+          detailsElements.forEach((details, index) => {
+            // Using index + label as a somewhat stable key
+            const labelEl = details.querySelector('.section-label, .sidebar-folder');
+            const key = labelEl ? `${index}-${labelEl.textContent.trim()}` : `${index}`;
+            if (collapseState[key] !== undefined) {
+              if (collapseState[key]) {
+                details.setAttribute('open', '');
+              } else {
+                details.removeAttribute('open');
+              }
+            }
+          });
+        } catch (e) {
+          console.error("Error restoring sidebar state", e);
+        }
+      }
+
+      // 2. Restore scroll
       const storedScroll = sessionStorage.getItem(SCROLL_KEY);
       if (storedScroll) {
         sidebar.scrollTop = parseInt(storedScroll, 10);
@@ -350,6 +375,20 @@ function isActive(href: string | undefined, current: string): boolean {
           activeItem.scrollIntoView({ block: 'center' });
         }
       }
+
+      // 3. Listen for toggle events to save state
+      sidebar.addEventListener('toggle', (e) => {
+        if (e.target.tagName === 'DETAILS') {
+          const detailsElements = Array.from(sidebar.querySelectorAll('details'));
+          const state = {};
+          detailsElements.forEach((details, index) => {
+            const labelEl = details.querySelector('.section-label, .sidebar-folder');
+            const key = labelEl ? `${index}-${labelEl.textContent.trim()}` : `${index}`;
+            state[key] = details.hasAttribute('open');
+          });
+          sessionStorage.setItem(COLLAPSE_KEY, JSON.stringify(state));
+        }
+      }, true); // use capture phase because toggle doesn't bubble
     }
   });
 

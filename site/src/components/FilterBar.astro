@@ -1,0 +1,320 @@
+---
+export interface FilterData {
+  baseDimension: { type: string; value: string } | null;
+  problems: {
+    slug: string;
+    title: string;
+    difficulty: string;
+    topics: string[];
+    companies: string[];
+    otherTags: string[];
+    groups: string[];
+  }[];
+  facets: {
+    topics: string[];
+    companies: string[];
+    otherTags: string[];
+    groups: string[];
+  };
+  companyLogos: Record<string, string>;
+}
+
+interface Props {
+  data: FilterData;
+}
+
+const { data } = Astro.props;
+---
+
+<div class="filter-bar" id="filter-bar">
+  <!-- Inline data for client script -->
+  <script id="filter-data" type="application/json" set:html={JSON.stringify(data)}></script>
+  
+  <div class="filter-header">
+    <div class="filter-actions">
+      <button class="filter-btn" id="btn-topics">Topics ▾</button>
+      <button class="filter-btn" id="btn-companies">Companies ▾</button>
+      <button class="filter-btn" id="btn-tags">Tags ▾</button>
+      <button class="filter-btn" id="btn-sort">Sort ▾</button>
+    </div>
+    
+    <div class="filter-status">
+      <span id="filter-count">Showing {data.problems.length} of {data.problems.length}</span>
+    </div>
+  </div>
+
+  <div class="active-filters" id="active-filters">
+    {data.baseDimension && (
+      <span class="active-chip base-chip" title="Locked dimension">
+        🔒 {data.baseDimension.value}
+      </span>
+    )}
+    <!-- Dynamic chips will be inserted here -->
+    <button class="clear-all-btn" id="clear-all-btn" style="display: none;">Clear all</button>
+  </div>
+
+  <!-- Popovers -->
+  <div class="popover-container" id="popover-topics" style="display: none;">
+    <div class="popover-search">
+      <input type="text" placeholder="Search topics..." data-filter-type="topics" />
+    </div>
+    <div class="popover-list" id="list-topics">
+      {data.facets.topics.map(t => (
+        <label class="facet-label">
+          <input type="checkbox" value={t} data-type="topics" />
+          <span>{t}</span>
+        </label>
+      ))}
+      {data.facets.topics.length === 0 && <span class="empty-facet">No topics found</span>}
+    </div>
+  </div>
+
+  <div class="popover-container" id="popover-companies" style="display: none;">
+    <div class="popover-search">
+      <input type="text" placeholder="Search companies..." data-filter-type="companies" />
+    </div>
+    <div class="popover-list" id="list-companies">
+      {data.facets.companies.map(c => (
+        <label class="facet-label">
+          <input type="checkbox" value={c} data-type="companies" />
+          {data.companyLogos[c] ? (
+            <img src={data.companyLogos[c]} alt={c} class="chip-logo" onerror="this.style.display='none'" />
+          ) : (
+            <div class="chip-logo-placeholder"></div>
+          )}
+          <span>{c}</span>
+        </label>
+      ))}
+      {data.facets.companies.length === 0 && <span class="empty-facet">No companies found</span>}
+    </div>
+  </div>
+
+  <div class="popover-container" id="popover-tags" style="display: none;">
+    <div class="popover-search">
+      <input type="text" placeholder="Search tags..." data-filter-type="otherTags" />
+    </div>
+    <div class="popover-list" id="list-tags">
+      {data.facets.otherTags.map(t => (
+        <label class="facet-label">
+          <input type="checkbox" value={t} data-type="otherTags" />
+          <span>{t}</span>
+        </label>
+      ))}
+      {data.facets.otherTags.length === 0 && <span class="empty-facet">No tags found</span>}
+    </div>
+  </div>
+
+  <div class="popover-container" id="popover-sort" style="display: none;">
+    <div class="popover-list">
+      <label class="facet-label sort-label">
+        <input type="radio" name="sort" value="default" checked />
+        <span>Default</span>
+      </label>
+      <label class="facet-label sort-label">
+        <input type="radio" name="sort" value="diff-asc" />
+        <span>Difficulty (Easy → Hard)</span>
+      </label>
+      <label class="facet-label sort-label">
+        <input type="radio" name="sort" value="diff-desc" />
+        <span>Difficulty (Hard → Easy)</span>
+      </label>
+      <label class="facet-label sort-label">
+        <input type="radio" name="sort" value="title-asc" />
+        <span>Title (A → Z)</span>
+      </label>
+      <label class="facet-label sort-label">
+        <input type="radio" name="sort" value="title-desc" />
+        <span>Title (Z → A)</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<script src="../scripts/filter.js"></script>
+
+<style>
+  .filter-bar {
+    position: relative;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .filter-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-primary);
+    color: var(--color-text-primary);
+  }
+
+  .filter-status {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  .active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  .active-filters:empty {
+    display: none;
+    margin-top: 0;
+  }
+
+  .active-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-bg-code);
+    border: 1px solid var(--color-border);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    color: var(--color-text-primary);
+  }
+
+  .active-chip button {
+    background: none;
+    border: none;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .active-chip button:hover {
+    color: var(--color-error);
+  }
+
+  .base-chip {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-border-hover);
+    color: var(--color-text-secondary);
+    user-select: none;
+  }
+
+  .clear-all-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-link);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    padding: 2px var(--space-2);
+  }
+  .clear-all-btn:hover {
+    text-decoration: underline;
+  }
+
+  /* Popovers */
+  .popover-container {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    left: 0;
+    z-index: var(--z-modal);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    width: 280px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popover-search {
+    padding: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .popover-search input {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+  }
+  .popover-search input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .popover-list {
+    overflow-y: auto;
+    padding: var(--space-2) 0;
+  }
+
+  .facet-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    transition: background var(--transition-fast);
+  }
+
+  .facet-label:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+  }
+
+  .facet-label input[type="checkbox"], .facet-label input[type="radio"] {
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .chip-logo {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    object-fit: contain;
+    background: white;
+  }
+  .chip-logo-placeholder {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .empty-facet {
+    display: block;
+    padding: var(--space-4);
+    text-align: center;
+    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+  }
+
+  /* When the active filters row is actually empty of dynamic chips, we still want it to show if base-chip exists, which it does. */
+</style>

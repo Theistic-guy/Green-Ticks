@@ -33,7 +33,9 @@ function getDescription(p: Problem) {
       </summary>
       <div class="card-grid">
         {easy.map(p => (
-          <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
         ))}
       </div>
     </details>
@@ -47,7 +49,9 @@ function getDescription(p: Problem) {
       </summary>
       <div class="card-grid">
         {medium.map(p => (
-          <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
         ))}
       </div>
     </details>
@@ -61,7 +65,9 @@ function getDescription(p: Problem) {
       </summary>
       <div class="card-grid">
         {hard.map(p => (
-          <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
         ))}
       </div>
     </details>
@@ -75,7 +81,9 @@ function getDescription(p: Problem) {
       </summary>
       <div class="card-grid">
         {uncategorized.map(p => (
-          <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
         ))}
       </div>
     </details>
@@ -155,5 +163,9 @@ function getDescription(p: Problem) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--space-4);
+  }
+  
+  .problem-wrapper {
+    display: contents;
   }
 </style>

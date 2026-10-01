@@ -227,6 +227,43 @@ export function sortDifficulty(a: string, b: string): number {
 }
 
 /**
+ * Compute the co-occurring facets (unique topics, companies, tags, groups)
+ * for a given list of problems. Removes the base dimension value if provided.
+ */
+export function computeFacets(problems: Problem[], baseValue?: string) {
+  const facets = {
+    topics: new Set<string>(),
+    companies: new Set<string>(),
+    otherTags: new Set<string>(),
+    groups: new Set<string>()
+  };
+
+  for (const p of problems) {
+    p.topics.forEach(t => facets.topics.add(t));
+    p.companies.forEach(c => facets.companies.add(c));
+    p.otherTags.forEach(t => facets.otherTags.add(t));
+    p.groups.forEach(g => facets.groups.add(g));
+  }
+
+  // Remove empty/unspecified strings
+  facets.companies.delete('Not Specified');
+  
+  if (baseValue) {
+    facets.topics.delete(baseValue);
+    facets.companies.delete(baseValue);
+    facets.otherTags.delete(baseValue);
+    facets.groups.delete(baseValue);
+  }
+
+  return {
+    topics: Array.from(facets.topics).sort(),
+    companies: Array.from(facets.companies).sort(),
+    otherTags: Array.from(facets.otherTags).sort(),
+    groups: Array.from(facets.groups).sort()
+  };
+}
+
+/**
  * Generate sidebar navigation tree.
  */
 export function getSidebar(): any[] {

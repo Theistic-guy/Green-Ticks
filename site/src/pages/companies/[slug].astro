@@ -1,7 +1,9 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import ProblemGroupList from '../../components/ProblemGroupList.astro';
-import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty } from '../../utils/content';
+import FilterBar from '../../components/FilterBar.astro';
+import type { FilterData } from '../../components/FilterBar.astro';
+import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets } from '../../utils/content';
 
 export async function getStaticPaths() {
   const problems = loadProblems();
@@ -13,18 +15,35 @@ export async function getStaticPaths() {
   return Object.entries(byCompany).map(([company, items]) => {
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
     
+    // Build filter data
+    const filterData: FilterData = {
+      baseDimension: { type: 'companies', value: company },
+      problems: sortedItems.map(p => ({
+        slug: p.slug,
+        title: p.title,
+        difficulty: p.difficulty,
+        topics: p.topics,
+        companies: p.companies,
+        otherTags: p.otherTags,
+        groups: p.groups
+      })),
+      facets: computeFacets(sortedItems, company),
+      companyLogos
+    };
+
     return {
       params: { slug: slugify(company) },
       props: { 
         company, 
         problems: sortedItems,
-        logoUrl: companyLogos[company]
+        logoUrl: companyLogos[company],
+        filterData
       },
     };
   });
 }
 
-const { company, problems, logoUrl } = Astro.props;
+const { company, problems, logoUrl, filterData } = Astro.props;
 ---
 
 <IndexLayout title={company} description={`${problems.length} problems asked at ${company}.`}>
@@ -34,6 +53,7 @@ const { company, problems, logoUrl } = Astro.props;
     </div>
   )}
 
+  <FilterBar data={filterData} />
   <ProblemGroupList problems={problems} />
 </IndexLayout>
 
