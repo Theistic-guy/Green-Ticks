@@ -45,6 +45,10 @@
   --color-hard: hsl(0, 72%, 55%);
   --color-hard-bg: hsl(0, 72%, 92%);
 
+  /* Tag colors (Light Mode) */
+  --color-tag-bg: hsl(220, 16%, 88%); /* Like secondary/tertiary bg */
+  --color-tag-text: hsl(230, 70%, 45%); /* Distinct blueish text */
+
   /* Semantic */
   --color-success: hsl(145, 65%, 42%);
   --color-warning: hsl(38, 90%, 50%);
