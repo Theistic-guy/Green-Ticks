@@ -59,10 +59,20 @@ const { company, problems, logoUrl, filterData, topContent, bottomContent } = As
     </div>
   )}
 
-  {topContent && <div class="markdown-body" set:html={topContent} style="margin-bottom: var(--space-8);" />}
+  {topContent && (
+    <div class="custom-section-container top-section">
+      <div class="prose" set:html={topContent} />
+    </div>
+  )}
+
   <FilterBar data={filterData} />
   <ProblemGroupList problems={problems} />
-  {bottomContent && <div class="markdown-body" set:html={bottomContent} style="margin-top: var(--space-8);" />}
+
+  {bottomContent && (
+    <div class="custom-section-container bottom-section">
+      <div class="prose" set:html={bottomContent} />
+    </div>
+  )}
 </IndexLayout>
 
 <style>
@@ -75,5 +85,30 @@ const { company, problems, logoUrl, filterData, topContent, bottomContent } = As
     background: white;
     padding: var(--space-1);
     box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container.top-section {
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container.bottom-section {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  /* Ensure the prose inside doesn't have excess margins */
+  .custom-section-container :global(.prose > *:first-child) {
+    margin-top: 0;
+  }
+  .custom-section-container :global(.prose > *:last-child) {
+    margin-bottom: 0;
   }
 </style>
