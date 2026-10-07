@@ -1,0 +1,6 @@
+[<h1 align='right'><a href='../README.md'>⇐🏠</a></h1>](../README.md)
+
+# <img src="https://img.logo.dev/liftoff.io?token=pk_cwa5LeR3RiifmBSonSReKw" width="32" height="32" align="absmiddle" style="margin-right: 10px;" /> Liftoff
+
+## Hard
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐

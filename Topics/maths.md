@@ -25,6 +25,7 @@
 
 ## Hard
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
 - [Two odd occurring](../Problems/two-odd-occurring.md)
 
@@ -38,6 +39,9 @@
 
 ### Maths + Backtracking + Sorting
 - [Power Set with Duplicates](../Problems/power-set-with-duplicates.md)
+
+### Maths + Backtracking + Matrix + Recursion
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 
 ### Maths + Combinatorics + Greedy + Strings
 - [Minimum Number of Operations to Make String Sorted (Leetcode 1830)](../Problems/minimum-number-of-operations-to-make-string-sorted-(leetcode-1830).md)
