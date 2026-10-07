@@ -255,6 +255,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Hide section if empty
       section.style.display = visibleCount > 0 ? 'block' : 'none';
+
+      // Update count in heading
+      const titleSpan = section.querySelector('.difficulty-title span:first-child');
+      if (titleSpan) {
+        const baseName = titleSpan.textContent.split(' (')[0];
+        titleSpan.textContent = `${baseName} (${visibleCount})`;
+      }
     });
   }
 });
