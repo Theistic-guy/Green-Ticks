@@ -340,17 +340,16 @@ function isActive(href: string | undefined, current: string): boolean {
   const SCROLL_KEY = 'sidebar-scroll';
   const COLLAPSE_KEY = 'sidebar-collapse';
   
-  // Restore scroll and collapse state
-  document.addEventListener('DOMContentLoaded', () => {
+  // Restore scroll and collapse state synchronously to prevent FOUC
+  (function restoreSidebarState() {
     if (sidebar) {
-      // 1. Restore collapse state
+      // 1. Restore collapse state immediately before paint
       const storedCollapse = sessionStorage.getItem(COLLAPSE_KEY);
       if (storedCollapse) {
         try {
           const collapseState = JSON.parse(storedCollapse);
           const detailsElements = sidebar.querySelectorAll('details');
           detailsElements.forEach((details, index) => {
-            // Using index + label as a somewhat stable key
             const labelEl = details.querySelector('.section-label, .sidebar-folder');
             const key = labelEl ? `${index}-${labelEl.textContent.trim()}` : `${index}`;
             if (collapseState[key] !== undefined) {
@@ -366,14 +365,15 @@ function isActive(href: string | undefined, current: string): boolean {
         }
       }
 
-      // 2. Restore scroll
+      // 2. Restore scroll immediately
       const storedScroll = sessionStorage.getItem(SCROLL_KEY);
       if (storedScroll) {
         sidebar.scrollTop = parseInt(storedScroll, 10);
       } else {
         const activeItem = sidebar.querySelector('.active');
         if (activeItem) {
-          activeItem.scrollIntoView({ block: 'center' });
+          // scrollIntoView works better if we wait for layout
+          setTimeout(() => activeItem.scrollIntoView({ block: 'center' }), 0);
         }
       }
 
@@ -391,7 +391,7 @@ function isActive(href: string | undefined, current: string): boolean {
         }
       }, true); // use capture phase because toggle doesn't bubble
     }
-  });
+  })();
 
   // Save scroll on any link click
   sidebar?.addEventListener('click', (e) => {
