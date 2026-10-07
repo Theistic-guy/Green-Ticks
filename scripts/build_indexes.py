@@ -525,23 +525,35 @@ def build_category_sections(sections_dir: Path, sub: str) -> str:
 
 def build_topic_individual_section(slug: str, position: str) -> str:
     """
-    Read the individual top.md or bottom.md from a per-topic subfolder.
+    Read the individual top.md or bottom.md from a per-topic subfolder,
+    OR from a subfolder named 'Top' or 'Bottom'.
 
     For a topic with slug 'sliding-window', looks for:
       assets/Topics Sections/sliding-window/top.md   (position='top')
-      assets/Topics Sections/sliding-window/bottom.md (position='bottom')
-
-    Returns '' if the folder or file doesn't exist, or the file is empty.
+      assets/Topics Sections/sliding-window/Top/*.md (position='top')
     """
-    file_path = TOPICS_SECTIONS_DIR / slug / f"{position}.md"
-    if not file_path.exists():
+    chunks = []
+    
+    # 1. Look for a specific folder (e.g. 'Top' or 'Bottom')
+    folder_path = TOPICS_SECTIONS_DIR / slug / position.capitalize()
+    if folder_path.exists() and folder_path.is_dir():
+        section_files = sorted(folder_path.glob("*.md"), key=readme_section_sort_key)
+        for f in section_files:
+            content = f.read_text(encoding="utf-8").strip()
+            if content and content.lower() != "placeholder":
+                chunks.append(content)
+
+    # 2. Look for the exact file (e.g. 'top.md' or 'bottom.md')
+    file_path = TOPICS_SECTIONS_DIR / slug / f"{position.lower()}.md"
+    if file_path.exists():
+        content = file_path.read_text(encoding="utf-8").strip()
+        if content and content.lower() != "placeholder":
+            chunks.append(content)
+
+    if not chunks:
         return ""
 
-    content = file_path.read_text(encoding="utf-8").strip()
-    if not content or content.lower() == "placeholder":
-        return ""
-
-    return content
+    return "\n\n---\n\n".join(chunks)
 
 def merge_topic_sections(all_section: str, individual_section: str, position: str) -> str:
     """
