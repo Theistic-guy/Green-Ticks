@@ -6,6 +6,7 @@ import rehypeKatex from 'rehype-katex';
 import { remarkLinkResolver } from './src/plugins/remark-link-resolver.mjs';
 import { remarkNormalizeCodeLang } from './src/plugins/remark-normalize-code-lang.mjs';
 import { remarkRemoveHomeLink } from './src/plugins/remark-remove-home-link.mjs';
+import { remarkInlineTags } from './src/plugins/remark-inline-tags.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
   markdown: {
     // Use the unified processor to support remark/rehype plugins
     processor: unified({
-      remarkPlugins: [remarkRemoveHomeLink, remarkNormalizeCodeLang, remarkLinkResolver, remarkMath],
+      remarkPlugins: [remarkRemoveHomeLink, remarkInlineTags, remarkNormalizeCodeLang, remarkLinkResolver, remarkMath],
       rehypePlugins: [rehypeKatex],
     }),
     shikiConfig: {

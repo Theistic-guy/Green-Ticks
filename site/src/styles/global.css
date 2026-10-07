@@ -292,3 +292,18 @@ hr {
   background: var(--color-bg-secondary);
   border-color: var(--color-border-hover);
 }
+
+/* --- Inline Tags (Obsidian style) --- */
+.inline-tag {
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 0.1em 0.6em;
+  border-radius: var(--radius-full);
+  font-size: 0.9em;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.2;
+  margin: 0 0.1em;
+}
