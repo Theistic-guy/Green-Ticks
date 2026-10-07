@@ -3,7 +3,7 @@ import IndexLayout from '../../layouts/IndexLayout.astro';
 import ProblemGroupList from '../../components/ProblemGroupList.astro';
 import FilterBar from '../../components/FilterBar.astro';
 import type { FilterData } from '../../components/FilterBar.astro';
-import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets } from '../../utils/content';
+import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
 
 export async function getStaticPaths() {
   const problems = loadProblems();
@@ -14,6 +14,7 @@ export async function getStaticPaths() {
   
   return Object.entries(byCompany).map(([company, items]) => {
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    const slug = slugify(company);
     
     // Build filter data
     const filterData: FilterData = {
@@ -31,19 +32,24 @@ export async function getStaticPaths() {
       companyLogos
     };
 
+    const topContent = loadSectionContent('Companies', slug, 'Top');
+    const bottomContent = loadSectionContent('Companies', slug, 'Bottom');
+
     return {
-      params: { slug: slugify(company) },
+      params: { slug },
       props: { 
         company, 
         problems: sortedItems,
         logoUrl: companyLogos[company],
-        filterData
+        filterData,
+        topContent,
+        bottomContent
       },
     };
   });
 }
 
-const { company, problems, logoUrl, filterData } = Astro.props;
+const { company, problems, logoUrl, filterData, topContent, bottomContent } = Astro.props;
 ---
 
 <IndexLayout title={company} description={`${problems.length} problems asked at ${company}.`}>
@@ -53,8 +59,10 @@ const { company, problems, logoUrl, filterData } = Astro.props;
     </div>
   )}
 
+  {topContent && <div class="markdown-body" set:html={topContent} style="margin-bottom: var(--space-8);" />}
   <FilterBar data={filterData} />
   <ProblemGroupList problems={problems} />
+  {bottomContent && <div class="markdown-body" set:html={bottomContent} style="margin-top: var(--space-8);" />}
 </IndexLayout>
 
 <style>

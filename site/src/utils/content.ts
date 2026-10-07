@@ -342,3 +342,74 @@ export function getSidebar(): any[] {
     }
   ];
 }
+
+import { marked } from 'marked';
+
+/**
+ * Load "Top" or "Bottom" section contents for a given category and slug.
+ * 
+ * Looks in:
+ * 1. assets/{category} Sections/{Position}/*.md  (Global for the category)
+ * 2. assets/{category} Sections/{slug}/{position}.md (Old script individual file)
+ * 3. assets/{category} Sections/{slug}/{Position}/*.md (User's new folder structure)
+ * 
+ * Returns rendered HTML string.
+ */
+export function loadSectionContent(category: string, slug: string, position: 'Top' | 'Bottom'): string {
+  const chunks: string[] = [];
+  const baseDir = path.join(VAULT_ROOT, 'assets', `${category} Sections`);
+  
+  if (!fs.existsSync(baseDir)) return '';
+
+  const isTop = position === 'Top';
+  const posLower = position.toLowerCase();
+
+  // Helper to read and sort files from a directory
+  const readDirMd = (dir: string) => {
+    if (!fs.existsSync(dir)) return [];
+    try {
+      return fs.readdirSync(dir)
+        .filter(f => f.endsWith('.md'))
+        .sort()
+        .map(f => fs.readFileSync(path.join(dir, f), 'utf-8').trim())
+        .filter(content => content && content.toLowerCase() !== 'placeholder');
+    } catch {
+      return [];
+    }
+  };
+
+  // 1. Global category sections
+  const globalChunks = readDirMd(path.join(baseDir, position));
+
+  // 2. Slug specific folder
+  const specificFolderChunks = readDirMd(path.join(baseDir, slug, position));
+
+  // 3. Slug specific file (e.g., assets/Topics Sections/trie/top.md)
+  let specificFileChunk = '';
+  const specificFile = path.join(baseDir, slug, `${posLower}.md`);
+  if (fs.existsSync(specificFile)) {
+    const content = fs.readFileSync(specificFile, 'utf-8').trim();
+    if (content && content.toLowerCase() !== 'placeholder') {
+      specificFileChunk = content;
+    }
+  }
+
+  // Combine specific chunks
+  const specificChunks = [...specificFolderChunks];
+  if (specificFileChunk) specificChunks.push(specificFileChunk);
+
+  // Merge according to Python script logic:
+  // For 'Top': All first, then individual
+  // For 'Bottom': individual first, then All
+  if (isTop) {
+    chunks.push(...globalChunks, ...specificChunks);
+  } else {
+    chunks.push(...specificChunks, ...globalChunks);
+  }
+
+  if (chunks.length === 0) return '';
+
+  // Render markdown to HTML
+  const rawMarkdown = chunks.join('\n\n---\n\n');
+  return marked.parse(rawMarkdown) as string;
+}
