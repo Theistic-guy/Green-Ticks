@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar.astro';
 import Card from '../components/Card.astro';
 import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify } from '../utils/content';
 
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+
 // Load all data at build time
 const problems = loadProblems();
 const templates = loadMarkdownDir('Templates');
@@ -33,10 +37,22 @@ const topTopics = Object.entries(byTopic)
   .sort((a, b) => b[1].length - a[1].length)
   .slice(0, 8);
 
-// Top companies (by problem count, top 8)
+// Top companies (by problem count, top 8, exclude "Not Specified")
 const topCompanies = Object.entries(byCompany)
+  .filter(([company]) => company !== 'Not Specified')
   .sort((a, b) => b[1].length - a[1].length)
   .slice(0, 8);
+
+// Load HOMEPAGE.md
+let homepageContent = '';
+const vaultRoot = path.join(process.cwd(), '..');
+const homepagePath = path.join(vaultRoot, 'HOMEPAGE.md');
+if (fs.existsSync(homepagePath)) {
+  const raw = fs.readFileSync(homepagePath, 'utf-8').trim();
+  if (raw) {
+    homepageContent = marked.parse(raw) as string;
+  }
+}
 ---
 
 <BaseLayout title="Home">
@@ -173,6 +189,15 @@ const topCompanies = Object.entries(byCompany)
       </div>
     </section>
 
+    <!-- Homepage Custom Content -->
+    {homepageContent && (
+      <section class="section homepage-custom-content">
+        <div class="custom-section-container bottom-section">
+          <div class="prose" set:html={homepageContent} />
+        </div>
+      </section>
+    )}
+
     <!-- Footer -->
     <footer class="home-footer">
       <p>Built with ❤️ by <a href="https://github.com/Theistic-Guy" target="_blank">@Theistic-Guy</a></p>
@@ -182,6 +207,17 @@ const topCompanies = Object.entries(byCompany)
 </BaseLayout>
 
 <style>
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container :global(.prose > *:first-child) { margin-top: 0; }
+  .custom-section-container :global(.prose > *:last-child) { margin-bottom: 0; }
+
   .home {
     padding-top: var(--navbar-height);
     max-width: 1100px;

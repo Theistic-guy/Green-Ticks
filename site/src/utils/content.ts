@@ -147,6 +147,8 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
         walk(fullPath, [...segments, entry.name]);
       } else if (entry.name.endsWith('.md') && entry.name.toLowerCase() !== 'readme.md') {
         const name = entry.name.replace(/\.md$/, '');
+        if (name.toLowerCase().includes('to-do-or-wishlist')) continue;
+
         const slug = [...segments, name].map(slugify).join('/');
         const title = name.includes('-') && !name.includes(' ')
           ? name.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
@@ -302,6 +304,20 @@ export function getSidebar(): any[] {
     
     function sortTree(nodes: any[]) {
       nodes.sort((a, b) => {
+        // Special pinning for "Extras" and "Overview"
+        const getPriority = (label: string) => {
+          if (label === 'Extras') return 1;
+          if (label === 'Overview') return 2;
+          return 99;
+        };
+
+        const priorityA = getPriority(a.label);
+        const priorityB = getPriority(b.label);
+
+        if (priorityA !== priorityB) {
+          return priorityA - priorityB;
+        }
+
         const aIsFolder = a.children ? 1 : 0;
         const bIsFolder = b.children ? 1 : 0;
         if (aIsFolder !== bIsFolder) return bIsFolder - aIsFolder;

@@ -60,10 +60,10 @@ function isActive(href: string | undefined, current: string): boolean {
                         {item.children.map((child) => (
                           <li class="sidebar-item">
                             <a
-                              class={`sidebar-link ${currentPath === child.href ? 'active' : ''}`}
+                              class={`sidebar-link ${currentPath === child.href ? 'active' : ''} ${child.label === 'Overview' ? 'overview-link' : ''}`}
                               href={child.href}
                             >
-                              {child.label}
+                              {child.label === 'Overview' ? '🌟 ' + child.label : child.label}
                               {child.count != null && <span class="sidebar-count">{child.count}</span>}
                             </a>
                           </li>
@@ -72,10 +72,10 @@ function isActive(href: string | undefined, current: string): boolean {
                     </details>
                   ) : (
                     <a
-                      class={`sidebar-link ${currentPath === item.href ? 'active' : ''}`}
+                      class={`sidebar-link ${currentPath === item.href ? 'active' : ''} ${item.label === 'Overview' ? 'overview-link' : ''}`}
                       href={item.href}
                     >
-                      {item.label}
+                      {item.label === 'Overview' ? '🌟 ' + item.label : item.label}
                       {item.count != null && <span class="sidebar-count">{item.count}</span>}
                     </a>
                   )}
@@ -228,12 +228,27 @@ function isActive(href: string | undefined, current: string): boolean {
     border-left: 2px solid transparent;
   }
 
-  .sidebar-link:hover {
+  .overview-link {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    background: var(--color-primary-bg);
+    border-radius: var(--radius-md);
+    margin: var(--space-1) var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border-left: 3px solid var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .overview-link:hover {
+    transform: translateX(2px);
+  }
+
+  .sidebar-link:hover:not(.overview-link) {
     color: var(--color-text-primary);
     background: var(--color-bg-secondary);
   }
 
-  .sidebar-link.active {
+  .sidebar-link.active:not(.overview-link) {
     color: var(--color-primary);
     border-left-color: var(--color-primary);
     background: var(--color-primary-bg);
