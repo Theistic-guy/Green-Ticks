@@ -204,11 +204,12 @@ function isActive(href: string | undefined, current: string): boolean {
   .sidebar-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 var(--space-5);
+    border-left: 1px solid var(--color-border-subtle, var(--color-border));
   }
 
   .sidebar-list.nested {
-    padding-left: var(--space-4);
+    margin-left: var(--space-6);
   }
 
   .sidebar-item {
@@ -219,13 +220,14 @@ function isActive(href: string | undefined, current: string): boolean {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-1) var(--space-4) var(--space-1) var(--space-6);
+    padding: var(--space-1) var(--space-4) var(--space-1) var(--space-3);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     text-decoration: none;
     border-radius: 0;
     transition: all var(--transition-fast);
     border-left: 2px solid transparent;
+    margin-left: -1px; /* Overlap the ul border */
   }
 
   .overview-link {

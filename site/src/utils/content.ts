@@ -147,7 +147,7 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
         walk(fullPath, [...segments, entry.name]);
       } else if (entry.name.endsWith('.md') && entry.name.toLowerCase() !== 'readme.md') {
         const name = entry.name.replace(/\.md$/, '');
-        if (name.toLowerCase().includes('to-do-or-wishlist')) continue;
+        if (name === '☑To-Do or Wishlist or Do later list') continue;
 
         const slug = [...segments, name].map(slugify).join('/');
         const title = name.includes('-') && !name.includes(' ')
