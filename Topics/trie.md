@@ -1,5 +1,9 @@
 [<h1 align='right'><a href='../README.md'>⇐🏠</a></h1>](../README.md)
 
+Trie Implementation  : [Trie — Implementation](../Templates/Trie%20—%20Implementation.md)
+
+---
+
 # Trie
 
 ## Medium
