@@ -7,4 +7,5 @@
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Hard
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

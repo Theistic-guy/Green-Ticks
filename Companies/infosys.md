@@ -13,5 +13,6 @@
 
 ## Hard
 - [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

@@ -14,6 +14,7 @@
 - [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Maximum Sum Rectangle in a 2D Matrix (Kadane's 2D)](../Problems/maximum-sum-rectangle-in-a-2d-matrix-(kadane-2d).md) ⭐⭐⭐⭐⭐
 - [Median in a Row-wise Sorted Matrix](../Problems/median-in-a-row-wise-sorted-matrix.md) ⭐⭐⭐⭐⭐
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Spiral Traversal of a Matrix](../Problems/spiral-traversal-of-a-matrix.md) ⭐⭐⭐⭐⭐
 
 ## See As Combo-wise Listings
@@ -32,6 +33,9 @@
 
 ### Matrix + Ordered Containers + Prefix Sum
 - [Max Sum of Rectangle No Larger Than K (Leetcode 363)](../Problems/maximum-sum-of-rectangle-no-larger-than-k.md) ⭐⭐⭐⭐⭐
+
+### Matrix + Backtracking + Maths + Recursion
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 
 ### Matrix + Hashing + Strings + Trie
 - [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)

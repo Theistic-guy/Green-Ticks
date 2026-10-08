@@ -13,4 +13,5 @@
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ## Hard
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

@@ -20,5 +20,6 @@
 ## Hard
 - [Longest Common Span with Same Sum in Binary Arrays](../Problems/longest-common-span-with-same-sum-in-binary-arrays.md) ⭐⭐⭐⭐
 - [Maximum Contiguous Subarray Sum ≤ K](../Problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k.md) ⭐⭐⭐⭐
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Shortest Palindrome (Leetcode 214)](../Problems/shortest-palindrome-(leetcode-214).md) ⭐⭐⭐⭐
 - [Subarray Sum Divisible by K](../Problems/subarray-sum-divisible-by-k.md) ⭐⭐⭐⭐

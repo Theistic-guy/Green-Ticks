@@ -8,3 +8,6 @@
 
 ## Medium
 - [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
+
+## Hard
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐

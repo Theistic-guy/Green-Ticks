@@ -35,6 +35,7 @@
 - [Longest Duplicate Substring (Leetcode 1044)](../Problems/longest-duplicate-substring-(leetcode-1044).md)
 - [Maximal Rectangle (Leetcode 85) (largest rectangle with all 1's)](../Problems/maximal-rectangle-(lc-85).md) ⭐⭐⭐⭐⭐
 - [Minimize Max Distance to Gas Station](../Problems/minimize-max-distance-to-gas-station.md)
+- [N-Queens (Leetcode 51 & 52)](../Problems/n-queens-(leetcode-51-and-52).md) ⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐
 - [Postfix to Infix & Evaluation of Postfix (Leetcode 150)](../Problems/postfix-to-infix-and-evaluation-of-postfix-(leetcode-150).md) ⭐⭐⭐
 - [Repeating Element (Cycle + Expected Sum appr.)](../Problems/repeating-element.md)
