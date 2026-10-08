@@ -32,16 +32,14 @@ template_dir = ROOT / "Templates"
 README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
 
 CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
-    "Topics":             ASSETS_DIR / "Topics Sections" / "All",
+    "Topics":             ASSETS_DIR / "Topics Sections",
     "Platforms":          ASSETS_DIR / "Platforms Sections",
     "Companies":          ASSETS_DIR / "Companies Sections",
     "Difficulty":         ASSETS_DIR / "Difficulty Sections",
-    "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Sections",
+    "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Tags Sections",
     "Rating":             ASSETS_DIR / "Rating Sections",
     "Groups":             ASSETS_DIR / "Groups Sections",
 }
-
-TOPICS_SECTIONS_DIR = ASSETS_DIR / "Topics Sections"
 
 template_files = []
 
@@ -499,79 +497,52 @@ def build_readme_sections_appendix(sections_dir: Path) -> str:
 
     return "\n\n---\n\n".join(chunks)
 
-def build_category_sections(sections_dir: Path, sub: str) -> str:
+def validate_and_read_custom_section(folder_path: Path, position: str) -> str:
     """
-    Reads all .md files from `sections_dir / sub` (e.g. 'Top' or 'Bottom'),
-    orders them by the same numeric-prefix sort key used for ReadMe Sections,
-    strips empty files, and joins non-empty content with '\n\n---\n\n'.
-
-    Returns '' if the folder doesn't exist, has no .md files, or all are empty.
+    Reads exactly top.md or bottom.md from folder_path.
+    Crashes if any other file exists in that folder.
     """
-    target = sections_dir / sub
-    if not target.exists():
+    if not folder_path.exists() or not folder_path.is_dir():
         return ""
-
-    section_files = sorted(target.glob("*.md"), key=readme_section_sort_key)
-    chunks: list[str] = []
-    for f in section_files:
-        content = f.read_text(encoding="utf-8").strip()
-        if content and content.lower() != "placeholder":
-            chunks.append(content)
-
-    if not chunks:
-        return ""
-
-    return "\n\n---\n\n".join(chunks)
-
-def build_topic_individual_section(slug: str, position: str) -> str:
-    """
-    Read the individual top.md or bottom.md from a per-topic subfolder,
-    OR from a subfolder named 'Top' or 'Bottom'.
-
-    For a topic with slug 'sliding-window', looks for:
-      assets/Topics Sections/sliding-window/top.md   (position='top')
-      assets/Topics Sections/sliding-window/Top/*.md (position='top')
-    """
-    chunks = []
     
-    # 1. Look for a specific folder (e.g. 'Top' or 'Bottom')
-    folder_path = TOPICS_SECTIONS_DIR / slug / position.capitalize()
-    if folder_path.exists() and folder_path.is_dir():
-        section_files = sorted(folder_path.glob("*.md"), key=readme_section_sort_key)
-        for f in section_files:
-            content = f.read_text(encoding="utf-8").strip()
-            if content and content.lower() != "placeholder":
-                chunks.append(content)
-
-    # 2. Look for the exact file (e.g. 'top.md' or 'bottom.md')
-    file_path = TOPICS_SECTIONS_DIR / slug / f"{position.lower()}.md"
+    # Check for invalid files
+    for item in folder_path.iterdir():
+        if item.is_dir():
+            raise ValueError(f"Invalid subdirectory found in {folder_path}: {item.name}")
+        if item.is_file() and item.name not in ["top.md", "bottom.md", ".gitkeep", ".DS_Store"]:
+            raise ValueError(f"Invalid file found in custom section {folder_path}: {item.name}. Only top.md and bottom.md are allowed.")
+            
+    file_path = folder_path / f"{position.lower()}.md"
     if file_path.exists():
         content = file_path.read_text(encoding="utf-8").strip()
         if content and content.lower() != "placeholder":
-            chunks.append(content)
+            return content
+    return ""
 
-    if not chunks:
+def get_custom_section(category: str, slug: str, position: str) -> str:
+    """
+    category: e.g. "Topics", "Companies", "Difficulty"
+    slug: e.g. "amazon", "3-stars"
+    position: "top" or "bottom"
+    """
+    base_dir = CATEGORY_SECTIONS_DIRS.get(category)
+    if not base_dir or not base_dir.exists():
         return ""
-
-    return "\n\n---\n\n".join(chunks)
-
-def merge_topic_sections(all_section: str, individual_section: str, position: str) -> str:
-    """
-    Merge the All-level and individual-level sections for a topic.
-
-    For 'top': All first, then individual  (All encapsulates on the outside)
-    For 'bottom': individual first, then All
-
-    Returns the merged string, or '' if both are empty.
-    """
-    if position == "top":
-        parts = [p for p in [all_section, individual_section] if p]
-    else:  # bottom
-        parts = [p for p in [individual_section, all_section] if p]
-
+        
+    all_content = validate_and_read_custom_section(base_dir / "All", position)
+    slug_content = validate_and_read_custom_section(base_dir / slug, position)
+    
+    parts = []
+    if position.lower() == "top":
+        if all_content: parts.append(all_content)
+        if slug_content: parts.append(slug_content)
+    else:
+        if slug_content: parts.append(slug_content)
+        if all_content: parts.append(all_content)
+        
     if not parts:
         return ""
-
+        
     return "\n\n---\n\n".join(parts)
 
 def build_templates_section(template_files: list[Path]) -> str:
@@ -831,12 +802,6 @@ def main() -> None:
         by_difficulty[note["difficulty"]].append(note)
         by_rating[rating_label(note["rating"])].append(note)
 
-    category_top: dict[str, str] = {}
-    category_bottom: dict[str, str] = {}
-    for cat_name, sdir in CATEGORY_SECTIONS_DIRS.items():
-        category_top[cat_name] = build_category_sections(sdir, "Top")
-        category_bottom[cat_name] = build_category_sections(sdir, "Bottom")
-
     # Load companies for logos
     companies_info = {}
     if COMPANIES_JSON_FILE.exists():
@@ -855,13 +820,8 @@ def main() -> None:
         slug = topic_slugs[topic]
         index_file = topics_dir / f"{slug}.md"
 
-        # Per-topic individual sections (from assets/Topics Sections/<slug>/)
-        indiv_top = build_topic_individual_section(slug, "top")
-        indiv_bottom = build_topic_individual_section(slug, "bottom")
-
-        # Merge: All encapsulates individual
-        merged_top = merge_topic_sections(category_top["Topics"], indiv_top, "top")
-        merged_bottom = merge_topic_sections(category_bottom["Topics"], indiv_bottom, "bottom")
+        merged_top = get_custom_section("Topics", slug, "top")
+        merged_bottom = get_custom_section("Topics", slug, "bottom")
 
         render_grouped_by_difficulty(
             index_file, topic, items, combo_topic=topic,
@@ -871,16 +831,18 @@ def main() -> None:
 
     platforms_dir = GENERATED_DIRS["Platforms"]
     for platform, items in by_platform.items():
-        index_file = platforms_dir / f"{platform_slugs[platform]}.md"
+        slug = platform_slugs[platform]
+        index_file = platforms_dir / f"{slug}.md"
         render_grouped_by_difficulty(
             index_file, platform, items,
-            top_sections=category_top["Platforms"],
-            bottom_sections=category_bottom["Platforms"],
+            top_sections=get_custom_section("Platforms", slug, "top"),
+            bottom_sections=get_custom_section("Platforms", slug, "bottom"),
         )
 
     companies_dir = GENERATED_DIRS["Companies"]
     for company, items in by_company.items():
-        index_file = companies_dir / f"{company_slugs[company]}.md"
+        slug = company_slugs[company]
+        index_file = companies_dir / f"{slug}.md"
         
         heading = company
         if company in company_logos:
@@ -888,44 +850,48 @@ def main() -> None:
             
         render_grouped_by_difficulty(
             index_file, heading, items,
-            top_sections=category_top["Companies"],
-            bottom_sections=category_bottom["Companies"],
+            top_sections=get_custom_section("Companies", slug, "top"),
+            bottom_sections=get_custom_section("Companies", slug, "bottom"),
         )
 
     misc_dir = GENERATED_DIRS["Miscellaneous Tags"]
     for tag, items in by_other_tag.items():
-        index_file = misc_dir / f"{other_tag_slugs[tag]}.md"
+        slug = other_tag_slugs[tag]
+        index_file = misc_dir / f"{slug}.md"
         render_grouped_by_difficulty(
             index_file, tag, items,
-            top_sections=category_top["Miscellaneous Tags"],
-            bottom_sections=category_bottom["Miscellaneous Tags"],
+            top_sections=get_custom_section("Miscellaneous Tags", slug, "top"),
+            bottom_sections=get_custom_section("Miscellaneous Tags", slug, "bottom"),
         )
 
     difficulty_dir = GENERATED_DIRS["Difficulty"]
     for difficulty, items in by_difficulty.items():
-        index_file = difficulty_dir / f"{difficulty_slugs[difficulty]}.md"
+        slug = difficulty_slugs[difficulty]
+        index_file = difficulty_dir / f"{slug}.md"
         render_flat_index(
             index_file, difficulty, items,
-            top_sections=category_top["Difficulty"],
-            bottom_sections=category_bottom["Difficulty"],
+            top_sections=get_custom_section("Difficulty", slug, "top"),
+            bottom_sections=get_custom_section("Difficulty", slug, "bottom"),
         )
 
     rating_dir = GENERATED_DIRS["Rating"]
     for rating, items in by_rating.items():
-        index_file = rating_dir / f"{rating_slugs[rating]}.md"
+        slug = rating_slugs[rating]
+        index_file = rating_dir / f"{slug}.md"
         render_grouped_by_difficulty(
             index_file, rating, items,
-            top_sections=category_top["Rating"],
-            bottom_sections=category_bottom["Rating"],
+            top_sections=get_custom_section("Rating", slug, "top"),
+            bottom_sections=get_custom_section("Rating", slug, "bottom"),
         )
 
     groups_dir = GENERATED_DIRS["Groups"]
     for group, items in by_group.items():
-        index_file = groups_dir / f"{group_slugs[group]}.md"
+        slug = group_slugs[group]
+        index_file = groups_dir / f"{slug}.md"
         render_grouped_by_difficulty(
             index_file, group, items,
-            top_sections=category_top.get("Groups", ""),
-            bottom_sections=category_bottom.get("Groups", ""),
+            top_sections=get_custom_section("Groups", slug, "top"),
+            bottom_sections=get_custom_section("Groups", slug, "bottom"),
         )
 
     print("Appending ReadMe Sections...", flush=True)

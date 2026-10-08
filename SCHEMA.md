@@ -115,19 +115,28 @@ To match a metadata value (like a Topic or Company) to its folder in `assets/`, 
 - `Depth-First Search (DFS)` ➡️ `depth-first-search-dfs`
 
 ### Section Injection Structure
-Place your files in `assets/<Category> Sections/` (e.g., `assets/Topics Sections/` or `assets/Companies Sections/`).
+There are 7 main category folders in `assets/`:
+- `Companies Sections/`
+- `Difficulty Sections/`
+- `Groups Sections/`
+- `Miscellaneous Tags Sections/`
+- `Platforms Sections/`
+- `Rating Sections/`
+- `Topics Sections/`
 
-**For a specific page (e.g. the "Sliding Window" topic page):**
-- Place files in: `assets/Topics Sections/sliding-window/Top/*.md`
-- Or use the exact file: `assets/Topics Sections/sliding-window/top.md`
-- Use `Bottom/` or `bottom.md` to inject content at the end of the page.
+Inside each of these folders, you must create a subdirectory that matches either:
+1. `All/` (applies to every single page in this category)
+2. `<slug>/` (applies to a specific page, mapping exactly to its generated filename, e.g., `amazon/`, `morgan-stanley/`, `3-stars/`)
 
-**For ALL pages in a category (e.g. across all Topic pages):**
-- Place files in: `assets/Topics Sections/Top/*.md`
-- Place files in: `assets/Topics Sections/Bottom/*.md`
+**Crucial Rules:**
+- Inside `All/` or `<slug>/`, **the ONLY permitted files are exactly `top.md` and/or `bottom.md`.**
+- Subdirectories inside these folders, or differently named files (e.g. `notes.txt`), will **crash the build process** to prevent file littering.
 
-This content is automatically rendered by both the Astro website build and the Python `build_indexes.py` script used for the GitHub generated markdown.
+**Ordering & Encapsulation:**
+- **Top Content:** The content from `All/top.md` is rendered *first*, immediately followed by `<slug>/top.md`.
+- **Bottom Content:** The content from `<slug>/bottom.md` is rendered *first*, immediately followed by `All/bottom.md`.
 
+This content is automatically rendered by both the Astro website build and the Python `build_indexes.py` script.
 ## Maintenance rules
 
 - Keep metadata consistent.

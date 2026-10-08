@@ -362,49 +362,45 @@ export function loadSectionContent(category: string, slug: string, position: 'To
   if (!fs.existsSync(baseDir)) return '';
 
   const isTop = position === 'Top';
-  const posLower = position.toLowerCase();
+  const fileName = `${position.toLowerCase()}.md`;
 
-  // Helper to read and sort files from a directory
-  const readDirMd = (dir: string) => {
-    if (!fs.existsSync(dir)) return [];
-    try {
-      return fs.readdirSync(dir)
-        .filter(f => f.endsWith('.md'))
-        .sort()
-        .map(f => fs.readFileSync(path.join(dir, f), 'utf-8').trim())
-        .filter(content => content && content.toLowerCase() !== 'placeholder');
-    } catch {
-      return [];
+  const validateAndRead = (folder: string) => {
+    const folderPath = path.join(baseDir, folder);
+    if (!fs.existsSync(folderPath)) return '';
+
+    // Validate that only top.md, bottom.md, or system files exist in the folder
+    const files = fs.readdirSync(folderPath, { withFileTypes: true });
+    for (const f of files) {
+      if (f.isDirectory()) {
+        throw new Error(`Invalid subdirectory found in ${folderPath}: ${f.name}`);
+      }
+      if (f.name !== 'top.md' && f.name !== 'bottom.md' && f.name !== '.gitkeep' && f.name !== '.DS_Store') {
+        throw new Error(`Invalid file found in custom section ${folderPath}: ${f.name}. Only top.md and bottom.md are allowed.`);
+      }
     }
+
+    const file = path.join(folderPath, fileName);
+    if (fs.existsSync(file)) {
+      const content = fs.readFileSync(file, 'utf-8').trim();
+      if (content && content.toLowerCase() !== 'placeholder') {
+        return content;
+      }
+    }
+    return '';
   };
 
-  // 1. Global category sections
-  const globalChunks = readDirMd(path.join(baseDir, position));
+  const allChunk = validateAndRead('All');
+  const slugChunk = validateAndRead(slug);
 
-  // 2. Slug specific folder
-  const specificFolderChunks = readDirMd(path.join(baseDir, slug, position));
-
-  // 3. Slug specific file (e.g., assets/Topics Sections/trie/top.md)
-  let specificFileChunk = '';
-  const specificFile = path.join(baseDir, slug, `${posLower}.md`);
-  if (fs.existsSync(specificFile)) {
-    const content = fs.readFileSync(specificFile, 'utf-8').trim();
-    if (content && content.toLowerCase() !== 'placeholder') {
-      specificFileChunk = content;
-    }
-  }
-
-  // Combine specific chunks
-  const specificChunks = [...specificFolderChunks];
-  if (specificFileChunk) specificChunks.push(specificFileChunk);
-
-  // Merge according to Python script logic:
+  // Merge order:
   // For 'Top': All first, then individual
   // For 'Bottom': individual first, then All
   if (isTop) {
-    chunks.push(...globalChunks, ...specificChunks);
+    if (allChunk) chunks.push(allChunk);
+    if (slugChunk) chunks.push(slugChunk);
   } else {
-    chunks.push(...specificChunks, ...globalChunks);
+    if (slugChunk) chunks.push(slugChunk);
+    if (allChunk) chunks.push(allChunk);
   }
 
   if (chunks.length === 0) return '';

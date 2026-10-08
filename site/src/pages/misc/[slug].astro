@@ -3,7 +3,7 @@ import IndexLayout from '../../layouts/IndexLayout.astro';
 import ProblemGroupList from '../../components/ProblemGroupList.astro';
 import FilterBar from '../../components/FilterBar.astro';
 import type { FilterData } from '../../components/FilterBar.astro';
-import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets } from '../../utils/content';
+import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
 
 export async function getStaticPaths() {
   const problems = loadProblems();
@@ -14,6 +14,7 @@ export async function getStaticPaths() {
   
   return Object.entries(byTag).map(([tag, items]) => {
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    const slug = slugify(tag);
     
     // Build filter data
     const filterData: FilterData = {
@@ -31,17 +32,54 @@ export async function getStaticPaths() {
       companyLogos
     };
 
+    const topContent = loadSectionContent('Miscellaneous Tags', slug, 'Top');
+    const bottomContent = loadSectionContent('Miscellaneous Tags', slug, 'Bottom');
+
     return {
-      params: { slug: slugify(tag) },
-      props: { tag, problems: sortedItems, filterData },
+      params: { slug },
+      props: { tag, problems: sortedItems, filterData, topContent, bottomContent },
     };
   });
 }
 
-const { tag, problems, filterData } = Astro.props;
+const { tag, problems, filterData, topContent, bottomContent } = Astro.props;
 ---
 
 <IndexLayout title={tag} description={`${problems.length} problems tagged with ${tag}.`}>
+  {topContent && (
+    <div class="custom-section-container top-section">
+      <div class="prose" set:html={topContent} />
+    </div>
+  )}
+
   <FilterBar data={filterData} />
-  <ProblemGroupList problems={problems} />
+  <ProblemGroupList problems={problems} showCompany={true} />
+
+  {bottomContent && (
+    <div class="custom-section-container bottom-section">
+      <div class="prose" set:html={bottomContent} />
+    </div>
+  )}
 </IndexLayout>
+
+<style>
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container.top-section {
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container.bottom-section {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container :global(.prose > *:first-child) { margin-top: 0; }
+  .custom-section-container :global(.prose > *:last-child) { margin-bottom: 0; }
+</style>
