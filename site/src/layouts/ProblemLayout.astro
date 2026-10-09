@@ -39,7 +39,7 @@ const hasRating = problem.rating != null && problem.rating > 0;
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               Back
             </button>
-            <button class="graph-toggle-btn action-button" aria-label="Open Graph View" title="Open Graph View" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; color: var(--text-1); cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-sm);">
+            <button class="graph-toggle-btn" aria-label="Open Graph View" title="Open Graph View">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="5" cy="18" r="3"></circle>
                 <circle cx="19" cy="18" r="3"></circle>
@@ -371,5 +371,30 @@ const hasRating = problem.rating != null && problem.rating > 0;
     .tag-label {
       min-width: unset;
     }
+  }
+
+  .graph-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: var(--color-primary, #3b82f6);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
+  }
+
+  .graph-toggle-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .graph-toggle-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   }
 </style>

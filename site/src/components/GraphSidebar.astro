@@ -28,6 +28,15 @@ const { currentUrl } = Astro.props;
       </button>
     </div>
     <div id="graph-viewport"></div>
+    <button id="graph-recenter-btn" aria-label="Recenter Graph" title="Recenter Graph">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <line x1="12" y1="2" x2="12" y2="6"></line>
+        <line x1="12" y1="18" x2="12" y2="22"></line>
+        <line x1="4" y1="12" x2="8" y2="12"></line>
+        <line x1="16" y1="12" x2="20" y2="12"></line>
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -130,6 +139,37 @@ const { currentUrl } = Astro.props;
     height: 100%;
     overflow: hidden;
   }
+
+  #graph-recenter-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1010;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  :root[data-theme="light"] #graph-recenter-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  #graph-recenter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.05);
+  }
 </style>
 
 <script>
@@ -141,6 +181,7 @@ const { currentUrl } = Astro.props;
   const overlay = document.getElementById('graph-overlay');
   const closeBtn = document.getElementById('graph-close-btn');
   const viewport = document.getElementById('graph-viewport');
+  const recenterBtn = document.getElementById('graph-recenter-btn');
 
   let rawUrl = container.dataset.currentUrl;
   if (!rawUrl.startsWith('/')) rawUrl = '/' + rawUrl;
@@ -183,6 +224,9 @@ const { currentUrl } = Astro.props;
   }
 
   closeBtn.addEventListener('click', closeGraph);
+  recenterBtn.addEventListener('click', () => {
+    if (graphInstance) graphInstance.zoomToFit(400, 50);
+  });
 
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
@@ -242,6 +286,8 @@ const { currentUrl } = Astro.props;
         })
         .linkDirectionalParticles(2)
         .linkDirectionalParticleSpeed(0.005)
+        .minZoom(0.5)
+        .maxZoom(8)
         .nodeCanvasObject((node, ctx, globalScale) => {
           const isCenter = node.id === currentUrl;
           const isLight = document.documentElement.getAttribute('data-theme') === 'light';
@@ -274,11 +320,17 @@ const { currentUrl } = Astro.props;
           viewport.style.cursor = node ? 'pointer' : null;
         });
 
-      window.addEventListener('resize', () => {
-        if (graphInstance && overlay.classList.contains('overlay-visible')) {
-          graphInstance.width(viewport.clientWidth).height(viewport.clientHeight);
+      // Use ResizeObserver for perfect viewport tracking
+      const ro = new ResizeObserver(entries => {
+        if (!graphInstance || !overlay.classList.contains('overlay-visible')) return;
+        for (let entry of entries) {
+          graphInstance.width(entry.contentRect.width).height(entry.contentRect.height);
         }
       });
+      ro.observe(viewport);
+    } else {
+      // If re-rendering, ensure size matches
+      graphInstance.width(viewport.clientWidth).height(viewport.clientHeight);
     }
 
     const gData = {
