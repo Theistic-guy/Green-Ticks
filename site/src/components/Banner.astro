@@ -1,0 +1,94 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+
+const bannerPath = path.resolve(process.cwd(), '../assets/home-banner.md');
+let bannerHtml = '';
+
+if (fs.existsSync(bannerPath)) {
+  const bannerMd = fs.readFileSync(bannerPath, 'utf8').trim();
+  if (bannerMd) {
+    bannerHtml = marked.parseInline(bannerMd);
+    // Fix relative obsidian links like ../Companies/google.md to /Companies/google
+    bannerHtml = bannerHtml.replace(/href="\.\.\/(.*?)\.md"/g, 'href="/$1"');
+  }
+}
+---
+
+{bannerHtml && bannerHtml.trim() !== '' && (
+  <div id="home-banner" class="home-banner">
+    <div class="banner-content" set:html={bannerHtml} />
+    <button id="close-banner" aria-label="Close banner">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <style>
+    .home-banner {
+      background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary), var(--color-accent));
+      color: white;
+      text-align: center;
+      padding: 10px 48px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .banner-content :global(a) {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 800;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .banner-content :global(a:hover) {
+      color: var(--color-accent-light, #fde047);
+    }
+
+    #close-banner {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.1s;
+      position: absolute;
+      right: 16px;
+    }
+
+    #close-banner:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+  </style>
+
+  <script is:inline>
+    const banner = document.getElementById('home-banner');
+    const closeBtn = document.getElementById('close-banner');
+    
+    if (banner) {
+      if (sessionStorage.getItem('home-banner-closed') === 'true') {
+        banner.style.display = 'none';
+      }
+
+      closeBtn.addEventListener('click', () => {
+        banner.style.display = 'none';
+        sessionStorage.setItem('home-banner-closed', 'true');
+      });
+    }
+  </script>
+)}
