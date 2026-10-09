@@ -18,6 +18,7 @@ const problemsCollection = defineCollection({
     'Other Tags': z.any().optional(),
     Rating: z.any().optional(),
     Groups: z.any().optional(),
+    updated: z.any().optional(),
   }).passthrough(),
 });
 
@@ -25,6 +26,7 @@ const notesCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: pathToFileURL(path.join(VAULT_ROOT, 'Notes')) }),
   schema: z.object({
     Title: z.string().optional(),
+    updated: z.any().optional(),
   }).passthrough(),
 });
 
@@ -32,6 +34,7 @@ const templatesCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: pathToFileURL(path.join(VAULT_ROOT, 'Templates')) }),
   schema: z.object({
     Title: z.string().optional(),
+    updated: z.any().optional(),
   }).passthrough(),
 });
 

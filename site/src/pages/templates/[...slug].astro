@@ -21,8 +21,9 @@ const { Content } = await render(entry);
 
 const fileName = parts[parts.length - 1];
 const title = entry.data?.Title || fileName.replace(/-/g, ' ');
+const updated = entry.data?.updated ? String(entry.data.updated) : undefined;
 ---
 
-<NoteLayout title={title} pathSegments={parts}>
+<NoteLayout title={title} pathSegments={parts} updated={updated}>
   <Content />
 </NoteLayout>

@@ -69,6 +69,7 @@ export interface Problem {
   rating: number | null;
   groups: string[];
   rawContent: string;
+  updated?: string;
 }
 
 /**
@@ -108,6 +109,7 @@ export function loadProblems(): Problem[] {
       rating,
       groups: asList(data.Groups),
       rawContent: content,
+      updated: data.updated ? String(data.updated) : undefined,
     });
   }
 
@@ -122,6 +124,7 @@ export interface MarkdownPage {
   rawContent: string;
   /** Relative path segments for breadcrumbs, e.g. ['Extras', 'Queue patterns'] */
   pathSegments: string[];
+  updated?: string;
 }
 
 /**
@@ -154,12 +157,16 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
           ? name.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
           : name;
 
+        const rawText = fs.readFileSync(fullPath, 'utf-8');
+        const { data, content } = matter(rawText);
+
         pages.push({
           slug,
           title,
           filePath: fullPath,
-          rawContent: fs.readFileSync(fullPath, 'utf-8'),
+          rawContent: content,
           pathSegments: [...segments, name],
+          updated: data.updated ? String(data.updated) : undefined,
         });
       }
     }
