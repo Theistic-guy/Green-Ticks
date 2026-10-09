@@ -29,7 +29,7 @@ The following characters are **not allowed** in any filename:
 
 - Filenames must **not** start with a `.` (dot)
 - Problem files (`Problems/`) must use **lowercase hyphenated** names (e.g. `two-sum.md`)
-- Template and Note files can use mixed case and spaces
+- Template, Note, and Write-Up files can use mixed case and spaces
 
 ### Why?
 
@@ -60,6 +60,7 @@ Difficulty: Easy
 - `Other Tags` — miscellaneous tags (list)
 - `Rating` — 1 to 5 (integer or ⭐ emoji)
 - `Groups` — problem groupings like "Blind 75", "Top Interview 150" (list)
+- `updated` — Must be exactly in `DD-MM-YYYY` format (e.g., `31-12-2024`). Invalid formats will break the build.
 
 ### Difficulty Values
 

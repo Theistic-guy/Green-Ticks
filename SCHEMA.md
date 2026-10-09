@@ -23,6 +23,8 @@ Green-Ticks/
 ├── Rating/
 ├── Groups/
 ├── Templates/
+├── Notes/
+├── Write-Ups/
 ├── scripts/
 ├── .github/
 ├── README.md
@@ -53,11 +55,11 @@ Optional keys:
 - `Other Tags`
 - `Rating` (1-5)
 - `Groups` (list of group names, e.g. "Blind 75", "Top Interview 150")
-- `updated` (Must be exactly in `DD-MM-YYYY` format, e.g., `31-12-2024`. Also applicable for Notes and Templates)
+- `updated` (Must be exactly in `DD-MM-YYYY` format, e.g., `31-12-2024`. Also applicable for Notes, Templates, and Write-Ups. Invalid formats will cause build errors.)
 
 ## Validation rules
 
-The build fails if required fields are missing, difficulty is invalid, or two values normalize to the same slug within the same generated folder.
+The build fails if required fields are missing, difficulty is invalid, `updated` format is incorrect, or two values normalize to the same slug within the same generated folder.
 
 ## Generated output
 
@@ -93,9 +95,11 @@ Groups/top-interview-150.md
 
 Do not manually edit `README.md`; changes will be overwritten.
 
-## Templates
+## Templates, Notes, and Write-Ups
 
-The `Templates/` directory contains reusable algorithm and data structure reference notes.
+- `Templates/` contains reusable algorithm and data structure reference notes.
+- `Notes/` contains in-depth concept explanations and guides.
+- `Write-Ups/` contains blog-style content, thoughts, and opinions.
 
 Every Markdown file inside `Templates/` is automatically linked in the generated README.
 
@@ -134,7 +138,7 @@ Inside each of these folders, you must create a subdirectory that matches either
 
 **Crucial Rules:**
 - Inside `All/` or `<slug>/`, **the ONLY permitted files are exactly `top.md` and/or `bottom.md`.**
-- Subdirectories inside these folders, or differently named files (e.g. `notes.txt`), will **crash the build process** to prevent file littering.
+- Subdirectories inside these folders, or differently named files (e.g. `notes.txt`), will **trigger a warning and be ignored** to prevent crashing the production site.
 
 **Ordering & Encapsulation:**
 - **Top Content:** The content from `All/top.md` is rendered *first*, immediately followed by `<slug>/top.md`.
