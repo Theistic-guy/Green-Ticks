@@ -1,5 +1,5 @@
 ---
-updated: 09-16-2026
+updated: 09-10-2026
 ---
 See :
 + [shortest-subarray-with-sum-at-least-k](../Problems/shortest-subarray-with-sum-at-least-k.md)

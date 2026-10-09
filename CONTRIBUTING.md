@@ -1,10 +1,10 @@
 ---
-updated: 09-16-2026
+updated: 09-10-2026
 ---
 # Contributing to Green-Ticks
 
 Thank you for your interest in contributing!
-
+ 
 ## Filename Rules
 
 All `.md` filenames in this repository must be compatible with **Windows** and **Obsidian**.
