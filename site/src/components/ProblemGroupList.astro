@@ -1,0 +1,171 @@
+---
+import Card from './Card.astro';
+import type { Problem } from '../utils/content';
+import { groupByDifficulty } from '../utils/content';
+
+interface Props {
+  problems: Problem[];
+  showCompany?: boolean;
+}
+
+const { problems, showCompany = false } = Astro.props;
+
+const byDiff = groupByDifficulty(problems);
+const easy = byDiff['Easy'] || [];
+const medium = byDiff['Medium'] || [];
+const hard = byDiff['Hard'] || [];
+const uncategorized = byDiff['Not Specified'] || [];
+
+function getDescription(p: Problem) {
+  if (showCompany) {
+    return `${p.companies.slice(0, 3).join(', ')}${p.companies.length > 3 ? '...' : ''}`;
+  }
+  return `${p.topics.slice(0, 3).join(', ')}${p.topics.length > 3 ? '...' : ''}`;
+}
+---
+
+<div class="problems-container">
+  {easy.length > 0 && (
+    <details class="difficulty-section" open>
+      <summary class="difficulty-title easy">
+        <span>Easy ({easy.length})</span>
+        <span class="toggle-icon"></span>
+      </summary>
+      <div class="card-grid">
+        {easy.map(p => (
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+
+  {medium.length > 0 && (
+    <details class="difficulty-section" open>
+      <summary class="difficulty-title medium">
+        <span>Medium ({medium.length})</span>
+        <span class="toggle-icon"></span>
+      </summary>
+      <div class="card-grid">
+        {medium.map(p => (
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+
+  {hard.length > 0 && (
+    <details class="difficulty-section" open>
+      <summary class="difficulty-title hard">
+        <span>Hard ({hard.length})</span>
+        <span class="toggle-icon"></span>
+      </summary>
+      <div class="card-grid">
+        {hard.map(p => (
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+
+  {uncategorized.length > 0 && (
+    <details class="difficulty-section" open>
+      <summary class="difficulty-title default">
+        <span>Not Specified ({uncategorized.length})</span>
+        <span class="toggle-icon"></span>
+      </summary>
+      <div class="card-grid">
+        {uncategorized.map(p => (
+          <div class="problem-wrapper" data-slug={p.slug}>
+            <Card title={p.title} href={`/problems/${p.slug}`} description={getDescription(p)} />
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+</div>
+
+<style>
+  .difficulty-section {
+    margin-bottom: var(--space-12);
+  }
+
+  .difficulty-section > summary {
+    list-style: none;
+  }
+  .difficulty-section > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .difficulty-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-border);
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    position: relative;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+  }
+
+  .difficulty-title:hover .toggle-icon {
+    opacity: 1;
+  }
+
+  .toggle-icon::before, .toggle-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  
+  .toggle-icon::before {
+    width: 12px;
+    height: 2px;
+  }
+
+  .toggle-icon::after {
+    width: 2px;
+    height: 12px;
+    transition: transform var(--transition-fast);
+  }
+
+  details[open] .toggle-icon::after {
+    transform: rotate(90deg) scale(0);
+  }
+
+  .difficulty-title.easy { color: var(--color-easy); border-bottom-color: var(--color-easy-bg); }
+  .difficulty-title.medium { color: var(--color-medium); border-bottom-color: var(--color-medium-bg); }
+  .difficulty-title.hard { color: var(--color-hard); border-bottom-color: var(--color-hard-bg); }
+  .difficulty-title.default { color: var(--color-text-primary); border-bottom-color: var(--color-border); }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  
+  .problem-wrapper {
+    display: contents;
+  }
+</style>

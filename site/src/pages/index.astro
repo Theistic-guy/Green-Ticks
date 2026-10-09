@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar.astro';
 import Card from '../components/Card.astro';
 import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify } from '../utils/content';
 
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+
 // Load all data at build time
 const problems = loadProblems();
 const templates = loadMarkdownDir('Templates');
@@ -33,10 +37,70 @@ const topTopics = Object.entries(byTopic)
   .sort((a, b) => b[1].length - a[1].length)
   .slice(0, 8);
 
-// Top companies (by problem count, top 8)
+// Top companies (by problem count, top 8, exclude "Not Specified")
 const topCompanies = Object.entries(byCompany)
+  .filter(([company]) => company !== 'Not Specified')
   .sort((a, b) => b[1].length - a[1].length)
   .slice(0, 8);
+
+// Load HOMEPAGE.md
+let homepageContent = '';
+const vaultRoot = path.join(process.cwd(), '..');
+const homepagePath = path.join(vaultRoot, 'HOMEPAGE.md');
+if (fs.existsSync(homepagePath)) {
+  const raw = fs.readFileSync(homepagePath, 'utf-8').trim();
+  if (raw) {
+    homepageContent = marked.parse(raw) as string;
+  }
+}
+
+// Parse recently updated pages
+interface UpdateItem {
+  title: string;
+  type: 'Problem' | 'Note' | 'Template';
+  href: string;
+  dateStr: string;
+  timestamp: number;
+}
+
+function parseDate(dateStr?: string) {
+  if (!dateStr) return null;
+  const parts = dateStr.split('-');
+  if (parts.length === 3) {
+    const [dd, mm, yyyy] = parts;
+    return new Date(`${yyyy}-${mm}-${dd}`).getTime();
+  }
+  return null;
+}
+
+const allUpdates: UpdateItem[] = [];
+
+problems.forEach(p => {
+  if (p.updated) {
+    const ts = parseDate(p.updated);
+    if (ts) allUpdates.push({ title: p.title, type: 'Problem', href: `/problems/${p.slug}`, dateStr: p.updated, timestamp: ts });
+  }
+});
+
+notes.forEach(n => {
+  if (n.updated) {
+    const ts = parseDate(n.updated);
+    // Remove 'Extras/' from start for notes to make link
+    let slug = n.slug;
+    if (slug.toLowerCase().startsWith('extras/')) slug = slug.substring(7); // wait, Astro note slugs are nested
+    if (ts) allUpdates.push({ title: n.title, type: 'Note', href: `/notes/${n.slug}`, dateStr: n.updated, timestamp: ts });
+  }
+});
+
+templates.forEach(t => {
+  if (t.updated) {
+    const ts = parseDate(t.updated);
+    if (ts) allUpdates.push({ title: t.title, type: 'Template', href: `/templates/${t.slug}`, dateStr: t.updated, timestamp: ts });
+  }
+});
+
+allUpdates.sort((a, b) => b.timestamp - a.timestamp);
+const recentUpdates = allUpdates.slice(0, 8);
 ---
 
 <BaseLayout title="Home">
@@ -173,6 +237,41 @@ const topCompanies = Object.entries(byCompany)
       </div>
     </section>
 
+    <!-- Homepage Custom Content -->
+    {homepageContent && (
+      <section class="section homepage-custom-content">
+        <div class="custom-section-container bottom-section">
+          <div class="prose" set:html={homepageContent} />
+        </div>
+      </section>
+    )}
+
+    <!-- Recently Updated -->
+    {recentUpdates.length > 0 && (
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Recently Updated</h2>
+        </div>
+        <div class="updates-grid">
+          {recentUpdates.map(update => (
+            <a href={update.href} class="update-card">
+              <div class="update-meta">
+                <span class={`update-badge ${update.type.toLowerCase()}`}>{update.type}</span>
+                <span class="update-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  {update.dateStr}
+                </span>
+              </div>
+              <h3 class="update-title">{update.title}</h3>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Footer -->
     <footer class="home-footer">
       <p>Built with ❤️ by <a href="https://github.com/Theistic-Guy" target="_blank">@Theistic-Guy</a></p>
@@ -182,6 +281,75 @@ const topCompanies = Object.entries(byCompany)
 </BaseLayout>
 
 <style>
+  .updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .update-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .update-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .update-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .update-badge {
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+  }
+  .update-badge.problem { background: var(--color-primary-bg); color: var(--color-primary); }
+  .update-badge.note { background: rgba(168, 85, 247, 0.1); color: rgb(168, 85, 247); }
+  .update-badge.template { background: rgba(245, 158, 11, 0.1); color: rgb(245, 158, 11); }
+
+  .update-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  .update-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    line-height: var(--leading-tight);
+    margin: 0;
+  }
+
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container :global(.prose > *:first-child) { margin-top: 0; }
+  .custom-section-container :global(.prose > *:last-child) { margin-bottom: 0; }
+
   .home {
     padding-top: var(--navbar-height);
     max-width: 1100px;

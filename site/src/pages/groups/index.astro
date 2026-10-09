@@ -1,0 +1,37 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import { loadProblems, groupByField, slugify } from '../../utils/content';
+
+const problems = loadProblems();
+const byGroup = groupByField(problems, 'groups');
+
+const groups = Object.entries(byGroup)
+  .map(([name, items]) => ({
+    name,
+    slug: slugify(name),
+    count: items.length
+  }))
+  .sort((a, b) => b.count - a.count);
+---
+
+<IndexLayout title="Groups" description="Browse coding problems by curated groups and patterns.">
+  <div class="card-grid">
+    {groups.map(group => (
+      <Card 
+        title={group.name} 
+        href={`/groups/${group.slug}`} 
+        count={group.count}
+        icon="📦"
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

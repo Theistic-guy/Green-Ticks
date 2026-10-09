@@ -24,6 +24,22 @@ export function asList(value: unknown): string[] {
   return [String(value)];
 }
 
+export function validateUpdated(value: unknown, filePath: string): string | undefined {
+  if (!value) return undefined;
+  console.log(`[validateUpdated] Checking ${filePath}:`, value);
+  const str = String(value).trim();
+  if (!/^\d{2}-\d{2}-\d{4}$/.test(str)) {
+    throw new Error(`[Format Error] File ${filePath} has an invalid "updated" format. Expected DD-MM-YYYY but got "${str}".`);
+  }
+  const parts = str.split('-');
+  const dd = parseInt(parts[0], 10);
+  const mm = parseInt(parts[1], 10);
+  if (mm < 1 || mm > 12 || dd < 1 || dd > 31) {
+    throw new Error(`[Format Error] File ${filePath} has an invalid "updated" date. Expected DD-MM-YYYY but got "${str}" (Month must be 1-12, Day must be 1-31).`);
+  }
+  return str;
+}
+
 /**
  * Slugify a string for use in URLs.
  * Matches the Python build_indexes.py slugify() behavior.
@@ -69,6 +85,7 @@ export interface Problem {
   rating: number | null;
   groups: string[];
   rawContent: string;
+  updated?: string;
 }
 
 /**
@@ -86,7 +103,7 @@ export function loadProblems(): Problem[] {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(raw);
 
-    const slug = file.replace(/\.md$/, '');
+    const slug = slugify(file.replace(/\.md$/, ''));
     const ratingRaw = data.Rating;
     let rating: number | null = null;
     if (ratingRaw != null && ratingRaw !== '') {
@@ -108,6 +125,7 @@ export function loadProblems(): Problem[] {
       rating,
       groups: asList(data.Groups),
       rawContent: content,
+      updated: validateUpdated(data.updated, filePath),
     });
   }
 
@@ -122,6 +140,7 @@ export interface MarkdownPage {
   rawContent: string;
   /** Relative path segments for breadcrumbs, e.g. ['Extras', 'Queue patterns'] */
   pathSegments: string[];
+  updated?: string;
 }
 
 /**
@@ -147,17 +166,23 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
         walk(fullPath, [...segments, entry.name]);
       } else if (entry.name.endsWith('.md') && entry.name.toLowerCase() !== 'readme.md') {
         const name = entry.name.replace(/\.md$/, '');
+        if (name === '☑To-Do or Wishlist or Do later list') continue;
+
         const slug = [...segments, name].map(slugify).join('/');
         const title = name.includes('-') && !name.includes(' ')
           ? name.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
           : name;
 
+        const rawText = fs.readFileSync(fullPath, 'utf-8');
+        const { data, content } = matter(rawText);
+
         pages.push({
           slug,
           title,
           filePath: fullPath,
-          rawContent: fs.readFileSync(fullPath, 'utf-8'),
+          rawContent: content,
           pathSegments: [...segments, name],
+          updated: validateUpdated(data.updated, fullPath),
         });
       }
     }
@@ -227,6 +252,43 @@ export function sortDifficulty(a: string, b: string): number {
 }
 
 /**
+ * Compute the co-occurring facets (unique topics, companies, tags, groups)
+ * for a given list of problems. Removes the base dimension value if provided.
+ */
+export function computeFacets(problems: Problem[], baseValue?: string) {
+  const facets = {
+    topics: new Set<string>(),
+    companies: new Set<string>(),
+    otherTags: new Set<string>(),
+    groups: new Set<string>()
+  };
+
+  for (const p of problems) {
+    p.topics.forEach(t => facets.topics.add(t));
+    p.companies.forEach(c => facets.companies.add(c));
+    p.otherTags.forEach(t => facets.otherTags.add(t));
+    p.groups.forEach(g => facets.groups.add(g));
+  }
+
+  // Remove empty/unspecified strings
+  facets.companies.delete('Not Specified');
+  
+  if (baseValue) {
+    facets.topics.delete(baseValue);
+    facets.companies.delete(baseValue);
+    facets.otherTags.delete(baseValue);
+    facets.groups.delete(baseValue);
+  }
+
+  return {
+    topics: Array.from(facets.topics).sort(),
+    companies: Array.from(facets.companies).sort(),
+    otherTags: Array.from(facets.otherTags).sort(),
+    groups: Array.from(facets.groups).sort()
+  };
+}
+
+/**
  * Generate sidebar navigation tree.
  */
 export function getSidebar(): any[] {
@@ -263,27 +325,126 @@ export function getSidebar(): any[] {
       }
     }
     
+    function sortTree(nodes: any[]) {
+      nodes.sort((a, b) => {
+        // Special pinning for "Extras" and "Overview"
+        const getPriority = (label: string) => {
+          if (label === 'Extras') return 1;
+          if (label === 'Overview') return 2;
+          return 99;
+        };
+
+        const priorityA = getPriority(a.label);
+        const priorityB = getPriority(b.label);
+
+        if (priorityA !== priorityB) {
+          return priorityA - priorityB;
+        }
+
+        const aIsFolder = a.children ? 1 : 0;
+        const bIsFolder = b.children ? 1 : 0;
+        if (aIsFolder !== bIsFolder) return bIsFolder - aIsFolder;
+        return a.label.localeCompare(b.label);
+      });
+      for (const node of nodes) {
+        if (node.children) sortTree(node.children);
+      }
+    }
+
+    sortTree(root);
     return root;
   }
 
   return [
     {
       label: 'Explore',
+      icon: 'compass',
       children: [
         { label: 'Problems', href: '/problems', count: problems.length },
         { label: 'Topics', href: '/topics' },
-        { label: 'Companies', href: '/companies' }
+        { label: 'Companies', href: '/companies' },
+        { label: 'Misc Tags', href: '/misc' },
+        { label: 'Groups', href: '/groups' },
       ]
     },
     {
       label: 'Templates',
+      icon: 'file-text',
       href: '/templates',
       children: buildTree(templates, 'templates')
     },
     {
       label: 'Notes',
+      icon: 'book',
       href: '/notes',
       children: buildTree(notes, 'notes')
     }
   ];
+}
+
+import { marked } from 'marked';
+
+/**
+ * Load "Top" or "Bottom" section contents for a given category and slug.
+ * 
+ * Looks in:
+ * 1. assets/{category} Sections/{Position}/*.md  (Global for the category)
+ * 2. assets/{category} Sections/{slug}/{position}.md (Old script individual file)
+ * 3. assets/{category} Sections/{slug}/{Position}/*.md (User's new folder structure)
+ * 
+ * Returns rendered HTML string.
+ */
+export function loadSectionContent(category: string, slug: string, position: 'Top' | 'Bottom'): string {
+  const chunks: string[] = [];
+  const baseDir = path.join(VAULT_ROOT, 'assets', `${category} Sections`);
+  
+  if (!fs.existsSync(baseDir)) return '';
+
+  const isTop = position === 'Top';
+  const fileName = `${position.toLowerCase()}.md`;
+
+  const validateAndRead = (folder: string) => {
+    const folderPath = path.join(baseDir, folder);
+    if (!fs.existsSync(folderPath)) return '';
+
+    // Validate that only top.md, bottom.md, or system files exist in the folder
+    const files = fs.readdirSync(folderPath, { withFileTypes: true });
+    for (const f of files) {
+      if (f.isDirectory()) {
+        throw new Error(`Invalid subdirectory found in ${folderPath}: ${f.name}`);
+      }
+      if (f.name !== 'top.md' && f.name !== 'bottom.md' && f.name !== '.gitkeep' && f.name !== '.DS_Store') {
+        throw new Error(`Invalid file found in custom section ${folderPath}: ${f.name}. Only top.md and bottom.md are allowed.`);
+      }
+    }
+
+    const file = path.join(folderPath, fileName);
+    if (fs.existsSync(file)) {
+      const content = fs.readFileSync(file, 'utf-8').trim();
+      if (content && content.toLowerCase() !== 'placeholder') {
+        return content;
+      }
+    }
+    return '';
+  };
+
+  const allChunk = validateAndRead('All');
+  const slugChunk = validateAndRead(slug);
+
+  // Merge order:
+  // For 'Top': All first, then individual
+  // For 'Bottom': individual first, then All
+  if (isTop) {
+    if (allChunk) chunks.push(allChunk);
+    if (slugChunk) chunks.push(slugChunk);
+  } else {
+    if (slugChunk) chunks.push(slugChunk);
+    if (allChunk) chunks.push(allChunk);
+  }
+
+  if (chunks.length === 0) return '';
+
+  // Render markdown to HTML
+  const rawMarkdown = chunks.join('\n\n---\n\n');
+  return marked.parse(rawMarkdown) as string;
 }

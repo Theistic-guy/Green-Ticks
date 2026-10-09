@@ -7,18 +7,18 @@ import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, 
 
 export async function getStaticPaths() {
   const problems = loadProblems();
-  const byCompany = groupByField(problems, 'companies');
+  const byGroup = groupByField(problems, 'groups');
   
   const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
   const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
   
-  return Object.entries(byCompany).map(([company, items]) => {
+  return Object.entries(byGroup).map(([group, items]) => {
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
-    const slug = slugify(company);
+    const slug = slugify(group);
     
     // Build filter data
     const filterData: FilterData = {
-      baseDimension: { type: 'companies', value: company },
+      baseDimension: { type: 'groups', value: group },
       problems: sortedItems.map(p => ({
         slug: p.slug,
         title: p.title,
@@ -28,37 +28,24 @@ export async function getStaticPaths() {
         otherTags: p.otherTags,
         groups: p.groups
       })),
-      facets: computeFacets(sortedItems, company),
+      facets: computeFacets(sortedItems, group),
       companyLogos
     };
 
-    const topContent = loadSectionContent('Companies', slug, 'Top');
-    const bottomContent = loadSectionContent('Companies', slug, 'Bottom');
+    const topContent = loadSectionContent('Groups', slug, 'Top');
+    const bottomContent = loadSectionContent('Groups', slug, 'Bottom');
 
     return {
       params: { slug },
-      props: { 
-        company, 
-        problems: sortedItems,
-        logoUrl: companyLogos[company],
-        filterData,
-        topContent,
-        bottomContent
-      },
+      props: { group, problems: sortedItems, filterData, topContent, bottomContent },
     };
   });
 }
 
-const { company, problems, logoUrl, filterData, topContent, bottomContent } = Astro.props;
+const { group, problems, filterData, topContent, bottomContent } = Astro.props;
 ---
 
-<IndexLayout title={company} description={`${problems.length} problems asked at ${company}.`}>
-  {logoUrl && (
-    <div class="company-header-logo">
-      <img src={logoUrl} alt={company} width="64" height="64" />
-    </div>
-  )}
-
+<IndexLayout title={group} description={`${problems.length} problems in group "${group}".`}>
   {topContent && (
     <div class="custom-section-container top-section">
       <div class="prose" set:html={topContent} />
@@ -66,7 +53,7 @@ const { company, problems, logoUrl, filterData, topContent, bottomContent } = As
   )}
 
   <FilterBar data={filterData} />
-  <ProblemGroupList problems={problems} />
+  <ProblemGroupList problems={problems} showCompany={true} />
 
   {bottomContent && (
     <div class="custom-section-container bottom-section">
@@ -76,17 +63,6 @@ const { company, problems, logoUrl, filterData, topContent, bottomContent } = As
 </IndexLayout>
 
 <style>
-  .company-header-logo {
-    margin-bottom: var(--space-6);
-  }
-  
-  .company-header-logo img {
-    border-radius: var(--radius-md);
-    background: white;
-    padding: var(--space-1);
-    box-shadow: var(--shadow-sm);
-  }
-
   .custom-section-container {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
@@ -104,11 +80,6 @@ const { company, problems, logoUrl, filterData, topContent, bottomContent } = As
     margin-bottom: var(--space-8);
   }
 
-  /* Ensure the prose inside doesn't have excess margins */
-  .custom-section-container :global(.prose > *:first-child) {
-    margin-top: 0;
-  }
-  .custom-section-container :global(.prose > *:last-child) {
-    margin-bottom: 0;
-  }
+  .custom-section-container :global(.prose > *:first-child) { margin-top: 0; }
+  .custom-section-container :global(.prose > *:last-child) { margin-bottom: 0; }
 </style>

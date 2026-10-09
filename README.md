@@ -6,7 +6,7 @@ updated: 09-10-2026
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
 </h1>
 
-![Static Badge](https://img.shields.io/badge/Problems-137-green?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Problems-134-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/python---?style=for-the-badge&logo=python&color=%23FFFF00)
 
 ---
@@ -16,22 +16,22 @@ updated: 09-10-2026
 
 | Metric | Count |
 |--------|------:|
-| Problems | 137 |
-| Topics | 24 |
+| Problems | 134 |
+| Topics | 23 |
 | Platforms | 3 |
 | Companies | 202 |
 | Difficulty Levels | 4 |
-| Miscellaneous Tags | 52 |
+| Miscellaneous Tags | 50 |
 | Groups | 4 |
-| Templates | 8 |
+| Templates | 9 |
 
 ---
 ### 🧠 By Topics
 <details>
   <summary>Expand</summary>
 
-  - [Arrays (58)](Topics/arrays.md)
-  - [Backtracking (3)](Topics/backtracking.md)
+  - [Arrays (57)](Topics/arrays.md)
+  - [Backtracking (2)](Topics/backtracking.md)
   - [Combinatorics (2)](Topics/combinatorics.md)
   - [Difference Array (1)](Topics/difference-array.md)
   - [Disjoint Set Union (1)](Topics/disjoint-set-union.md)
@@ -62,8 +62,8 @@ updated: 09-10-2026
 <details>
   <summary>Expand</summary>
 
-  - [GFG (10)](Platforms/gfg.md)
-  - [Leetcode (65)](Platforms/leetcode.md)
+  - [GFG (9)](Platforms/gfg.md)
+  - [Leetcode (63)](Platforms/leetcode.md)
   - [Miscellaneous (62)](Platforms/miscellaneous.md)
 </details>
 
@@ -83,7 +83,7 @@ updated: 09-10-2026
   - <img src="https://img.logo.dev/akamai.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Akamai (1)](Companies/akamai.md)
   - [Alation (2)](Companies/alation.md)
   - <img src="https://img.logo.dev/altimetrik.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Altimetrik (2)](Companies/altimetrik.md)
-  - <img src="https://img.logo.dev/amazon.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Amazon (38)](Companies/amazon.md)
+  - <img src="https://img.logo.dev/amazon.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Amazon (36)](Companies/amazon.md)
   - <img src="https://img.logo.dev/amd.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [AMD (1)](Companies/amd.md)
   - <img src="https://img.logo.dev/americanexpress.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [American Express (1)](Companies/american-express.md)
   - <img src="https://img.logo.dev/anduril.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Anduril (3)](Companies/anduril.md)
@@ -96,7 +96,7 @@ updated: 09-10-2026
   - <img src="https://img.logo.dev/barclays.co.uk?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Barclays (2)](Companies/barclays.md)
   - <img src="https://img.logo.dev/bitgo.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [BitGo (3)](Companies/bitgo.md)
   - <img src="https://img.logo.dev/blackrock.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [BlackRock (3)](Companies/blackrock.md)
-  - <img src="https://img.logo.dev/bloomberg.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Bloomberg (23)](Companies/bloomberg.md)
+  - <img src="https://img.logo.dev/bloomberg.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Bloomberg (21)](Companies/bloomberg.md)
   - <img src="https://img.logo.dev/bytedance.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [ByteDance (6)](Companies/bytedance.md)
   - <img src="https://img.logo.dev/cadence.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Cadence (1)](Companies/cadence.md)
   - <img src="https://img.logo.dev/canonical.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Canonical (1)](Companies/canonical.md)
@@ -137,8 +137,8 @@ updated: 09-10-2026
   - <img src="https://img.logo.dev/freshworks.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [FreshWorks (1)](Companies/freshworks.md)
   - <img src="https://img.logo.dev/garmin.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Garmin (1)](Companies/garmin.md)
   - <img src="https://img.logo.dev/godaddy.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [GoDaddy (1)](Companies/godaddy.md)
-  - <img src="https://img.logo.dev/goldmansachs.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Goldman Sachs (17)](Companies/goldman-sachs.md)
-  - <img src="https://img.logo.dev/google.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Google (38)](Companies/google.md)
+  - <img src="https://img.logo.dev/goldmansachs.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Goldman Sachs (16)](Companies/goldman-sachs.md)
+  - <img src="https://img.logo.dev/google.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Google (36)](Companies/google.md)
   - <img src="https://img.logo.dev/grab.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Grab (3)](Companies/grab.md)
   - <img src="https://img.logo.dev/grammarly.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Grammarly (2)](Companies/grammarly.md)
   - <img src="https://img.logo.dev/hashedin.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [HashedIn (2)](Companies/hashedin.md)
@@ -148,11 +148,11 @@ updated: 09-10-2026
   - <img src="https://img.logo.dev/hp.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [HP (1)](Companies/hp.md)
   - <img src="https://img.logo.dev/huawei.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Huawei (4)](Companies/huawei.md)
   - <img src="https://img.logo.dev/hubspot.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Hubspot (1)](Companies/hubspot.md)
-  - <img src="https://img.logo.dev/ibm.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [IBM (9)](Companies/ibm.md)
+  - <img src="https://img.logo.dev/ibm.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [IBM (7)](Companies/ibm.md)
   - <img src="https://img.logo.dev/imc.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [IMC (2)](Companies/imc.md)
   - [Increff (1)](Companies/increff.md)
   - <img src="https://img.logo.dev/informatica.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Informatica (1)](Companies/informatica.md)
-  - <img src="https://img.logo.dev/infosys.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Infosys (10)](Companies/infosys.md)
+  - <img src="https://img.logo.dev/infosys.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Infosys (8)](Companies/infosys.md)
   - <img src="https://img.logo.dev/inmobi.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [InMobi (1)](Companies/inmobi.md)
   - <img src="https://img.logo.dev/intel.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Intel (4)](Companies/intel.md)
   - <img src="https://img.logo.dev/intuit.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Intuit (5)](Companies/intuit.md)
@@ -171,8 +171,8 @@ updated: 09-10-2026
   - <img src="https://img.logo.dev/mastercard.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Mastercard (4)](Companies/mastercard.md)
   - <img src="https://img.logo.dev/mathworks.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [MathWorks (1)](Companies/mathworks.md)
   - <img src="https://img.logo.dev/media.net?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Media.net (1)](Companies/medianet.md)
-  - <img src="https://img.logo.dev/meta.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Meta (25)](Companies/meta.md)
-  - <img src="https://img.logo.dev/microsoft.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Microsoft (28)](Companies/microsoft.md)
+  - <img src="https://img.logo.dev/meta.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Meta (23)](Companies/meta.md)
+  - <img src="https://img.logo.dev/microsoft.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Microsoft (26)](Companies/microsoft.md)
   - <img src="https://img.logo.dev/microstrategy.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Microstrategy (1)](Companies/microstrategy.md)
   - <img src="https://img.logo.dev/mlp.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Millennium (1)](Companies/millennium.md)
   - <img src="https://img.logo.dev/mindtickle.com?token=pk_cwa5LeR3RiifmBSonSReKw" width="16" height="16" align="absmiddle" style="margin-right: 5px;" /> [Mindtickle (1)](Companies/mindtickle.md)
@@ -283,9 +283,9 @@ updated: 09-10-2026
 <details>
   <summary>Expand</summary>
 
-  - [Easy (32)](Difficulty/easy.md)
-  - [Medium (54)](Difficulty/medium.md)
-  - [Hard (48)](Difficulty/hard.md)
+  - [Easy (31)](Difficulty/easy.md)
+  - [Medium (53)](Difficulty/medium.md)
+  - [Hard (47)](Difficulty/hard.md)
   - [Not Specified (3)](Difficulty/not-specified.md)
 </details>
 
@@ -296,7 +296,7 @@ updated: 09-10-2026
   <summary>Expand</summary>
 
   - [5 Stars (17)](Rating/5-stars.md)
-  - [4 Stars (17)](Rating/4-stars.md)
+  - [4 Stars (15)](Rating/4-stars.md)
   - [3 Stars (6)](Rating/3-stars.md)
   - [Not Rated (97)](Rating/not-rated.md)
 </details>
@@ -382,6 +382,7 @@ updated: 09-10-2026
   - [2-Way-Partitioning](Templates/2-Way-Partitioning.md)
   - [Binary Search on Odd and Even range](Templates/Binary%20Search%20on%20Odd%20and%20Even%20range.md)
   - [Cyclic-sort-and-placement](Templates/Cyclic-sort-and-placement.md)
+  - [DSU - Disjoint Set Union](Templates/DSU%20-%20Disjoint%20Set%20Union.md)
   - [Factorials and Inverse Factorials Calc.](Templates/Factorials%20and%20Inverse%20Factorials%20Calc..md)
   - [Heap-Lazy-Deletion-(Decrease-Key)](Templates/Heap-Lazy-Deletion-%28Decrease-Key%29.md)
   - [KMP-string-matching](Templates/KMP-string-matching.md)

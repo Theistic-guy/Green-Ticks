@@ -1,45 +1,96 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
-import Card from '../../components/Card.astro';
-import { loadProblems, groupByField, slugify, sortDifficulty } from '../../utils/content';
+import ProblemGroupList from '../../components/ProblemGroupList.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import type { FilterData } from '../../components/FilterBar.astro';
+import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
 
 export async function getStaticPaths() {
   const problems = loadProblems();
   const byTopic = groupByField(problems, 'topics');
   
+  const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+  const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+  
   return Object.entries(byTopic).map(([topic, items]) => {
-    // Sort problems within the topic by difficulty
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    const slug = slugify(topic);
     
+    // Build filter data
+    const filterData: FilterData = {
+      baseDimension: { type: 'topics', value: topic },
+      problems: sortedItems.map(p => ({
+        slug: p.slug,
+        title: p.title,
+        difficulty: p.difficulty,
+        topics: p.topics,
+        companies: p.companies,
+        otherTags: p.otherTags,
+        groups: p.groups
+      })),
+      facets: computeFacets(sortedItems, topic),
+      companyLogos
+    };
+
+    const topContent = loadSectionContent('Topics', slug, 'Top');
+    const bottomContent = loadSectionContent('Topics', slug, 'Bottom');
+
     return {
-      params: { slug: slugify(topic) },
+      params: { slug },
       props: { 
         topic, 
-        problems: sortedItems 
+        problems: sortedItems,
+        filterData,
+        topContent,
+        bottomContent
       },
     };
   });
 }
 
-const { topic, problems } = Astro.props;
+const { topic, problems, filterData, topContent, bottomContent } = Astro.props;
 ---
 
 <IndexLayout title={topic} description={`${problems.length} problems tagged with ${topic}.`}>
-  <div class="card-grid">
-    {problems.map(p => (
-      <Card 
-        title={p.title} 
-        href={`/problems/${p.slug}`} 
-        description={`${p.difficulty} • ${p.companies.slice(0, 3).join(', ')}${p.companies.length > 3 ? '...' : ''}`} 
-      />
-    ))}
-  </div>
+  {topContent && (
+    <div class="custom-section-container top-section">
+      <div class="prose" set:html={topContent} />
+    </div>
+  )}
+
+  <FilterBar data={filterData} />
+  <ProblemGroupList problems={problems} showCompany={true} />
+
+  {bottomContent && (
+    <div class="custom-section-container bottom-section">
+      <div class="prose" set:html={bottomContent} />
+    </div>
+  )}
 </IndexLayout>
 
 <style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-4);
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container.top-section {
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container.bottom-section {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  /* Ensure the prose inside doesn't have excess margins */
+  .custom-section-container :global(.prose > *:first-child) {
+    margin-top: 0;
+  }
+  .custom-section-container :global(.prose > *:last-child) {
+    margin-bottom: 0;
   }
 </style>

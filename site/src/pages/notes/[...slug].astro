@@ -19,13 +19,14 @@ export async function getStaticPaths() {
 }
 
 const { entry, parts } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 // Extract title from frontmatter or filename
 const fileName = parts[parts.length - 1];
 const title = entry.data?.Title || fileName.replace(/-/g, ' ');
+const updated = entry.data?.updated ? String(entry.data.updated) : undefined;
 ---
 
-<NoteLayout title={title} pathSegments={parts}>
+<NoteLayout title={title} pathSegments={parts} headings={headings} updated={updated}>
   <Content />
 </NoteLayout>

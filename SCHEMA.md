@@ -53,6 +53,7 @@ Optional keys:
 - `Other Tags`
 - `Rating` (1-5)
 - `Groups` (list of group names, e.g. "Blind 75", "Top Interview 150")
+- `updated` (Must be exactly in `DD-MM-YYYY` format, e.g., `31-12-2024`. Also applicable for Notes and Templates)
 
 ## Validation rules
 
@@ -100,6 +101,46 @@ Every Markdown file inside `Templates/` is automatically linked in the generated
 
 No frontmatter is required for template files.
 
+## Custom Top and Bottom Sections
+
+You can inject custom Markdown content at the top or bottom of index pages (Topics, Companies, etc.) by placing files in the `assets/` directory.
+
+### Slugification Rules (Folder Naming)
+To match a metadata value (like a Topic or Company) to its folder in `assets/`, the value is converted to a "slug" using these exact rules:
+1. Converted to entirely lowercase.
+2. All special characters (like `+`, `#`, `.`, `!`, `()`) are completely removed.
+3. Spaces and underscores are replaced with hyphens (`-`).
+4. Multiple consecutive hyphens are compressed into a single hyphen.
+5. Leading and trailing hyphens are trimmed.
+
+**Examples:**
+- `Sliding Window` ➡️ `sliding-window`
+- `C++ STL` ➡️ `c-stl`
+- `Depth-First Search (DFS)` ➡️ `depth-first-search-dfs`
+
+### Section Injection Structure
+There are 7 main category folders in `assets/`:
+- `Companies Sections/`
+- `Difficulty Sections/`
+- `Groups Sections/`
+- `Miscellaneous Tags Sections/`
+- `Platforms Sections/`
+- `Rating Sections/`
+- `Topics Sections/`
+
+Inside each of these folders, you must create a subdirectory that matches either:
+1. `All/` (applies to every single page in this category)
+2. `<slug>/` (applies to a specific page, mapping exactly to its generated filename, e.g., `amazon/`, `morgan-stanley/`, `3-stars/`)
+
+**Crucial Rules:**
+- Inside `All/` or `<slug>/`, **the ONLY permitted files are exactly `top.md` and/or `bottom.md`.**
+- Subdirectories inside these folders, or differently named files (e.g. `notes.txt`), will **crash the build process** to prevent file littering.
+
+**Ordering & Encapsulation:**
+- **Top Content:** The content from `All/top.md` is rendered *first*, immediately followed by `<slug>/top.md`.
+- **Bottom Content:** The content from `<slug>/bottom.md` is rendered *first*, immediately followed by `All/bottom.md`.
+
+This content is automatically rendered by both the Astro website build and the Python `build_indexes.py` script.
 ## Maintenance rules
 
 - Keep metadata consistent.

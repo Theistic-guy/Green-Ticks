@@ -3,15 +3,18 @@ import BaseLayout from './BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 import { getSidebar } from '../utils/content';
 
 interface Props {
   title: string;
   pathSegments?: string[];
+  headings?: any[];
+  updated?: string;
 }
 
-const { title, pathSegments = [] } = Astro.props;
+const { title, pathSegments = [], headings = [], updated } = Astro.props;
 
 const sidebarSections = getSidebar();
 
@@ -25,17 +28,52 @@ const currentPath = Astro.url.pathname;
     
     <main class="content-area">
       <article class="prose note-article">
+        <button onclick="history.length > 1 ? history.back() : (window.location.href='/notes')" class="back-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back
+        </button>
         {pathSegments.length > 0 && <Breadcrumbs segments={pathSegments} />}
         
+        {updated && (
+          <div class="updated-bar">
+            <span class="updated-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Updated {updated}
+            </span>
+          </div>
+        )}
+
         <div class="markdown-content">
           <slot />
         </div>
       </article>
     </main>
+    
+    <TableOfContents headings={headings} />
   </div>
 </BaseLayout>
 
 <style>
+  .updated-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
+  }
+
+  .updated-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
+  }
+
   .layout-container {
     display: flex;
     min-height: 100vh;
@@ -46,8 +84,21 @@ const currentPath = Astro.url.pathname;
     flex: 1;
     margin-left: var(--sidebar-width);
     padding: var(--space-8) var(--space-6) var(--space-16);
-    max-width: 1000px;
-    margin-right: auto;
+    /* Calculate max-width by subtracting sidebar and toc (if visible) */
+    max-width: calc(100% - var(--sidebar-width) - var(--toc-width));
+  }
+
+  @media (max-width: 1200px) {
+    .content-area {
+      max-width: calc(100% - var(--sidebar-width));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      margin-left: 0;
+      max-width: 100%;
+    }
   }
 
   .note-article {
