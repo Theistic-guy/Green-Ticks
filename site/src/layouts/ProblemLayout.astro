@@ -55,6 +55,18 @@ const hasRating = problem.rating != null && problem.rating > 0;
               </div>
             )}
 
+            <div style="flex-grow: 1;"></div>
+
+            {problem.updated && (
+              <span class="updated-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Updated {problem.updated}
+              </span>
+            )}
+
             {problem.link && (
               <a href={problem.link} target="_blank" rel="noopener noreferrer" class="external-link">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -204,12 +216,20 @@ const hasRating = problem.rating != null && problem.rating > 0;
     font-size: var(--text-sm);
     line-height: 1;
   }
+  
+  .updated-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-tertiary);
+  }
 
   .external-link {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    margin-left: auto;
     font-size: var(--text-xs);
     font-weight: var(--font-weight-medium);
     color: var(--color-text-secondary);

@@ -24,6 +24,22 @@ export function asList(value: unknown): string[] {
   return [String(value)];
 }
 
+export function validateUpdated(value: unknown, filePath: string): string | undefined {
+  if (!value) return undefined;
+  console.log(`[validateUpdated] Checking ${filePath}:`, value);
+  const str = String(value).trim();
+  if (!/^\d{2}-\d{2}-\d{4}$/.test(str)) {
+    throw new Error(`[Format Error] File ${filePath} has an invalid "updated" format. Expected DD-MM-YYYY but got "${str}".`);
+  }
+  const parts = str.split('-');
+  const dd = parseInt(parts[0], 10);
+  const mm = parseInt(parts[1], 10);
+  if (mm < 1 || mm > 12 || dd < 1 || dd > 31) {
+    throw new Error(`[Format Error] File ${filePath} has an invalid "updated" date. Expected DD-MM-YYYY but got "${str}" (Month must be 1-12, Day must be 1-31).`);
+  }
+  return str;
+}
+
 /**
  * Slugify a string for use in URLs.
  * Matches the Python build_indexes.py slugify() behavior.
@@ -69,6 +85,7 @@ export interface Problem {
   rating: number | null;
   groups: string[];
   rawContent: string;
+  updated?: string;
 }
 
 /**
@@ -108,6 +125,7 @@ export function loadProblems(): Problem[] {
       rating,
       groups: asList(data.Groups),
       rawContent: content,
+      updated: validateUpdated(data.updated, filePath),
     });
   }
 
@@ -122,6 +140,7 @@ export interface MarkdownPage {
   rawContent: string;
   /** Relative path segments for breadcrumbs, e.g. ['Extras', 'Queue patterns'] */
   pathSegments: string[];
+  updated?: string;
 }
 
 /**
@@ -154,12 +173,16 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
           ? name.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
           : name;
 
+        const rawText = fs.readFileSync(fullPath, 'utf-8');
+        const { data, content } = matter(rawText);
+
         pages.push({
           slug,
           title,
           filePath: fullPath,
-          rawContent: fs.readFileSync(fullPath, 'utf-8'),
+          rawContent: content,
           pathSegments: [...segments, name],
+          updated: validateUpdated(data.updated, fullPath),
         });
       }
     }

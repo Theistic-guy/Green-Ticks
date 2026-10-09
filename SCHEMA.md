@@ -53,6 +53,7 @@ Optional keys:
 - `Other Tags`
 - `Rating` (1-5)
 - `Groups` (list of group names, e.g. "Blind 75", "Top Interview 150")
+- `updated` (Must be exactly in `DD-MM-YYYY` format, e.g., `31-12-2024`. Also applicable for Notes and Templates)
 
 ## Validation rules
 
