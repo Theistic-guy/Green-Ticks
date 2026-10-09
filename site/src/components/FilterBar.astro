@@ -37,9 +37,16 @@ const { data } = Astro.props;
       <button class="filter-btn" id="btn-tags">Tags ▾</button>
       <button class="filter-btn" id="btn-sort">Sort ▾</button>
     </div>
-    
-    <div class="filter-status">
-      <span id="filter-count">Showing {data.problems.length} of {data.problems.length}</span>
+
+    <div class="in-page-search-wrapper">
+      <div class="in-page-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="in-page-search-input" placeholder="Filter by title..." />
+        <button id="in-page-search-clear" class="search-clear-btn" style="display: none;">✕</button>
+      </div>
+      <div class="filter-status">
+        <span id="filter-count">Showing {data.problems.length} of {data.problems.length}</span>
+      </div>
     </div>
   </div>
 
@@ -177,6 +184,64 @@ const { data } = Astro.props;
   .filter-status {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
+    text-align: right;
+  }
+
+  .in-page-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+  }
+
+  .in-page-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .in-page-search:focus-within {
+    border-color: var(--color-primary);
+  }
+
+  .search-icon {
+    margin-left: var(--space-2);
+    color: var(--color-text-tertiary);
+  }
+
+  .in-page-search input {
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+    outline: none;
+    width: 200px;
+  }
+
+  .in-page-search input::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .search-clear-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    padding: 0 var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+  }
+
+  .search-clear-btn:hover {
+    color: var(--color-text-primary);
   }
 
   .active-filters {

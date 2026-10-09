@@ -176,6 +176,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Text search filter
+  const searchInput = document.getElementById('in-page-search-input');
+  const searchClearBtn = document.getElementById('in-page-search-clear');
+  let currentSearchQuery = '';
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearchQuery = e.target.value.toLowerCase().trim();
+      searchClearBtn.style.display = currentSearchQuery.length > 0 ? 'inline-block' : 'none';
+      applyFiltersAndSort();
+    });
+  }
+
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      currentSearchQuery = '';
+      searchClearBtn.style.display = 'none';
+      searchInput.focus();
+      applyFiltersAndSort();
+    });
+  }
+
   // Filter and Sort Logic
   function applyFiltersAndSort() {
     // 1. Filter
@@ -183,9 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     data.problems.forEach(p => {
       let matches = true;
+
+      // Text search
+      if (currentSearchQuery && !p.title.toLowerCase().includes(currentSearchQuery)) {
+        matches = false;
+      }
       
       // AND across categories. OR within category (handled by checking if intersection > 0)
-      if (activeFilters.topics.size > 0) {
+      if (matches && activeFilters.topics.size > 0) {
         const intersection = p.topics.filter(x => activeFilters.topics.has(x));
         if (intersection.length === 0) matches = false;
       }
@@ -213,11 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = Array.from(document.querySelectorAll('.difficulty-section'));
     let sortedProblems = [...data.problems].filter(p => matchedSlugs.has(p.slug));
     
-    // Default order is what's already in the DOM (grouped by difficulty).
-    // If not default sort, we might need to break difficulty groupings. 
-    // Actually, sorting inside difficulty groups is easier, but user might expect global sort.
-    // Given the DOM structure (grouped in details), we can just sort the elements WITHIN each details grid.
-    
     sections.forEach(section => {
       const grid = section.querySelector('.card-grid');
       if (!grid) return;
@@ -235,10 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentSort === 'title-asc') return probA.title.localeCompare(probB.title);
         if (currentSort === 'title-desc') return probB.title.localeCompare(probA.title);
         
-        // Difficulty sorts usually apply globally, but since we are bounded by sections, 
-        // diff sorting within a single diff section is a no-op. 
-        // A true global sort requires flattening the DOM, which breaks the details/summary.
-        // For simplicity, we just sort by title within sections if requested.
         return 0;
       });
 
