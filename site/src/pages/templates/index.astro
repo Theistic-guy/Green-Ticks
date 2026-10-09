@@ -1,6 +1,7 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
+import ListSearch from '../../components/ListSearch.astro';
 import { getCollection } from 'astro:content';
 import { slugify } from '../../utils/content';
 
@@ -16,6 +17,7 @@ const templateItems = templates.map(temp => {
 ---
 
 <IndexLayout title="Templates" description="Reusable algorithm templates and patterns.">
+  <ListSearch placeholder="Search templates..." />
   <div class="card-grid">
     {templateItems.map(item => (
       <Card 

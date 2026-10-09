@@ -1,6 +1,7 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
+import ListSearch from '../../components/ListSearch.astro';
 import { loadProblems, groupByField, slugify } from '../../utils/content';
 
 const problems = loadProblems();
@@ -16,6 +17,7 @@ const groups = Object.entries(byGroup)
 ---
 
 <IndexLayout title="Groups" description="Browse coding problems by curated groups and patterns.">
+  <ListSearch placeholder="Search groups..." />
   <div class="card-grid">
     {groups.map(group => (
       <Card 

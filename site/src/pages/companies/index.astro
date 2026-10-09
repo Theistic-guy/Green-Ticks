@@ -1,6 +1,7 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
+import ListSearch from '../../components/ListSearch.astro';
 import { loadProblems, loadCompanyLogos, groupByField, slugify } from '../../utils/content';
 
 const problems = loadProblems();
@@ -20,6 +21,7 @@ const companies = Object.entries(byCompany)
 ---
 
 <IndexLayout title="Companies" description="Problems grouped by the companies that ask them.">
+  <ListSearch placeholder="Search companies..." />
   <div class="card-grid">
     {companies.map(company => (
       <Card 

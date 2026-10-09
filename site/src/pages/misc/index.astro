@@ -1,6 +1,7 @@
 ---
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
+import ListSearch from '../../components/ListSearch.astro';
 import { loadProblems, groupByField, slugify } from '../../utils/content';
 
 const problems = loadProblems();
@@ -16,6 +17,7 @@ const tags = Object.entries(byTag)
 ---
 
 <IndexLayout title="Misc Tags" description="Browse coding problems by miscellaneous tags and patterns.">
+  <ListSearch placeholder="Search tags..." />
   <div class="card-grid">
     {tags.map(tag => (
       <Card 
