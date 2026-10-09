@@ -43,7 +43,7 @@ function initVaultFiles(vaultRoot) {
 /**
  * Converts an absolute system path of a markdown file into its final Astro URL.
  */
-function getSiteUrlForPath(absolutePath, vaultRoot) {
+export function getSiteUrlForPath(absolutePath, vaultRoot) {
   // Get relative path from vault root (e.g., "Problems\two-sum.md" or "Notes\Algorithms\binary-search.md")
   const relPath = path.relative(vaultRoot, absolutePath);
   
