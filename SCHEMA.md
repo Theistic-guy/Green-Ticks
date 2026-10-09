@@ -1,3 +1,6 @@
+---
+updated: 09-10-2026
+---
 # Green-Ticks Schema
 
 ## Source of truth

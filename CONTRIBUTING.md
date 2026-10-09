@@ -1,3 +1,6 @@
+---
+updated: 09-10-2026
+---
 # Contributing to Green-Ticks
 
 Thank you for your interest in contributing!
