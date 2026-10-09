@@ -11,7 +11,8 @@ const notes = await getCollection('notes');
 const noteItems = notes.map(note => {
   const parts = note.id.split('/');
   const slug = parts.map(slugify).join('/');
-  const title = note.data.Title || parts[parts.length - 1];
+  const rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
+  const title = note.data.Title || rawFileName;
   const folder = parts.length > 1 ? parts[0] : '';
   
   return { title, slug, folder };

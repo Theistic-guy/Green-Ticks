@@ -10,7 +10,17 @@ const templates = await getCollection('templates');
 const templateItems = templates.map(temp => {
   const parts = temp.id.split('/');
   const slug = parts.map(slugify).join('/');
-  const title = temp.data.Title || parts[parts.length - 1];
+  // In Astro v5 with loaders, `id` might be slugified/extensionless.
+  // We use filePath to get the exact original filename if available.
+  let rawFileName = temp.id;
+  if (temp.filePath) {
+    const segments = temp.filePath.split(/[/\\]/);
+    rawFileName = segments[segments.length - 1].replace(/\.md$/, '');
+  } else {
+    rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
+  }
+  
+  const title = temp.data.Title || rawFileName;
   
   return { title, slug };
 }).sort((a, b) => a.title.localeCompare(b.title));

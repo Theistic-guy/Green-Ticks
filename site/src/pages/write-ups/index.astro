@@ -11,7 +11,8 @@ const writeUps = await getCollection('write-ups');
 const writeUpItems = writeUps.map(writeUp => {
   const parts = writeUp.id.split('/');
   const slug = parts.map(slugify).join('/');
-  const title = writeUp.data.Title || parts[parts.length - 1];
+  const rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
+  const title = writeUp.data.Title || rawFileName;
   const folder = parts.length > 1 ? parts[0] : '';
   
   return { title, slug, folder };
