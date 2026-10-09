@@ -139,5 +139,34 @@ const tocHeadings = headings.filter(h => h.depth >= 2 && h.depth <= 4);
     document.querySelectorAll('h2, h3, h4').forEach((heading) => {
       observer.observe(heading);
     });
+
+    // --- Dynamic Collapsible Module TOC Logic ---
+    function updateTocVisibility() {
+      document.querySelectorAll('.toc-item a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href.startsWith('#')) return;
+        
+        const id = href.substring(1);
+        const targetElement = document.getElementById(id);
+        
+        if (targetElement) {
+          // If the heading is literally inside a details tag that is closed, hide its TOC item
+          const detailsParent = targetElement.closest('details.collapsible-module');
+          if (detailsParent && !detailsParent.open) {
+            a.parentElement.style.display = 'none';
+          } else {
+            a.parentElement.style.display = '';
+          }
+        }
+      });
+    }
+
+    // Run initially
+    updateTocVisibility();
+
+    // Listen to all details toggle events
+    document.querySelectorAll('details.collapsible-module').forEach(details => {
+      details.addEventListener('toggle', updateTocVisibility);
+    });
   });
 </script>

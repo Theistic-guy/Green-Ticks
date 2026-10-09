@@ -311,3 +311,77 @@ hr {
   line-height: 1.2;
   margin: 0 0.1em;
 }
+
+/* --- Collapsible Modules --- */
+.collapsible-module {
+  margin: var(--space-8) 0;
+  width: 100%;
+}
+
+.collapsible-module > summary {
+  list-style: none; /* Remove default arrow */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-4);
+  transition: border-color var(--transition-fast);
+}
+
+.collapsible-module > summary::-webkit-details-marker {
+  display: none; /* For Safari */
+}
+
+.collapsible-module > summary:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+.collapsible-title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary, #3b82f6);
+}
+
+/* Heading levels scaling */
+.collapsible-header.level-1 .collapsible-title { font-size: var(--text-3xl); font-weight: var(--font-weight-bold); }
+.collapsible-header.level-2 .collapsible-title { font-size: var(--text-2xl); font-weight: var(--font-weight-bold); }
+.collapsible-header.level-3 .collapsible-title { font-size: var(--text-xl); }
+.collapsible-header.level-4 .collapsible-title { font-size: var(--text-lg); }
+.collapsible-header.level-5 .collapsible-title { font-size: var(--text-base); }
+.collapsible-header.level-6 .collapsible-title { font-size: var(--text-sm); }
+
+/* The +/- toggle icon */
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary, #3b82f6);
+  color: var(--color-primary, #3b82f6);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  transition: all var(--transition-fast);
+}
+
+.toggle-icon::before {
+  content: '+';
+  transform: translateY(-1px);
+}
+
+.collapsible-module[open] > summary .toggle-icon::before {
+  content: '−'; /* Minus sign */
+}
+
+.collapsible-content {
+  padding: 0 var(--space-2);
+  animation: details-show 0.3s ease-out;
+}
+
+@keyframes details-show {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

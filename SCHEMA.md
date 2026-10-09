@@ -145,6 +145,21 @@ Inside each of these folders, you must create a subdirectory that matches either
 - **Bottom Content:** The content from `<slug>/bottom.md` is rendered *first*, immediately followed by `All/bottom.md`.
 
 This content is automatically rendered by both the Astro website build and the Python `build_indexes.py` script.
+
+## Collapsible Modules
+
+You can create reusable, interactively collapsible sections by storing Markdown files inside `assets/Collapsible Modules/`.
+
+A collapsible module requires the following frontmatter:
+- `Title`: The display name of the section (rendered next to the +/- toggle).
+- `Heading Level` (1-6): Determines the visual size and boldness of the title.
+
+**Usage:**
+In any note or problem file, insert the module using standard wiki link syntax:
+`[[Module Name]]`
+
+The Astro build intercepts this link, parses the target `.md` file (including inner formatting, code blocks, or nested carousels), and renders it inline as an accessible `<details>` block. The module title automatically appears in the Table of Contents, and its subheadings dynamically hide/show in the TOC based on the toggle state.
+
 ## Maintenance rules
 
 - Keep metadata consistent.

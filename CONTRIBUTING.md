@@ -66,6 +66,24 @@ Difficulty: Easy
 
 Must be one of: `Easy`, `Medium`, `Hard`, `Not Specified`
 
+## Assets & Special Mechanics
+
+You can utilize special formatting mechanics by linking to specific Markdown files stored inside the `assets/` directory.
+
+### 1. Collapsible Modules
+To create a reusable, interactive collapsible section, create a `.md` file inside `assets/Collapsible Modules/`.
+- Required frontmatter: `Title` and `Heading Level` (1-6).
+- **Usage:** In any note, insert `[[Module Name]]`. The build will automatically embed the content as a collapsible `<details>` section, adding the title to the Table of Contents dynamically.
+
+### 2. Carousels
+To render interactive swipeable carousels:
+- Create Carousel Containers inside `assets/Carousels/Carousel Containers/` (Requires `Cards` list frontmatter).
+- Create Carousel Cards inside `assets/Carousels/Carousel Cards/`.
+- **Usage:** In any note, insert `[[Container Name]]`. The build will parse the cards and generate a native `<green-carousel>` Web Component.
+
+### 3. Custom Category Sections
+You can inject custom Markdown at the top or bottom of auto-generated index pages (like the "Amazon" companies page) by creating specifically named `top.md` or `bottom.md` files inside `assets/<Category> Sections/<slug>/`. See `SCHEMA.md` for strict directory rules.
+
 ## What Gets Auto-Generated
 
 The following files and folders are **auto-generated** and should **not** be edited manually:
