@@ -1,6 +1,3 @@
----
-updated: 09-10-2026
----
 <h1>
   Green-Ticks
   <img src="assets/Accepted.gif" alt="Accepted" width="40" />
