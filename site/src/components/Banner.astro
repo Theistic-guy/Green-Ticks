@@ -77,18 +77,20 @@ if (fs.existsSync(bannerPath)) {
   </style>
 
   <script is:inline>
-    const banner = document.getElementById('home-banner');
-    const closeBtn = document.getElementById('close-banner');
-    
-    if (banner) {
-      if (sessionStorage.getItem('home-banner-closed') === 'true') {
-        banner.style.display = 'none';
-      }
+    {
+      const banner = document.getElementById('home-banner');
+      const closeBtn = document.getElementById('close-banner');
+      
+      if (banner) {
+        if (sessionStorage.getItem('home-banner-closed') === 'true') {
+          banner.style.display = 'none';
+        }
 
-      closeBtn.addEventListener('click', () => {
-        banner.style.display = 'none';
-        sessionStorage.setItem('home-banner-closed', 'true');
-      });
+        closeBtn.addEventListener('click', () => {
+          banner.style.display = 'none';
+          sessionStorage.setItem('home-banner-closed', 'true');
+        });
+      }
     }
   </script>
 )}

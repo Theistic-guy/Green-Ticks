@@ -272,29 +272,31 @@ import AuthorCard from './AuthorCard.astro';
   });
 
   // Modal logic
-  const modal = document.getElementById('author-modal');
-  const openBtn = document.getElementById('open-author-modal');
-  const closeBtn = document.getElementById('close-author-modal');
+  {
+    const modal = document.getElementById('author-modal');
+    const openBtn = document.getElementById('open-author-modal');
+    const closeBtn = document.getElementById('close-author-modal');
 
-  if (modal && openBtn) {
-    openBtn.addEventListener('click', () => modal.showModal());
-    closeBtn.addEventListener('click', () => modal.close());
-    
-    // Close on backdrop click
-    modal.addEventListener('click', (e) => {
-      const rect = modal.getBoundingClientRect();
-      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
-        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-      if (!isInDialog) {
-        modal.close();
-      }
-    });
-    
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.open) {
-        modal.close();
-      }
-    });
+    if (modal && openBtn) {
+      openBtn.addEventListener('click', () => modal.showModal());
+      closeBtn.addEventListener('click', () => modal.close());
+      
+      // Close on backdrop click
+      modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+          modal.close();
+        }
+      });
+      
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.open) {
+          modal.close();
+        }
+      });
+    }
   }
 </script>
