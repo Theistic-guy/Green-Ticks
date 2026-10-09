@@ -1,1 +1,0 @@
-See : [__lt__ dunder and cmp_to_key (tricks)](../Templates/__lt__%20dunder%20and%20cmp_to_key%20(tricks).md)
