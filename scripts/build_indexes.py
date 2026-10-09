@@ -29,16 +29,17 @@ LOGO_SIZE_HEADING = 32
 PROBLEMS_DIR = ROOT / "Problems"
 README_FILE = ROOT / "README.md"
 template_dir = ROOT / "Templates"
-README_SECTIONS_DIR = ROOT / "assets" / "ReadMe Sections"
+ASSETS_APPEND_DIR = ASSETS_DIR / "Append Sections"
+README_SECTIONS_DIR = ASSETS_APPEND_DIR / "ReadMe Sections"
 
 CATEGORY_SECTIONS_DIRS: dict[str, Path] = {
-    "Topics":             ASSETS_DIR / "Topics Sections",
-    "Platforms":          ASSETS_DIR / "Platforms Sections",
-    "Companies":          ASSETS_DIR / "Companies Sections",
-    "Difficulty":         ASSETS_DIR / "Difficulty Sections",
-    "Miscellaneous Tags": ASSETS_DIR / "Miscellaneous Tags Sections",
-    "Rating":             ASSETS_DIR / "Rating Sections",
-    "Groups":             ASSETS_DIR / "Groups Sections",
+    "Topics":             ASSETS_APPEND_DIR / "Topics Sections",
+    "Platforms":          ASSETS_APPEND_DIR / "Platforms Sections",
+    "Companies":          ASSETS_APPEND_DIR / "Companies Sections",
+    "Difficulty":         ASSETS_APPEND_DIR / "Difficulty Sections",
+    "Miscellaneous Tags": ASSETS_APPEND_DIR / "Miscellaneous Tags Sections",
+    "Rating":             ASSETS_APPEND_DIR / "Rating Sections",
+    "Groups":             ASSETS_APPEND_DIR / "Groups Sections",
 }
 
 template_files = []

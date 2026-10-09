@@ -123,7 +123,7 @@ To match a metadata value (like a Topic or Company) to its folder in `assets/`, 
 - `Depth-First Search (DFS)` ➡️ `depth-first-search-dfs`
 
 ### Section Injection Structure
-There are 7 main category folders in `assets/`:
+There are 7 main category folders in `assets/Append Sections/`:
 - `Companies Sections/`
 - `Difficulty Sections/`
 - `Groups Sections/`

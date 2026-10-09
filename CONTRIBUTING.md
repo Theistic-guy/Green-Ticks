@@ -82,7 +82,7 @@ To render interactive swipeable carousels:
 - **Usage:** In any note, insert `[[Container Name]]`. The build will parse the cards and generate a native `<green-carousel>` Web Component.
 
 ### 3. Custom Category Sections
-You can inject custom Markdown at the top or bottom of auto-generated index pages (like the "Amazon" companies page) by creating specifically named `top.md` or `bottom.md` files inside `assets/<Category> Sections/<slug>/`. See `SCHEMA.md` for strict directory rules.
+You can inject custom Markdown at the top or bottom of auto-generated index pages (like the "Amazon" companies page) by creating specifically named `top.md` or `bottom.md` files inside `assets/Append Sections/<Category> Sections/<slug>/`. See `SCHEMA.md` for strict directory rules.
 
 ## What Gets Auto-Generated
 

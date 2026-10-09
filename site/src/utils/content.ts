@@ -403,7 +403,7 @@ import { marked } from 'marked';
  */
 export function loadSectionContent(category: string, slug: string, position: 'Top' | 'Bottom'): string {
   const chunks: string[] = [];
-  const baseDir = path.join(VAULT_ROOT, 'assets', `${category} Sections`);
+  const baseDir = path.join(VAULT_ROOT, 'assets', 'Append Sections', `${category} Sections`);
   
   if (!fs.existsSync(baseDir)) return '';
 
