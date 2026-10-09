@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Sidebar from '../components/Sidebar.astro';
 import DifficultyBadge from '../components/DifficultyBadge.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import GraphSidebar from '../components/GraphSidebar.astro';
 import type { Problem } from '../utils/content';
 import { getSidebar, slugify } from '../utils/content';
 
@@ -156,6 +157,7 @@ const hasRating = problem.rating != null && problem.rating > 0;
     </main>
     
     <TableOfContents headings={headings} />
+    <GraphSidebar currentUrl={currentPath} />
   </div>
 </BaseLayout>
 

@@ -1,0 +1,273 @@
+---
+interface Props {
+  currentUrl: string;
+}
+
+const { currentUrl } = Astro.props;
+---
+
+<div id="graph-sidebar-container" data-current-url={currentUrl}>
+  <button id="graph-toggle-btn" aria-label="Open Graph View">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+  </button>
+
+  <div id="graph-drawer" class="drawer-closed">
+    <div class="drawer-header">
+      <h3>Local Graph</h3>
+      <button id="graph-close-btn" aria-label="Close Graph">&times;</button>
+    </div>
+    <div id="graph-viewport"></div>
+  </div>
+  
+  <div id="graph-backdrop" class="backdrop-hidden"></div>
+</div>
+
+<style>
+  #graph-toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #graph-toggle-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  #graph-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    background: var(--surface-1);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .drawer-closed {
+    transform: translateX(100%);
+  }
+
+  .drawer-open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .drawer-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-1);
+  }
+
+  #graph-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-2);
+    font-size: 1.75rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+  }
+
+  #graph-close-btn:hover {
+    color: var(--primary);
+  }
+
+  #graph-viewport {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--surface-2);
+  }
+
+  #graph-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 95;
+    transition: opacity 0.3s ease;
+  }
+
+  .backdrop-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .backdrop-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  // Dynamic import of ForceGraph to keep bundle size small on initial load
+  let ForceGraph;
+  let graphInstance = null;
+  let graphDataCache = null;
+
+  const container = document.getElementById('graph-sidebar-container');
+  const toggleBtn = document.getElementById('graph-toggle-btn');
+  const closeBtn = document.getElementById('graph-close-btn');
+  const drawer = document.getElementById('graph-drawer');
+  const backdrop = document.getElementById('graph-backdrop');
+  const viewport = document.getElementById('graph-viewport');
+
+  // Normalize current URL to match our IDs (ensure leading slash, strip trailing slash except for root)
+  let rawUrl = container.dataset.currentUrl;
+  if (!rawUrl.startsWith('/')) rawUrl = '/' + rawUrl;
+  if (rawUrl.length > 1 && rawUrl.endsWith('/')) rawUrl = rawUrl.slice(0, -1);
+  
+  // Try to strip /index.html if present
+  if (rawUrl.endsWith('/index.html')) {
+    rawUrl = rawUrl.slice(0, -11);
+    if (rawUrl === '') rawUrl = '/';
+  }
+
+  const currentUrl = rawUrl;
+
+  async function openGraph() {
+    drawer.classList.remove('drawer-closed');
+    drawer.classList.add('drawer-open');
+    backdrop.classList.remove('backdrop-hidden');
+    backdrop.classList.add('backdrop-visible');
+
+    if (!ForceGraph) {
+      // Import the library dynamically only when needed
+      const module = await import('force-graph');
+      ForceGraph = module.default;
+    }
+
+    if (!graphDataCache) {
+      try {
+        const res = await fetch('/graph-data.json');
+        graphDataCache = await res.json();
+      } catch (err) {
+        console.error('Failed to load graph data:', err);
+        return;
+      }
+    }
+
+    renderGraph();
+  }
+
+  function closeGraph() {
+    drawer.classList.add('drawer-closed');
+    drawer.classList.remove('drawer-open');
+    backdrop.classList.add('backdrop-hidden');
+    backdrop.classList.remove('backdrop-visible');
+  }
+
+  toggleBtn.addEventListener('click', openGraph);
+  closeBtn.addEventListener('click', closeGraph);
+  backdrop.addEventListener('click', closeGraph);
+
+  function renderGraph() {
+    // 1. Filter Graph Data for 1st-degree neighborhood
+    const allNodes = graphDataCache.nodes;
+    const allLinks = graphDataCache.links;
+
+    // Find links where current node is source or target
+    const neighborhoodLinks = allLinks.filter(l => 
+      l.source === currentUrl || l.target === currentUrl ||
+      l.source.id === currentUrl || l.target.id === currentUrl
+    );
+
+    const neighborhoodNodeIds = new Set();
+    neighborhoodNodeIds.add(currentUrl);
+    
+    neighborhoodLinks.forEach(l => {
+      neighborhoodNodeIds.add(typeof l.source === 'object' ? l.source.id : l.source);
+      neighborhoodNodeIds.add(typeof l.target === 'object' ? l.target.id : l.target);
+    });
+
+    const neighborhoodNodes = allNodes.filter(n => neighborhoodNodeIds.has(n.id));
+
+    // Colors mapping based on groups
+    const colorMap = {
+      problems: '#f87171',   // Red
+      notes: '#60a5fa',      // Blue
+      templates: '#34d399',  // Green
+      'write-ups': '#c084fc',// Purple
+      topics: '#fbbf24',     // Yellow
+      default: '#9ca3af'     // Gray
+    };
+
+    if (!graphInstance) {
+      graphInstance = ForceGraph()(viewport)
+        .backgroundColor('transparent')
+        .width(viewport.clientWidth)
+        .height(viewport.clientHeight)
+        .nodeRelSize(6)
+        .nodeColor(node => {
+          if (node.id === currentUrl) return '#ffffff'; // Highlight center node
+          return colorMap[node.group] || colorMap.default;
+        })
+        .nodeLabel('title')
+        .linkColor(() => '#4b5563')
+        .linkDirectionalParticles(2)
+        .linkDirectionalParticleSpeed(0.005)
+        .onNodeClick(node => {
+          window.location.href = node.url;
+        })
+        .onNodeHover(node => {
+          viewport.style.cursor = node ? 'pointer' : null;
+        });
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        if (graphInstance && drawer.classList.contains('drawer-open')) {
+          graphInstance.width(viewport.clientWidth).height(viewport.clientHeight);
+        }
+      });
+    }
+
+    // Update data (needs deep copy or else d3 mutates it)
+    const gData = {
+      nodes: neighborhoodNodes.map(n => ({ ...n })),
+      links: neighborhoodLinks.map(l => ({ ...l }))
+    };
+
+    graphInstance.graphData(gData);
+    
+    // Slight adjustments to physics
+    graphInstance.d3Force('charge').strength(-150);
+    graphInstance.d3Force('link').distance(40);
+  }
+</script>

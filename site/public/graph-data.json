@@ -1,0 +1,1724 @@
+{
+  "nodes": [
+    {
+      "id": "/problems/3sum",
+      "title": "3Sum",
+      "url": "/problems/3sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/all-divisors-of-a-number",
+      "title": "All divisors of a number",
+      "url": "/problems/all-divisors-of-a-number",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/best-time-to-buy-and-sell-stock",
+      "title": "Best Time to Buy and Sell Stock",
+      "url": "/problems/best-time-to-buy-and-sell-stock",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/binary-exponentiation",
+      "title": "Binary Exponentiation",
+      "url": "/problems/binary-exponentiation",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/capacity-to-ship-packages",
+      "title": "Capacity to Ship Packages Within D Days",
+      "url": "/problems/capacity-to-ship-packages",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/check-for-prime",
+      "title": "Check For Prime",
+      "url": "/problems/check-for-prime",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/check-if-a-string-is-a-subsequence-of-another-string",
+      "title": "Check if a String is a Subsequence of Another String",
+      "url": "/problems/check-if-a-string-is-a-subsequence-of-another-string",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/check-if-kth-bit-is-set-or-not",
+      "title": "Check if the K-th Bit is Set or Not",
+      "url": "/problems/check-if-kth-bit-is-set-or-not",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/check-if-number-is-power-of-two",
+      "title": "If number is power of 2",
+      "url": "/problems/check-if-number-is-power-of-two",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/check-if-two-strings-are-rotations-of-each-other-rotate-string-leetcode",
+      "title": "Check if Two Strings are Rotations of Each Other (Leetcode 796)",
+      "url": "/problems/check-if-two-strings-are-rotations-of-each-other-rotate-string-leetcode",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/chocolate-distribution",
+      "title": "Chocolate Distribution Problem",
+      "url": "/problems/chocolate-distribution",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/container-with-most-water",
+      "title": "Container With Most Water",
+      "url": "/problems/container-with-most-water",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/contains-duplicate",
+      "title": "Contains Duplicate",
+      "url": "/problems/contains-duplicate",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-digits",
+      "title": "Count Digits",
+      "url": "/problems/count-digits",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-distinct-elements-in-every-window",
+      "title": "Count Distinct Elements in Every Window",
+      "url": "/problems/count-distinct-elements-in-every-window",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-inversions-in-array",
+      "title": "Count Inversions in Array",
+      "url": "/problems/count-inversions-in-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-set-bits",
+      "title": "Count set bits",
+      "url": "/problems/count-set-bits",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-subarrays-with-given-sum",
+      "title": "Count Subarrays with Given Sum",
+      "url": "/problems/count-subarrays-with-given-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/count-subsets-with-given-sum",
+      "title": "Count Subsets with Given Sum",
+      "url": "/problems/count-subsets-with-given-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/counting-distinct-rows-in-a-binary-matrix",
+      "title": "Counting Distinct Rows in a Binary Matrix",
+      "url": "/problems/counting-distinct-rows-in-a-binary-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/divide-chocolate_lc-1231",
+      "title": "Divide Chocolate (Leetcode 1231)",
+      "url": "/problems/divide-chocolate_lc-1231",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/elements-occurring-more-than-n_div_k-times",
+      "title": "Elements Occurring More Than n/k Times",
+      "url": "/problems/elements-occurring-more-than-n_div_k-times",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/equal-partition",
+      "title": "Equal Partition",
+      "url": "/problems/equal-partition",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/equilibrium-point",
+      "title": "Equilibrium Point",
+      "url": "/problems/equilibrium-point",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-a-peak-element-in-2d-matrix",
+      "title": "Find a peak element in 2D matrix",
+      "url": "/problems/find-a-peak-element-in-2d-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-all-anagrams-in-a-string",
+      "title": "Find All Anagrams in a String (Leetcode 438)",
+      "url": "/problems/find-all-anagrams-in-a-string",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-all-duplicates-in-an-array",
+      "title": "Find All Duplicates in an Array (LC 442)",
+      "url": "/problems/find-all-duplicates-in-an-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-duplicate-number",
+      "title": "Find duplicate number (LC-287)",
+      "url": "/problems/find-duplicate-number",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-k-pairs-with-smallest-sums",
+      "title": "Find K Pairs With Smallest Sums",
+      "url": "/problems/find-k-pairs-with-smallest-sums",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-minimum-element-in-a-sorted-rotated-array",
+      "title": "Find Minimum Element in a Sorted Rotated Array",
+      "url": "/problems/find-minimum-element-in-a-sorted-rotated-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-peak-element",
+      "title": "Find Peak Element",
+      "url": "/problems/find-peak-element",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-peak-in-mountain-array",
+      "title": "Find peak in mountain array",
+      "url": "/problems/find-peak-in-mountain-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/find-the-smallest-divisor-given-a-threshold",
+      "title": "Find the Smallest Divisor Given a Threshold",
+      "url": "/problems/find-the-smallest-divisor-given-a-threshold",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/first-missing-positive",
+      "title": "First Missing Positive (LC 41)",
+      "url": "/problems/first-missing-positive",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array",
+      "title": "First Occurrence Last Occurrence & Count in a Sorted Array",
+      "url": "/problems/first-occurrence-last-occurrence-and-count-in-a-sorted-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/gas-station-leetcode-134",
+      "title": "Gas Station (Leetcode 134)",
+      "url": "/problems/gas-station-leetcode-134",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/greatest-common-divisor",
+      "title": "Greatest Common Divisor",
+      "url": "/problems/greatest-common-divisor",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/group-anagrams-leetcode-49",
+      "title": "Group Anagrams (Leetcode 49)",
+      "url": "/problems/group-anagrams-leetcode-49",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/implement-queue-using-stacks-leetcode-232",
+      "title": "Implement Queue using Stacks (LeetCode 232)",
+      "url": "/problems/implement-queue-using-stacks-leetcode-232",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/implement-two-stacks-in-one-array",
+      "title": "Implement Two Stacks in One Array",
+      "url": "/problems/implement-two-stacks-in-one-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/implementation-of-deque-using-array-leetcode-641",
+      "title": "Implementation of Deque using Circular Array (Leetcode 641)",
+      "url": "/problems/implementation-of-deque-using-array-leetcode-641",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/infix-to-postfix-shunting-yard-algorithm",
+      "title": "Infix to Postfix (Shunting Yard Algorithm)",
+      "url": "/problems/infix-to-postfix-shunting-yard-algorithm",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/infix-to-prefix",
+      "title": "Infix to Prefix (Shunting Yard Variant)",
+      "url": "/problems/infix-to-prefix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/intersection-of-two-sorted-arrays",
+      "title": "Intersection of Two Sorted Arrays",
+      "url": "/problems/intersection-of-two-sorted-arrays",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/job-sequencing-problem-with-deadlines",
+      "title": "Job Sequencing Problem with Deadlines",
+      "url": "/problems/job-sequencing-problem-with-deadlines",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/josephus-problem",
+      "title": "Josephus Problem",
+      "url": "/problems/josephus-problem",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/koko-eating-bananas",
+      "title": "Koko Eating Bananas - Predicate Search",
+      "url": "/problems/koko-eating-bananas",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/kth-element-in-two-sorted-arrays",
+      "title": "Kth element in two sorted arrays",
+      "url": "/problems/kth-element-in-two-sorted-arrays",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/kth-smallest-element-in-a-sorted-matrix",
+      "title": "Kth Smallest Element in a Sorted Matrix",
+      "url": "/problems/kth-smallest-element-in-a-sorted-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/kth-smallest-element-in-an-array",
+      "title": "Kth smallest element in an array",
+      "url": "/problems/kth-smallest-element-in-an-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/kth-smallest-number-in-multiplication-table",
+      "title": "K-th Smallest Number in Multiplication Table",
+      "url": "/problems/kth-smallest-number-in-multiplication-table",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/kth-smallest-pair-distance",
+      "title": "Kth smallest pair distance",
+      "url": "/problems/kth-smallest-pair-distance",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/largest-number-leetcode-179",
+      "title": "Largest Number (Leetcode 179)",
+      "url": "/problems/largest-number-leetcode-179",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/largest-rectangle-in-histogram-lc-84",
+      "title": "Largest Rectangle in Histogram (leetcode 84)",
+      "url": "/problems/largest-rectangle-in-histogram-lc-84",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/least-common-multiple",
+      "title": "Least Common Multiple",
+      "url": "/problems/least-common-multiple",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/leftmost-non-repeating-character",
+      "title": "Leftmost Non-Repeating Character (Leetcode 387)",
+      "url": "/problems/leftmost-non-repeating-character",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/leftmost-repeating-character",
+      "title": "Leftmost Repeating Character",
+      "url": "/problems/leftmost-repeating-character",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/lexicographic-rank-of-a-string",
+      "title": "Lexicographic Rank of a String",
+      "url": "/problems/lexicographic-rank-of-a-string",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-common-span-with-same-sum-in-binary-arrays",
+      "title": "Longest Common Span with Same Sum in Binary Arrays",
+      "url": "/problems/longest-common-span-with-same-sum-in-binary-arrays",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-consecutive-sequence",
+      "title": "Longest Consecutive Subsequence (Leetcode 128)",
+      "url": "/problems/longest-consecutive-sequence",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-duplicate-substring-leetcode-1044",
+      "title": "Longest Duplicate Substring (Leetcode 1044)",
+      "url": "/problems/longest-duplicate-substring-leetcode-1044",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-palindromic-substring",
+      "title": "Longest Palindromic Substring (leetcode 5)",
+      "url": "/problems/longest-palindromic-substring",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-subarray-with-equal-number-of-0s-and-1s",
+      "title": "Longest Subarray with Equal Number of 0s and 1s",
+      "url": "/problems/longest-subarray-with-equal-number-of-0s-and-1s",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-subarray-with-given-sum",
+      "title": "Longest Subarray With Given Sum",
+      "url": "/problems/longest-subarray-with-given-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters (leetcode 3)",
+      "url": "/problems/longest-substring-without-repeating-characters",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/magnetic-force-between-two-balls-or-aggressive-cows",
+      "title": "Magnetic Force Between Two Balls / Aggressive Cows",
+      "url": "/problems/magnetic-force-between-two-balls-or-aggressive-cows",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/majority-element",
+      "title": "Majority Element",
+      "url": "/problems/majority-element",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximal-rectangle-lc-85",
+      "title": "Maximal Rectangle (Leetcode 85) (largest rectangle with all 1s)",
+      "url": "/problems/maximal-rectangle-lc-85",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-appearing-element",
+      "title": "Maximum Appearing Element",
+      "url": "/problems/maximum-appearing-element",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-candies-allocated-to-k-children-lc-2226",
+      "title": "Maximum Candies Allocated to K Children (LC 2226)",
+      "url": "/problems/maximum-candies-allocated-to-k-children-lc-2226",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k",
+      "title": "Maximum Contiguous Subarray Sum ≤ K",
+      "url": "/problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-points-you-can-obtain-from-cards",
+      "title": "Maximize Points You Can Get from Cards (Leetcode 1423)",
+      "url": "/problems/maximum-points-you-can-obtain-from-cards",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-subarray-sum",
+      "title": "Maximum Subarray Sum",
+      "url": "/problems/maximum-subarray-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-sum-of-k-consecutive-elements",
+      "title": "Maximum sum of K consecutive elements",
+      "url": "/problems/maximum-sum-of-k-consecutive-elements",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-sum-of-rectangle-no-larger-than-k",
+      "title": "Max Sum of Rectangle No Larger Than K (Leetcode 363)",
+      "url": "/problems/maximum-sum-of-rectangle-no-larger-than-k",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-sum-rectangle-in-a-2d-matrix-kadane-2d",
+      "title": "Maximum Sum Rectangle in a 2D Matrix (Kadanes 2D)",
+      "url": "/problems/maximum-sum-rectangle-in-a-2d-matrix-kadane-2d",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/maximum-units-on-a-truck-leetcode-1710",
+      "title": "Leetcode 1710 — Maximum Units on a Truck",
+      "url": "/problems/maximum-units-on-a-truck-leetcode-1710",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/median-in-a-row-wise-sorted-matrix",
+      "title": "Median in a Row-wise Sorted Matrix",
+      "url": "/problems/median-in-a-row-wise-sorted-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/median-of-two-sorted-arrays",
+      "title": "Median of Two Sorted Arrays",
+      "url": "/problems/median-of-two-sorted-arrays",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/merge-k-sorted-lists",
+      "title": "Merge K Sorted Lists — K-Way Merge",
+      "url": "/problems/merge-k-sorted-lists",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/min-stack-leetcode-155",
+      "title": "Min Stack (Leetcode 155)",
+      "url": "/problems/min-stack-leetcode-155",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimize-max-distance-to-gas-station",
+      "title": "Minimize Max Distance to Gas Station",
+      "url": "/problems/minimize-max-distance-to-gas-station",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimized-maximum-of-products-distributed-to-any-store",
+      "title": "Minimized Maximum of Products Distributed to Any Store",
+      "url": "/problems/minimized-maximum-of-products-distributed-to-any-store",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-consecutive-flips",
+      "title": "Minimum Consecutive Flips",
+      "url": "/problems/minimum-consecutive-flips",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-limit-of-balls-in-a-bag",
+      "title": "Minimum Limit of Balls in a Bag",
+      "url": "/problems/minimum-limit-of-balls-in-a-bag",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-number-of-operations-to-make-string-sorted-leetcode-1830",
+      "title": "Minimum Number of Operations to Make String Sorted (Leetcode 1830)",
+      "url": "/problems/minimum-number-of-operations-to-make-string-sorted-leetcode-1830",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-number-of-steps-to-make-two-strings-anagram-lc-1347",
+      "title": "Minimum Number of Steps to Make Two Strings Anagram (LC 1347)",
+      "url": "/problems/minimum-number-of-steps-to-make-two-strings-anagram-lc-1347",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-lc-2186",
+      "title": "Minimum Number of Steps to Make Two Strings Anagram II (leetcode 2186)",
+      "url": "/problems/minimum-number-of-steps-to-make-two-strings-anagram-ii-lc-2186",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/minimum-operations-to-reduce-x-to-zero",
+      "title": "Minimum Operations to Reduce X to Zero (Leetcode 1658)",
+      "url": "/problems/minimum-operations-to-reduce-x-to-zero",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/n-queens-leetcode-51-and-52",
+      "title": "N-Queens (Leetcode 51 & 52)",
+      "url": "/problems/n-queens-leetcode-51-and-52",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/next-greater-element-nge",
+      "title": "Next Greater Element (NGE)",
+      "url": "/problems/next-greater-element-nge",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/next-permutation-leetcode-31",
+      "title": "Next Permutation (Leetcode 31)",
+      "url": "/problems/next-permutation-leetcode-31",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/odd-one-occurring",
+      "title": "Odd one occurring",
+      "url": "/problems/odd-one-occurring",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/pair-with-given-sum-in-an-unsorted-array",
+      "title": "Pair With Given Sum in an Unsorted Array",
+      "url": "/problems/pair-with-given-sum-in-an-unsorted-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/palindrome-number",
+      "title": "Palindrome number",
+      "url": "/problems/palindrome-number",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/permutations-2-handling-duplicates",
+      "title": "Permutations 2 (handling duplicates)",
+      "url": "/problems/permutations-2-handling-duplicates",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/postfix-to-infix-and-evaluation-of-postfix-leetcode-150",
+      "title": "Postfix to Infix & Evaluation of Postfix (Leetcode 150)",
+      "url": "/problems/postfix-to-infix-and-evaluation-of-postfix-leetcode-150",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/power-set-using-bitwise",
+      "title": "Power Set using Bitwise",
+      "url": "/problems/power-set-using-bitwise",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/power-set-with-duplicates",
+      "title": "Power Set with Duplicates",
+      "url": "/problems/power-set-with-duplicates",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/prefix-to-infix-and-evaluation-of-prefix",
+      "title": "Prefix to Infix & Evaluation of Prefix",
+      "url": "/problems/prefix-to-infix-and-evaluation-of-prefix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/previous-greater-element-pge",
+      "title": "Previous Greater Element (PGE)",
+      "url": "/problems/previous-greater-element-pge",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/prime-factors",
+      "title": "Prime Factors",
+      "url": "/problems/prime-factors",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/print-first-n-numbers-formed-using-a-given-digit-set",
+      "title": "Print First N Numbers Formed Using a Given Digit Set",
+      "url": "/problems/print-first-n-numbers-formed-using-a-given-digit-set",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters",
+      "title": "Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)",
+      "url": "/problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/repeated-substring-pattern-leetcode-459",
+      "title": "Repeated Substring Pattern (Leetcode 459)",
+      "url": "/problems/repeated-substring-pattern-leetcode-459",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/repeating-element",
+      "title": "Repeating Element (Cycle + Expected Sum appr.)",
+      "url": "/problems/repeating-element",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/reverse-words-in-a-string",
+      "title": "Reverse Words in a String (Leetcode 151)",
+      "url": "/problems/reverse-words-in-a-string",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/rope-cutting-with-dp",
+      "title": "Rope Cutting With DP",
+      "url": "/problems/rope-cutting-with-dp",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/rotate-matrix-by-90-degrees-anti-clockwise",
+      "title": "Rotate Matrix by 90° Anti-Clockwise",
+      "url": "/problems/rotate-matrix-by-90-degrees-anti-clockwise",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/search-in-infinite-sorted-array",
+      "title": "Search in an Infinite Sorted Array",
+      "url": "/problems/search-in-infinite-sorted-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/search-in-rotated-sorted-array-ii",
+      "title": "Search in Rotated Sorted Array II (With Duplicates)",
+      "url": "/problems/search-in-rotated-sorted-array-ii",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/search-in-sorted-rotated-array",
+      "title": "Search in Sorted Rotated Array (Distinct Elements)",
+      "url": "/problems/search-in-sorted-rotated-array",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/seive-of-eratosthenes",
+      "title": "Sieve Of Eratosthenes",
+      "url": "/problems/seive-of-eratosthenes",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/shortest-palindrome-leetcode-214",
+      "title": "Shortest Palindrome (Leetcode 214)",
+      "url": "/problems/shortest-palindrome-leetcode-214",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/shortest-subarray-with-sum-at-least-k",
+      "title": "Sliding Window Maximum (Leetcode 239)",
+      "url": "/problems/shortest-subarray-with-sum-at-least-k",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/sliding-window-maximum-lc-239",
+      "title": "Sliding Window Maximum (Leetcode 239)",
+      "url": "/problems/sliding-window-maximum-lc-239",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/smallest-range-covering-elements-from-k-sorted-lists",
+      "title": "Smallest Range Covering Elements from K Sorted Lists",
+      "url": "/problems/smallest-range-covering-elements-from-k-sorted-lists",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/spiral-traversal-of-a-matrix",
+      "title": "Spiral Traversal of a Matrix",
+      "url": "/problems/spiral-traversal-of-a-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/split-array-largest-sum",
+      "title": "Split Array Largest Sum",
+      "url": "/problems/split-array-largest-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/square-root-using-binary-search",
+      "title": "Square root using binary search",
+      "url": "/problems/square-root-using-binary-search",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/stack-using-queue-leetcode-225",
+      "title": "Stack using Queue (LeetCode 225)",
+      "url": "/problems/stack-using-queue-leetcode-225",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/stock-span-problem-lc-901",
+      "title": "Stock Span Problem (Leetcode 901)",
+      "url": "/problems/stock-span-problem-lc-901",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/subarray-sum-divisible-by-k",
+      "title": "Subarray Sum Divisible by K",
+      "url": "/problems/subarray-sum-divisible-by-k",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/subarray-with-given-sum",
+      "title": "Subarray with given sum",
+      "url": "/problems/subarray-with-given-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/subset-sum-using-dp",
+      "title": "Subset sum using DP",
+      "url": "/problems/subset-sum-using-dp",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/top-k-closest-elements-lc-658",
+      "title": "Top K closest Elements (leetcode 658)",
+      "url": "/problems/top-k-closest-elements-lc-658",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/top-k-frequent-elements-lc-347",
+      "title": "Top K Frequent Elements (Leetcode 347)",
+      "url": "/problems/top-k-frequent-elements-lc-347",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/tower-of-hanoi",
+      "title": "Tower Of Hanoi",
+      "url": "/problems/tower-of-hanoi",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/trailing-zeroes-in-a-factorial",
+      "title": "Trailing zeroes in a factorial",
+      "url": "/problems/trailing-zeroes-in-a-factorial",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/transpose-of-a-matrix",
+      "title": "Transpose of a Matrix",
+      "url": "/problems/transpose-of-a-matrix",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/trapping-rain-water-lc-42",
+      "title": "Trapping Rain Water (LC 42)",
+      "url": "/problems/trapping-rain-water-lc-42",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/two-odd-occurring",
+      "title": "Two odd occurring",
+      "url": "/problems/two-odd-occurring",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/two-sum",
+      "title": "Two Sum (Leetcode 1)",
+      "url": "/problems/two-sum",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/union-of-two-sorted-arrays",
+      "title": "Union of Two Sorted Arrays",
+      "url": "/problems/union-of-two-sorted-arrays",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/valid-anagram-leetcode-242",
+      "title": "Valid Anagram (leetcode 242)",
+      "url": "/problems/valid-anagram-leetcode-242",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/valid-parentheses-leetcode-20",
+      "title": "Valid Parentheses (Leetcode 20)",
+      "url": "/problems/valid-parentheses-leetcode-20",
+      "group": "problems"
+    },
+    {
+      "id": "/problems/weighted-sum-range-queries",
+      "title": "Weighted Sum range queries",
+      "url": "/problems/weighted-sum-range-queries",
+      "group": "problems"
+    },
+    {
+      "id": "/notes/3-way-partitioning-dutch-national-flag",
+      "title": "3-Way Partitioning (Dutch National Flag)",
+      "url": "/notes/3-way-partitioning-dutch-national-flag",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/arrays-as-functional-graphs",
+      "title": "Arrays as Functional Graphs",
+      "url": "/notes/arrays-as-functional-graphs",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/basic-array-problems",
+      "title": "Basic Array Problems",
+      "url": "/notes/basic-array-problems",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/basic-problems-using-simple-recursion",
+      "title": "Basic Problems Using Simple Recursion",
+      "url": "/notes/basic-problems-using-simple-recursion",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/binary-exponentiation-with-modulo",
+      "title": "Binary Exponentiation with modulo",
+      "url": "/notes/binary-exponentiation-with-modulo",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/binary-search-on-answer-predicate-search-5",
+      "title": "Binary Search on Answer ( Predicate Search) - 5⭐",
+      "url": "/notes/binary-search-on-answer-predicate-search-5",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/bucket-sort",
+      "title": "Bucket Sort",
+      "url": "/notes/bucket-sort",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/complementary-counting",
+      "title": "Complementary Counting",
+      "url": "/notes/complementary-counting",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/coordinate-compression",
+      "title": "Coordinate Compression",
+      "url": "/notes/coordinate-compression",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/cycle-sort-with-duplicates",
+      "title": "Cycle Sort (with duplicates)",
+      "url": "/notes/cycle-sort-with-duplicates",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/difference-array-range-update-problems-faang-variations",
+      "title": "Difference Array & Range Update Problems (FAANG Variations)",
+      "url": "/notes/difference-array-range-update-problems-faang-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/dsu-disjoint-set-union",
+      "title": "DSU - Disjoint Set Union",
+      "url": "/notes/dsu-disjoint-set-union",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/2-doubts-about-median-of-two-sorted-arrays",
+      "title": "2 doubts about 'median of two sorted arrays'",
+      "url": "/notes/extras/2-doubts-about-median-of-two-sorted-arrays",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/backtracking-and-variations",
+      "title": "Backtracking and variations",
+      "url": "/notes/extras/backtracking-and-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/bfs-backtracking-based-queue-but-not-queue-patterns",
+      "title": "BFS-Backtracking based Queue but not queue patterns",
+      "url": "/notes/extras/bfs-backtracking-based-queue-but-not-queue-patterns",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/boundary-style-vs-explicit-answer-style-binary-search",
+      "title": "Boundary style vs  Explicit answer style Binary Search",
+      "url": "/notes/extras/boundary-style-vs-explicit-answer-style-binary-search",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/deque-patterns-and-variations",
+      "title": "Deque Patterns and Variations",
+      "url": "/notes/extras/deque-patterns-and-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/difference-array-related-range-update-techniques",
+      "title": "Difference Array & Related Range-Update Techniques",
+      "url": "/notes/extras/difference-array-related-range-update-techniques",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/disjoint-cycle-theorem",
+      "title": "Disjoint Cycle Theorem",
+      "url": "/notes/extras/disjoint-cycle-theorem",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/disjoint-set-union-patterns-and-variations",
+      "title": "Disjoint Set Union patterns and variations",
+      "url": "/notes/extras/disjoint-set-union-patterns-and-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/expected-sum-solution-for-repeating-element-or-floyd-cycle-finding-solution-duplicates",
+      "title": "Expected Sum solution for Repeating Element (or Floyd cycle finding solution duplicates)",
+      "url": "/notes/extras/expected-sum-solution-for-repeating-element-or-floyd-cycle-finding-solution-duplicates",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/explanation-of-low-and-high-initialization-in-kth-element-in-two-sorted-arrays",
+      "title": "Explanation of low and high initialization in 'kth element in two sorted arrays'",
+      "url": "/notes/extras/explanation-of-low-and-high-initialization-in-kth-element-in-two-sorted-arrays",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/greedy-patterns",
+      "title": "Greedy Patterns",
+      "url": "/notes/extras/greedy-patterns",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/huffman-coding-indirectly-inspired",
+      "title": "Huffman Coding (indirectly inspired)",
+      "url": "/notes/extras/huffman-coding-indirectly-inspired",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/kmp-algorithm",
+      "title": "KMP algorithm",
+      "url": "/notes/extras/kmp-algorithm",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/linked-lists-variations-and-patterns",
+      "title": "linked lists variations and patterns",
+      "url": "/notes/extras/linked-lists-variations-and-patterns",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/naive-pattern-searching-general-distinct-characters-optimization",
+      "title": "Naive Pattern Searching (General + Distinct Characters Optimization)",
+      "url": "/notes/extras/naive-pattern-searching-general-distinct-characters-optimization",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/predicate-search-problem-set",
+      "title": "Predicate Search Problem Set",
+      "url": "/notes/extras/predicate-search-problem-set",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/queue-patterns-and-variations",
+      "title": "Queue patterns and Variations",
+      "url": "/notes/extras/queue-patterns-and-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/rabin-karp-algo",
+      "title": "Rabin Karp algo",
+      "url": "/notes/extras/rabin-karp-algo",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/scheduling-greedy-dp-heap-cluster",
+      "title": "Scheduling - Greedy - DP - Heap cluster",
+      "url": "/notes/extras/scheduling-greedy-dp-heap-cluster",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/sorted-containers-in-python",
+      "title": "Sorted Containers in Python",
+      "url": "/notes/extras/sorted-containers-in-python",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/stack-patterns-and-variations-to-do",
+      "title": "stack patterns and variations (to do)",
+      "url": "/notes/extras/stack-patterns-and-variations-to-do",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/string-variations-and-patterns",
+      "title": "string variations and patterns",
+      "url": "/notes/extras/string-variations-and-patterns",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/trie-based-patterns",
+      "title": "Trie based patterns",
+      "url": "/notes/extras/trie-based-patterns",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/useful-python-functions",
+      "title": "Useful Python functions",
+      "url": "/notes/extras/useful-python-functions",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/valley-peak-approach",
+      "title": "Valley Peak approach",
+      "url": "/notes/extras/valley-peak-approach",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/variants-of-josephus-problem",
+      "title": "Variants of Josephus problem",
+      "url": "/notes/extras/variants-of-josephus-problem",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/why-finding-peak-element-using-binary-search-works",
+      "title": "Why finding peak element using binary search works",
+      "url": "/notes/extras/why-finding-peak-element-using-binary-search-works",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/extras/resources",
+      "title": "📚Resources",
+      "url": "/notes/extras/resources",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/fibonacci-numbers",
+      "title": "Fibonacci Numbers",
+      "url": "/notes/fibonacci-numbers",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/floyds-cycle-detection-duplicate-finding-algorithm-tortoise-and-hare",
+      "title": "Floyd's Cycle Detection & Duplicate Finding Algorithm (Tortoise and Hare)",
+      "url": "/notes/floyds-cycle-detection-duplicate-finding-algorithm-tortoise-and-hare",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/follow-up-questions-on-two-odd-occurring-xor-pattern",
+      "title": "Follow-Up questions on Two Odd Occurring XOR pattern",
+      "url": "/notes/follow-up-questions-on-two-odd-occurring-xor-pattern",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/further-optimized-prime-factorization-div-by-2-3",
+      "title": "Further Optimized Prime Factorization (div. by 2 & 3)",
+      "url": "/notes/further-optimized-prime-factorization-div-by-2-3",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/gray-code-1-bit-difference",
+      "title": "Gray Code (1-bit difference)",
+      "url": "/notes/gray-code-1-bit-difference",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/heaps-concept-sorting-operations-etc",
+      "title": "Heaps Concept (Sorting , Operations etc.)",
+      "url": "/notes/heaps-concept-sorting-operations-etc",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/how-to-convert-to-tail-recursive-procedures",
+      "title": "How to convert to 'Tail Recursive Procedures'",
+      "url": "/notes/how-to-convert-to-tail-recursive-procedures",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/huffman-coding",
+      "title": "Huffman Coding",
+      "url": "/notes/huffman-coding",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/intervals-ranges-pattern-sorting",
+      "title": "Intervals & Ranges Pattern (Sorting)",
+      "url": "/notes/intervals-ranges-pattern-sorting",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/intuition-behind-josephus-problem",
+      "title": "Intuition behind Josephus Problem",
+      "url": "/notes/intuition-behind-josephus-problem",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/k-way-merge",
+      "title": "K-way Merge",
+      "url": "/notes/k-way-merge",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/lookup-table-solution-for-counting-set-bits",
+      "title": "Lookup Table Solution for counting set bits",
+      "url": "/notes/lookup-table-solution-for-counting-set-bits",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/matrices-everywhere-",
+      "title": "Matrices Everywhere !!!",
+      "url": "/notes/matrices-everywhere-",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/maximum-subarray-important-interview-variations",
+      "title": "Maximum Subarray — Important Interview Variations",
+      "url": "/notes/maximum-subarray-important-interview-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/merge-sort-divide-conquer-strategies",
+      "title": "Merge Sort (Divide & Conquer) Strategies",
+      "url": "/notes/merge-sort-divide-conquer-strategies",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/modulo-formulas",
+      "title": "Modulo Formulas",
+      "url": "/notes/modulo-formulas",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/monotonic-deque",
+      "title": "Monotonic Deque",
+      "url": "/notes/monotonic-deque",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/overview",
+      "title": "Overview",
+      "url": "/notes/overview",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/python-memory-model-for-dsa-interviews",
+      "title": "Python Memory Model for DSA & Interviews",
+      "url": "/notes/python-memory-model-for-dsa-interviews",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/quickselect",
+      "title": "QuickSelect",
+      "url": "/notes/quickselect",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/radix-sort",
+      "title": "Radix Sort",
+      "url": "/notes/radix-sort",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/row-or-col-compression-in-matrix",
+      "title": "Row or Col compression in matrix",
+      "url": "/notes/row-or-col-compression-in-matrix",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/sliding-window-variations",
+      "title": "Sliding window variations",
+      "url": "/notes/sliding-window-variations",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/strings-pattern-matching",
+      "title": "Strings Pattern Matching",
+      "url": "/notes/strings-pattern-matching",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "title": "Subarray with Given Sum — Important Interview Variations (Solutions)",
+      "url": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/time-complexity-for-gcd",
+      "title": "Time complexity for GCD",
+      "url": "/notes/time-complexity-for-gcd",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/time-complexity-for-prime-factorization",
+      "title": "Time complexity for Prime Factorization",
+      "url": "/notes/time-complexity-for-prime-factorization",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/time-complexity-for-sieve-of-eratosthenes",
+      "title": "Time Complexity for Sieve of Eratosthenes",
+      "url": "/notes/time-complexity-for-sieve-of-eratosthenes",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/trie-implementation",
+      "title": "Trie — Implementation",
+      "url": "/notes/trie-implementation",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/what-makes-a-problem-dp",
+      "title": "What makes a problem DP",
+      "url": "/notes/what-makes-a-problem-dp",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/xor-properties",
+      "title": "XOR properties",
+      "url": "/notes/xor-properties",
+      "group": "notes"
+    },
+    {
+      "id": "/notes/to-do-or-wishlist-or-do-later-list",
+      "title": "☑To-Do or Wishlist or Do later list",
+      "url": "/notes/to-do-or-wishlist-or-do-later-list",
+      "group": "notes"
+    },
+    {
+      "id": "/templates/2-way-partitioning",
+      "title": "2-Way-Partitioning",
+      "url": "/templates/2-way-partitioning",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/binary-search-on-odd-and-even-range",
+      "title": "Binary Search on Odd and Even range",
+      "url": "/templates/binary-search-on-odd-and-even-range",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/cyclic-sort-and-placement",
+      "title": "Cyclic-sort-and-placement",
+      "url": "/templates/cyclic-sort-and-placement",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/factorials-and-inverse-factorials-calc",
+      "title": "Factorials and Inverse Factorials Calc.",
+      "url": "/templates/factorials-and-inverse-factorials-calc",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/heap-lazy-deletion-decrease-key",
+      "title": "Heap-Lazy-Deletion-(Decrease-Key)",
+      "url": "/templates/heap-lazy-deletion-decrease-key",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/kmp-string-matching",
+      "title": "KMP-string-matching",
+      "url": "/templates/kmp-string-matching",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/merging-two-sorted-arrays",
+      "title": "Merging-two-sorted-arrays",
+      "url": "/templates/merging-two-sorted-arrays",
+      "group": "templates"
+    },
+    {
+      "id": "/templates/__lt__-dunder-and-cmp_to_key-tricks",
+      "title": "__lt__ dunder and cmp_to_key (tricks)",
+      "url": "/templates/__lt__-dunder-and-cmp_to_key-tricks",
+      "group": "templates"
+    }
+  ],
+  "links": [
+    {
+      "source": "/problems/3sum",
+      "target": "/problems/two-sum"
+    },
+    {
+      "source": "/problems/check-if-two-strings-are-rotations-of-each-other-rotate-string-leetcode",
+      "target": "/templates/kmp-string-matching"
+    },
+    {
+      "source": "/problems/count-inversions-in-array",
+      "target": "/notes/coordinate-compression"
+    },
+    {
+      "source": "/problems/count-inversions-in-array",
+      "target": "/problems/union-of-two-sorted-arrays"
+    },
+    {
+      "source": "/problems/count-inversions-in-array",
+      "target": "/problems/intersection-of-two-sorted-arrays"
+    },
+    {
+      "source": "/problems/count-subsets-with-given-sum",
+      "target": "/problems/equal-partition"
+    },
+    {
+      "source": "/problems/elements-occurring-more-than-n_div_k-times",
+      "target": "/problems/majority-element"
+    },
+    {
+      "source": "/problems/equal-partition",
+      "target": "/problems/count-subsets-with-given-sum"
+    },
+    {
+      "source": "/problems/find-duplicate-number",
+      "target": "/problems/repeating-element"
+    },
+    {
+      "source": "/problems/find-peak-element",
+      "target": "/problems/find-peak-in-mountain-array"
+    },
+    {
+      "source": "/problems/find-peak-element",
+      "target": "/problems/find-a-peak-element-in-2d-matrix"
+    },
+    {
+      "source": "/problems/find-peak-in-mountain-array",
+      "target": "/problems/find-peak-element"
+    },
+    {
+      "source": "/problems/first-missing-positive",
+      "target": "/templates/cyclic-sort-and-placement"
+    },
+    {
+      "source": "/problems/intersection-of-two-sorted-arrays",
+      "target": "/problems/union-of-two-sorted-arrays"
+    },
+    {
+      "source": "/problems/kth-element-in-two-sorted-arrays",
+      "target": "/problems/median-of-two-sorted-arrays"
+    },
+    {
+      "source": "/problems/leftmost-non-repeating-character",
+      "target": "/problems/leftmost-repeating-character"
+    },
+    {
+      "source": "/problems/leftmost-repeating-character",
+      "target": "/problems/leftmost-non-repeating-character"
+    },
+    {
+      "source": "/problems/longest-common-span-with-same-sum-in-binary-arrays",
+      "target": "/problems/longest-subarray-with-equal-number-of-0s-and-1s"
+    },
+    {
+      "source": "/problems/longest-subarray-with-equal-number-of-0s-and-1s",
+      "target": "/problems/longest-subarray-with-given-sum"
+    },
+    {
+      "source": "/problems/majority-element",
+      "target": "/problems/elements-occurring-more-than-n_div_k-times"
+    },
+    {
+      "source": "/problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k",
+      "target": "/problems/shortest-subarray-with-sum-at-least-k"
+    },
+    {
+      "source": "/problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k",
+      "target": "/problems/maximum-sum-of-rectangle-no-larger-than-k"
+    },
+    {
+      "source": "/problems/maximum-points-you-can-obtain-from-cards",
+      "target": "/problems/minimum-operations-to-reduce-x-to-zero"
+    },
+    {
+      "source": "/problems/maximum-sum-of-rectangle-no-larger-than-k",
+      "target": "/problems/maximum-contiguous-subarray-sum-less_than_or_equal-to-k"
+    },
+    {
+      "source": "/problems/maximum-sum-rectangle-in-a-2d-matrix-kadane-2d",
+      "target": "/problems/maximum-subarray-sum"
+    },
+    {
+      "source": "/problems/median-of-two-sorted-arrays",
+      "target": "/problems/kth-element-in-two-sorted-arrays"
+    },
+    {
+      "source": "/problems/permutations-2-handling-duplicates",
+      "target": "/problems/power-set-with-duplicates"
+    },
+    {
+      "source": "/problems/power-set-using-bitwise",
+      "target": "/problems/power-set-with-duplicates"
+    },
+    {
+      "source": "/problems/rotate-matrix-by-90-degrees-anti-clockwise",
+      "target": "/problems/transpose-of-a-matrix"
+    },
+    {
+      "source": "/problems/search-in-rotated-sorted-array-ii",
+      "target": "/problems/search-in-sorted-rotated-array"
+    },
+    {
+      "source": "/problems/search-in-sorted-rotated-array",
+      "target": "/problems/search-in-rotated-sorted-array-ii"
+    },
+    {
+      "source": "/problems/search-in-sorted-rotated-array",
+      "target": "/problems/search-in-rotated-sorted-array-ii"
+    },
+    {
+      "source": "/problems/subset-sum-using-dp",
+      "target": "/problems/count-subsets-with-given-sum"
+    },
+    {
+      "source": "/problems/subset-sum-using-dp",
+      "target": "/problems/equal-partition"
+    },
+    {
+      "source": "/problems/two-sum",
+      "target": "/problems/3sum"
+    },
+    {
+      "source": "/problems/union-of-two-sorted-arrays",
+      "target": "/problems/intersection-of-two-sorted-arrays"
+    },
+    {
+      "source": "/notes/3-way-partitioning-dutch-national-flag",
+      "target": "/templates/2-way-partitioning"
+    },
+    {
+      "source": "/notes/arrays-as-functional-graphs",
+      "target": "/problems/find-all-duplicates-in-an-array"
+    },
+    {
+      "source": "/notes/arrays-as-functional-graphs",
+      "target": "/problems/first-missing-positive"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/rope-cutting-with-dp"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/power-set-using-bitwise"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/power-set-with-duplicates"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/subset-sum-using-dp"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/count-subsets-with-given-sum"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/equal-partition"
+    },
+    {
+      "source": "/notes/basic-problems-using-simple-recursion",
+      "target": "/problems/permutations-2-handling-duplicates"
+    },
+    {
+      "source": "/notes/complementary-counting",
+      "target": "/problems/minimum-operations-to-reduce-x-to-zero"
+    },
+    {
+      "source": "/notes/complementary-counting",
+      "target": "/problems/maximum-points-you-can-obtain-from-cards"
+    },
+    {
+      "source": "/notes/complementary-counting",
+      "target": "/problems/maximum-points-you-can-obtain-from-cards"
+    },
+    {
+      "source": "/notes/complementary-counting",
+      "target": "/problems/minimum-operations-to-reduce-x-to-zero"
+    },
+    {
+      "source": "/notes/cycle-sort-with-duplicates",
+      "target": "/templates/cyclic-sort-and-placement"
+    },
+    {
+      "source": "/notes/extras/deque-patterns-and-variations",
+      "target": "/problems/shortest-subarray-with-sum-at-least-k"
+    },
+    {
+      "source": "/notes/extras/kmp-algorithm",
+      "target": "/templates/kmp-string-matching"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/koko-eating-bananas"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/capacity-to-ship-packages"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/find-the-smallest-divisor-given-a-threshold"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/koko-eating-bananas"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/split-array-largest-sum"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/minimized-maximum-of-products-distributed-to-any-store"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/minimum-limit-of-balls-in-a-bag"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/split-array-largest-sum"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/split-array-largest-sum"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/magnetic-force-between-two-balls-or-aggressive-cows"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/magnetic-force-between-two-balls-or-aggressive-cows"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/divide-chocolate_lc-1231"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/kth-smallest-pair-distance"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/kth-smallest-element-in-a-sorted-matrix"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/kth-smallest-number-in-multiplication-table"
+    },
+    {
+      "source": "/notes/extras/predicate-search-problem-set",
+      "target": "/problems/minimize-max-distance-to-gas-station"
+    },
+    {
+      "source": "/notes/floyds-cycle-detection-duplicate-finding-algorithm-tortoise-and-hare",
+      "target": "/problems/repeating-element"
+    },
+    {
+      "source": "/notes/floyds-cycle-detection-duplicate-finding-algorithm-tortoise-and-hare",
+      "target": "/problems/find-duplicate-number"
+    },
+    {
+      "source": "/notes/k-way-merge",
+      "target": "/problems/merge-k-sorted-lists"
+    },
+    {
+      "source": "/notes/k-way-merge",
+      "target": "/problems/kth-smallest-element-in-a-sorted-matrix"
+    },
+    {
+      "source": "/notes/k-way-merge",
+      "target": "/problems/find-k-pairs-with-smallest-sums"
+    },
+    {
+      "source": "/notes/k-way-merge",
+      "target": "/problems/smallest-range-covering-elements-from-k-sorted-lists"
+    },
+    {
+      "source": "/notes/matrices-everywhere-",
+      "target": "/problems/spiral-traversal-of-a-matrix"
+    },
+    {
+      "source": "/notes/matrices-everywhere-",
+      "target": "/problems/transpose-of-a-matrix"
+    },
+    {
+      "source": "/notes/matrices-everywhere-",
+      "target": "/problems/median-in-a-row-wise-sorted-matrix"
+    },
+    {
+      "source": "/notes/matrices-everywhere-",
+      "target": "/problems/rotate-matrix-by-90-degrees-anti-clockwise"
+    },
+    {
+      "source": "/notes/maximum-subarray-important-interview-variations",
+      "target": "/problems/maximum-subarray-sum"
+    },
+    {
+      "source": "/notes/merge-sort-divide-conquer-strategies",
+      "target": "/problems/count-inversions-in-array"
+    },
+    {
+      "source": "/notes/merge-sort-divide-conquer-strategies",
+      "target": "/problems/intersection-of-two-sorted-arrays"
+    },
+    {
+      "source": "/notes/merge-sort-divide-conquer-strategies",
+      "target": "/problems/union-of-two-sorted-arrays"
+    },
+    {
+      "source": "/notes/merge-sort-divide-conquer-strategies",
+      "target": "/problems/median-of-two-sorted-arrays"
+    },
+    {
+      "source": "/notes/merge-sort-divide-conquer-strategies",
+      "target": "/problems/count-inversions-in-array"
+    },
+    {
+      "source": "/notes/monotonic-deque",
+      "target": "/problems/shortest-subarray-with-sum-at-least-k"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/notes/extras/boundary-style-vs-explicit-answer-style-binary-search"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/problems/kth-smallest-element-in-an-array"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/problems/median-of-two-sorted-arrays"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/problems/kth-smallest-element-in-an-array"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/problems/kth-smallest-pair-distance"
+    },
+    {
+      "source": "/notes/quickselect",
+      "target": "/problems/kth-smallest-element-in-a-sorted-matrix"
+    },
+    {
+      "source": "/notes/row-or-col-compression-in-matrix",
+      "target": "/problems/maximum-sum-of-rectangle-no-larger-than-k"
+    },
+    {
+      "source": "/notes/row-or-col-compression-in-matrix",
+      "target": "/problems/maximum-sum-of-rectangle-no-larger-than-k"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/count-subarrays-with-given-sum"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/longest-subarray-with-given-sum"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/shortest-subarray-with-sum-at-least-k"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/subarray-sum-divisible-by-k"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/count-subarrays-with-given-sum"
+    },
+    {
+      "source": "/notes/subarray-with-given-sum-important-interview-variations-solutions",
+      "target": "/problems/minimum-operations-to-reduce-x-to-zero"
+    },
+    {
+      "source": "/notes/what-makes-a-problem-dp",
+      "target": "/problems/maximum-subarray-sum"
+    },
+    {
+      "source": "/templates/cyclic-sort-and-placement",
+      "target": "/problems/first-missing-positive"
+    },
+    {
+      "source": "/templates/merging-two-sorted-arrays",
+      "target": "/problems/intersection-of-two-sorted-arrays"
+    },
+    {
+      "source": "/templates/merging-two-sorted-arrays",
+      "target": "/problems/union-of-two-sorted-arrays"
+    }
+  ]
+}

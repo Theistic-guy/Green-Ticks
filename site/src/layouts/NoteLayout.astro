@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import GraphSidebar from '../components/GraphSidebar.astro';
 
 import { getSidebar } from '../utils/content';
 
@@ -53,6 +54,7 @@ const currentPath = Astro.url.pathname;
     </main>
     
     <TableOfContents headings={headings} />
+    <GraphSidebar currentUrl={currentPath} />
   </div>
 </BaseLayout>
 
