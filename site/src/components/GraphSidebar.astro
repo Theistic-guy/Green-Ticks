@@ -7,102 +7,121 @@ const { currentUrl } = Astro.props;
 ---
 
 <div id="graph-sidebar-container" data-current-url={currentUrl}>
-  <button id="graph-toggle-btn" aria-label="Open Graph View">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="18" cy="5" r="3"></circle>
-      <circle cx="6" cy="12" r="3"></circle>
-      <circle cx="18" cy="19" r="3"></circle>
-      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-    </svg>
-  </button>
-
-  <div id="graph-drawer" class="drawer-closed">
-    <div class="drawer-header">
-      <h3>Local Graph</h3>
-      <button id="graph-close-btn" aria-label="Close Graph">&times;</button>
+  <div id="graph-overlay" class="overlay-hidden">
+    <div class="overlay-header">
+      <div class="header-left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="5" cy="18" r="3"></circle>
+          <circle cx="19" cy="18" r="3"></circle>
+          <circle cx="12" cy="6" r="3"></circle>
+          <path d="M10 8l-3 8"></path>
+          <path d="M14 8l3 8"></path>
+          <path d="M7 18h10"></path>
+        </svg>
+        <h3>Local Graph View</h3>
+      </div>
+      <button id="graph-close-btn" aria-label="Close Graph">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
     <div id="graph-viewport"></div>
   </div>
-  
-  <div id="graph-backdrop" class="backdrop-hidden"></div>
 </div>
 
 <style>
-  #graph-toggle-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: white;
-    border: none;
-    box-shadow: var(--shadow-lg);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 90;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  #graph-toggle-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-  }
-
-  #graph-drawer {
+  #graph-overlay {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 500px;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    background: var(--surface-1);
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    background: rgba(15, 23, 42, 0.85); /* Translucent dark slate */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
-  .drawer-closed {
-    transform: translateX(100%);
+  /* Make sure it works perfectly in light mode too (dark overlay is usually fine, but we can adapt) */
+  :root[data-theme="light"] #graph-overlay {
+    background: rgba(255, 255, 255, 0.9);
   }
 
-  .drawer-open {
-    transform: translateX(0);
+  .overlay-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
-  .drawer-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
+  .overlay-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .overlay-header {
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1010;
+    pointer-events: none; /* Let clicks pass through header empty space */
   }
 
-  .drawer-header h3 {
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    pointer-events: auto;
+  }
+
+  .header-left h3 {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  :root[data-theme="light"] .header-left h3 {
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
   }
 
   #graph-close-btn {
-    background: none;
-    border: none;
-    color: var(--text-2);
-    font-size: 1.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--text-1);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    line-height: 1;
-    padding: 0.25rem;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+  }
+
+  :root[data-theme="light"] #graph-close-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   #graph-close-btn:hover {
-    color: var(--primary);
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.05);
   }
 
   #graph-viewport {
@@ -110,66 +129,36 @@ const { currentUrl } = Astro.props;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: var(--surface-2);
-  }
-
-  #graph-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    z-index: 95;
-    transition: opacity 0.3s ease;
-  }
-
-  .backdrop-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .backdrop-visible {
-    opacity: 1;
-    pointer-events: auto;
   }
 </style>
 
 <script>
-  // Dynamic import of ForceGraph to keep bundle size small on initial load
   let ForceGraph;
   let graphInstance = null;
   let graphDataCache = null;
 
   const container = document.getElementById('graph-sidebar-container');
-  const toggleBtn = document.getElementById('graph-toggle-btn');
+  const overlay = document.getElementById('graph-overlay');
   const closeBtn = document.getElementById('graph-close-btn');
-  const drawer = document.getElementById('graph-drawer');
-  const backdrop = document.getElementById('graph-backdrop');
   const viewport = document.getElementById('graph-viewport');
 
-  // Normalize current URL to match our IDs (ensure leading slash, strip trailing slash except for root)
   let rawUrl = container.dataset.currentUrl;
   if (!rawUrl.startsWith('/')) rawUrl = '/' + rawUrl;
   if (rawUrl.length > 1 && rawUrl.endsWith('/')) rawUrl = rawUrl.slice(0, -1);
-  
-  // Try to strip /index.html if present
   if (rawUrl.endsWith('/index.html')) {
     rawUrl = rawUrl.slice(0, -11);
     if (rawUrl === '') rawUrl = '/';
   }
-
   const currentUrl = rawUrl;
 
   async function openGraph() {
-    drawer.classList.remove('drawer-closed');
-    drawer.classList.add('drawer-open');
-    backdrop.classList.remove('backdrop-hidden');
-    backdrop.classList.add('backdrop-visible');
+    overlay.classList.remove('overlay-hidden');
+    overlay.classList.add('overlay-visible');
+    
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
 
     if (!ForceGraph) {
-      // Import the library dynamically only when needed
       const module = await import('force-graph');
       ForceGraph = module.default;
     }
@@ -188,22 +177,35 @@ const { currentUrl } = Astro.props;
   }
 
   function closeGraph() {
-    drawer.classList.add('drawer-closed');
-    drawer.classList.remove('drawer-open');
-    backdrop.classList.add('backdrop-hidden');
-    backdrop.classList.remove('backdrop-visible');
+    overlay.classList.add('overlay-hidden');
+    overlay.classList.remove('overlay-visible');
+    document.body.style.overflow = '';
   }
 
-  toggleBtn.addEventListener('click', openGraph);
   closeBtn.addEventListener('click', closeGraph);
-  backdrop.addEventListener('click', closeGraph);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('overlay-visible')) {
+      closeGraph();
+    }
+  });
+
+  // Expose openGraph globally so layout buttons can trigger it
+  window.openLocalGraph = openGraph;
+
+  // Attach event listeners to the buttons rendered in NoteLayout and ProblemLayout
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtns = document.querySelectorAll('.graph-toggle-btn');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', openGraph);
+    });
+  });
 
   function renderGraph() {
-    // 1. Filter Graph Data for 1st-degree neighborhood
     const allNodes = graphDataCache.nodes;
     const allLinks = graphDataCache.links;
 
-    // Find links where current node is source or target
     const neighborhoodLinks = allLinks.filter(l => 
       l.source === currentUrl || l.target === currentUrl ||
       l.source.id === currentUrl || l.target.id === currentUrl
@@ -219,14 +221,13 @@ const { currentUrl } = Astro.props;
 
     const neighborhoodNodes = allNodes.filter(n => neighborhoodNodeIds.has(n.id));
 
-    // Colors mapping based on groups
     const colorMap = {
-      problems: '#f87171',   // Red
-      notes: '#60a5fa',      // Blue
-      templates: '#34d399',  // Green
-      'write-ups': '#c084fc',// Purple
-      topics: '#fbbf24',     // Yellow
-      default: '#9ca3af'     // Gray
+      problems: '#f87171',
+      notes: '#60a5fa',
+      templates: '#34d399',
+      'write-ups': '#c084fc',
+      topics: '#fbbf24',
+      default: '#9ca3af'
     };
 
     if (!graphInstance) {
@@ -235,14 +236,37 @@ const { currentUrl } = Astro.props;
         .width(viewport.clientWidth)
         .height(viewport.clientHeight)
         .nodeRelSize(6)
-        .nodeColor(node => {
-          if (node.id === currentUrl) return '#ffffff'; // Highlight center node
-          return colorMap[node.group] || colorMap.default;
+        .linkColor(() => {
+           const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+           return isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)';
         })
-        .nodeLabel('title')
-        .linkColor(() => '#4b5563')
         .linkDirectionalParticles(2)
         .linkDirectionalParticleSpeed(0.005)
+        .nodeCanvasObject((node, ctx, globalScale) => {
+          const isCenter = node.id === currentUrl;
+          const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          
+          // Draw Node Circle
+          const size = isCenter ? 12 : 5; // Center node is much larger
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false);
+          ctx.fillStyle = isCenter 
+            ? (isLight ? '#000000' : '#ffffff') 
+            : (colorMap[node.group] || colorMap.default);
+          ctx.fill();
+
+          // Draw Text Label
+          // Show text for center node always, and for other nodes only if zoomed in (globalScale > 1.2)
+          if (isCenter || globalScale > 1.2) {
+            const label = node.title;
+            const fontSize = isCenter ? 14 / globalScale : 12 / globalScale;
+            ctx.font = `${fontSize}px Sans-Serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.fillStyle = isLight ? '#1f2937' : 'rgba(255, 255, 255, 0.8)';
+            ctx.fillText(label, node.x, node.y + size + (2 / globalScale));
+          }
+        })
         .onNodeClick(node => {
           window.location.href = node.url;
         })
@@ -250,15 +274,13 @@ const { currentUrl } = Astro.props;
           viewport.style.cursor = node ? 'pointer' : null;
         });
 
-      // Handle resize
       window.addEventListener('resize', () => {
-        if (graphInstance && drawer.classList.contains('drawer-open')) {
+        if (graphInstance && overlay.classList.contains('overlay-visible')) {
           graphInstance.width(viewport.clientWidth).height(viewport.clientHeight);
         }
       });
     }
 
-    // Update data (needs deep copy or else d3 mutates it)
     const gData = {
       nodes: neighborhoodNodes.map(n => ({ ...n })),
       links: neighborhoodLinks.map(l => ({ ...l }))
@@ -266,8 +288,15 @@ const { currentUrl } = Astro.props;
 
     graphInstance.graphData(gData);
     
-    // Slight adjustments to physics
-    graphInstance.d3Force('charge').strength(-150);
-    graphInstance.d3Force('link').distance(40);
+    // Adjust physics to spread out 100+ nodes effectively
+    graphInstance.d3Force('charge').strength(-200);
+    graphInstance.d3Force('link').distance(60);
+
+    // Auto-center the graph after a short delay to allow physics to settle
+    setTimeout(() => {
+      if (graphInstance && overlay.classList.contains('overlay-visible')) {
+        graphInstance.zoomToFit(400, 50); // 400ms transition, 50px padding
+      }
+    }, 400);
   }
 </script>
