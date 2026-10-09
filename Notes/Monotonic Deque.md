@@ -1,3 +1,6 @@
+---
+updated: 09-10-2026
+---
 See :
 + [shortest-subarray-with-sum-at-least-k](../Problems/shortest-subarray-with-sum-at-least-k.md)
 + [sliding-window-maximum-(lc-239)](../Problems/sliding-window-maximum-(lc-239).md)
