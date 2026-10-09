@@ -295,6 +295,7 @@ export function getSidebar(): any[] {
   const problems = loadProblems();
   const notes = loadMarkdownDir('Notes');
   const templates = loadMarkdownDir('Templates');
+  const writeUps = loadMarkdownDir('Write-Ups');
 
   // Helper to build a nested tree from paths
   function buildTree(pages: MarkdownPage[], basePath: string) {
@@ -378,6 +379,12 @@ export function getSidebar(): any[] {
       icon: 'book',
       href: '/notes',
       children: buildTree(notes, 'notes')
+    },
+    {
+      label: 'Write-Ups',
+      icon: 'pen-tool',
+      href: '/write-ups',
+      children: buildTree(writeUps, 'write-ups')
     }
   ];
 }

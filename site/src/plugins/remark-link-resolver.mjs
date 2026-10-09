@@ -32,7 +32,7 @@ function scanDirectory(dir, fileList) {
 
 function initVaultFiles(vaultRoot) {
   if (isInitialized) return;
-  const dirsToScan = ['Problems', 'Notes', 'Templates', 'Companies', 'Topics', 'Platforms', 'Miscellaneous Tags', 'Groups'];
+  const dirsToScan = ['Problems', 'Notes', 'Templates', 'Write-Ups', 'Companies', 'Topics', 'Platforms', 'Miscellaneous Tags', 'Groups'];
   
   for (const d of dirsToScan) {
     scanDirectory(path.join(vaultRoot, d), vaultFilesCache);
@@ -64,6 +64,7 @@ function getSiteUrlForPath(absolutePath, vaultRoot) {
     case 'Problems': return `/problems/${slugPath}`;
     case 'Notes': return `/notes/${slugPath}`;
     case 'Templates': return `/templates/${slugPath}`;
+    case 'Write-Ups': return `/write-ups/${slugPath}`;
     case 'Companies': return `/companies/${slugPath}`;
     case 'Topics': return `/topics/${slugPath}`;
     case 'Platforms': return `/platforms/${slugPath}`;

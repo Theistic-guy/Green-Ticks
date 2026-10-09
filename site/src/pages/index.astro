@@ -12,6 +12,7 @@ import { marked } from 'marked';
 const problems = loadProblems();
 const templates = loadMarkdownDir('Templates');
 const notes = loadMarkdownDir('Notes');
+const writeUps = loadMarkdownDir('Write-Ups');
 
 const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
 const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
@@ -57,7 +58,7 @@ if (fs.existsSync(homepagePath)) {
 // Parse recently updated pages
 interface UpdateItem {
   title: string;
-  type: 'Problem' | 'Note' | 'Template';
+  type: 'Problem' | 'Note' | 'Template' | 'Write-Up';
   href: string;
   dateStr: string;
   timestamp: number;
@@ -96,6 +97,13 @@ templates.forEach(t => {
   if (t.updated) {
     const ts = parseDate(t.updated);
     if (ts) allUpdates.push({ title: t.title, type: 'Template', href: `/templates/${t.slug}`, dateStr: t.updated, timestamp: ts });
+  }
+});
+
+writeUps.forEach(w => {
+  if (w.updated) {
+    const ts = parseDate(w.updated);
+    if (ts) allUpdates.push({ title: w.title, type: 'Write-Up', href: `/write-ups/${w.slug}`, dateStr: w.updated, timestamp: ts });
   }
 });
 
