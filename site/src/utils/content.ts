@@ -6,12 +6,11 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+
 import matter from 'gray-matter';
 
 /** Root of the Green-Ticks vault (parent of site/) */
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const VAULT_ROOT = path.resolve(__dirname, '..', '..', '..');
+const VAULT_ROOT = path.resolve(process.cwd(), '..');
 
 /**
  * Normalize a frontmatter field that can be either a string, an array, or undefined
