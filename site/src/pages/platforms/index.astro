@@ -2,7 +2,10 @@
 import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
 import ListSearch from '../../components/ListSearch.astro';
-import { loadProblems, groupByField, slugify } from '../../utils/content';
+import { loadProblems, loadPlatformLogos, groupByField, slugify } from '../../utils/content';
+
+const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+const platformLogos = loadPlatformLogos(LOGO_DEV_TOKEN);
 
 const problems = loadProblems();
 const byPlatform = groupByField(problems, 'platforms');
@@ -11,7 +14,8 @@ const platforms = Object.entries(byPlatform)
   .map(([name, items]) => ({
     name,
     slug: slugify(name),
-    count: items.length
+    count: items.length,
+    logoUrl: platformLogos[name] || platformLogos[name.toLowerCase()]
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 ---
@@ -24,7 +28,8 @@ const platforms = Object.entries(byPlatform)
         title={platform.name} 
         href={`/platforms/${platform.slug}`} 
         count={platform.count}
-        icon="💻"
+        logoUrl={platform.logoUrl}
+        icon={!platform.logoUrl ? "💻" : undefined}
       />
     ))}
   </div>

@@ -6,7 +6,10 @@ import DifficultyBadge from '../components/DifficultyBadge.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import GraphSidebar from '../components/GraphSidebar.astro';
 import type { Problem } from '../utils/content';
-import { getSidebar, slugify } from '../utils/content';
+import { getSidebar, slugify, loadPlatformLogos } from '../utils/content';
+
+const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+const platformLogos = loadPlatformLogos(LOGO_DEV_TOKEN);
 
 interface Props {
   problem: Problem;
@@ -57,9 +60,25 @@ const hasRating = problem.rating != null && problem.rating > 0;
             <DifficultyBadge difficulty={problem.difficulty} size="md" />
             
             {hasPlatforms && (
-              problem.platforms.map(platform => (
-                <span class="chip platform-chip">{platform}</span>
-              ))
+              problem.platforms.map(platform => {
+                const logo = platformLogos[platform] || platformLogos[platform.toLowerCase()];
+                return (
+                  <a href={`/platforms/${slugify(platform)}`} class="chip platform-chip">
+                    {logo && (
+                      <img 
+                        src={logo} 
+                        alt="" 
+                        width="14" 
+                        height="14" 
+                        loading="lazy" 
+                        onerror="this.style.display='none'"
+                        style="vertical-align: middle; margin-right: 4px; border-radius: 2px;"
+                      />
+                    )}
+                    {platform}
+                  </a>
+                );
+              })
             )}
 
             {hasRating && (
@@ -314,6 +333,15 @@ const hasRating = problem.rating != null && problem.rating > 0;
     background: var(--color-bg-secondary);
     color: var(--color-text-secondary);
     border: 1px solid var(--color-border);
+  }
+
+  .platform-chip:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-bg-tertiary);
+  }
+
+  .platform-chip img {
+    border-radius: 2px;
   }
 
   .topic-chip {

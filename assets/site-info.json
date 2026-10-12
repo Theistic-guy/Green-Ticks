@@ -2,5 +2,12 @@
   "author": "Aryaman Verma",
   "bisky": "https://bsky.app/profile/aryamanverma.bsky.social",
   "github": "https://github.com/Theistic-guy",
-  "homepage_content_bordered" : true
+  "homepage_content_bordered": true,
+  "platforms": {
+    "GFG": "geeksforgeeks.org",
+    "Leetcode": "leetcode.com",
+    "Neetcode": "neetcode.io",
+    "Codechef": "codechef.com",
+    "Codeforces": "codeforces.com"
+  }
 }

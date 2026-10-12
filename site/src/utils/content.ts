@@ -210,6 +210,33 @@ export function loadCompanyLogos(token: string): Record<string, string> {
 }
 
 /**
+ * Load the platforms logo mapping from assets/site-info.json.
+ */
+export function loadPlatformLogos(token: string): Record<string, string> {
+  const jsonPath = path.join(VAULT_ROOT, 'assets', 'site-info.json');
+  if (!fs.existsSync(jsonPath)) return {};
+
+  try {
+    const raw = fs.readFileSync(jsonPath, 'utf-8');
+    const info = JSON.parse(raw);
+    const platformsMap: Record<string, string> = info.platforms || {};
+    const logos: Record<string, string> = {};
+
+    if (!token || token === 'your_token_here') return logos;
+
+    for (const [platform, domain] of Object.entries(platformsMap)) {
+      const url = `https://img.logo.dev/${domain}?token=${token}`;
+      logos[platform] = url;
+      logos[platform.toLowerCase()] = url;
+      logos[platform.toUpperCase()] = url;
+    }
+    return logos;
+  } catch (e) {
+    return {};
+  }
+}
+
+/**
  * Group problems by a multi-value field (topics, companies, etc.)
  */
 export function groupByField(

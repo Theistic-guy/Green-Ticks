@@ -3,7 +3,7 @@ import IndexLayout from '../../layouts/IndexLayout.astro';
 import ProblemGroupList from '../../components/ProblemGroupList.astro';
 import FilterBar from '../../components/FilterBar.astro';
 import type { FilterData } from '../../components/FilterBar.astro';
-import { loadProblems, loadCompanyLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
+import { loadProblems, loadCompanyLogos, loadPlatformLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
 
 export async function getStaticPaths() {
   const problems = loadProblems();
@@ -11,6 +11,7 @@ export async function getStaticPaths() {
   
   const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
   const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+  const platformLogos = loadPlatformLogos(LOGO_DEV_TOKEN);
   
   return Object.entries(byPlatform).map(([platform, items]) => {
     const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
@@ -34,12 +35,14 @@ export async function getStaticPaths() {
 
     const topContent = loadSectionContent('Platforms', slug, 'Top');
     const bottomContent = loadSectionContent('Platforms', slug, 'Bottom');
+    const logoUrl = platformLogos[platform] || platformLogos[platform.toLowerCase()];
 
     return {
       params: { slug },
       props: { 
         platform, 
         problems: sortedItems,
+        logoUrl,
         filterData,
         topContent,
         bottomContent
@@ -48,10 +51,16 @@ export async function getStaticPaths() {
   });
 }
 
-const { platform, problems, filterData, topContent, bottomContent } = Astro.props;
+const { platform, problems, logoUrl, filterData, topContent, bottomContent } = Astro.props;
 ---
 
 <IndexLayout title={platform} description={`${problems.length} problems on ${platform}.`}>
+  {logoUrl && (
+    <div class="platform-header-logo">
+      <img src={logoUrl} alt={platform} width="56" height="56" />
+    </div>
+  )}
+
   {topContent && (
     <div class="custom-section-container top-section">
       <div class="prose" set:html={topContent} />
@@ -69,6 +78,20 @@ const { platform, problems, filterData, topContent, bottomContent } = Astro.prop
 </IndexLayout>
 
 <style>
+  .platform-header-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .platform-header-logo img {
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
   .custom-section-container {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
