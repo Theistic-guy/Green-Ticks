@@ -1,0 +1,39 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import Card from '../../components/Card.astro';
+import ListSearch from '../../components/ListSearch.astro';
+import { loadProblems, groupByField, slugify } from '../../utils/content';
+
+const problems = loadProblems();
+const byPlatform = groupByField(problems, 'platforms');
+
+const platforms = Object.entries(byPlatform)
+  .map(([name, items]) => ({
+    name,
+    slug: slugify(name),
+    count: items.length
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<IndexLayout title="Platforms" description="Browse coding problems by platform (LeetCode, GFG, etc.).">
+  <ListSearch placeholder="Search platforms..." />
+  <div class="card-grid">
+    {platforms.map(platform => (
+      <Card 
+        title={platform.name} 
+        href={`/platforms/${platform.slug}`} 
+        count={platform.count}
+        icon="💻"
+      />
+    ))}
+  </div>
+</IndexLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

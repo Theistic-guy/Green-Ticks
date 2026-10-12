@@ -363,6 +363,7 @@ export function getSidebar(): any[] {
         { label: 'Problems', href: '/problems', count: problems.length },
         { label: 'Topics', href: '/topics' },
         { label: 'Companies', href: '/companies' },
+        { label: 'Platforms', href: '/platforms' },
         { label: 'Misc Tags', href: '/misc' },
         { label: 'Groups', href: '/groups' },
       ]
