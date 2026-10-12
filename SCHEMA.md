@@ -188,6 +188,14 @@ In any problem, note, or collapsible module, embed the carousel using standard w
 
 The Astro build automatically embeds the cards and initializes the interactive `<green-carousel>` client component with smooth scrolling, navigation buttons, and touch-drag support.
 
+## Site Configuration (`assets/site-info.json`)
+
+Global metadata and display settings can be configured in `assets/site-info.json`:
+- `author`: Site author name
+- `github`: Author's GitHub profile URL
+- `bisky`: Author's Bluesky profile URL
+- `homepage_content_bordered`: `true` (default) wraps custom `HOMEPAGE.md` content in a framed card container with border and background; `false` renders it unbordered and seamlessly integrated directly into the page layout.
+
 ## Maintenance rules
 
 - Keep metadata consistent.

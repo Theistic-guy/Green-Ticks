@@ -84,6 +84,9 @@ To render interactive swipeable carousels:
 ### 3. Custom Category Sections
 You can inject custom Markdown at the top or bottom of auto-generated index pages (like the "Amazon" companies page) by creating specifically named `top.md` or `bottom.md` files inside `assets/Append Sections/<Category> Sections/<slug>/`. See `SCHEMA.md` for strict directory rules.
 
+### 4. Site Settings (`assets/site-info.json`)
+Configure global display options such as `homepage_content_bordered: true | false` to choose between a card-bordered container or seamless page integration for `HOMEPAGE.md`.
+
 ## What Gets Auto-Generated
 
 The following files and folders are **auto-generated** and should **not** be edited manually:
