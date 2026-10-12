@@ -1,6 +1,6 @@
 ---
 Caption: Tree carousel Container
-Display Count: "1"
+Display Count: "2"
 Rotation: true
 Rotation Speed: Fast
 Cards:
