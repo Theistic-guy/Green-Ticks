@@ -64,10 +64,15 @@ export function scanDirectory(dir, fileList) {
   if (!fs.existsSync(dir)) return;
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
+    if (entry.name.startsWith('.')) continue;
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       scanDirectory(fullPath, fileList);
     } else if (entry.name.endsWith('.md')) {
+      const baseName = entry.name.replace(/\.md$/i, '');
+      if (baseName.includes('To-Do or Wishlist') || baseName.toLowerCase() === 'readme') {
+        continue;
+      }
       fileList.push(fullPath);
     }
   }

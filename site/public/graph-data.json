@@ -1105,12 +1105,6 @@
                       "group":  "notes"
                   },
                   {
-                      "id":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "title":  "☑To-Do or Wishlist or Do later list",
-                      "url":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "group":  "notes"
-                  },
-                  {
                       "id":  "/notes/extras/2-doubts-about-median-of-two-sorted-arrays",
                       "title":  "2 doubts about \u0027median of two sorted arrays\u0027",
                       "url":  "/notes/extras/2-doubts-about-median-of-two-sorted-arrays",
@@ -3745,38 +3739,6 @@
                   {
                       "source":  "/notes/what-makes-a-problem-dp",
                       "target":  "/problems/maximum-subarray-sum"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/intervals-ranges-pattern-sorting"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/string-variations-and-patterns"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/problems/next-permutation-leetcode-31"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/stack-patterns-and-variations-to-do"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/queue-patterns-and-variations"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/bfs-backtracking-based-queue-but-not-queue-patterns"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/huffman-coding-indirectly-inspired"
-                  },
-                  {
-                      "source":  "/notes/to-do-or-wishlist-or-do-later-list",
-                      "target":  "/notes/extras/scheduling-greedy-dp-heap-cluster"
                   },
                   {
                       "source":  "/notes/extras/deque-patterns-and-variations",
