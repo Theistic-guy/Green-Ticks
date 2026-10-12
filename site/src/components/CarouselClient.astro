@@ -326,10 +326,54 @@ green-carousel[data-size="large"] .carousel-btn {
 green-carousel[data-size="large"] .carousel-btn-prev { left: -17px; }
 green-carousel[data-size="large"] .carousel-btn-next { right: -17px; }
 
+/* --- Alignment Variants --- */
+
+/* Left alignment */
+green-carousel[data-align="left"] {
+  margin-left: 0;
+  margin-right: auto;
+}
+green-carousel[data-align="left"] .carousel-caption {
+  text-align: left;
+}
+
+/* Right alignment */
+green-carousel[data-align="right"] {
+  margin-left: auto;
+  margin-right: 0;
+}
+green-carousel[data-align="right"] .carousel-caption {
+  text-align: right;
+}
+
+/* Center alignment (default) */
+green-carousel:not([data-align]),
+green-carousel[data-align="center"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+green-carousel:not([data-align]) .carousel-caption,
+green-carousel[data-align="center"] .carousel-caption {
+  text-align: center;
+}
+
+/* Justify (stretch to fill 100% width of container) */
+green-carousel[data-align="justify"] {
+  max-width: 100% !important;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+green-carousel[data-align="justify"] .carousel-caption {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   green-carousel {
     --display-count: 1.15 !important;
     max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .carousel-btn {
     display: none;

@@ -57,6 +57,10 @@ async function buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath) {
   const validSizes = ['small', 'medium', 'large'];
   const size = validSizes.includes(rawSize) ? rawSize : 'medium';
   
+  const rawAlign = String(containerData.Align || 'Center').trim().toLowerCase();
+  const validAligns = ['left', 'center', 'right', 'justify'];
+  const align = validAligns.includes(rawAlign) ? rawAlign : 'center';
+  
   const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
   const cardLinks = extractWikiLinks(cardsRaw);
   
@@ -111,7 +115,7 @@ async function buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath) {
   
   const cardsHtml = cardsHtmlArr.join('');
   
-  return `<green-carousel data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtml}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+  return `<green-carousel data-align="${align}" data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtml}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
 }
 
 export function remarkCarousel() {

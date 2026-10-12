@@ -177,6 +177,7 @@ Create container definitions inside `assets/Carousels/Carousel Containers/<Conta
 Supported frontmatter:
 - `Caption`: Optional label displayed beneath the carousel
 - `Size`: `Small`, `Medium` (default), or `Large`. Adjusts card scale, image height, and container width.
+- `Align`: `Left`, `Center` (default), `Right`, or `Justify` (stretches cards across 100% width of the container).
 - `Display Count`: Number of cards visible at once (e.g. `1`, `2`)
 - `Rotation`: `true` or `false` for autoplay auto-scrolling
 - `Rotation Speed`: `Slow` (5s), `Medium` (3s), or `Fast` (1.5s)

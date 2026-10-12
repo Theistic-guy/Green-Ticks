@@ -77,7 +77,7 @@ To create a reusable, interactive collapsible section, create a `.md` file insid
 
 ### 2. Carousels
 To render interactive swipeable carousels:
-- Create Carousel Containers inside `assets/Carousels/Carousel Containers/` (Supports `Cards`, `Size: Small | Medium | Large`, `Display Count`, `Rotation`, `Rotation Speed`, `Caption`).
+- Create Carousel Containers inside `assets/Carousels/Carousel Containers/` (Supports `Cards`, `Size: Small | Medium | Large`, `Align: Left | Right | Center | Justify`, `Display Count`, `Rotation`, `Rotation Speed`, `Caption`).
 - Create Carousel Cards inside `assets/Carousels/Carousel Cards/`.
 - **Usage:** In any note, insert `[[Container Name]]`. The build will parse the cards and generate a native `<green-carousel>` Web Component.
 
