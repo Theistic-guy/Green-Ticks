@@ -1,5 +1,5 @@
 ---
-updated: 09-10-2026
+updated: 12-10-2026
 ---
 # Green-Ticks Schema
 
@@ -103,7 +103,51 @@ Do not manually edit `README.md`; changes will be overwritten.
 
 Every Markdown file inside `Templates/` is automatically linked in the generated README.
 
-No frontmatter is required for template files.
+No frontmatter is strictly required for template or note files, but you can optionally add frontmatter metadata:
+- `Title`: Custom display title. Defaults to the file basename.
+- `updated`: Modification date strictly in `DD-MM-YYYY` format (e.g. `12-10-2026`).
+- `tags`: Obsidian's standard tagging property.
+
+### Note & Template Tagging Convention
+
+Notes and templates can be tagged using Obsidian's default frontmatter `tags` property in any of the following formats:
+
+1. **YAML bullet list**:
+   ```yaml
+   ---
+   tags:
+     - recursion
+     - josephus
+   ---
+   ```
+
+2. **YAML inline array**:
+   ```yaml
+   ---
+   tags: [theory, backtracking, recursion, dfs]
+   ---
+   ```
+
+3. **Space-delimited hashtags or comma strings**:
+   ```yaml
+   ---
+   Tags: #DSA #Trie #Tree
+   ---
+   ```
+   *(Both lowercase `tags:` and capitalized `Tags:` are supported, as well as nested Obsidian tags like `computer-science/algorithms`.)*
+
+### Search Indexing & Tags Behavior
+
+- **Master Search (`Ctrl + K`)**: Note and template tags are indexed automatically. Users can find notes via standard keyword fuzzy search or by prefixing with `#` (e.g., `#recursion` or `#dfs`).
+- **In-Page Filtering**: Notes on `/notes` and templates on `/templates` can be filtered by tag using the in-page search bar.
+- **Page Display**: Tagged notes display `#tag` chip badges at the top of the note layout.
+
+### Crucial Distinction: Note `tags` vs Problem `Other Tags`
+
+- **`Other Tags` (Problems only)**: Drives the **Miscellaneous Tags** section (`/misc/` and `/misc/[slug]`), the problem filter popover (`btn-tags`), and the "Tags" row on problem layouts.
+- **`tags` (Notes, Templates, Write-Ups)**: Obsidian's native tag property for general concept notes. Note tags are **never** injected into `Other Tags` and will **never** appear in the `/misc/` problem directories or problem filters.
+- **In Master Search (`Ctrl + K`)**: The `#tag` filter searches across **both** pools seamlessly (Problems' `Other Tags` and Notes' `tags`), highlighting matched tags on their respective cards.
+
 
 ## Custom Top and Bottom Sections
 

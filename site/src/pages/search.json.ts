@@ -54,7 +54,8 @@ export async function GET() {
       topics: [],
       companies: [],
       platforms: [],
-      otherTags: noteTags,
+      otherTags: [],
+      obsidianTags: noteTags,
       groups: [],
     });
   }
@@ -79,7 +80,8 @@ export async function GET() {
       topics: [],
       companies: [],
       platforms: [],
-      otherTags: tempTags,
+      otherTags: [],
+      obsidianTags: tempTags,
       groups: [],
     });
   }
@@ -104,7 +106,8 @@ export async function GET() {
       topics: [],
       companies: [],
       platforms: [],
-      otherTags: wuTags,
+      otherTags: [],
+      obsidianTags: wuTags,
       groups: [],
     });
   }

@@ -1,5 +1,5 @@
 ---
-updated: 09-10-2026
+updated: 12-10-2026
 ---
 # Contributing to Green-Ticks
 
@@ -65,6 +65,33 @@ Difficulty: Easy
 ### Difficulty Values
 
 Must be one of: `Easy`, `Medium`, `Hard`, `Not Specified`
+
+## Notes, Templates, and Write-Ups Format
+
+Notes (`Notes/`), Templates (`Templates/`), and Write-Ups (`Write-Ups/`) do not require problem metadata like `Platform`, `Companies`, or `Difficulty`.
+
+### Tagging Notes & Templates
+
+You can tag notes and templates using Obsidian's default frontmatter `tags` property in either format:
+
+1. **YAML bullet list**:
+   ```yaml
+   ---
+   tags:
+     - recursion
+     - josephus
+   ---
+   ```
+
+2. **YAML inline array**:
+   ```yaml
+   ---
+   tags: [theory, backtracking, recursion, dfs]
+   ---
+   ```
+
+- **Searchability**: These tags are automatically indexed by the site's Master Search (`Ctrl + K`). Users can search them as plain keywords or with the `#` prefix (e.g., `#recursion`).
+- **Distinction from Problem `Other Tags`**: Problem `Other Tags:` exclusively drives the **Miscellaneous Tags** section (`/misc/`). Note `tags:` are strictly for notes and will never appear under `/misc/` or problem filters. Both remain independently searchable via Master Search.
 
 ## Assets & Special Mechanics
 

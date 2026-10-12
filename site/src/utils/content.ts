@@ -168,13 +168,6 @@ export function loadProblems(): Problem[] {
       rating = starCount > 0 ? starCount : parseInt(str, 10) || null;
     }
 
-    const extraTags = extractFrontmatterTags(data);
-    const otherTags = [...new Set([
-      ...asList(data['Other Tags']),
-      ...asList(data['otherTags']),
-      ...extraTags,
-    ])];
-
     problems.push({
       slug,
       filePath,
@@ -184,7 +177,7 @@ export function loadProblems(): Problem[] {
       companies: asList(data.Companies),
       difficulty: String(data.Difficulty || 'Not Specified'),
       link: String(data.Link || ''),
-      otherTags,
+      otherTags: asList(data['Other Tags']),
       rating,
       groups: asList(data.Groups),
       rawContent: content,

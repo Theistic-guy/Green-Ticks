@@ -393,6 +393,7 @@
           item.platforms || [],
           item.otherTags || [],
           item.groups || [],
+          item.obsidianTags || [],
           item.tags || []
         );
         return allTags.some(function(tag) {
@@ -435,7 +436,7 @@
         
         if (isTagMode && tagQuery) {
           var q = tagQuery.toLowerCase();
-          var allTagArrays = [item.topics, item.companies, item.platforms, item.otherTags, item.groups, item.tags];
+          var allTagArrays = [item.topics, item.companies, item.platforms, item.otherTags, item.groups, item.obsidianTags, item.tags];
           allTagArrays.forEach(function(arr) {
             if (arr) {
               arr.forEach(function(tag) {
