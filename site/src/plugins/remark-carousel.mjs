@@ -40,13 +40,92 @@ function resolveAssetPath(target, currentDir, vaultRoot) {
   return resolved;
 }
 
+async function buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath) {
+  if (!fs.existsSync(containerPath) || !containerPath.includes('Carousel Containers')) {
+    return null;
+  }
+
+  const containerRaw = fs.readFileSync(containerPath, 'utf8');
+  const { data: containerData } = matter(containerRaw);
+  
+  const caption = containerData.Caption || '';
+  const displayCount = parseInt(containerData['Display Count'] || 1, 10);
+  const rotation = containerData.Rotation === true;
+  const speedMap = { Slow: 5000, Medium: 3000, Fast: 1500 };
+  const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
+  const rawSize = String(containerData.Size || 'Medium').trim().toLowerCase();
+  const validSizes = ['small', 'medium', 'large'];
+  const size = validSizes.includes(rawSize) ? rawSize : 'medium';
+  
+  const rawAlign = String(containerData.Align || 'Center').trim().toLowerCase();
+  const validAligns = ['left', 'center', 'right', 'justify'];
+  const align = validAligns.includes(rawAlign) ? rawAlign : 'center';
+  
+  const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
+  const cardLinks = extractWikiLinks(cardsRaw);
+  
+  const cardsHtmlArr = await Promise.all(cardLinks.map(async cardLink => {
+    let cardPath = path.resolve(path.dirname(containerPath), cardLink.target);
+    if (!cardPath.endsWith('.md')) cardPath += '.md';
+    if (!fs.existsSync(cardPath)) {
+      cardPath = path.resolve(vaultRoot, 'assets', 'Carousels', 'Carousel Cards', cardLink.target);
+      if (!cardPath.endsWith('.md')) cardPath += '.md';
+    }
+    
+    if (!fs.existsSync(cardPath)) return ''; 
+    
+    const cardRaw = fs.readFileSync(cardPath, 'utf8');
+    const { data: cardData } = matter(cardRaw);
+    
+    const title = cardData.Title || '';
+    const description = cardData.Description || '';
+    
+    let coverImg = '';
+    if (cardData['Cover Img']) {
+      const imgLinks = extractWikiLinks(String(cardData['Cover Img']));
+      if (imgLinks.length > 0) {
+        const imgTarget = imgLinks[0].target.trim();
+        if (imgTarget.startsWith('http://') || imgTarget.startsWith('https://')) {
+          coverImg = imgTarget;
+        } else {
+          coverImg = `/Images/${path.basename(imgTarget)}`;
+        }
+      }
+    }
+    
+    let cardLinkUrl = '#';
+    if (cardData.Link) {
+      const lnks = extractWikiLinks(String(cardData.Link));
+      if (lnks.length > 0) {
+         const lnkTarget = lnks[0].target.trim();
+         if (lnkTarget.startsWith('http://') || lnkTarget.startsWith('https://')) {
+           cardLinkUrl = lnkTarget;
+         } else {
+           let resolvedMd = path.resolve(path.dirname(cardPath), lnkTarget);
+           if (!resolvedMd.endsWith('.md')) resolvedMd += '.md';
+           if (fs.existsSync(resolvedMd)) {
+             cardLinkUrl = getSiteUrlForPath(resolvedMd, vaultRoot);
+           }
+         }
+      }
+    }
+    
+    return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" onerror="this.style.display='none'" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
+  }));
+  
+  const cardsHtml = cardsHtmlArr.join('');
+  
+  return `<green-carousel data-align="${align}" data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtml}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+}
+
 export function remarkCarousel() {
   return async (tree, file) => {
     const currentFilePath = file.history[0];
     const siteDir = path.resolve(process.cwd());
     const vaultRoot = path.resolve(siteDir, '..');
+    const { getSiteUrlForPath } = await import('./remark-link-resolver.mjs');
     
-    // Collect all matches first
+    // 1. Collect text nodes with [[...]]
     const nodesToProcess = [];
     visit(tree, 'text', (node, index, parent) => {
       if (!parent) return;
@@ -57,9 +136,6 @@ export function remarkCarousel() {
         nodesToProcess.push({ node, index, parent, matches, text });
       }
     });
-    
-    // We import dynamically because getSiteUrlForPath is now exported
-    const { getSiteUrlForPath } = await import('./remark-link-resolver.mjs');
 
     for (const { node, index, parent, matches, text } of nodesToProcess) {
       const newNodes = [];
@@ -79,94 +155,16 @@ export function remarkCarousel() {
         
         lastIndex = matchStart + fullMatch.length;
         
-        let containerPath = path.resolve(path.dirname(currentFilePath), target);
-        if (!target.endsWith('.md')) containerPath += '.md';
+        let containerPath = currentFilePath ? path.resolve(path.dirname(currentFilePath), target) : '';
+        if (containerPath && !target.endsWith('.md')) containerPath += '.md';
         
-        if (!fs.existsSync(containerPath)) {
+        if (!containerPath || !fs.existsSync(containerPath)) {
           containerPath = path.resolve(vaultRoot, 'assets', 'Carousels', 'Carousel Containers', target);
           if (!target.endsWith('.md')) containerPath += '.md';
         }
         
-        if (fs.existsSync(containerPath) && containerPath.includes('Carousel Containers')) {
-          const containerRaw = fs.readFileSync(containerPath, 'utf8');
-          const { data: containerData } = matter(containerRaw);
-          
-          const caption = containerData.Caption || '';
-          const displayCount = parseInt(containerData['Display Count'] || 1, 10);
-          const rotation = containerData.Rotation === true;
-          const speedMap = { Slow: 5000, Medium: 3000, Fast: 1500 };
-          const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
-          
-          const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
-          const cardLinks = extractWikiLinks(cardsRaw);
-          
-          const cardsHtmlArr = await Promise.all(cardLinks.map(async cardLink => {
-            let cardPath = path.resolve(path.dirname(containerPath), cardLink.target);
-            if (!cardPath.endsWith('.md')) cardPath += '.md';
-            
-            if (!fs.existsSync(cardPath)) return ''; 
-            
-            const cardRaw = fs.readFileSync(cardPath, 'utf8');
-            const { data: cardData } = matter(cardRaw);
-            
-            const title = cardData.Title || '';
-            const description = cardData.Description || '';
-            
-            let coverImg = '';
-            if (cardData['Cover Img']) {
-              const imgLinks = extractWikiLinks(String(cardData['Cover Img']));
-              if (imgLinks.length > 0) {
-                const imgTarget = imgLinks[0].target.trim();
-                if (imgTarget.startsWith('http://') || imgTarget.startsWith('https://')) {
-                  coverImg = imgTarget;
-                } else {
-                  coverImg = `/Images/${path.basename(imgTarget)}`;
-                }
-              }
-            }
-            
-            let cardLinkUrl = '#';
-            if (cardData.Link) {
-              const lnks = extractWikiLinks(String(cardData.Link));
-              if (lnks.length > 0) {
-                 const lnkTarget = lnks[0].target.trim();
-                 if (lnkTarget.startsWith('http://') || lnkTarget.startsWith('https://')) {
-                   cardLinkUrl = lnkTarget;
-                 } else {
-                   let resolvedMd = path.resolve(path.dirname(cardPath), lnkTarget);
-                   if (!resolvedMd.endsWith('.md')) resolvedMd += '.md';
-                   if (fs.existsSync(resolvedMd)) {
-                     cardLinkUrl = getSiteUrlForPath(resolvedMd, vaultRoot);
-                   }
-                 }
-              }
-            }
-            
-            return `
-              <div class="carousel-card">
-                ${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" />` : ''}
-                <div class="carousel-card-content">
-                  ${title ? `<h3>${title}</h3>` : ''}
-                  ${description ? `<p>${description}</p>` : ''}
-                  ${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}
-                </div>
-              </div>
-            `;
-          }));
-          
-          const cardsHtml = cardsHtmlArr.join('');
-          
-          const htmlStr = `
-            <green-carousel data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}">
-              <div class="carousel-wrapper">
-                <div class="carousel-track">
-                  ${cardsHtml}
-                </div>
-                ${caption ? `<div class="carousel-caption">${caption}</div>` : ''}
-              </div>
-            </green-carousel>
-          `;
-          
+        const htmlStr = await buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath);
+        if (htmlStr) {
           newNodes.push({ type: 'html', value: htmlStr });
         } else {
           newNodes.push({ type: 'text', value: fullMatch });
@@ -178,6 +176,35 @@ export function remarkCarousel() {
       }
       
       parent.children.splice(index, 1, ...newNodes);
+    }
+
+    // 2. Process link nodes with [label](url) targeting Carousel Containers
+    const linksToProcess = [];
+    visit(tree, 'link', (node, index, parent) => {
+      if (!parent) return;
+      const cleanUrl = decodeURIComponent(node.url || '');
+      if (cleanUrl.includes('Carousel Containers') || cleanUrl.includes('Carousels')) {
+        linksToProcess.push({ node, index, parent, cleanUrl });
+      }
+    });
+
+    for (const { node, index, parent, cleanUrl } of linksToProcess) {
+      let containerPath = currentFilePath ? path.resolve(path.dirname(currentFilePath), cleanUrl) : '';
+      if (containerPath && !containerPath.endsWith('.md')) containerPath += '.md';
+      
+      if (!containerPath || !fs.existsSync(containerPath)) {
+        containerPath = path.resolve(vaultRoot, cleanUrl);
+        if (!containerPath.endsWith('.md')) containerPath += '.md';
+      }
+      if (!fs.existsSync(containerPath)) {
+        containerPath = path.resolve(vaultRoot, 'assets', 'Carousels', 'Carousel Containers', path.basename(cleanUrl));
+        if (!containerPath.endsWith('.md')) containerPath += '.md';
+      }
+      
+      const htmlStr = await buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath);
+      if (htmlStr) {
+        parent.children.splice(index, 1, { type: 'html', value: htmlStr });
+      }
     }
   };
 }

@@ -1,5 +1,5 @@
 ---
-updated: 09-10-2026
+updated: 12-10-2026
 ---
 # Green-Ticks Schema
 
@@ -103,7 +103,51 @@ Do not manually edit `README.md`; changes will be overwritten.
 
 Every Markdown file inside `Templates/` is automatically linked in the generated README.
 
-No frontmatter is required for template files.
+No frontmatter is strictly required for template or note files, but you can optionally add frontmatter metadata:
+- `Title`: Custom display title. Defaults to the file basename.
+- `updated`: Modification date strictly in `DD-MM-YYYY` format (e.g. `12-10-2026`).
+- `tags`: Obsidian's standard tagging property.
+
+### Note & Template Tagging Convention
+
+Notes and templates can be tagged using Obsidian's default frontmatter `tags` property in any of the following formats:
+
+1. **YAML bullet list**:
+   ```yaml
+   ---
+   tags:
+     - recursion
+     - josephus
+   ---
+   ```
+
+2. **YAML inline array**:
+   ```yaml
+   ---
+   tags: [theory, backtracking, recursion, dfs]
+   ---
+   ```
+
+3. **Space-delimited hashtags or comma strings**:
+   ```yaml
+   ---
+   Tags: #DSA #Trie #Tree
+   ---
+   ```
+   *(Both lowercase `tags:` and capitalized `Tags:` are supported, as well as nested Obsidian tags like `computer-science/algorithms`.)*
+
+### Search Indexing & Tags Behavior
+
+- **Master Search (`Ctrl + K`)**: Note and template tags are indexed automatically. Users can find notes via standard keyword fuzzy search or by prefixing with `#` (e.g., `#recursion` or `#dfs`).
+- **In-Page Filtering**: Notes on `/notes` and templates on `/templates` can be filtered by tag using the in-page search bar.
+- **Page Display**: Tagged notes display `#tag` chip badges at the top of the note layout.
+
+### Crucial Distinction: Note `tags` vs Problem `Other Tags`
+
+- **`Other Tags` (Problems only)**: Drives the **Miscellaneous Tags** section (`/misc/` and `/misc/[slug]`), the problem filter popover (`btn-tags`), and the "Tags" row on problem layouts.
+- **`tags` (Notes, Templates, Write-Ups)**: Obsidian's native tag property for general concept notes. Note tags are **never** injected into `Other Tags` and will **never** appear in the `/misc/` problem directories or problem filters.
+- **In Master Search (`Ctrl + K`)**: The `#tag` filter searches across **both** pools seamlessly (Problems' `Other Tags` and Notes' `tags`), highlighting matched tags on their respective cards.
+
 
 ## Custom Top and Bottom Sections
 
@@ -159,6 +203,43 @@ In any note or problem file, insert the module using standard wiki link syntax:
 `[[Module Name]]`
 
 The Astro build intercepts this link, parses the target `.md` file (including inner formatting, code blocks, or nested carousels), and renders it inline as an accessible `<details>` block. The module title automatically appears in the Table of Contents, and its subheadings dynamically hide/show in the TOC based on the toggle state.
+
+## Carousels
+
+You can render interactive, swipeable card carousels anywhere across your notes.
+
+### 1. Carousel Cards
+Create individual cards inside `assets/Carousels/Carousel Cards/<CardName>.md`.
+Supported frontmatter:
+- `Title`: Card heading
+- `Description`: Text snippet or summary
+- `Cover Img`: Wikilink (e.g. `"[[tree_img.png]]"`) or external image URL
+- `Link`: Wikilink (e.g. `"[[Topics/trie]]"`) or external URL for the "View More" button
+
+### 2. Carousel Containers
+Create container definitions inside `assets/Carousels/Carousel Containers/<ContainerName>.md`.
+Supported frontmatter:
+- `Caption`: Optional label displayed beneath the carousel
+- `Size`: `Small`, `Medium` (default), or `Large`. Adjusts card scale, image height, and container width.
+- `Align`: `Left`, `Center` (default), `Right`, or `Justify` (stretches cards across 100% width of the container).
+- `Display Count`: Number of cards visible at once (e.g. `1`, `2`)
+- `Rotation`: `true` or `false` for autoplay auto-scrolling
+- `Rotation Speed`: `Slow` (5s), `Medium` (3s), or `Fast` (1.5s)
+- `Cards`: List of wikilinks pointing to cards in `Carousel Cards/`
+
+### 3. Usage
+In any problem, note, or collapsible module, embed the carousel using standard wikilink syntax:
+`[[ContainerName]]` or `![[ContainerName]]`
+
+The Astro build automatically embeds the cards and initializes the interactive `<green-carousel>` client component with smooth scrolling, navigation buttons, and touch-drag support.
+
+## Site Configuration (`assets/site-info.json`)
+
+Global metadata and display settings can be configured in `assets/site-info.json`:
+- `author`: Site author name
+- `github`: Author's GitHub profile URL
+- `bisky`: Author's Bluesky profile URL
+- `homepage_content_bordered`: `true` (default) wraps custom `HOMEPAGE.md` content in a framed card container with border and background; `false` renders it unbordered and seamlessly integrated directly into the page layout.
 
 ## Maintenance rules
 

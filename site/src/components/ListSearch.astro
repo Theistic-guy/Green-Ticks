@@ -26,13 +26,15 @@ const { placeholder = "Search..." } = Astro.props;
       
       cards.forEach((card: any) => {
         const titleEl = card.querySelector('.card-title');
-        if (titleEl) {
-          const title = titleEl.textContent.toLowerCase();
-          if (title.includes(term)) {
-            card.style.display = ''; // Restore original (usually flex)
-          } else {
-            card.style.display = 'none';
-          }
+        const descEl = card.querySelector('.card-desc');
+        const dataTags = card.getAttribute('data-tags') || '';
+        const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        const desc = descEl ? descEl.textContent.toLowerCase() : '';
+
+        if (title.includes(term) || desc.includes(term) || dataTags.toLowerCase().includes(term)) {
+          card.style.display = ''; // Restore original (usually flex)
+        } else {
+          card.style.display = 'none';
         }
       });
       

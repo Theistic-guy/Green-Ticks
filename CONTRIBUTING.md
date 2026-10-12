@@ -1,5 +1,5 @@
 ---
-updated: 09-10-2026
+updated: 12-10-2026
 ---
 # Contributing to Green-Ticks
 
@@ -66,6 +66,33 @@ Difficulty: Easy
 
 Must be one of: `Easy`, `Medium`, `Hard`, `Not Specified`
 
+## Notes, Templates, and Write-Ups Format
+
+Notes (`Notes/`), Templates (`Templates/`), and Write-Ups (`Write-Ups/`) do not require problem metadata like `Platform`, `Companies`, or `Difficulty`.
+
+### Tagging Notes & Templates
+
+You can tag notes and templates using Obsidian's default frontmatter `tags` property in either format:
+
+1. **YAML bullet list**:
+   ```yaml
+   ---
+   tags:
+     - recursion
+     - josephus
+   ---
+   ```
+
+2. **YAML inline array**:
+   ```yaml
+   ---
+   tags: [theory, backtracking, recursion, dfs]
+   ---
+   ```
+
+- **Searchability**: These tags are automatically indexed by the site's Master Search (`Ctrl + K`). Users can search them as plain keywords or with the `#` prefix (e.g., `#recursion`).
+- **Distinction from Problem `Other Tags`**: Problem `Other Tags:` exclusively drives the **Miscellaneous Tags** section (`/misc/`). Note `tags:` are strictly for notes and will never appear under `/misc/` or problem filters. Both remain independently searchable via Master Search.
+
 ## Assets & Special Mechanics
 
 You can utilize special formatting mechanics by linking to specific Markdown files stored inside the `assets/` directory.
@@ -77,12 +104,15 @@ To create a reusable, interactive collapsible section, create a `.md` file insid
 
 ### 2. Carousels
 To render interactive swipeable carousels:
-- Create Carousel Containers inside `assets/Carousels/Carousel Containers/` (Requires `Cards` list frontmatter).
+- Create Carousel Containers inside `assets/Carousels/Carousel Containers/` (Supports `Cards`, `Size: Small | Medium | Large`, `Align: Left | Right | Center | Justify`, `Display Count`, `Rotation`, `Rotation Speed`, `Caption`).
 - Create Carousel Cards inside `assets/Carousels/Carousel Cards/`.
 - **Usage:** In any note, insert `[[Container Name]]`. The build will parse the cards and generate a native `<green-carousel>` Web Component.
 
 ### 3. Custom Category Sections
 You can inject custom Markdown at the top or bottom of auto-generated index pages (like the "Amazon" companies page) by creating specifically named `top.md` or `bottom.md` files inside `assets/Append Sections/<Category> Sections/<slug>/`. See `SCHEMA.md` for strict directory rules.
+
+### 4. Site Settings (`assets/site-info.json`)
+Configure global display options such as `homepage_content_bordered: true | false` to choose between a card-bordered container or seamless page integration for `HOMEPAGE.md`.
 
 ## What Gets Auto-Generated
 

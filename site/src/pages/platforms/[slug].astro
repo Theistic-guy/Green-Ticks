@@ -1,0 +1,118 @@
+---
+import IndexLayout from '../../layouts/IndexLayout.astro';
+import ProblemGroupList from '../../components/ProblemGroupList.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import type { FilterData } from '../../components/FilterBar.astro';
+import { loadProblems, loadCompanyLogos, loadPlatformLogos, groupByField, slugify, sortDifficulty, computeFacets, loadSectionContent } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const problems = loadProblems();
+  const byPlatform = groupByField(problems, 'platforms');
+  
+  const LOGO_DEV_TOKEN = 'pk_cwa5LeR3RiifmBSonSReKw';
+  const companyLogos = loadCompanyLogos(LOGO_DEV_TOKEN);
+  const platformLogos = loadPlatformLogos(LOGO_DEV_TOKEN);
+  
+  return Object.entries(byPlatform).map(([platform, items]) => {
+    const sortedItems = [...items].sort((a, b) => sortDifficulty(a.difficulty, b.difficulty));
+    const slug = slugify(platform);
+    
+    // Build filter data
+    const filterData: FilterData = {
+      baseDimension: { type: 'platforms', value: platform },
+      problems: sortedItems.map(p => ({
+        slug: p.slug,
+        title: p.title,
+        difficulty: p.difficulty,
+        topics: p.topics,
+        companies: p.companies,
+        otherTags: p.otherTags,
+        groups: p.groups
+      })),
+      facets: computeFacets(sortedItems, platform),
+      companyLogos
+    };
+
+    const topContent = loadSectionContent('Platforms', slug, 'Top');
+    const bottomContent = loadSectionContent('Platforms', slug, 'Bottom');
+    const logoUrl = platformLogos[platform] || platformLogos[platform.toLowerCase()];
+
+    return {
+      params: { slug },
+      props: { 
+        platform, 
+        problems: sortedItems,
+        logoUrl,
+        filterData,
+        topContent,
+        bottomContent
+      },
+    };
+  });
+}
+
+const { platform, problems, logoUrl, filterData, topContent, bottomContent } = Astro.props;
+---
+
+<IndexLayout title={platform} description={`${problems.length} problems on ${platform}.`}>
+  {logoUrl && (
+    <div class="platform-header-logo">
+      <img src={logoUrl} alt={platform} width="56" height="56" />
+    </div>
+  )}
+
+  {topContent && (
+    <div class="custom-section-container top-section">
+      <div class="prose" set:html={topContent} />
+    </div>
+  )}
+
+  <FilterBar data={filterData} />
+  <ProblemGroupList problems={problems} showCompany={true} />
+
+  {bottomContent && (
+    <div class="custom-section-container bottom-section">
+      <div class="prose" set:html={bottomContent} />
+    </div>
+  )}
+</IndexLayout>
+
+<style>
+  .platform-header-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .platform-header-logo img {
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .custom-section-container.top-section {
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container.bottom-section {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .custom-section-container :global(.prose > *:first-child) {
+    margin-top: 0;
+  }
+  .custom-section-container :global(.prose > *:last-child) {
+    margin-bottom: 0;
+  }
+</style>

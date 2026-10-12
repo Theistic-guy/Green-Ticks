@@ -6,12 +6,13 @@ interface Props {
   icon?: string;
   description?: string;
   logoUrl?: string;
+  tags?: string[];
 }
 
-const { title, href, count, icon, description, logoUrl } = Astro.props;
+const { title, href, count, icon, description, logoUrl, tags = [] } = Astro.props;
 ---
 
-<a class="card" href={href}>
+<a class="card" href={href} data-tags={tags.length > 0 ? tags.join(' ') : undefined}>
   <div class="card-header">
     {logoUrl && (
       <img

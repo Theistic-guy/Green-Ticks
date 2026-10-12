@@ -200,7 +200,7 @@
 }
 
 /* --- Details / Summary (collapsible) --- */
-.prose details {
+.prose details:not(.collapsible-module) {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
@@ -208,13 +208,13 @@
   background: var(--color-bg-card);
 }
 
-.prose summary {
+.prose details:not(.collapsible-module) summary {
   cursor: pointer;
   font-weight: var(--font-weight-medium);
   user-select: none;
 }
 
-.prose details[open] summary {
+.prose details:not(.collapsible-module)[open] summary {
   margin-bottom: var(--space-3);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-border);

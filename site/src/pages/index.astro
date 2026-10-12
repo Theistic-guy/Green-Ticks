@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
 import Card from '../components/Card.astro';
-import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify } from '../utils/content';
+import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify, renderVaultMarkdown } from '../utils/content';
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
+import siteInfo from '../../../assets/site-info.json';
 
 // Load all data at build time
 const problems = loadProblems();
@@ -45,14 +46,19 @@ const topCompanies = Object.entries(byCompany)
   .sort((a, b) => b[1].length - a[1].length)
   .slice(0, 8);
 
-// Load HOMEPAGE.md
+// Load HOMEPAGE.md & site configuration
 let homepageContent = '';
-const vaultRoot = path.join(process.cwd(), '..');
+const homepageContentBordered = siteInfo.homepage_content_bordered !== false;
+
+const vaultRoot = fs.existsSync(path.resolve(process.cwd(), 'HOMEPAGE.md'))
+  ? process.cwd()
+  : path.resolve(process.cwd(), '..');
+
 const homepagePath = path.join(vaultRoot, 'HOMEPAGE.md');
 if (fs.existsSync(homepagePath)) {
   const raw = fs.readFileSync(homepagePath, 'utf-8').trim();
   if (raw) {
-    homepageContent = marked.parse(raw) as string;
+    homepageContent = renderVaultMarkdown(raw, vaultRoot);
   }
 }
 
@@ -249,10 +255,16 @@ const recentUpdates = allUpdates.slice(0, 8);
 
     <!-- Homepage Custom Content -->
     {homepageContent && (
-      <section class="section homepage-custom-content">
-        <div class="custom-section-container bottom-section">
-          <div class="prose" set:html={homepageContent} />
-        </div>
+      <section class={`section homepage-custom-content ${homepageContentBordered ? 'bordered' : 'unbordered'}`}>
+        {homepageContentBordered ? (
+          <div class="custom-section-container bordered">
+            <div class="prose" set:html={homepageContent} />
+          </div>
+        ) : (
+          <div class="homepage-content-clean">
+            <div class="prose" set:html={homepageContent} />
+          </div>
+        )}
       </section>
     )}
 
@@ -350,6 +362,7 @@ const recentUpdates = allUpdates.slice(0, 8);
   }
 
   .custom-section-container {
+    width: 100%;
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -357,8 +370,29 @@ const recentUpdates = allUpdates.slice(0, 8);
     box-shadow: var(--shadow-sm);
   }
 
-  .custom-section-container :global(.prose > *:first-child) { margin-top: 0; }
-  .custom-section-container :global(.prose > *:last-child) { margin-bottom: 0; }
+  .homepage-content-clean {
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .homepage-custom-content :global(.prose) {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .custom-section-container :global(.prose > *:first-child),
+  .homepage-content-clean :global(.prose > *:first-child) { margin-top: 0; }
+  .custom-section-container :global(.prose > *:last-child),
+  .homepage-content-clean :global(.prose > *:last-child) { margin-bottom: 0; }
+
+  @media (max-width: 768px) {
+    .custom-section-container {
+      padding: var(--space-4);
+    }
+  }
 
   .home {
     max-width: 1100px;

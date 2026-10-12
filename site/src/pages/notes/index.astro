@@ -3,20 +3,24 @@ import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
 import ListSearch from '../../components/ListSearch.astro';
 import { getCollection } from 'astro:content';
-import { slugify } from '../../utils/content';
+import { slugify, extractFrontmatterTags } from '../../utils/content';
 
 const notes = await getCollection('notes');
 
 // Structure them nicely for the grid
-const noteItems = notes.map(note => {
-  const parts = note.id.split('/');
-  const slug = parts.map(slugify).join('/');
-  const rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
-  const title = note.data.Title || rawFileName;
-  const folder = parts.length > 1 ? parts[0] : '';
-  
-  return { title, slug, folder };
-}).sort((a, b) => a.title.localeCompare(b.title));
+const noteItems = notes
+  .filter(note => !note.id.includes('To-Do or Wishlist') && !note.id.toLowerCase().includes('readme'))
+  .map(note => {
+    const parts = note.id.split('/');
+    const slug = parts.map(slugify).join('/');
+    const rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
+    const title = note.data.Title || rawFileName;
+    const folder = parts.length > 1 ? parts[0] : '';
+    const tags = extractFrontmatterTags(note.data);
+    
+    return { title, slug, folder, tags };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 <IndexLayout title="Notes" description="In-depth topic explanations and guides.">
@@ -28,6 +32,7 @@ const noteItems = notes.map(note => {
         href={`/notes/${item.slug}`} 
         icon="📓"
         description={item.folder}
+        tags={item.tags}
       />
     ))}
   </div>

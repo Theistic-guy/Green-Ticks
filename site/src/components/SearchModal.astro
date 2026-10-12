@@ -207,6 +207,11 @@
     background: rgba(245, 158, 11, 0.1);
   }
 
+  :global(.search-result-type.type-Write-Up) {
+    color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+  }
+
   :global(.search-result-name) {
     font-size: var(--text-sm);
     font-weight: var(--font-weight-medium);
@@ -388,6 +393,7 @@
           item.platforms || [],
           item.otherTags || [],
           item.groups || [],
+          item.obsidianTags || [],
           item.tags || []
         );
         return allTags.some(function(tag) {
@@ -430,11 +436,11 @@
         
         if (isTagMode && tagQuery) {
           var q = tagQuery.toLowerCase();
-          var allTagArrays = [item.topics, item.companies, item.platforms, item.otherTags, item.groups];
+          var allTagArrays = [item.topics, item.companies, item.platforms, item.otherTags, item.groups, item.obsidianTags, item.tags];
           allTagArrays.forEach(function(arr) {
             if (arr) {
               arr.forEach(function(tag) {
-                if (tag.toLowerCase().includes(q)) {
+                if (tag.toLowerCase().includes(q) && !matchedTags.includes(tag)) {
                   matchedTags.push(tag);
                 }
               });

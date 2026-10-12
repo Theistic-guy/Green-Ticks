@@ -23,6 +23,63 @@ export function asList(value: unknown): string[] {
   return [String(value)];
 }
 
+/**
+ * Extract and normalize Obsidian tags from frontmatter properties.
+ * Handles:
+ *  - YAML array: `tags: [theory, backtracking, recursion, dfs]`
+ *  - YAML bullet list: `tags:\n  - recursion\n  - josephus`
+ *  - Space-delimited hashtags: `Tags: #DSA #Trie #Tree`
+ *  - Comma-delimited strings: `tags: dsa, math`
+ *  - Variations in casing: `tags`, `Tags`, `tag`, `Tag`
+ */
+export function extractFrontmatterTags(data: any): string[] {
+  if (!data || typeof data !== 'object') return [];
+  const raw = data.tags ?? data.Tags ?? data.tag ?? data.Tag;
+  if (!raw) return [];
+
+  const rawList = Array.isArray(raw) ? raw : (typeof raw === 'string' ? [raw] : [String(raw)]);
+  const tags: string[] = [];
+
+  for (const entry of rawList) {
+    if (typeof entry !== 'string') {
+      const s = String(entry).trim();
+      if (s) tags.push(s);
+      continue;
+    }
+    const trimmed = entry.trim();
+    if (!trimmed) continue;
+
+    // Multiple hashtags in a single line, e.g. "#DSA #Trie #Tree"
+    if (trimmed.includes('#')) {
+      const tokens = trimmed.split(/[\s,]+/).filter(Boolean);
+      for (const tok of tokens) {
+        const clean = tok.replace(/^#+/, '').trim();
+        if (clean) tags.push(clean);
+      }
+    } else if (trimmed.includes(',')) {
+      // Comma-separated tags
+      const tokens = trimmed.split(',').map((s) => s.trim()).filter(Boolean);
+      tags.push(...tokens);
+    } else {
+      // Single tag (could be "recursion", "josephus", or "two pointers")
+      const clean = trimmed.replace(/^#+/, '').trim();
+      if (clean) tags.push(clean);
+    }
+  }
+
+  // Deduplicate case-insensitively while preserving original case
+  const seen = new Set<string>();
+  const uniqueTags: string[] = [];
+  for (const t of tags) {
+    const lower = t.toLowerCase();
+    if (!seen.has(lower)) {
+      seen.add(lower);
+      uniqueTags.push(t);
+    }
+  }
+  return uniqueTags;
+}
+
 export function validateUpdated(value: unknown, filePath: string): string | undefined {
   if (!value) return undefined;
   console.log(`[validateUpdated] Checking ${filePath}:`, value);
@@ -140,6 +197,7 @@ export interface MarkdownPage {
   /** Relative path segments for breadcrumbs, e.g. ['Extras', 'Queue patterns'] */
   pathSegments: string[];
   updated?: string;
+  tags?: string[];
 }
 
 /**
@@ -174,6 +232,7 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
 
         const rawText = fs.readFileSync(fullPath, 'utf-8');
         const { data, content } = matter(rawText);
+        const pageTags = extractFrontmatterTags(data);
 
         pages.push({
           slug,
@@ -182,6 +241,7 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
           rawContent: content,
           pathSegments: [...segments, name],
           updated: validateUpdated(data.updated, fullPath),
+          tags: pageTags,
         });
       }
     }
@@ -207,6 +267,33 @@ export function loadCompanyLogos(token: string): Record<string, string> {
     logos[company] = `https://img.logo.dev/${domain}?token=${token}`;
   }
   return logos;
+}
+
+/**
+ * Load the platforms logo mapping from assets/site-info.json.
+ */
+export function loadPlatformLogos(token: string): Record<string, string> {
+  const jsonPath = path.join(VAULT_ROOT, 'assets', 'site-info.json');
+  if (!fs.existsSync(jsonPath)) return {};
+
+  try {
+    const raw = fs.readFileSync(jsonPath, 'utf-8');
+    const info = JSON.parse(raw);
+    const platformsMap: Record<string, string> = info.platforms || {};
+    const logos: Record<string, string> = {};
+
+    if (!token || token === 'your_token_here') return logos;
+
+    for (const [platform, domain] of Object.entries(platformsMap)) {
+      const url = `https://img.logo.dev/${domain}?token=${token}`;
+      logos[platform] = url;
+      logos[platform.toLowerCase()] = url;
+      logos[platform.toUpperCase()] = url;
+    }
+    return logos;
+  } catch (e) {
+    return {};
+  }
 }
 
 /**
@@ -363,6 +450,7 @@ export function getSidebar(): any[] {
         { label: 'Problems', href: '/problems', count: problems.length },
         { label: 'Topics', href: '/topics' },
         { label: 'Companies', href: '/companies' },
+        { label: 'Platforms', href: '/platforms' },
         { label: 'Misc Tags', href: '/misc' },
         { label: 'Groups', href: '/groups' },
       ]
@@ -389,6 +477,209 @@ export function getSidebar(): any[] {
 }
 
 import { marked } from 'marked';
+
+function extractWikiLinks(text: string) {
+  const links: { target: string; display: string }[] = [];
+  const regex = /\[\[(.*?)\]\]/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    const inner = match[1];
+    const parts = inner.split('|');
+    links.push({
+      target: parts[0].trim(),
+      display: parts.length > 1 ? parts[1].trim() : parts[0].trim(),
+    });
+  }
+  return links;
+}
+
+function renderCarouselHtml(containerPath: string): string {
+  if (!fs.existsSync(containerPath)) return '';
+  const containerRaw = fs.readFileSync(containerPath, 'utf8');
+  const { data: containerData } = matter(containerRaw);
+
+  const caption = containerData.Caption || '';
+  const displayCount = parseInt(containerData['Display Count'] || 1, 10);
+  const rotation = containerData.Rotation === true;
+  const speedMap: Record<string, number> = { Slow: 5000, Medium: 3000, Fast: 1500 };
+  const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
+  const rawSize = String(containerData.Size || 'Medium').trim().toLowerCase();
+  const validSizes = ['small', 'medium', 'large'];
+  const size = validSizes.includes(rawSize) ? rawSize : 'medium';
+
+  const rawAlign = String(containerData.Align || 'Center').trim().toLowerCase();
+  const validAligns = ['left', 'center', 'right', 'justify'];
+  const align = validAligns.includes(rawAlign) ? rawAlign : 'center';
+
+  const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
+  const cardLinks = extractWikiLinks(cardsRaw);
+
+  const cardsHtmlArr = cardLinks.map((cardLink) => {
+    let cardPath = path.resolve(path.dirname(containerPath), cardLink.target);
+    if (!cardPath.endsWith('.md')) cardPath += '.md';
+    if (!fs.existsSync(cardPath)) {
+      cardPath = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Cards', cardLink.target);
+      if (!cardPath.endsWith('.md')) cardPath += '.md';
+    }
+    if (!fs.existsSync(cardPath)) return '';
+
+    const cardRaw = fs.readFileSync(cardPath, 'utf8');
+    const { data: cardData } = matter(cardRaw);
+
+    const title = cardData.Title || '';
+    const description = cardData.Description || '';
+
+    let coverImg = '';
+    if (cardData['Cover Img']) {
+      const imgLinks = extractWikiLinks(String(cardData['Cover Img']));
+      if (imgLinks.length > 0) {
+        const imgTarget = imgLinks[0].target.trim();
+        if (imgTarget.startsWith('http://') || imgTarget.startsWith('https://')) {
+          coverImg = imgTarget;
+        } else {
+          coverImg = `/Images/${path.basename(imgTarget)}`;
+        }
+      } else {
+        const rawImg = String(cardData['Cover Img']).trim();
+        if (rawImg.startsWith('http://') || rawImg.startsWith('https://')) {
+          coverImg = rawImg;
+        } else {
+          coverImg = `/Images/${path.basename(rawImg)}`;
+        }
+      }
+    }
+
+    let cardLinkUrl = '#';
+    if (cardData.Link) {
+      const lnks = extractWikiLinks(String(cardData.Link));
+      if (lnks.length > 0) {
+        const lnkTarget = lnks[0].target.trim();
+        if (lnkTarget.startsWith('http://') || lnkTarget.startsWith('https://')) {
+          cardLinkUrl = lnkTarget;
+        } else {
+          const cleanTarget = lnkTarget.replace(/^(\.\.\/)+/, '').replace(/^\//, '').replace(/\.md$/, '');
+          cardLinkUrl = `/${cleanTarget.toLowerCase()}`;
+        }
+      } else {
+        const rawLink = String(cardData.Link).trim();
+        if (rawLink.startsWith('http://') || rawLink.startsWith('https://')) {
+          cardLinkUrl = rawLink;
+        }
+      }
+    }
+
+    return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" onerror="this.style.display='none'" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
+  });
+
+  return `<green-carousel data-align="${align}" data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtmlArr.join('')}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+}
+
+function renderCollapsibleHtml(modulePath: string, visited: Set<string>): string {
+  if (!fs.existsSync(modulePath)) return '';
+  if (visited.has(modulePath)) return '<div class="error">Infinite recursion detected</div>';
+  visited.add(modulePath);
+
+  const raw = fs.readFileSync(modulePath, 'utf8');
+  const { data, content } = matter(raw);
+
+  const title = data.Title || path.basename(modulePath, '.md');
+  const level = parseInt(data['Heading Level'] || data.Heading || 3, 10);
+
+  const innerHtml = renderVaultMarkdown(content, path.dirname(modulePath), visited);
+
+  visited.delete(modulePath);
+
+  return `<details class="collapsible-module"><summary class="collapsible-header level-${level}"><span class="collapsible-title">${title}</span><span class="toggle-icon"></span></summary><div class="collapsible-content">${innerHtml}</div></details>`;
+}
+
+export function renderVaultMarkdown(rawMarkdown: string, baseDir?: string, visited = new Set<string>()): string {
+  if (!rawMarkdown) return '';
+  const currentDir = baseDir || VAULT_ROOT;
+  const blocks: string[] = [];
+
+  const storeBlock = (html: string) => {
+    const idx = blocks.length;
+    blocks.push(html.trim());
+    return `\n\n<div data-green-block="${idx}"></div>\n\n`;
+  };
+
+  // 1. Process Markdown links: !?[label](url)
+  let processed = rawMarkdown.replace(/!?\[([^\]]*?)\]\(([^)]+?)\)/g, (fullMatch, label, url) => {
+    const cleanUrl = decodeURIComponent(url.trim());
+    
+    // Check if Carousel Container
+    if (cleanUrl.includes('Carousel Containers') || cleanUrl.includes('Carousels')) {
+      let resolved = path.resolve(currentDir, cleanUrl);
+      if (!resolved.endsWith('.md')) resolved += '.md';
+      if (!fs.existsSync(resolved)) {
+        resolved = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Containers', path.basename(cleanUrl));
+        if (!resolved.endsWith('.md')) resolved += '.md';
+      }
+      if (fs.existsSync(resolved)) {
+        const html = renderCarouselHtml(resolved);
+        return storeBlock(html);
+      }
+    }
+
+    // Check if Collapsible Module
+    if (cleanUrl.includes('Collapsible Modules')) {
+      let resolved = path.resolve(currentDir, cleanUrl);
+      if (!resolved.endsWith('.md')) resolved += '.md';
+      if (!fs.existsSync(resolved)) {
+        resolved = path.resolve(VAULT_ROOT, 'assets', 'Collapsible Modules', path.basename(cleanUrl));
+        if (!resolved.endsWith('.md')) resolved += '.md';
+      }
+      if (fs.existsSync(resolved)) {
+        const html = renderCollapsibleHtml(resolved, visited);
+        return storeBlock(html);
+      }
+    }
+
+    return fullMatch;
+  });
+
+  // 2. Process Wikilinks: !?[[target|display]] or [[target]]
+  processed = processed.replace(/!?\[\[(.*?)\]\]/g, (fullMatch, inner) => {
+    const parts = inner.split('|');
+    const target = parts[0].trim();
+
+    // Check if Carousel Container
+    let containerPath = path.resolve(currentDir, target);
+    if (!containerPath.endsWith('.md')) containerPath += '.md';
+    if (!fs.existsSync(containerPath)) {
+      containerPath = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Containers', target);
+      if (!containerPath.endsWith('.md')) containerPath += '.md';
+    }
+    if (fs.existsSync(containerPath) && containerPath.includes('Carousel Containers')) {
+      const html = renderCarouselHtml(containerPath);
+      return storeBlock(html);
+    }
+
+    // Check if Collapsible Module
+    let modulePath = path.resolve(currentDir, target);
+    if (!modulePath.endsWith('.md')) modulePath += '.md';
+    if (!fs.existsSync(modulePath)) {
+      modulePath = path.resolve(VAULT_ROOT, 'assets', 'Collapsible Modules', target);
+      if (!modulePath.endsWith('.md')) modulePath += '.md';
+    }
+    if (fs.existsSync(modulePath) && modulePath.includes('Collapsible Modules')) {
+      const html = renderCollapsibleHtml(modulePath, visited);
+      return storeBlock(html);
+    }
+
+    return fullMatch;
+  });
+
+  // 3. Parse Markdown
+  let htmlResult = marked.parse(processed) as string;
+
+  // 4. Restore blocks and remove wrapping <p> if marked wrapped the placeholder
+  htmlResult = htmlResult.replace(/(?:<p>\s*)?<div data-green-block="(\d+)"><\/div>(?:\s*<\/p>)?/g, (_, idx) => {
+    return blocks[Number(idx)] || '';
+  });
+
+  return htmlResult;
+}
 
 /**
  * Load "Top" or "Bottom" section contents for a given category and slug.
@@ -452,5 +743,5 @@ export function loadSectionContent(category: string, slug: string, position: 'To
 
   // Render markdown to HTML
   const rawMarkdown = chunks.join('\n\n---\n\n');
-  return marked.parse(rawMarkdown) as string;
+  return renderVaultMarkdown(rawMarkdown, baseDir);
 }
