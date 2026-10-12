@@ -8,7 +8,10 @@
 - [Top K Frequent Elements (Leetcode 347)](../Problems/top-k-frequent-elements-(lc-347).md)
 
 ## Medium
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
+- [K Largest Elements in an Array](../Problems/k-largest-elements-in-an-array.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
 
 ## Hard

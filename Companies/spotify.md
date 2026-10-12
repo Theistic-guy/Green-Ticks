@@ -9,3 +9,6 @@
 
 ## Medium
 - [Longest Substring Without Repeating Characters (leetcode 3)](../Problems/longest-substring-without-repeating-characters.md)
+
+## Hard
+- [Median of a Stream (leetcode 295)](../Problems/median-of-a-stream-(leetcode-295).md) ⭐⭐⭐⭐⭐

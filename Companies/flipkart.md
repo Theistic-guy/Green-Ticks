@@ -8,8 +8,10 @@
 
 ## Medium
 - [Gas Station (Leetcode 134)](../Problems/gas-station-(leetcode-134).md) ⭐⭐⭐⭐
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
 - [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 
 ## Hard
 - [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
+- [Median of a Stream (leetcode 295)](../Problems/median-of-a-stream-(leetcode-295).md) ⭐⭐⭐⭐⭐
 - [Trapping Rain Water (LC 42)](../Problems/trapping-rain-water-(lc-42).md) ⭐⭐⭐⭐⭐

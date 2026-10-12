@@ -5,6 +5,9 @@
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
+## Medium
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
+
 ## Hard
 - [Largest Rectangle in Histogram (leetcode 84)](../Problems/largest-rectangle-in-histogram-(lc-84).md) ⭐⭐⭐⭐⭐
 - [Next Permutation (Leetcode 31)](../Problems/next-permutation-(leetcode-31).md) ⭐⭐⭐⭐⭐

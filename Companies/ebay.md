@@ -10,5 +10,8 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Repeated Substring Pattern (Leetcode 459)](../Problems/repeated-substring-pattern-(leetcode-459).md) ⭐⭐⭐
 
+## Hard
+- [Median of a Stream (leetcode 295)](../Problems/median-of-a-stream-(leetcode-295).md) ⭐⭐⭐⭐⭐
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

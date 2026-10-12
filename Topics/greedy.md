@@ -17,6 +17,7 @@
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Remove Duplicate Letters / Smallest Subsequence of Distinct Characters (Leetcode 316 / 1081)](../Problems/remove-duplicate-numbers-or-smallest-subsequence-of-distinct-characters.md) ⭐⭐⭐⭐
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 
 ## Hard
@@ -73,6 +74,9 @@
 
 ### Greedy + Arrays + Hashing + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
+
+### Greedy + Arrays + Heap + Sorting
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 
 ### Greedy + Arrays + Sliding Window + Sorting
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)

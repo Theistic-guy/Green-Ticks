@@ -12,8 +12,10 @@
 - [Group Anagrams (Leetcode 49)](../Problems/group-anagrams-(leetcode-49).md) ⭐⭐⭐⭐
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Largest Number (Leetcode 179)](../Problems/largest-number-(leetcode-179).md) ⭐⭐⭐⭐⭐
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 - [Union of Two Sorted Arrays](../Problems/union-of-two-sorted-arrays.md) ⭐⭐⭐⭐
 
 ## Hard
@@ -35,6 +37,7 @@
 - [First Missing Positive (LC 41)](../Problems/first-missing-positive.md) ⭐⭐⭐⭐⭐
 
 ### Sorting + Arrays + Heap
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
 ### Sorting + Backtracking + Maths
@@ -48,6 +51,9 @@
 
 ### Sorting + Arrays + Greedy + Hashing
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
+
+### Sorting + Arrays + Greedy + Heap
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 
 ### Sorting + Arrays + Greedy + Sliding Window
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)

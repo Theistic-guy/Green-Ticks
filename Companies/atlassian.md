@@ -5,5 +5,8 @@
 ## Easy
 - [Two Sum (Leetcode 1)](../Problems/two-sum.md)
 
+## Medium
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
+
 ## Not Specified
 - [Best Time to Buy and Sell Stock](../Problems/best-time-to-buy-and-sell-stock.md)

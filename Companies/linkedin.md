@@ -7,6 +7,7 @@
 - [Valid Parentheses (Leetcode 20)](../Problems/valid-parentheses-(leetcode-20).md)
 
 ## Medium
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
 - [Min Stack (Leetcode 155)](../Problems/min-stack-(leetcode-155).md) ⭐⭐⭐⭐
 
 ## Hard

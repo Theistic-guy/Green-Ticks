@@ -31,6 +31,8 @@
 - [Implementation of Deque using Circular Array (Leetcode 641)](../Problems/implementation-of-deque-using-array-(leetcode-641).md)
 - [Intersection of Two Sorted Arrays](../Problems/intersection-of-two-sorted-arrays.md)
 - [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
+- [K Largest Elements in an Array](../Problems/k-largest-elements-in-an-array.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 - [Longest Subarray with Equal Number of 0s and 1s](../Problems/longest-subarray-with-equal-number-of-0s-and-1s.md)
 - [Maximize Points You Can Get from Cards (Leetcode 1423)](../Problems/maximum-points-you-can-obtain-from-cards.md) ⭐⭐⭐⭐
@@ -38,6 +40,7 @@
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
 - [Search in Sorted Rotated Array (Distinct Elements)](../Problems/search-in-sorted-rotated-array.md)
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 - [Stock Span Problem (Leetcode 901)](../Problems/stock-span-problem-(lc-901).md) ⭐⭐⭐⭐
 - [Subarray with given sum](../Problems/subarray-with-given-sum.md) ⭐⭐⭐⭐⭐
 - [Top K closest Elements (leetcode 658)](../Problems/top-k-closest-elements-(lc-658).md) ⭐⭐⭐⭐
@@ -79,6 +82,9 @@
 ### Arrays + Hashing
 - [Contains Duplicate](../Problems/contains-duplicate.md)
 - [Pair With Given Sum in an Unsorted Array](../Problems/pair-with-given-sum-in-an-unsorted-array.md)
+
+### Arrays + Heap
+- [K Largest Elements in an Array](../Problems/k-largest-elements-in-an-array.md)
 
 ### Arrays + Prefix Sum
 - [Equilibrium Point](../Problems/equilibrium-point.md)
@@ -146,6 +152,7 @@
 - [Valid Anagram (leetcode 242)](../Problems/valid-anagram-(leetcode-242).md)
 
 ### Arrays + Heap + Sorting
+- [K Closest Elements (leetcode 658)](../Problems/k-closest-elements.md)
 - [Kth smallest element in an array](../Problems/kth-smallest-element-in-an-array.md)
 
 ### Arrays + Linked Lists + Two Pointers
@@ -170,6 +177,9 @@
 
 ### Arrays + Greedy + Hashing + Sorting
 - [Elements Occurring More Than n/k Times](../Problems/elements-occurring-more-than-n_div_k-times.md) ⭐⭐⭐
+
+### Arrays + Greedy + Heap + Sorting
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 
 ### Arrays + Greedy + Sliding Window + Sorting
 - [Chocolate Distribution Problem](../Problems/chocolate-distribution.md)

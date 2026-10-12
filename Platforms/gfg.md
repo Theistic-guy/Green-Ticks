@@ -9,8 +9,10 @@
 ## Medium
 - [Counting Distinct Rows in a Binary Matrix](../Problems/counting-distinct-rows-in-a-binary-matrix.md)
 - [Job Sequencing Problem with Deadlines](../Problems/job-sequencing-problem-with-deadlines.md) ⭐⭐⭐⭐
+- [K Largest Elements in an Array](../Problems/k-largest-elements-in-an-array.md)
 - [Next Greater Element (NGE)](../Problems/next-greater-element-(nge).md)
 - [Previous Greater Element (PGE)](../Problems/previous-greater-element-(pge).md)
+- [Sort a K-Sorted Array (Nearly Sorted Array)](../Problems/sort-k-sorted-array-(nearly-sorted-array).md)
 
 ## Hard
 - [Infix to Postfix (Shunting Yard Algorithm)](../Problems/infix-to-postfix-(shunting-yard-algorithm).md)
