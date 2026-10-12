@@ -415,6 +415,9 @@ function renderCarouselHtml(containerPath: string): string {
   const rotation = containerData.Rotation === true;
   const speedMap: Record<string, number> = { Slow: 5000, Medium: 3000, Fast: 1500 };
   const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
+  const rawSize = String(containerData.Size || 'Medium').trim().toLowerCase();
+  const validSizes = ['small', 'medium', 'large'];
+  const size = validSizes.includes(rawSize) ? rawSize : 'medium';
 
   const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
   const cardLinks = extractWikiLinks(cardsRaw);
@@ -476,7 +479,7 @@ function renderCarouselHtml(containerPath: string): string {
     return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" onerror="this.style.display='none'" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
   });
 
-  return `<green-carousel data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtmlArr.join('')}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+  return `<green-carousel data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtmlArr.join('')}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
 }
 
 function renderCollapsibleHtml(modulePath: string, visited: Set<string>): string {

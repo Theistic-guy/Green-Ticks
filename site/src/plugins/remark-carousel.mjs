@@ -53,6 +53,9 @@ async function buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath) {
   const rotation = containerData.Rotation === true;
   const speedMap = { Slow: 5000, Medium: 3000, Fast: 1500 };
   const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
+  const rawSize = String(containerData.Size || 'Medium').trim().toLowerCase();
+  const validSizes = ['small', 'medium', 'large'];
+  const size = validSizes.includes(rawSize) ? rawSize : 'medium';
   
   const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
   const cardLinks = extractWikiLinks(cardsRaw);
@@ -108,7 +111,7 @@ async function buildCarouselHtml(containerPath, vaultRoot, getSiteUrlForPath) {
   
   const cardsHtml = cardsHtmlArr.join('');
   
-  return `<green-carousel data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtml}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+  return `<green-carousel data-size="${size}" data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtml}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
 }
 
 export function remarkCarousel() {

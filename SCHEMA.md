@@ -176,6 +176,7 @@ Supported frontmatter:
 Create container definitions inside `assets/Carousels/Carousel Containers/<ContainerName>.md`.
 Supported frontmatter:
 - `Caption`: Optional label displayed beneath the carousel
+- `Size`: `Small`, `Medium` (default), or `Large`. Adjusts card scale, image height, and container width.
 - `Display Count`: Number of cards visible at once (e.g. `1`, `2`)
 - `Rotation`: `true` or `false` for autoplay auto-scrolling
 - `Rotation Speed`: `Slow` (5s), `Medium` (3s), or `Fast` (1.5s)
