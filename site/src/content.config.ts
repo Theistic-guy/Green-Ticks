@@ -16,6 +16,8 @@ const problemsCollection = defineCollection({
     Difficulty: z.any().optional(),
     Link: z.any().optional(),
     'Other Tags': z.any().optional(),
+    tags: z.any().optional(),
+    Tags: z.any().optional(),
     Rating: z.any().optional(),
     Groups: z.any().optional(),
     updated: z.string().regex(/^\d{2}-\d{2}-\d{4}$/, "updated property must be exactly in DD-MM-YYYY format (e.g. 31-12-2024)").refine((val) => {
@@ -31,6 +33,8 @@ const notesCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: pathToFileURL(path.join(VAULT_ROOT, 'Notes')) }),
   schema: z.object({
     Title: z.string().optional(),
+    tags: z.any().optional(),
+    Tags: z.any().optional(),
     updated: z.string().regex(/^\d{2}-\d{2}-\d{4}$/, "updated property must be exactly in DD-MM-YYYY format (e.g. 31-12-2024)").refine((val) => {
       const parts = val.split('-');
       const mm = parseInt(parts[1], 10);
@@ -44,6 +48,8 @@ const templatesCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: pathToFileURL(path.join(VAULT_ROOT, 'Templates')) }),
   schema: z.object({
     Title: z.string().optional(),
+    tags: z.any().optional(),
+    Tags: z.any().optional(),
     updated: z.string().regex(/^\d{2}-\d{2}-\d{4}$/, "updated property must be exactly in DD-MM-YYYY format (e.g. 31-12-2024)").refine((val) => {
       const parts = val.split('-');
       const mm = parseInt(parts[1], 10);
@@ -57,6 +63,8 @@ const writeUpsCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: pathToFileURL(path.join(VAULT_ROOT, 'Write-Ups')) }),
   schema: z.object({
     Title: z.string().optional(),
+    tags: z.any().optional(),
+    Tags: z.any().optional(),
     updated: z.string().regex(/^\d{2}-\d{2}-\d{4}$/, "updated property must be exactly in DD-MM-YYYY format (e.g. 31-12-2024)").refine((val) => {
       const parts = val.split('-');
       const mm = parseInt(parts[1], 10);

@@ -23,6 +23,63 @@ export function asList(value: unknown): string[] {
   return [String(value)];
 }
 
+/**
+ * Extract and normalize Obsidian tags from frontmatter properties.
+ * Handles:
+ *  - YAML array: `tags: [theory, backtracking, recursion, dfs]`
+ *  - YAML bullet list: `tags:\n  - recursion\n  - josephus`
+ *  - Space-delimited hashtags: `Tags: #DSA #Trie #Tree`
+ *  - Comma-delimited strings: `tags: dsa, math`
+ *  - Variations in casing: `tags`, `Tags`, `tag`, `Tag`
+ */
+export function extractFrontmatterTags(data: any): string[] {
+  if (!data || typeof data !== 'object') return [];
+  const raw = data.tags ?? data.Tags ?? data.tag ?? data.Tag;
+  if (!raw) return [];
+
+  const rawList = Array.isArray(raw) ? raw : (typeof raw === 'string' ? [raw] : [String(raw)]);
+  const tags: string[] = [];
+
+  for (const entry of rawList) {
+    if (typeof entry !== 'string') {
+      const s = String(entry).trim();
+      if (s) tags.push(s);
+      continue;
+    }
+    const trimmed = entry.trim();
+    if (!trimmed) continue;
+
+    // Multiple hashtags in a single line, e.g. "#DSA #Trie #Tree"
+    if (trimmed.includes('#')) {
+      const tokens = trimmed.split(/[\s,]+/).filter(Boolean);
+      for (const tok of tokens) {
+        const clean = tok.replace(/^#+/, '').trim();
+        if (clean) tags.push(clean);
+      }
+    } else if (trimmed.includes(',')) {
+      // Comma-separated tags
+      const tokens = trimmed.split(',').map((s) => s.trim()).filter(Boolean);
+      tags.push(...tokens);
+    } else {
+      // Single tag (could be "recursion", "josephus", or "two pointers")
+      const clean = trimmed.replace(/^#+/, '').trim();
+      if (clean) tags.push(clean);
+    }
+  }
+
+  // Deduplicate case-insensitively while preserving original case
+  const seen = new Set<string>();
+  const uniqueTags: string[] = [];
+  for (const t of tags) {
+    const lower = t.toLowerCase();
+    if (!seen.has(lower)) {
+      seen.add(lower);
+      uniqueTags.push(t);
+    }
+  }
+  return uniqueTags;
+}
+
 export function validateUpdated(value: unknown, filePath: string): string | undefined {
   if (!value) return undefined;
   console.log(`[validateUpdated] Checking ${filePath}:`, value);
@@ -111,6 +168,13 @@ export function loadProblems(): Problem[] {
       rating = starCount > 0 ? starCount : parseInt(str, 10) || null;
     }
 
+    const extraTags = extractFrontmatterTags(data);
+    const otherTags = [...new Set([
+      ...asList(data['Other Tags']),
+      ...asList(data['otherTags']),
+      ...extraTags,
+    ])];
+
     problems.push({
       slug,
       filePath,
@@ -120,7 +184,7 @@ export function loadProblems(): Problem[] {
       companies: asList(data.Companies),
       difficulty: String(data.Difficulty || 'Not Specified'),
       link: String(data.Link || ''),
-      otherTags: asList(data['Other Tags']),
+      otherTags,
       rating,
       groups: asList(data.Groups),
       rawContent: content,
@@ -140,6 +204,7 @@ export interface MarkdownPage {
   /** Relative path segments for breadcrumbs, e.g. ['Extras', 'Queue patterns'] */
   pathSegments: string[];
   updated?: string;
+  tags?: string[];
 }
 
 /**
@@ -174,6 +239,7 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
 
         const rawText = fs.readFileSync(fullPath, 'utf-8');
         const { data, content } = matter(rawText);
+        const pageTags = extractFrontmatterTags(data);
 
         pages.push({
           slug,
@@ -182,6 +248,7 @@ export function loadMarkdownDir(dirName: string): MarkdownPage[] {
           rawContent: content,
           pathSegments: [...segments, name],
           updated: validateUpdated(data.updated, fullPath),
+          tags: pageTags,
         });
       }
     }

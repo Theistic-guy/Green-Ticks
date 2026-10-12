@@ -3,27 +3,29 @@ import IndexLayout from '../../layouts/IndexLayout.astro';
 import Card from '../../components/Card.astro';
 import ListSearch from '../../components/ListSearch.astro';
 import { getCollection } from 'astro:content';
-import { slugify } from '../../utils/content';
+import { slugify, extractFrontmatterTags } from '../../utils/content';
 
 const templates = await getCollection('templates');
 
-const templateItems = templates.map(temp => {
-  const parts = temp.id.split('/');
-  const slug = parts.map(slugify).join('/');
-  // In Astro v5 with loaders, `id` might be slugified/extensionless.
-  // We use filePath to get the exact original filename if available.
-  let rawFileName = temp.id;
-  if (temp.filePath) {
-    const segments = temp.filePath.split(/[/\\]/);
-    rawFileName = segments[segments.length - 1].replace(/\.md$/, '');
-  } else {
-    rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
-  }
-  
-  const title = temp.data.Title || rawFileName;
-  
-  return { title, slug };
-}).sort((a, b) => a.title.localeCompare(b.title));
+const templateItems = templates
+  .filter(temp => !temp.id.toLowerCase().includes('readme'))
+  .map(temp => {
+    const parts = temp.id.split('/');
+    const slug = parts.map(slugify).join('/');
+    let rawFileName = temp.id;
+    if (temp.filePath) {
+      const segments = temp.filePath.split(/[/\\]/);
+      rawFileName = segments[segments.length - 1].replace(/\.md$/, '');
+    } else {
+      rawFileName = parts[parts.length - 1].replace(/\.md$/, '');
+    }
+    
+    const title = temp.data.Title || rawFileName;
+    const tags = extractFrontmatterTags(temp.data);
+    
+    return { title, slug, tags };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 <IndexLayout title="Templates" description="Reusable algorithm templates and patterns.">
@@ -34,6 +36,7 @@ const templateItems = templates.map(temp => {
         title={item.title} 
         href={`/templates/${item.slug}`} 
         icon="📄"
+        tags={item.tags}
       />
     ))}
   </div>
