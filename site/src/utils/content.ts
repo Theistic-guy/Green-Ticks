@@ -473,7 +473,7 @@ function renderCarouselHtml(containerPath: string): string {
       }
     }
 
-    return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
+    return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" onerror="this.style.display='none'" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
   });
 
   return `<green-carousel data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtmlArr.join('')}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;

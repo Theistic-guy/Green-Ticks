@@ -927,6 +927,13 @@ def main() -> None:
         readme_sections_appendix=readme_sections_appendix
     )
 
+    # Ensure assets/Images are copied into site/public/Images if site exists
+    images_src = ASSETS_DIR / "Images"
+    images_dest = ROOT / "site" / "public" / "Images"
+    if images_src.exists() and (ROOT / "site" / "public").exists():
+        import shutil
+        shutil.copytree(images_src, images_dest, dirs_exist_ok=True)
+
     print("Indexes and README generated successfully.", flush=True)
 
 if __name__ == "__main__":

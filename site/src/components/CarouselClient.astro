@@ -9,6 +9,32 @@ class GreenCarousel extends HTMLElement {
     // Set custom property for CSS
     this.style.setProperty('--display-count', this.displayCount.toString());
     
+    // Add prev/next buttons if more than 1 card
+    const wrapper = this.querySelector('.carousel-wrapper');
+    if (wrapper && this.track && this.track.children.length > 1) {
+      if (!this.querySelector('.carousel-btn-prev')) {
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-btn carousel-btn-prev';
+        prevBtn.setAttribute('aria-label', 'Previous slide');
+        prevBtn.innerHTML = '‹';
+        prevBtn.addEventListener('click', () => {
+          this.scrollDelta(-1);
+          this.stopRotation();
+        });
+        wrapper.appendChild(prevBtn);
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-btn carousel-btn-next';
+        nextBtn.setAttribute('aria-label', 'Next slide');
+        nextBtn.innerHTML = '›';
+        nextBtn.addEventListener('click', () => {
+          this.scrollDelta(1);
+          this.stopRotation();
+        });
+        wrapper.appendChild(nextBtn);
+      }
+    }
+    
     if (this.rotation && this.track && this.track.children.length > this.displayCount) {
       this.startRotation();
       
@@ -21,13 +47,21 @@ class GreenCarousel extends HTMLElement {
   disconnectedCallback() {
     this.stopRotation();
   }
+
+  scrollDelta(dir) {
+    if (!this.track || !this.track.firstElementChild) return;
+    const cardWidth = this.track.firstElementChild.getBoundingClientRect().width;
+    const gap = 16;
+    const scrollAmount = (cardWidth + gap) * dir;
+    this.track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
   
   startRotation() {
     if (this.interval) return;
     this.interval = setInterval(() => {
-      if (!this.track) return;
+      if (!this.track || !this.track.firstElementChild) return;
       const cardWidth = this.track.firstElementChild.getBoundingClientRect().width;
-      const gap = 16; // 1rem gap
+      const gap = 16;
       const scrollAmount = cardWidth + gap;
       
       // If we've reached the end, snap back to start
@@ -54,120 +88,159 @@ customElements.define('green-carousel', GreenCarousel);
 green-carousel {
   display: block;
   width: 100%;
-  margin: 2.5rem 0;
+  margin: var(--space-6) 0;
   position: relative;
   --display-count: 1;
 }
 
 .carousel-wrapper {
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-3);
 }
 
 .carousel-track {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  padding-bottom: 0.5rem; /* Room for shadows */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: var(--space-2) 2px var(--space-4);
 }
 
 .carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .carousel-card {
-  /* Calculate width based on display count, subtracting the gap share */
-  flex: 0 0 calc((100% - (1rem * (var(--display-count) - 1))) / var(--display-count));
+  flex: 0 0 calc((100% - (var(--space-4) * (var(--display-count) - 1))) / var(--display-count));
   scroll-snap-align: start;
-  background: var(--surface-1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .carousel-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  border-color: var(--color-primary);
 }
 
 .carousel-card-img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-  border-bottom: 1px solid var(--border);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .carousel-card-content {
-  padding: 1.5rem;
+  padding: var(--space-5);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 0.75rem;
+  gap: var(--space-2);
 }
 
 .carousel-card-content h3 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-1);
-  line-height: 1.3;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
 }
 
 .carousel-card-content p {
   margin: 0;
-  color: var(--text-2);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
   flex-grow: 1;
 }
 
 .carousel-card-link {
   display: inline-flex;
   align-items: center;
-  margin-top: auto;
-  padding: 0.5rem 1rem;
-  background: var(--surface-2);
-  color: var(--primary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 6px;
+  gap: 6px;
+  margin-top: var(--space-3);
+  padding: 6px 14px;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-full);
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: all var(--transition-fast);
   align-self: flex-start;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
 }
 
 .carousel-card-link:hover {
-  background: var(--primary);
+  background: var(--color-primary);
   color: white;
+  transform: translateY(-1px);
 }
 
 .carousel-caption {
   text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
   font-style: italic;
-  margin-top: 0.5rem;
+  margin-top: var(--space-1);
 }
 
-/* Mobile Responsiveness */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
+  z-index: 5;
+  user-select: none;
+}
+
+.carousel-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn-prev {
+  left: -18px;
+}
+
+.carousel-btn-next {
+  right: -18px;
+}
+
 @media (max-width: 768px) {
   green-carousel {
-    /* On mobile, force display count to 1 for readability, or let user decide? */
-    /* Let's force it to 1.something so next card peeks out slightly */
     --display-count: 1.15 !important;
+  }
+  .carousel-btn {
+    display: none;
   }
 }
 </style>

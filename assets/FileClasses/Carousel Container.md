@@ -16,7 +16,8 @@ fieldsOrder:
   - OBVspa
   - ds3Nmt
   - wYUt3r
-version: "2.20"
+  - LYvTZI
+version: "2.27"
 fields:
   - name: Caption
     type: Input
@@ -49,4 +50,14 @@ fields:
     options: {}
     path: ""
     id: wYUt3r
+  - name: Size
+    type: Select
+    options:
+      sourceType: ValuesList
+      valuesList:
+        "1": Small
+        "2": Medium
+        "3": Large
+    path: ""
+    id: LYvTZI
 ---
