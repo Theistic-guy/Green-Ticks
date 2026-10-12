@@ -234,31 +234,11 @@ If you do not pop equal elements (i.e., using strictly `current_h > height[stack
 
 ##### How to Explain the Stack Approach in an Interview
 
-If an interviewer asks you about this solution, you can explain the core intuition using these three structured points:
+If an interviewer asks  about this solution, you can explain the core intuition using these three structured points:
 
 - Horizontal Slices instead of Vertical Columns: "Unlike the two-pointer approach which calculates water column-by-column, the stack approach calculates water horizontally, layer-by-layer." [1] [5]
 - Monotonic Decreasing Property: "We keep indices in a stack in strictly decreasing order of height. A decreasing stack means we are going down into a valley [2]." [6, 7]
 - The Trigger Condition: "The moment we see a bar taller than the stack's top, it means we found a right wall. We pop the valley bottom, look at the next item in the stack as our left wall, and calculate the water trapped in that specific horizontal ditch [1]." [8]
-
-Would you like to analyze the Time and Space Complexity of this stack method compared to the two-pointer solution, or dry-run another array?
-
-  
-
-[1] [https://medium.com](https://medium.com/deluxify/leetcode-42-trapping-rain-water-111061a97241)
-
-[2] [https://algo.monster](https://algo.monster/liteproblems/2282)
-
-[3] [https://www.linkedin.com](https://www.linkedin.com/pulse/guide-solving-problem-based-monotonic-stack-leetcode-ujjwal-kumar)
-
-[4] [https://www.reddit.com](https://www.reddit.com/r/leetcode/comments/1d0brjl/struggling_to_understand_two_pointer_solution_to/)
-
-[5] [https://medium.com](https://medium.com/@yejj177/please-the-last-time-trapping-rain-water-c1c6a1039096)
-
-[6] [https://unwiredlearning.com](https://unwiredlearning.com/blog/monotonic-stack-guide)
-
-[7] [https://medium.com](https://medium.com/@kishanbabariya101/advanced-stack-applicationsdata-structures-and-algorithms-deep-dive-advanced-stack-applications-b78bfa21dd86)
-
-[8] [https://medium.com](https://medium.com/deluxify/leetcode-42-trapping-rain-water-111061a97241)
 
 
 ## 🔗References

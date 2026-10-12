@@ -16,7 +16,9 @@ fieldsOrder:
   - OBVspa
   - ds3Nmt
   - wYUt3r
-version: "2.20"
+  - LYvTZI
+  - I99nGQ
+version: "2.35"
 fields:
   - name: Caption
     type: Input
@@ -49,4 +51,25 @@ fields:
     options: {}
     path: ""
     id: wYUt3r
+  - name: Size
+    type: Select
+    options:
+      sourceType: ValuesList
+      valuesList:
+        "1": Small
+        "2": Medium
+        "3": Large
+    path: ""
+    id: LYvTZI
+  - name: Align
+    type: Select
+    options:
+      sourceType: ValuesList
+      valuesList:
+        "1": Left
+        "2": Right
+        "3": Center
+        "4": Justify
+    path: ""
+    id: I99nGQ
 ---
