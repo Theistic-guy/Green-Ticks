@@ -160,6 +160,33 @@ In any note or problem file, insert the module using standard wiki link syntax:
 
 The Astro build intercepts this link, parses the target `.md` file (including inner formatting, code blocks, or nested carousels), and renders it inline as an accessible `<details>` block. The module title automatically appears in the Table of Contents, and its subheadings dynamically hide/show in the TOC based on the toggle state.
 
+## Carousels
+
+You can render interactive, swipeable card carousels anywhere across your notes.
+
+### 1. Carousel Cards
+Create individual cards inside `assets/Carousels/Carousel Cards/<CardName>.md`.
+Supported frontmatter:
+- `Title`: Card heading
+- `Description`: Text snippet or summary
+- `Cover Img`: Wikilink (e.g. `"[[tree_img.png]]"`) or external image URL
+- `Link`: Wikilink (e.g. `"[[Topics/trie]]"`) or external URL for the "View More" button
+
+### 2. Carousel Containers
+Create container definitions inside `assets/Carousels/Carousel Containers/<ContainerName>.md`.
+Supported frontmatter:
+- `Caption`: Optional label displayed beneath the carousel
+- `Display Count`: Number of cards visible at once (e.g. `1`, `2`)
+- `Rotation`: `true` or `false` for autoplay auto-scrolling
+- `Rotation Speed`: `Slow` (5s), `Medium` (3s), or `Fast` (1.5s)
+- `Cards`: List of wikilinks pointing to cards in `Carousel Cards/`
+
+### 3. Usage
+In any problem, note, or collapsible module, embed the carousel using standard wikilink syntax:
+`[[ContainerName]]` or `![[ContainerName]]`
+
+The Astro build automatically embeds the cards and initializes the interactive `<green-carousel>` client component with smooth scrolling, navigation buttons, and touch-drag support.
+
 ## Maintenance rules
 
 - Keep metadata consistent.

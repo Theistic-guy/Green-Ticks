@@ -128,3 +128,11 @@ if (!fs.existsSync(publicDir)) {
 }
 fs.writeFileSync(path.join(publicDir, 'graph-data.json'), JSON.stringify(outputData, null, 2));
 console.log('Graph data generated with', nodes.length, 'nodes and', links.length, 'links.');
+
+// Copy assets/Images into site/public/Images
+const imagesSource = path.join(vaultRoot, 'assets', 'Images');
+const imagesDest = path.join(publicDir, 'Images');
+if (fs.existsSync(imagesSource)) {
+  fs.cpSync(imagesSource, imagesDest, { recursive: true });
+  console.log('Copied assets/Images to public/Images.');
+}

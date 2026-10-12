@@ -390,6 +390,202 @@ export function getSidebar(): any[] {
 
 import { marked } from 'marked';
 
+function extractWikiLinks(text: string) {
+  const links: { target: string; display: string }[] = [];
+  const regex = /\[\[(.*?)\]\]/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    const inner = match[1];
+    const parts = inner.split('|');
+    links.push({
+      target: parts[0].trim(),
+      display: parts.length > 1 ? parts[1].trim() : parts[0].trim(),
+    });
+  }
+  return links;
+}
+
+function renderCarouselHtml(containerPath: string): string {
+  if (!fs.existsSync(containerPath)) return '';
+  const containerRaw = fs.readFileSync(containerPath, 'utf8');
+  const { data: containerData } = matter(containerRaw);
+
+  const caption = containerData.Caption || '';
+  const displayCount = parseInt(containerData['Display Count'] || 1, 10);
+  const rotation = containerData.Rotation === true;
+  const speedMap: Record<string, number> = { Slow: 5000, Medium: 3000, Fast: 1500 };
+  const rotationSpeed = speedMap[containerData['Rotation Speed']] || 3000;
+
+  const cardsRaw = containerData.Cards ? String(containerData.Cards) : '';
+  const cardLinks = extractWikiLinks(cardsRaw);
+
+  const cardsHtmlArr = cardLinks.map((cardLink) => {
+    let cardPath = path.resolve(path.dirname(containerPath), cardLink.target);
+    if (!cardPath.endsWith('.md')) cardPath += '.md';
+    if (!fs.existsSync(cardPath)) {
+      cardPath = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Cards', cardLink.target);
+      if (!cardPath.endsWith('.md')) cardPath += '.md';
+    }
+    if (!fs.existsSync(cardPath)) return '';
+
+    const cardRaw = fs.readFileSync(cardPath, 'utf8');
+    const { data: cardData } = matter(cardRaw);
+
+    const title = cardData.Title || '';
+    const description = cardData.Description || '';
+
+    let coverImg = '';
+    if (cardData['Cover Img']) {
+      const imgLinks = extractWikiLinks(String(cardData['Cover Img']));
+      if (imgLinks.length > 0) {
+        const imgTarget = imgLinks[0].target.trim();
+        if (imgTarget.startsWith('http://') || imgTarget.startsWith('https://')) {
+          coverImg = imgTarget;
+        } else {
+          coverImg = `/Images/${path.basename(imgTarget)}`;
+        }
+      } else {
+        const rawImg = String(cardData['Cover Img']).trim();
+        if (rawImg.startsWith('http://') || rawImg.startsWith('https://')) {
+          coverImg = rawImg;
+        } else {
+          coverImg = `/Images/${path.basename(rawImg)}`;
+        }
+      }
+    }
+
+    let cardLinkUrl = '#';
+    if (cardData.Link) {
+      const lnks = extractWikiLinks(String(cardData.Link));
+      if (lnks.length > 0) {
+        const lnkTarget = lnks[0].target.trim();
+        if (lnkTarget.startsWith('http://') || lnkTarget.startsWith('https://')) {
+          cardLinkUrl = lnkTarget;
+        } else {
+          const cleanTarget = lnkTarget.replace(/^(\.\.\/)+/, '').replace(/^\//, '').replace(/\.md$/, '');
+          cardLinkUrl = `/${cleanTarget.toLowerCase()}`;
+        }
+      } else {
+        const rawLink = String(cardData.Link).trim();
+        if (rawLink.startsWith('http://') || rawLink.startsWith('https://')) {
+          cardLinkUrl = rawLink;
+        }
+      }
+    }
+
+    return `<div class="carousel-card">${coverImg ? `<img src="${coverImg}" class="carousel-card-img" alt="${title}" loading="lazy" />` : ''}<div class="carousel-card-content">${title ? `<h3>${title}</h3>` : ''}${description ? `<p>${description}</p>` : ''}${cardLinkUrl !== '#' ? `<a href="${cardLinkUrl}" class="carousel-card-link">View More</a>` : ''}</div></div>`;
+  });
+
+  return `<green-carousel data-display="${displayCount}" data-rotation="${rotation}" data-speed="${rotationSpeed}"><div class="carousel-wrapper"><div class="carousel-track">${cardsHtmlArr.join('')}</div>${caption ? `<div class="carousel-caption">${caption}</div>` : ''}</div></green-carousel>`;
+}
+
+function renderCollapsibleHtml(modulePath: string, visited: Set<string>): string {
+  if (!fs.existsSync(modulePath)) return '';
+  if (visited.has(modulePath)) return '<div class="error">Infinite recursion detected</div>';
+  visited.add(modulePath);
+
+  const raw = fs.readFileSync(modulePath, 'utf8');
+  const { data, content } = matter(raw);
+
+  const title = data.Title || path.basename(modulePath, '.md');
+  const level = parseInt(data['Heading Level'] || data.Heading || 3, 10);
+
+  const innerHtml = renderVaultMarkdown(content, path.dirname(modulePath), visited);
+
+  visited.delete(modulePath);
+
+  return `<details class="collapsible-module"><summary class="collapsible-header level-${level}"><span class="collapsible-title">${title}</span><span class="toggle-icon"></span></summary><div class="collapsible-content">${innerHtml}</div></details>`;
+}
+
+export function renderVaultMarkdown(rawMarkdown: string, baseDir?: string, visited = new Set<string>()): string {
+  if (!rawMarkdown) return '';
+  const currentDir = baseDir || VAULT_ROOT;
+  const blocks: string[] = [];
+
+  const storeBlock = (html: string) => {
+    const idx = blocks.length;
+    blocks.push(html.trim());
+    return `\n\n<div data-green-block="${idx}"></div>\n\n`;
+  };
+
+  // 1. Process Markdown links: !?[label](url)
+  let processed = rawMarkdown.replace(/!?\[([^\]]*?)\]\(([^)]+?)\)/g, (fullMatch, label, url) => {
+    const cleanUrl = decodeURIComponent(url.trim());
+    
+    // Check if Carousel Container
+    if (cleanUrl.includes('Carousel Containers') || cleanUrl.includes('Carousels')) {
+      let resolved = path.resolve(currentDir, cleanUrl);
+      if (!resolved.endsWith('.md')) resolved += '.md';
+      if (!fs.existsSync(resolved)) {
+        resolved = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Containers', path.basename(cleanUrl));
+        if (!resolved.endsWith('.md')) resolved += '.md';
+      }
+      if (fs.existsSync(resolved)) {
+        const html = renderCarouselHtml(resolved);
+        return storeBlock(html);
+      }
+    }
+
+    // Check if Collapsible Module
+    if (cleanUrl.includes('Collapsible Modules')) {
+      let resolved = path.resolve(currentDir, cleanUrl);
+      if (!resolved.endsWith('.md')) resolved += '.md';
+      if (!fs.existsSync(resolved)) {
+        resolved = path.resolve(VAULT_ROOT, 'assets', 'Collapsible Modules', path.basename(cleanUrl));
+        if (!resolved.endsWith('.md')) resolved += '.md';
+      }
+      if (fs.existsSync(resolved)) {
+        const html = renderCollapsibleHtml(resolved, visited);
+        return storeBlock(html);
+      }
+    }
+
+    return fullMatch;
+  });
+
+  // 2. Process Wikilinks: !?[[target|display]] or [[target]]
+  processed = processed.replace(/!?\[\[(.*?)\]\]/g, (fullMatch, inner) => {
+    const parts = inner.split('|');
+    const target = parts[0].trim();
+
+    // Check if Carousel Container
+    let containerPath = path.resolve(currentDir, target);
+    if (!containerPath.endsWith('.md')) containerPath += '.md';
+    if (!fs.existsSync(containerPath)) {
+      containerPath = path.resolve(VAULT_ROOT, 'assets', 'Carousels', 'Carousel Containers', target);
+      if (!containerPath.endsWith('.md')) containerPath += '.md';
+    }
+    if (fs.existsSync(containerPath) && containerPath.includes('Carousel Containers')) {
+      const html = renderCarouselHtml(containerPath);
+      return storeBlock(html);
+    }
+
+    // Check if Collapsible Module
+    let modulePath = path.resolve(currentDir, target);
+    if (!modulePath.endsWith('.md')) modulePath += '.md';
+    if (!fs.existsSync(modulePath)) {
+      modulePath = path.resolve(VAULT_ROOT, 'assets', 'Collapsible Modules', target);
+      if (!modulePath.endsWith('.md')) modulePath += '.md';
+    }
+    if (fs.existsSync(modulePath) && modulePath.includes('Collapsible Modules')) {
+      const html = renderCollapsibleHtml(modulePath, visited);
+      return storeBlock(html);
+    }
+
+    return fullMatch;
+  });
+
+  // 3. Parse Markdown
+  let htmlResult = marked.parse(processed) as string;
+
+  // 4. Restore blocks and remove wrapping <p> if marked wrapped the placeholder
+  htmlResult = htmlResult.replace(/(?:<p>\s*)?<div data-green-block="(\d+)"><\/div>(?:\s*<\/p>)?/g, (_, idx) => {
+    return blocks[Number(idx)] || '';
+  });
+
+  return htmlResult;
+}
+
 /**
  * Load "Top" or "Bottom" section contents for a given category and slug.
  * 
@@ -452,5 +648,5 @@ export function loadSectionContent(category: string, slug: string, position: 'To
 
   // Render markdown to HTML
   const rawMarkdown = chunks.join('\n\n---\n\n');
-  return marked.parse(rawMarkdown) as string;
+  return renderVaultMarkdown(rawMarkdown, baseDir);
 }
