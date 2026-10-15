@@ -1,5 +1,5 @@
 ---
-updated: 12-10-2026
+updated: 15-10-2026
 ---
 # Contributing to Green-Ticks
 

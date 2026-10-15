@@ -1,7 +1,5 @@
-Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base.
- Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base. Hi, Welcome to this DSA knowledge base.
- 
-[Tree Carousel](assets/Carousels/Carousel%20Containers/Tree%20Carousel.md)
+---
+updated: 15-10-2026
+---
 
-[sample_collapsible_section](assets/Collapsible%20Modules/sample_collapsible_section.md)
 
