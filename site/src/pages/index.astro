@@ -8,6 +8,7 @@ import { loadProblems, loadMarkdownDir, loadCompanyLogos, groupByField, slugify,
 import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
+import matter from 'gray-matter';
 import siteInfo from '../../../assets/site-info.json';
 
 // Load all data at build time
@@ -58,7 +59,11 @@ const homepagePath = path.join(vaultRoot, 'HOMEPAGE.md');
 if (fs.existsSync(homepagePath)) {
   const raw = fs.readFileSync(homepagePath, 'utf-8').trim();
   if (raw) {
-    homepageContent = renderVaultMarkdown(raw, vaultRoot);
+    const { content } = matter(raw);
+    const body = content.trim();
+    if (body) {
+      homepageContent = renderVaultMarkdown(body, vaultRoot);
+    }
   }
 }
 

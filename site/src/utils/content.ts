@@ -594,6 +594,9 @@ function renderCollapsibleHtml(modulePath: string, visited: Set<string>): string
 
 export function renderVaultMarkdown(rawMarkdown: string, baseDir?: string, visited = new Set<string>()): string {
   if (!rawMarkdown) return '';
+  const { content } = matter(rawMarkdown);
+  const textToRender = content.trim();
+  if (!textToRender) return '';
   const currentDir = baseDir || VAULT_ROOT;
   const blocks: string[] = [];
 
@@ -604,7 +607,7 @@ export function renderVaultMarkdown(rawMarkdown: string, baseDir?: string, visit
   };
 
   // 1. Process Markdown links: !?[label](url)
-  let processed = rawMarkdown.replace(/!?\[([^\]]*?)\]\(([^)]+?)\)/g, (fullMatch, label, url) => {
+  let processed = textToRender.replace(/!?\[([^\]]*?)\]\(([^)]+?)\)/g, (fullMatch, label, url) => {
     const cleanUrl = decodeURIComponent(url.trim());
     
     // Check if Carousel Container
