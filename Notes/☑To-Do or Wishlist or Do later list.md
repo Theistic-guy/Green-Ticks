@@ -1,5 +1,5 @@
 ---
-updated: 09-10-2026
+updated: 16-10-2026
 ---
 <h1 align='right'><a href="../README.md">⇐🏠</a></h1>
 
@@ -84,3 +84,5 @@ updated: 09-10-2026
 + Greedy patterns
 + see huffman coding indirectly inspired problems - [Huffman Coding (indirectly inspired)](Extras/Huffman%20Coding%20(indirectly%20inspired).md)
 + see as well - [Scheduling - Greedy - DP - Heap cluster](Extras/Scheduling%20-%20Greedy%20-%20DP%20-%20Heap%20cluster.md)
++ for trees
+	+ 863, 110,662,199,222
